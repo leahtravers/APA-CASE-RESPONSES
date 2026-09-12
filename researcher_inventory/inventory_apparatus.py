@@ -24,42 +24,52 @@ PREFIX = {"PLACE": "P", "TIME": "T", "OBJECT": "O", "LABEL": "L", "VERB": "V", "
 
 CLASS_RULES = {
     "PLACE": (
-        "Return places/settings for materially represented occurrences. A place may be unnamed. "
-        "If an actual represented occurrence clearly happens somewhere but no place is named, emit one neutral inferred scene place with source_wording null and an exact source_cue from that occurrence. "
-        "Do not invent a location name and do not emit bare prepositions."
+        "Return every materially distinct place/scene coordinate needed to locate represented material. "
+        "Keep an explicit broad setting and contained setting separate even when one phrase names both. "
+        "Retain supported unnamed places for a material object location, destination, waiting scene, later conversation, or present telling when independently selectable. "
+        "For inferred places use source_wording null and an exact source_cue; never invent a location name. "
+        "When broad and contained settings arise in one situation, give them the same order_cue and scope_rank 0 for broad, 1 for contained."
     ),
     "TIME": (
-        "Return materially distinct occurrence/episode times. A time does not require a clock, date, or explicit temporal noun. "
-        "If an actual represented occurrence has no named time, emit a neutral episode time with source_wording null and an exact source_cue. "
-        "Do not create separate TIME rows for merely hypothetical or counterfactual possibilities."
+        "Return all materially distinct temporal frames in source progression: attempts/conditions, help/response episodes, transitions/departures, waits, intended periods, later conversations/reports, recurring spans, present reflection, and explicitly represented prospective/future frames. "
+        "A TIME does not require a clock/date/temporal noun. For unnamed times use source_wording null and an exact source_cue. "
+        "Retaining an intended, questioned, recurring, or future frame does not assert its content happened; preserve posture."
     ),
     "PERSON": (
-        "Return the speaker and actual represented human/social actors. Merge true aliases/coreference. "
-        "Do not manufacture people from generic categories or rhetorical possibilities. Speaker canonical_key must be B."
+        "Return the speaker plus every materially represented human/social actor, including relational actors needed by retained things/relations. Merge true aliases/coreference. Speaker canonical_key must be B. "
+        "For each non-speaker, order_cue should be the exact first source cue where that actor independently participates (acts, speaks, perceives, is acted upon, or is the endpoint of a material interaction/relation). "
+        "If the actor is only a possessor/beneficiary/descriptor and never independently participates, set order_cue null so code places them after participating actors."
     ),
     "OBJECT": (
-        "Return materially represented concrete or abstract things that are independently useful. Prefer fewer stronger coordinates. Do not emit every noun or every descriptive part."
+        "Return every materially represented independently selectable concrete or abstract thing, including source-distinguished wholes/parts, amounts/values, orders/services/results, decisions/next steps, contemplated choices treated as things, recurring relations, named sets/categories, and internal represented objects. "
+        "Do not duplicate a thing as OBJECT when its only source function is PLACE. Do not discard a represented part merely because its whole is retained."
     ),
     "LABEL": (
-        "Return source characterizations/questions/comparisons/contrasts that are independently useful. Preserve exact wording and posture. Do not translate labels into synonyms or psychological meanings."
+        "Return every independently selectable source characterization/quality/state/comparison/identity/self-label/evaluative phrase/question-label/contrast/rejection/correction. "
+        "Use the shortest complete exact source form that carries the characterization. LABEL inventory is separate from the qualities_available boolean. Never translate to synonyms or inferred psychological meanings."
     ),
     "VERB": (
-        "Return materially represented lexical happenings/predicates. Prioritize things that actually happen in the represented case. "
-        "Do not turn hypothetical, proposed, negated, or merely possible actions into completed happenings. Preserve exact source wording."
+        "Return materially represented lexical predicate increments in source order. Split matrix and embedded predicates when each is independently selectable, and split coordinated predicates when they do different jobs. "
+        "Prefer the shortest complete lexical predicate construction, normally without subject or optional objects. "
+        "Retain predicates under negation, uncertainty, questions, intentions, hypotheticals, proposals, recurrence, and future language; inventorying a predicate does not assert that its event happened. Preserve exact source posture."
     ),
     "LOCATOR": (
-        "Return materially useful spatial/directional/relational locator constructions. Preserve exact wording. Do not emit isolated prepositions."
+        "Return every materially useful spatial/directional/containment/path/proximity/movement/relational locator increment. Use the smallest complete meaningful construction, not an isolated preposition. "
+        "One episode may contain several independently selectable locator relations such as broad setting, contained setting, movement, accompaniment, destination, or containment. "
+        "When broad and contained setting locators arise in one situation, give them the same order_cue and scope_rank 0 for broad, 1 for contained."
     ),
 }
 
-BASE_RULES = """You are a sparse literal extraction worker. Inventory only.
-READ THE WHOLE SOURCE before answering the requested class.
+BASE_RULES = """You are a comprehensive literal extraction worker. Inventory only.
+READ THE WHOLE SOURCE before answering the requested class, then do a second end-to-end omission pass.
 NEVER substitute a synonym just because it is convenient. Preserve the source's own words, colloquial language, dialect, questions, negation, uncertainty, comparison, attribution, and figurative wording.
-Prefer fewer strong coordinates over speculative or interpretive coordinates. When uncertain, do less.
-An unnamed PLACE may still exist because an actual occurrence happened somewhere. An unnamed TIME may still exist because an actual occurrence happened during an episode. For those inferred coordinates, source_wording MUST be null and source_cue MUST be exact source text anchoring the occurrence.
-qualities_available is ONLY a boolean: true when the source gives qualities/descriptions associated with that coordinate, otherwise false. Do not unpack or classify the qualities merely to justify Q.
+Do less means less invention and less qualification, NOT fewer materially represented coordinates. Do not stop after salient items.
+An unnamed PLACE may exist because a material occurrence/object/relation requires a scene coordinate. An unnamed TIME may exist because represented material requires an episode/frame. For inferred PLACE/TIME, source_wording MUST be null and source_cue MUST be exact source text anchoring the coordinate.
+qualities_available is ONLY a boolean: true when the source gives qualities/descriptions associated with that coordinate, otherwise false. Do not interpret or classify qualities merely to justify Q. LABEL inventory remains separate from this boolean.
+Inventorying a verb, time frame, question, hypothetical, negation, intention, or prospective relation does not assert that it happened. Preserve source posture instead of deleting materially represented language.
+Remove only grammatical debris, unsupported inference, and duplicate mentions of the same coordinate. Keep independently selectable coordinates at their own grain.
 Never do APA scoring, psychological interpretation, protected-thread analysis, promotion, conclusions, or gold-answer reconstruction.
-Return JSON only. You have no access to archetypes, gold outputs, expected counts, or evaluator findings.
+Return JSON only. You have no access to archetypes, gold outputs, expected counts, evaluator findings, prior scored outputs, or holdout outputs.
 """
 
 _WORD_RE = re.compile(r"[A-Za-z0-9']+")
@@ -75,6 +85,8 @@ class Candidate:
     note: str | None
     qualities_available: bool
     anchor: int
+    order_anchor: int | None = None
+    scope_rank: int = 0
 
 
 class ApparatusError(RuntimeError):
@@ -129,18 +141,21 @@ class InventoryApparatus:
 
     @staticmethod
     def _assert_source_near_tag(tag: str, wording: str | None, cue: str) -> None:
-        """Reject convenient synonyms for explicit coordinates.
-
-        Every substantive token in an explicit coordinate tag must occur in its
-        exact wording/cue. Inferred PLACE/TIME tags are exempt because there is
-        intentionally no source name for them.
-        """
+        """Reject convenient synonyms for explicit coordinates."""
         if wording is None:
             return
         allowed = {w.casefold() for w in _WORD_RE.findall((wording or "") + " " + cue)}
         tag_words = {w.casefold() for w in _WORD_RE.findall(tag)}
         if tag_words - allowed:
             raise ApparatusError(f"short_tag introduces non-source wording: {tag!r}")
+
+    @staticmethod
+    def _possessive_only_first_mention(source: str, wording: str | None, anchor: int) -> bool:
+        if not wording:
+            return False
+        end = anchor + len(wording)
+        tail = source[end:end + 2]
+        return tail.startswith("’") or tail.startswith("'s") or tail.startswith("’s")
 
     def _extract_class(self, source: str, cls: str) -> list[Candidate]:
         response_schema = {
@@ -153,6 +168,8 @@ class InventoryApparatus:
                 "note": "neutral inference/coreference note or null",
                 "qualities_available": "boolean only",
                 "anchor_hint": "integer source offset if known",
+                "order_cue": "optional exact source substring establishing semantic order; for PERSON use first independent participation; null for relation-only actors",
+                "scope_rank": "optional nonnegative integer; 0 broad/whole, 1 contained/dependent when two coordinates share one material situation",
             },
         }
         payload = {
@@ -185,6 +202,24 @@ class InventoryApparatus:
                     self._assert_exact_source(source, cue, "source_cue")
                     self._assert_source_near_tag(tag, wording, cue)
                     anchor = self._exact_anchor(source, wording, cue, row.get("anchor_hint"))
+
+                    order_cue = row.get("order_cue")
+                    if order_cue is not None:
+                        if not isinstance(order_cue, str) or not order_cue:
+                            raise ApparatusError("order_cue must be a nonempty exact source substring or null")
+                        self._assert_exact_source(source, order_cue, "order_cue")
+                        order_anchor: int | None = source.find(order_cue)
+                    elif cls == "PERSON" and key != "B" and self._possessive_only_first_mention(source, wording, anchor):
+                        order_anchor = None
+                    else:
+                        order_anchor = anchor
+
+                    scope_rank_raw = row.get("scope_rank", 0)
+                    try:
+                        scope_rank = max(0, int(scope_rank_raw))
+                    except (TypeError, ValueError):
+                        raise ApparatusError("scope_rank must be a nonnegative integer") from None
+
                     out.append(Candidate(
                         unit_class=cls,
                         canonical_key=key,
@@ -194,6 +229,8 @@ class InventoryApparatus:
                         note=row.get("note"),
                         qualities_available=bool(row.get("qualities_available")),
                         anchor=anchor,
+                        order_anchor=order_anchor,
+                        scope_rank=scope_rank,
                     ))
                 return self._merge_and_order(out, cls)
             except Exception as exc:
@@ -208,11 +245,12 @@ class InventoryApparatus:
             grouped.setdefault(row.canonical_key.casefold(), []).append(row)
         merged: list[Candidate] = []
         for members in grouped.values():
-            members.sort(key=lambda x: (x.anchor, x.short_tag.casefold()))
+            members.sort(key=lambda x: (x.anchor, x.scope_rank, x.short_tag.casefold()))
             first = members[0]
             notes = [m.note for m in members if m.note]
             if len(members) > 1:
                 notes.append("alias/coreference mentions merged mechanically")
+            order_candidates = [m.order_anchor for m in members if m.order_anchor is not None]
             merged.append(Candidate(
                 unit_class=cls,
                 canonical_key=first.canonical_key,
@@ -222,14 +260,27 @@ class InventoryApparatus:
                 note="; ".join(dict.fromkeys(notes)) if notes else None,
                 qualities_available=any(m.qualities_available for m in members),
                 anchor=min(m.anchor for m in members),
+                order_anchor=min(order_candidates) if order_candidates else None,
+                scope_rank=min(m.scope_rank for m in members),
             ))
-        merged.sort(key=lambda x: (x.anchor, x.short_tag.casefold()))
+
         if cls == "PERSON":
             speakers = [x for x in merged if x.canonical_key == "B"]
             others = [x for x in merged if x.canonical_key != "B"]
             if len(speakers) != 1:
                 raise ApparatusError(f"PERSON requires exactly one speaker canonical_key B; found {len(speakers)}")
-            merged = speakers + others
+            participants = [x for x in others if x.order_anchor is not None]
+            relational_only = [x for x in others if x.order_anchor is None]
+            participants.sort(key=lambda x: (x.order_anchor, x.scope_rank, x.anchor, x.short_tag.casefold()))
+            relational_only.sort(key=lambda x: (x.anchor, x.scope_rank, x.short_tag.casefold()))
+            return speakers + participants + relational_only
+
+        merged.sort(key=lambda x: (
+            x.order_anchor if x.order_anchor is not None else x.anchor,
+            x.scope_rank,
+            x.anchor,
+            x.short_tag.casefold(),
+        ))
         return merged
 
     @staticmethod
@@ -254,11 +305,11 @@ class InventoryApparatus:
     def _extract_compounds(self, source: str, units: list[dict[str, Any]], refmap: dict[str, Candidate]) -> list[dict[str, Any]]:
         payload = {
             "task": "researcher_inventory_build_lightweight_compounds",
-            "rules": BASE_RULES + "\nBuild only obvious, useful situation maps. Prefer fewer compounds. Use only supplied unit_ref values. Q is not a unit ref.",
+            "rules": BASE_RULES + "\nMap the story at materially distinct event/proposition grain, not only broad scenes. Create a useful compound for each distinct represented predicate relation, characterization proposition, question/correction/reflection, and prospective relation. Use only supplied unit_ref values. Q is not a unit ref. A compound cannot repair a missing unit.",
             "source": source,
             "units": units,
             "response_schema": [{
-                "refs": "array of at least two existing unit_ref strings",
+                "refs": "array of at least two existing unit_ref strings in semantic/source order",
                 "researcher_bundle": "concise source-near bundle or null",
                 "qualities_available": "boolean only",
             }],
@@ -321,9 +372,6 @@ class InventoryApparatus:
         if not source.strip():
             raise ApparatusError("source is empty")
 
-        # The seven semantic requests are independent. Run them concurrently so
-        # model latency cannot turn calibration into an hours-long serial chain.
-        # Deterministic ordering remains code-owned below via CLASSES.
         by_class: dict[str, list[Candidate]] = {}
         with ThreadPoolExecutor(max_workers=len(CLASSES), thread_name_prefix="ri-class") as pool:
             futures = {pool.submit(self._extract_class, source, cls): cls for cls in CLASSES}
@@ -348,7 +396,7 @@ class InventoryApparatus:
                 "lightweight_resolution_preserved": True,
                 "all_compound_refs_registered": True,
                 "forbidden_work_avoided": True,
-                "notes": ["mechanical source-span, literal-language, ID, Q, and reference checks passed"],
+                "notes": ["mechanical source-span, literal-language, semantic-order, ID, Q, and reference checks passed"],
             },
         }
 
