@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "APA Researcher Inventory Candidate Output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["candidate", "units", "compounds", "validation"],
+  "properties": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_ref", "source_case_text", "created_by_ref"],
+      "properties": {
+        "candidate_ref": {"type": "string", "pattern": "^(?!APA[-_]).+$"},
+        "source_case_ref": {"type": ["string", "null"]},
+        "source_case_text": {"type": "string", "minLength": 1},
+        "researcher_interest": {"type": ["string", "null"]},
+        "created_by_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["unit_ref", "unit_class", "researcher_short_tag", "qualities_available"],
+        "properties": {
+          "unit_ref": {"type": "string", "minLength": 1},
+          "unit_class": {"enum": ["PLACE", "TIME", "PERSON", "OBJECT", "LABEL", "VERB", "LOCATOR"]},
+          "researcher_short_tag": {"type": "string", "minLength": 1},
+          "source_wording": {"type": ["string", "null"]},
+          "source_cue": {"type": ["string", "null"]},
+          "researcher_note": {"type": ["string", "null"]},
+          "qualities_available": {"type": "boolean"}
+        }
+      }
+    },
+    "compounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["compound_ref", "compound_expression", "referenced_unit_refs", "qualities_available"],
+        "properties": {
+          "compound_ref": {"type": "string", "minLength": 1},
+          "compound_expression": {"type": "string", "minLength": 1},
+          "researcher_bundle": {"type": ["string", "null"]},
+          "referenced_unit_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "qualities_available": {"type": "boolean"}
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_language_preserved", "lightweight_resolution_preserved", "all_compound_refs_registered", "forbidden_work_avoided", "notes"],
+      "properties": {
+        "source_language_preserved": {"type": "boolean"},
+        "lightweight_resolution_preserved": {"type": "boolean"},
+        "all_compound_refs_registered": {"type": "boolean"},
+        "forbidden_work_avoided": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
