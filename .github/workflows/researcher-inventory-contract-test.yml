@@ -76,29 +76,24 @@ jobs:
         if: steps.final_state.outputs.certified != 'true'
         shell: bash
         run: |
-          set -u
+          set -euo pipefail
           mkdir -p researcher_inventory/runtime researcher_inventory/status
           : > researcher_inventory/runtime/training_history.ndjson
           python researcher_inventory/session_bootstrap.py
-          PASS=0
-          for ROUND in 1 2 3 4; do
-            echo "=== CALIBRATION ROUND ${ROUND} ==="
-            if TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner; then
-              echo "first consecutive batch passed; checking the same saved extractor again"
-              if TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner; then
-                PASS=1
-                break
-              fi
-            fi
-          done
-          if [ "$PASS" -ne 1 ]; then
-            echo "calibration gate not yet met"
-            exit 1
-          fi
+
+          echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
+          TEST_REPETITIONS=1 python -m researcher_inventory.apparatus_calibration_runner
+
+          echo '=== REPEATABILITY BATCH 1 ==='
+          TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner
+
+          echo '=== REPEATABILITY BATCH 2 ==='
+          TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner
+
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
 
-          V10 comprehensive-literal apparatus passed two consecutive hidden-archetype verification batches on one calibration lineage. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
+          V10 comprehensive-literal apparatus passed the hidden Case 2/Case 6 diagnostic batch and two further repeated verification batches on the same finalized contract and saved-agent lineage. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
