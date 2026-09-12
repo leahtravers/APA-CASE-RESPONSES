@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""APA Researcher Inventory apparatus.
+"""Mechanical APA Researcher Inventory apparatus.
 
-The apparatus, not the model, owns the output mechanics.
-A provider adapter receives JSON on stdin and returns JSON on stdout.
-Set RI_MODEL_COMMAND to any executable command implementing that contract.
-
-The worker NEVER receives approved archetypes or expected outputs.
+The model is a replaceable semantic extractor. Code owns IDs, ordering, source
+verification, Q expression, compound integrity, and SQL-ready output.
+The worker never receives approved archetypes or evaluator answers.
 """
 from __future__ import annotations
 
@@ -21,24 +19,50 @@ from dataclasses import dataclass
 from typing import Any
 
 CLASSES = ("PLACE", "TIME", "PERSON", "OBJECT", "LABEL", "VERB", "LOCATOR")
-PREFIX = {"PLACE":"P", "TIME":"T", "OBJECT":"O", "LABEL":"L", "VERB":"V", "LOCATOR":"R"}
+PREFIX = {"PLACE": "P", "TIME": "T", "OBJECT": "O", "LABEL": "L", "VERB": "V", "LOCATOR": "R"}
 
 CLASS_RULES = {
-    "PLACE": "Retain materially represented settings, contained/off-scene settings, and supported inferred scene places. Do not emit bare prepositions.",
-    "TIME": "Retain materially distinct periods, episodes, transitions, durations, recurrence, present-reflection frames, and future/conditional frames. Do not emit incidental tense alone.",
-    "PERSON": "Retain speaker plus materially represented human/social actors or groups. Merge true aliases/coreference. Speaker canonical_key must be B.",
-    "OBJECT": "Retain materially represented concrete or abstract things, proposition-like things, represented wholes and independently selectable parts. Do not emit every noun.",
-    "LABEL": "Retain source characterizations, identities, comparisons, questions, alternatives, proposals, rejections, contrasts and corrections. Preserve question/negation/uncertainty posture.",
-    "VERB": "Retain materially represented lexical predicates/happenings, including embedded, reported, hypothetical and prospective predicates. Preserve source wording; do not invent event summaries.",
-    "LOCATOR": "Retain materially useful physical, directional, relational, containment, path, proximity and figurative locator constructions. Do not emit isolated prepositions.",
+    "PLACE": (
+        "Return places/settings for materially represented occurrences. A place may be unnamed. "
+        "If an actual represented occurrence clearly happens somewhere but no place is named, emit one neutral inferred scene place with source_wording null and an exact source_cue from that occurrence. "
+        "Do not invent a location name and do not emit bare prepositions."
+    ),
+    "TIME": (
+        "Return materially distinct occurrence/episode times. A time does not require a clock, date, or explicit temporal noun. "
+        "If an actual represented occurrence has no named time, emit a neutral episode time with source_wording null and an exact source_cue. "
+        "Do not create separate TIME rows for merely hypothetical or counterfactual possibilities."
+    ),
+    "PERSON": (
+        "Return the speaker and actual represented human/social actors. Merge true aliases/coreference. "
+        "Do not manufacture people from generic categories or rhetorical possibilities. Speaker canonical_key must be B."
+    ),
+    "OBJECT": (
+        "Return materially represented concrete or abstract things that are independently useful. Prefer fewer stronger coordinates. Do not emit every noun or every descriptive part."
+    ),
+    "LABEL": (
+        "Return source characterizations/questions/comparisons/contrasts that are independently useful. Preserve exact wording and posture. Do not translate labels into synonyms or psychological meanings."
+    ),
+    "VERB": (
+        "Return materially represented lexical happenings/predicates. Prioritize things that actually happen in the represented case. "
+        "Do not turn hypothetical, proposed, negated, or merely possible actions into completed happenings. Preserve exact source wording."
+    ),
+    "LOCATOR": (
+        "Return materially useful spatial/directional/relational locator constructions. Preserve exact wording. Do not emit isolated prepositions."
+    ),
 }
 
-BASE_RULES = """You are a bounded extraction worker. Inventory only. Never do APA scoring, psychological interpretation, protected-thread analysis, promotion, or conclusions.
-Read the entire source. Preserve colloquial language, dialect, questions, negation, uncertainty, comparison, attribution, hypothetical/future status, and figurative wording.
-Return JSON only. Never use or infer any gold-standard answer, example output, archetype, or expected count.
-A coordinate is retained only if materially represented or required by a materially represented situation and independently selectable for research. Do not inventory grammatical debris or every word.
-qualities_available is true when the source gives one or more material qualities/descriptions of that coordinate beyond merely naming it. Do not unpack those qualities into extra coordinates unless they independently satisfy the requested class.
+BASE_RULES = """You are a sparse literal extraction worker. Inventory only.
+READ THE WHOLE SOURCE before answering the requested class.
+NEVER substitute a synonym just because it is convenient. Preserve the source's own words, colloquial language, dialect, questions, negation, uncertainty, comparison, attribution, and figurative wording.
+Prefer fewer strong coordinates over speculative or interpretive coordinates. When uncertain, do less.
+An unnamed PLACE may still exist because an actual occurrence happened somewhere. An unnamed TIME may still exist because an actual occurrence happened during an episode. For those inferred coordinates, source_wording MUST be null and source_cue MUST be exact source text anchoring the occurrence.
+qualities_available is ONLY a boolean: true when the source gives qualities/descriptions associated with that coordinate, otherwise false. Do not unpack or classify the qualities merely to justify Q.
+Never do APA scoring, psychological interpretation, protected-thread analysis, promotion, conclusions, or gold-answer reconstruction.
+Return JSON only. You have no access to archetypes, gold outputs, expected counts, or evaluator findings.
 """
+
+_WORD_RE = re.compile(r"[A-Za-z0-9']+")
+
 
 @dataclass
 class Candidate:
@@ -46,16 +70,18 @@ class Candidate:
     canonical_key: str
     short_tag: str
     source_wording: str | None
-    source_cue: str | None
+    source_cue: str
     note: str | None
     qualities_available: bool
     anchor: int
 
+
 class ApparatusError(RuntimeError):
     pass
 
+
 class CommandAdapter:
-    """Provider-neutral adapter. Any platform can implement stdin JSON -> stdout JSON."""
+    """Provider-neutral stdin JSON -> stdout JSON adapter."""
     def __init__(self, command: str, timeout: int = 180):
         if not command:
             raise ApparatusError("RI_MODEL_COMMAND is required")
@@ -78,14 +104,14 @@ class CommandAdapter:
         except json.JSONDecodeError as exc:
             raise ApparatusError(f"model adapter returned non-JSON: {raw[:1000]}") from exc
 
+
 class InventoryApparatus:
     def __init__(self, adapter: CommandAdapter, retries: int = 2):
         self.adapter = adapter
         self.retries = retries
 
     @staticmethod
-    def _exact_anchor(source: str, wording: str | None, cue: str | None, proposed: Any) -> int:
-        """Code, never the model, establishes the source anchor."""
+    def _exact_anchor(source: str, wording: str | None, cue: str, proposed: Any) -> int:
         for text in (wording, cue):
             if text:
                 pos = source.find(text)
@@ -100,29 +126,44 @@ class InventoryApparatus:
         if value is not None and value not in source:
             raise ApparatusError(f"{field} is not exact source text: {value!r}")
 
+    @staticmethod
+    def _assert_source_near_tag(tag: str, wording: str | None, cue: str) -> None:
+        """Reject convenient synonyms for explicit coordinates.
+
+        Every substantive token in an explicit coordinate tag must occur in its
+        exact wording/cue. Inferred PLACE/TIME tags are exempt because there is
+        intentionally no source name for them.
+        """
+        if wording is None:
+            return
+        allowed = {w.casefold() for w in _WORD_RE.findall((wording or "") + " " + cue)}
+        tag_words = {w.casefold() for w in _WORD_RE.findall(tag)}
+        if tag_words - allowed:
+            raise ApparatusError(f"short_tag introduces non-source wording: {tag!r}")
+
     def _extract_class(self, source: str, cls: str) -> list[Candidate]:
-        schema = {
+        response_schema = {
             "type": "array",
             "items": {
-                "canonical_key": "string; stable neutral identity for alias/coreference merge; B for speaker in PERSON",
-                "short_tag": "compact source-near navigation tag",
-                "source_wording": "exact source substring or null for supported inference",
-                "source_cue": "exact bounded source substring preserving posture/scope",
-                "note": "neutral inference/alias note or null",
-                "qualities_available": "boolean",
-                "anchor_hint": "integer source character offset if known"
-            }
+                "canonical_key": "stable neutral identity for alias/coreference merge; B for speaker",
+                "short_tag": "compact source-near tag; no synonym substitution",
+                "source_wording": "exact source substring, or null only for a supported inferred PLACE/TIME",
+                "source_cue": "required exact bounded source substring anchoring the coordinate",
+                "note": "neutral inference/coreference note or null",
+                "qualities_available": "boolean only",
+                "anchor_hint": "integer source offset if known",
+            },
         }
         payload = {
             "task": "researcher_inventory_extract_one_class",
             "rules": BASE_RULES,
             "class": cls,
             "class_rule": CLASS_RULES[cls],
-            "response_schema": schema,
+            "response_schema": response_schema,
             "source": source,
         }
         last: Exception | None = None
-        for attempt in range(self.retries + 1):
+        for _ in range(self.retries + 1):
             try:
                 rows = self.adapter.ask(payload)
                 if not isinstance(rows, list):
@@ -133,12 +174,15 @@ class InventoryApparatus:
                         raise ApparatusError("candidate must be object")
                     wording = row.get("source_wording")
                     cue = row.get("source_cue")
-                    self._assert_exact_source(source, wording, "source_wording")
-                    self._assert_exact_source(source, cue, "source_cue")
                     key = str(row.get("canonical_key") or "").strip()
                     tag = str(row.get("short_tag") or "").strip()
-                    if not key or not tag:
-                        raise ApparatusError("canonical_key and short_tag are required")
+                    if not key or not tag or not isinstance(cue, str) or not cue:
+                        raise ApparatusError("canonical_key, short_tag, and exact source_cue are required")
+                    if wording is None and cls not in {"PLACE", "TIME"}:
+                        raise ApparatusError(f"source_wording may be null only for inferred PLACE/TIME, not {cls}")
+                    self._assert_exact_source(source, wording, "source_wording")
+                    self._assert_exact_source(source, cue, "source_cue")
+                    self._assert_source_near_tag(tag, wording, cue)
                     anchor = self._exact_anchor(source, wording, cue, row.get("anchor_hint"))
                     out.append(Candidate(
                         unit_class=cls,
@@ -158,7 +202,6 @@ class InventoryApparatus:
 
     @staticmethod
     def _merge_and_order(rows: list[Candidate], cls: str) -> list[Candidate]:
-        """Deterministic alias merge by worker canonical_key; code owns survivor/order."""
         grouped: dict[str, list[Candidate]] = {}
         for row in rows:
             grouped.setdefault(row.canonical_key.casefold(), []).append(row)
@@ -166,18 +209,16 @@ class InventoryApparatus:
         for members in grouped.values():
             members.sort(key=lambda x: (x.anchor, x.short_tag.casefold()))
             first = members[0]
-            cues = [m.source_cue for m in members if m.source_cue]
-            wording = first.source_wording
-            note_bits = [m.note for m in members if m.note]
+            notes = [m.note for m in members if m.note]
             if len(members) > 1:
-                note_bits.append("alias/coreference mentions merged mechanically")
+                notes.append("alias/coreference mentions merged mechanically")
             merged.append(Candidate(
                 unit_class=cls,
                 canonical_key=first.canonical_key,
                 short_tag=first.short_tag,
-                source_wording=wording,
-                source_cue=cues[0] if cues else first.source_cue,
-                note="; ".join(dict.fromkeys(note_bits)) if note_bits else None,
+                source_wording=first.source_wording,
+                source_cue=first.source_cue,
+                note="; ".join(dict.fromkeys(notes)) if notes else None,
                 qualities_available=any(m.qualities_available for m in members),
                 anchor=min(m.anchor for m in members),
             ))
@@ -195,12 +236,8 @@ class InventoryApparatus:
         units: list[dict[str, Any]] = []
         refmap: dict[str, Candidate] = {}
         for cls in CLASSES:
-            rows = by_class[cls]
-            for i, row in enumerate(rows, 1):
-                if cls == "PERSON":
-                    ref = "B" if i == 1 else f"H{i-1}"
-                else:
-                    ref = f"{PREFIX[cls]}{i}"
+            for i, row in enumerate(by_class[cls], 1):
+                ref = ("B" if i == 1 else f"H{i-1}") if cls == "PERSON" else f"{PREFIX[cls]}{i}"
                 refmap[ref] = row
                 units.append({
                     "unit_ref": ref,
@@ -216,15 +253,14 @@ class InventoryApparatus:
     def _extract_compounds(self, source: str, units: list[dict[str, Any]], refmap: dict[str, Candidate]) -> list[dict[str, Any]]:
         payload = {
             "task": "researcher_inventory_build_lightweight_compounds",
-            "rules": BASE_RULES + "\nBuild a useful nonexhaustive map of major represented situations. A compound cannot repair a missing unit. Use only supplied unit_ref values. Do not use Q as a unit ref.",
+            "rules": BASE_RULES + "\nBuild only obvious, useful situation maps. Prefer fewer compounds. Use only supplied unit_ref values. Q is not a unit ref.",
             "source": source,
             "units": units,
             "response_schema": [{
-                "refs": "array of existing unit_ref strings in source/situation order",
+                "refs": "array of at least two existing unit_ref strings",
                 "researcher_bundle": "concise source-near bundle or null",
-                "qualities_available": "boolean",
-                "anchor_ref": "one ref from refs establishing first material anchor"
-            }]
+                "qualities_available": "boolean only",
+            }],
         }
         last: Exception | None = None
         for _ in range(self.retries + 1):
@@ -232,7 +268,7 @@ class InventoryApparatus:
                 rows = self.adapter.ask(payload)
                 if not isinstance(rows, list):
                     raise ApparatusError("compound extraction must return array")
-                normalized = []
+                normalized: list[tuple[int, str, list[str], bool, Any]] = []
                 for row in rows:
                     refs = row.get("refs") if isinstance(row, dict) else None
                     if not isinstance(refs, list) or len(refs) < 2 or any(r not in refmap for r in refs):
@@ -242,8 +278,7 @@ class InventoryApparatus:
                     expression = "_".join(refs) + ("_Q" if q else "")
                     anchor = min(refmap[r].anchor for r in refs)
                     normalized.append((anchor, expression, refs, q, row.get("researcher_bundle")))
-                # deterministic dedupe/order/ref assignment
-                dedup: dict[str, tuple] = {}
+                dedup: dict[str, tuple[int, str, list[str], bool, Any]] = {}
                 for item in normalized:
                     dedup.setdefault(item[1], item)
                 ordered = sorted(dedup.values(), key=lambda x: (x[0], x[1]))
@@ -267,7 +302,6 @@ class InventoryApparatus:
 
     @staticmethod
     def sql_rows(result: dict[str, Any]) -> dict[str, Any]:
-        """Return parameter rows for the isolated candidate tables. No SQL interpolation."""
         cref = result["candidate"]["candidate_ref"]
         return {
             "research_hypothesis_candidate": [{
@@ -288,7 +322,7 @@ class InventoryApparatus:
         by_class = {cls: self._extract_class(source, cls) for cls in CLASSES}
         units, refmap = self._assign_refs(by_class)
         compounds = self._extract_compounds(source, units, refmap)
-        result = {
+        return {
             "candidate": {
                 "candidate_ref": self._candidate_ref(source, source_case_ref),
                 "source_case_ref": source_case_ref,
@@ -303,10 +337,10 @@ class InventoryApparatus:
                 "lightweight_resolution_preserved": True,
                 "all_compound_refs_registered": True,
                 "forbidden_work_avoided": True,
-                "notes": ["mechanical source-span and reference integrity checks passed"],
+                "notes": ["mechanical source-span, literal-language, ID, Q, and reference checks passed"],
             },
         }
-        return result
+
 
 def main() -> int:
     p = argparse.ArgumentParser()
@@ -317,14 +351,15 @@ def main() -> int:
     p.add_argument("--sql-rows", action="store_true")
     args = p.parse_args()
     source = open(args.source_file, encoding="utf-8").read()
-    apparatus = InventoryApparatus(CommandAdapter(os.environ.get("RI_MODEL_COMMAND", "")))
-    result = apparatus.run(source, args.source_case_ref, args.researcher_interest, args.created_by_ref)
-    print(json.dumps(apparatus.sql_rows(result) if args.sql_rows else result, ensure_ascii=False, indent=2))
+    app = InventoryApparatus(CommandAdapter(os.environ.get("RI_MODEL_COMMAND", "")))
+    result = app.run(source, args.source_case_ref, args.researcher_interest, args.created_by_ref)
+    print(json.dumps(app.sql_rows(result) if args.sql_rows else result, ensure_ascii=False, indent=2))
     return 0
+
 
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except ApparatusError as exc:
-        print(json.dumps({"error":"APPARATUS_FAILURE", "detail":str(exc)}), file=sys.stderr)
+        print(json.dumps({"error": "APPARATUS_FAILURE", "detail": str(exc)}), file=sys.stderr)
         raise SystemExit(2)
