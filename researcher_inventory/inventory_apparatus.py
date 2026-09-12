@@ -8,6 +8,7 @@ The worker never receives approved archetypes or evaluator answers.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
 import os
@@ -319,7 +320,17 @@ class InventoryApparatus:
     def run(self, source: str, source_case_ref: str | None = None, researcher_interest: str | None = None, created_by_ref: str = "RI-WORKER") -> dict[str, Any]:
         if not source.strip():
             raise ApparatusError("source is empty")
-        by_class = {cls: self._extract_class(source, cls) for cls in CLASSES}
+
+        # The seven semantic requests are independent. Run them concurrently so
+        # model latency cannot turn calibration into an hours-long serial chain.
+        # Deterministic ordering remains code-owned below via CLASSES.
+        by_class: dict[str, list[Candidate]] = {}
+        with ThreadPoolExecutor(max_workers=len(CLASSES), thread_name_prefix="ri-class") as pool:
+            futures = {pool.submit(self._extract_class, source, cls): cls for cls in CLASSES}
+            for future in as_completed(futures):
+                cls = futures[future]
+                by_class[cls] = future.result()
+
         units, refmap = self._assign_refs(by_class)
         compounds = self._extract_compounds(source, units, refmap)
         return {
