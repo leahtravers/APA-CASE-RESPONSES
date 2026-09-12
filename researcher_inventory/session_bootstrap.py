@@ -1,8 +1,8 @@
-"""Create the reusable Researcher Inventory saved agent.
+"""Create the reusable Researcher Inventory calibration agent.
 
 Requires OPENAI_API_KEY scoped to the APA Case Responses project.
 Actual researcher-inventory sessions are created per case with initial input.
-Prints only stable IDs and bounded API error metadata; never prints the API key.
+The agent receives both the behavioral contract and exact machine schema.
 """
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ from pathlib import Path
 
 API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V2")
 AGENT_ID_FILE = Path("researcher_inventory/runtime/agent_id.txt")
 CONTRACT = Path("researcher_inventory/AGENT_CONTRACT.md")
 OUTPUT_SCHEMA = Path("researcher_inventory/output_schema.json")
@@ -58,7 +59,7 @@ def main():
     schema = OUTPUT_SCHEMA.read_text(encoding="utf-8")
     instructions = (
         contract
-        + "\n\n## EXACT OUTPUT SCHEMA\n"
+        + "\n\n## EXACT OUTPUT SCHEMA — OBEY LITERALLY\n"
         + "The final answer MUST use these exact top-level keys and field names. Do not invent aliases such as unit_rows, compound_rows, validation_report, candidate_metadata, ref, source_text, researcher_tag, composition, or member_refs.\n\n"
         + schema
     )
@@ -66,13 +67,14 @@ def main():
         "/agents",
         method="POST",
         body={
-            "name": "APA Researcher Inventory",
+            "name": f"APA Researcher Inventory {CONTRACT_VERSION}",
             "model": MODEL,
             "instructions": instructions,
             "metadata": {
                 "apa_role": "researcher_inventory",
-                "contract_version": os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V1"),
+                "contract_version": CONTRACT_VERSION,
                 "promotion_authority": "none",
+                "training_mode": "archetype_calibration",
             },
         },
     )
@@ -81,6 +83,7 @@ def main():
     AGENT_ID_FILE.write_text(agent_id + "\n", encoding="utf-8")
     print(f"agent_id={agent_id}")
     print(f"model={MODEL}")
+    print(f"contract_version={CONTRACT_VERSION}")
     print("session_policy=per_case_with_initial_input")
 
 
