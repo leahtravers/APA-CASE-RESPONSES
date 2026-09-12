@@ -18,11 +18,11 @@ concurrency:
 jobs:
   repeatability-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V1
+      CONTRACT_VERSION: RI-CONTRACT-V2
       TEST_REPETITIONS: '2'
     steps:
       - name: Checkout repository without external actions
@@ -45,11 +45,11 @@ jobs:
             exit 1
           fi
 
-      - name: Bootstrap dedicated saved agent and session
+      - name: Bootstrap dedicated calibration agent
         shell: bash
         run: python researcher_inventory/session_bootstrap.py
 
-      - name: Run repeatability fixtures
+      - name: Run approved-archetype calibration fixtures
         id: tests
         shell: bash
         continue-on-error: true
@@ -67,7 +67,7 @@ jobs:
           fi
           echo '=== APA RESEARCHER INVENTORY TRAINING PACKET END ==='
 
-      - name: Fail workflow if contract tests failed
+      - name: Fail workflow if archetype calibration failed
         if: steps.tests.outcome == 'failure'
         shell: bash
         run: exit 1
