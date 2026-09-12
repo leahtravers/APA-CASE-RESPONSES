@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: researcher-inventory-apparatus-verification
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   verify:
