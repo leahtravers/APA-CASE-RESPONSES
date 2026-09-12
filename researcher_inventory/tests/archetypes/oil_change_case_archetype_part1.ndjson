@@ -1,0 +1,90 @@
+{"t":"u","r":"P1","c":"PLACE","g":"oil-change place","s":"“oil-change place I go to”; “ours is right there”"}
+{"t":"u","r":"P2","c":"PLACE","g":"place of B and wife","s":"physical place(s) for the 42-year wife relation not specified"}
+{"t":"u","r":"P3","c":"PLACE","g":"can / bathroom","s":"“sitting on the can”"}
+{"t":"u","r":"P4","c":"PLACE","g":"place of B and daughter","s":"place of conversation about daughter’s divorce not specified"}
+{"t":"u","r":"P5","c":"PLACE","g":"daycare","s":"“my grandbaby’s daycare”"}
+{"t":"u","r":"P6","c":"PLACE","g":"place daughter was doing stockings","s":"exact place not specified"}
+{"t":"u","r":"P7","c":"PLACE","g":"body of water","s":"B is fishing; exact body of water not specified"}
+{"t":"u","r":"P8","c":"PLACE","g":"boat","s":"“side of my boat”"}
+{"t":"u","r":"P9","c":"PLACE","g":"forest","s":"introduced in “driving through the forest at night”"}
+{"t":"u","r":"P10","c":"PLACE","g":"place of present telling","s":"exact place not specified"}
+{"t":"u","r":"T1","c":"TIME","g":"earlier oil-change period","s":"past-tense qualities of the place and the guys"}
+{"t":"u","r":"T2","c":"TIME","g":"around the holidays","s":"owner pushed out; daycare lady account; daughter doing stockings"}
+{"t":"u","r":"T3","c":"TIME","g":"after oil-change change / twice since","s":"B has been back twice since"}
+{"t":"u","r":"T4","c":"TIME","g":"a few weeks ago","s":"B walked out of the oil-change place"}
+{"t":"u","r":"T5","c":"TIME","g":"42-year wife period","s":"wife has spent 42 years trying to “get a rise out of me”"}
+{"t":"u","r":"T6","c":"TIME","g":"can-thinking episode","s":"B sitting on the can thinking about owner; exact date not supplied"}
+{"t":"u","r":"T7","c":"TIME","g":"daughter conversation","s":"B talking to daughter about her divorce"}
+{"t":"u","r":"T8","c":"TIME","g":"daughter divorce period","s":"daughter’s divorce as broader period/context"}
+{"t":"u","r":"T9","c":"TIME","g":"whole-life period","s":"“Maybe my whole life…”"}
+{"t":"u","r":"T10","c":"TIME","g":"few days back","s":"fishing episode"}
+{"t":"u","r":"T11","c":"TIME","g":"dawn","s":"“fishing at dawn”"}
+{"t":"u","r":"T12","c":"TIME","g":"present telling","s":"current report / performance / utterances"}
+{"t":"u","r":"B","c":"PERSON","g":"B","s":"speaker"}
+{"t":"u","r":"H1","c":"PERSON","g":"wife","s":"B’s wife"}
+{"t":"u","r":"H2","c":"PERSON","g":"daughter","s":"B’s daughter"}
+{"t":"u","r":"H3","c":"PERSON","g":"grandbaby / little one","s":"B’s grandbaby / “the little one”"}
+{"t":"u","r":"H4","c":"PERSON","g":"daycare lady","s":"“my grandbaby’s daycare lady”"}
+{"t":"u","r":"H5","c":"PERSON","g":"oil-change owner","s":"“guy who owned it”"}
+{"t":"u","r":"H6","c":"PERSON","g":"old oil-change guys","s":"“the guys”"}
+{"t":"u","r":"H7","c":"PERSON","g":"salesmen / kids","s":"“Salesmen”; “these kids”"}
+{"t":"u","r":"H8","c":"PERSON","g":"corporate","s":"“corporate”"}
+{"t":"u","r":"O1","c":"OBJECT","g":"car","s":"B cares for his car"}
+{"t":"u","r":"O2","c":"OBJECT","g":"tires","s":"oil-change place"}
+{"t":"u","r":"O3","c":"OBJECT","g":"brake pads","s":"oil-change place"}
+{"t":"u","r":"O4","c":"OBJECT","g":"“free” printout / paper","s":"says you need something else every time"}
+{"t":"u","r":"O5","c":"OBJECT","g":"floor","s":"earlier oil-change place"}
+{"t":"u","r":"O6","c":"OBJECT","g":"unpacked boxes","s":"earlier oil-change place"}
+{"t":"u","r":"O7","c":"OBJECT","g":"dust","s":"earlier oil-change place"}
+{"t":"u","r":"O8","c":"OBJECT","g":"Dunkin’s","s":"on the counter"}
+{"t":"u","r":"O9","c":"OBJECT","g":"parts","s":"may have had “questionable origins”"}
+{"t":"u","r":"O10","c":"OBJECT","g":"franchise","s":"owner pushed out of his franchise"}
+{"t":"u","r":"O11","c":"OBJECT","g":"new fancy lifts","s":"later oil-change place"}
+{"t":"u","r":"O12","c":"OBJECT","g":"extra work","s":"kids push B for it"}
+{"t":"u","r":"O13","c":"OBJECT","g":"loud music","s":"those guys / earlier oil-change place"}
+{"t":"u","r":"O14","c":"OBJECT","g":"pinups","s":"on the wall"}
+{"t":"u","r":"O15","c":"OBJECT","g":"crumpled receipts","s":"earlier oil-change place"}
+{"t":"u","r":"O16","c":"OBJECT","g":"feelings / not easy feelings","s":"B says he has many “not easy feelings”"}
+{"t":"u","r":"O17","c":"OBJECT","g":"scramble head","s":"“my scramble head”"}
+{"t":"u","r":"O18","c":"OBJECT","g":"big greedy something","s":"B’s wording"}
+{"t":"u","r":"O19","c":"OBJECT","g":"spaces you wasn’t looking at","s":"B’s wording"}
+{"t":"u","r":"O20","c":"OBJECT","g":"tractor trailer","s":"figurative object"}
+{"t":"u","r":"O21","c":"OBJECT","g":"lights","s":"tractor trailer “with its lights off”"}
+{"t":"u","r":"O22","c":"OBJECT","g":"my mind","s":"“My mind oughta be crystal as the water”"}
+{"t":"u","r":"O23","c":"OBJECT","g":"sunrise","s":"“just me and the sunrise”"}
+{"t":"u","r":"O24","c":"OBJECT","g":"water","s":"fishing comparison and present water request are source uses of water"}
+{"t":"u","r":"O25","c":"OBJECT","g":"fish / bass","s":"“big-mouthed beaut”; later “that bass”"}
+{"t":"u","r":"O26","c":"OBJECT","g":"line","s":"B holds bass up on the line"}
+{"t":"u","r":"O27","c":"OBJECT","g":"something happening","s":"“something is happening”"}
+{"t":"u","r":"O28","c":"OBJECT","g":"small thing","s":"“this small thing come up and bit me outta nowhere”"}
+{"t":"u","r":"O29","c":"OBJECT","g":"big things","s":"daughter’s approximate wording: “all the big things”"}
+{"t":"u","r":"O30","c":"OBJECT","g":"rise","s":"“get a rise out of me”"}
+{"t":"u","r":"O31","c":"OBJECT","g":"notch","s":"“that notch in her belt”"}
+{"t":"u","r":"O32","c":"OBJECT","g":"divorce","s":"daughter’s divorce"}
+{"t":"u","r":"L1","c":"LABEL","g":"real fine team","s":"old oil-change guys"}
+{"t":"u","r":"L2","c":"LABEL","g":"rough around the edges","s":"old oil-change guys"}
+{"t":"u","r":"L3","c":"LABEL","g":"salt of the earth folks","s":"old oil-change guys"}
+{"t":"u","r":"L4","c":"LABEL","g":"pals","s":"old oil-change guys; “seemed like they’d been pals a long time”"}
+{"t":"u","r":"L5","c":"LABEL","g":"salesmen","s":"later oil-change people"}
+{"t":"u","r":"L6","c":"LABEL","g":"kids","s":"later oil-change people"}
+{"t":"u","r":"L7","c":"LABEL","g":"level guy","s":"B"}
+{"t":"u","r":"L8","c":"LABEL","g":"in a state","s":"B at a few-weeks-ago oil-change moment"}
+{"t":"u","r":"L9","c":"LABEL","g":"about as much of a state as I get","s":"qualification of B’s “state”"}
+{"t":"u","r":"L10","c":"LABEL","g":"nervous Nelly","s":"B’s source label"}
+{"t":"u","r":"L11","c":"LABEL","g":"real General","s":"B’s source label"}
+{"t":"u","r":"L12","c":"LABEL","g":"big-mouthed beaut","s":"fish / bass"}
+{"t":"u","r":"L13","c":"LABEL","g":"mutual understanding","s":"B + bass"}
+{"t":"u","r":"L14","c":"LABEL","g":"fish out of water","s":"B"}
+{"t":"u","r":"L15","c":"LABEL","g":"grief","s":"B’s comparison: “It’s like grief”"}
+{"t":"u","r":"L16","c":"LABEL","g":"loss, deep, of somethin’ wasn’t yours","s":"B’s wording"}
+{"t":"u","r":"L17","c":"LABEL","g":"anger?","s":"B’s candidate label"}
+{"t":"u","r":"L18","c":"LABEL","g":"no","s":"B’s immediate response after “Anger?”"}
+{"t":"u","r":"L19","c":"LABEL","g":"maybe surprise?","s":"B’s candidate label"}
+{"t":"u","r":"L20","c":"LABEL","g":"confusion?","s":"B’s candidate label"}
+{"t":"u","r":"L21","c":"LABEL","g":"damn straight it’s confusing","s":"B’s wording"}
+{"t":"u","r":"L22","c":"LABEL","g":"crystal as the water","s":"quality/comparison for “my mind”"}
+{"t":"u","r":"L23","c":"LABEL","g":"mixy feeling","s":"B’s wording"}
+{"t":"u","r":"L24","c":"LABEL","g":"coming down with the dementia","s":"B’s wording about how this may sound"}
+{"t":"u","r":"V1","c":"VERB","g":"go to","s":"B → oil-change place"}
+{"t":"u","r":"V2","c":"VERB","g":"says you need","s":"printout → something else"}
+{"t":"u","r":"V3","c":"VERB","g":"got pushed out","s":"owner → franchise"}
