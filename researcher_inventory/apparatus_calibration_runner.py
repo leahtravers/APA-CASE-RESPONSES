@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Hidden evaluator for the mechanical Researcher Inventory apparatus.
 
-The worker/apparatus never receives archetypes. This runner does.
+The worker/apparatus never receives archetypes. This runner does.  The immutable
+Case 2 and Case 6 workbook hashes are checked before any canonical extract is used.
+Every attempt is appended to durable runtime history for later database ingestion.
 """
 from __future__ import annotations
 
@@ -13,16 +15,29 @@ import re
 from pathlib import Path
 
 from researcher_inventory.inventory_apparatus import InventoryApparatus, CommandAdapter
+from researcher_inventory.verify_archetypes import EXPECTED, ARCHETYPES as GOLD_DIR, sha256
 
 FIXTURES = Path("researcher_inventory/tests/fixtures.json")
 ARCHETYPES = Path("researcher_inventory/tests/archetypes")
 RESULTS = Path("researcher_inventory/runtime/test_results.json")
-CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V8")
+HISTORY = Path("researcher_inventory/runtime/training_history.ndjson")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V9")
 MODEL_REF = os.environ.get("OPENAI_MODEL", "unknown")
 ARCHETYPE_FILES = {
     "coupon_case": [ARCHETYPES / "coupon_case_archetype.ndjson"],
     "oil_change_case": [ARCHETYPES / "oil_change_case_archetype_part1.ndjson", ARCHETYPES / "oil_change_case_archetype_part2.ndjson"],
 }
+
+
+def assert_gold_integrity():
+    wrong = {}
+    for name, expected in EXPECTED.items():
+        path = GOLD_DIR / name
+        actual = sha256(path) if path.exists() else None
+        if actual != expected:
+            wrong[name] = {"actual": actual, "expected": expected}
+    if wrong:
+        raise RuntimeError(f"immutable workbook hash gate failed: {wrong}")
 
 
 def norm(v):
@@ -32,14 +47,17 @@ def norm(v):
 
 
 def load_archetype(name):
+    assert_gold_integrity()
     units, compounds = {}, {}
     for path in ARCHETYPE_FILES[name]:
         for line in path.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
             row = json.loads(line)
-            if row["t"] == "u": units[row["r"]] = row
-            elif row["t"] == "c": compounds[row["e"]] = row
+            if row["t"] == "u":
+                units[row["r"]] = row
+            elif row["t"] == "c":
+                compounds[row["e"]] = row
     return units, compounds
 
 
@@ -65,7 +83,7 @@ def evaluate(payload, fixture):
             findings.append(("EXTRA_UNIT", f"extra {ref} [{actual['unit_class']}] {actual['researcher_short_tag']}"))
 
     actual_compounds = {c["compound_expression"]: c for c in payload["compounds"]}
-    for expression, expected in expected_compounds.items():
+    for expression in expected_compounds:
         if expression not in actual_compounds:
             findings.append(("BAD_COMPOUND", f"missing compound {expression}"))
     for expression in actual_compounds:
@@ -82,9 +100,15 @@ def evaluate(payload, fixture):
     return findings
 
 
+def append_history(result):
+    HISTORY.parent.mkdir(parents=True, exist_ok=True)
+    with HISTORY.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(result, ensure_ascii=False) + "\n")
+
+
 def run_one(app, fixture, iteration):
     started = time.time()
-    ref = f"TRAIN-APP-{fixture['name']}-R{iteration}-{int(started)}"
+    ref = f"TRAIN-APP-{fixture['name']}-R{iteration}-{time.time_ns()}"
     payload = None
     findings = []
     try:
@@ -101,7 +125,11 @@ def run_one(app, fixture, iteration):
         "training_run_ref": ref,
         "contract_version_ref": CONTRACT_VERSION,
         "fixture": fixture["name"],
+        "source_case_ref": fixture.get("source_case_ref") or fixture["name"],
+        "source_case_text": fixture["case_text"],
+        "researcher_interest": fixture.get("researcher_interest"),
         "model_ref": MODEL_REF,
+        "session_ref": None,
         "attempt_no": iteration,
         "run_status": "COMPLETED" if not findings else "FAILED",
         "candidate_ref": payload.get("candidate", {}).get("candidate_ref") if payload else None,
@@ -111,7 +139,7 @@ def run_one(app, fixture, iteration):
                 "finding_ref": f"{ref}-F{i+1}",
                 "finding_class": kind,
                 "severity": "ERROR",
-                "expected_behavior": "match hidden Leah-approved archetype without worker access to that archetype",
+                "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
                 "observed_behavior": message,
             }
             for i, (kind, message) in enumerate(findings)
@@ -120,11 +148,13 @@ def run_one(app, fixture, iteration):
         "started_unix": started,
         "finished_unix": time.time(),
     }
-    print(json.dumps({k:v for k,v in result.items() if k != "raw_output"}, ensure_ascii=False))
+    append_history(result)
+    print(json.dumps({k: v for k, v in result.items() if k not in ("raw_output", "source_case_text")}, ensure_ascii=False))
     return result
 
 
 def main():
+    assert_gold_integrity()
     command = os.environ.get("RI_MODEL_COMMAND", "python researcher_inventory/openai_agents_adapter.py")
     app = InventoryApparatus(CommandAdapter(command), retries=2)
     fixtures = json.loads(FIXTURES.read_text(encoding="utf-8"))
