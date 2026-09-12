@@ -1,7 +1,7 @@
-# RESEARCHER INVENTORY WORKER CONTRACT v9
+# RESEARCHER INVENTORY WORKER CONTRACT v10
 
 Status: ACTIVE
-Contract version: RI-CONTRACT-V9
+Contract version: RI-CONTRACT-V10
 Mission: RESEARCHER INVENTORY ONLY
 
 ## Isolation
@@ -12,7 +12,7 @@ The worker receives only the general job rules, one source story, and optional n
 
 ## Job
 
-Read the whole story. Inventory only these seven coordinate classes:
+Read the whole story. Produce a coverage-complete but interpretation-minimal inventory in exactly seven classes:
 
 1. `PLACE`
 2. `TIME`
@@ -22,9 +22,11 @@ Read the whole story. Inventory only these seven coordinate classes:
 6. `VERB`
 7. `LOCATOR`
 
-Then make a lightweight map of obvious represented situations using the retained coordinates.
+Then map the represented situations with lightweight compounds.
 
 This is an index, not an interpretation.
+
+**Do less means less invention and less qualification, not fewer materially represented coordinates.** Do not stop after salient items. Make a complete source pass for the requested class.
 
 ## Controlling rules
 
@@ -36,103 +38,136 @@ Preserve colloquial language, dialect, idiom, figurative language, questions, ne
 
 If a field claims to contain source wording or a source cue, it must be exact source text.
 
-### 2. A place can be unnamed
+Use the shortest complete source-near form that keeps the coordinate distinct. Do not absorb subjects, objects, complements, or neighboring predicates unless they are necessary to keep the coordinate complete.
 
-If an actual represented occurrence happened, it happened somewhere.
-A `PLACE` may therefore exist even when no physical place noun or proper name appears.
+### 2. Places are scene coordinates, not only place nouns
 
-For an unnamed place:
+Retain every materially distinct place required to locate a represented situation.
 
-- `source_wording` is null;
-- anchor it with an exact source cue from the occurrence;
-- use a neutral descriptive tag only;
-- never invent a location name.
+- Keep a broad setting and a contained setting separate when both are represented, even when they occur in one phrase.
+- A place may be unnamed if a material occurrence, wait, conversation, object location, origin, destination, or present telling requires a scene coordinate.
+- If a named object is materially located but the location itself is not named, the object's place may be a separate inferred coordinate.
+- An off-scene destination or actor location may be retained when the source materially represents movement or relation to it.
+- Distinct episodes may have distinct provisional places even when the source leaves them unnamed.
 
-### 3. A time can be unnamed
+For an unnamed place, `source_wording` is null, the exact source cue anchors it, and the tag is neutral. Never invent a location name.
 
-If an actual represented occurrence happened, it happened during an episode.
-A `TIME` may therefore exist even when no clock time, date, or explicit temporal phrase appears.
+When a broad setting and contained setting first arise together, order the broad setting first.
 
-For an unnamed time:
+### 3. Times are episode coordinates, not only clock/calendar expressions
 
-- `source_wording` is null;
-- anchor it with an exact source cue from the occurrence;
-- use a neutral episode tag only;
-- never invent a date or clock time.
+Retain materially distinct temporal frames needed to locate the represented story:
 
-### 4. Qualities are only availability
+- an initial attempt or condition;
+- a distinct assistance/response episode;
+- a transition or departure;
+- a waiting episode;
+- an intended or contemplated period;
+- a later conversation or report;
+- a recurring span;
+- present reflection;
+- a prospective/future frame when explicitly represented.
+
+A time does not require a clock, date, or temporal noun.
+For an unnamed time, `source_wording` is null, the exact source cue anchors it, and the tag is a neutral episode description.
+
+Inventorying a hypothetical, intended, recurring, or future time frame does not assert that its content happened. Preserve its source posture.
+
+### 4. People: retain all represented actors, but order by participation
+
+Retain the speaker plus all materially represented human or social actors, including relational actors that matter to a retained thing or relation.
+Merge true aliases and coreference.
+
+The speaker is `B`.
+For everyone else, ordering is by first independent represented participation, not by an earlier merely possessive or descriptive mention.
+Independent participation includes acting, speaking, perceiving, deciding, being acted upon, being the endpoint of a material interaction, or being the represented endpoint of a relation.
+A person mentioned only as a possessor/beneficiary/descriptor does not jump ahead of people who independently participate; if such a person never independently participates, retain them after participating actors in source order.
+
+### 5. Objects: retain independently selectable things, including abstract things
+
+Retain each materially represented concrete or abstract thing that can be independently selected later. This includes, when represented:
+
+- physical things and source-distinguished wholes/parts;
+- an amount/value;
+- an order, service, result, or condition;
+- a decision or next step;
+- a contemplated choice/action treated as a thing;
+- a recurring relation;
+- a named set/category such as “these situations”;
+- an internal represented object such as “my mind.”
+
+Do not convert a coordinate whose only function is PLACE into a duplicate OBJECT.
+Do not discard a represented part merely because its whole is also retained.
+
+### 6. Labels: retain source qualities and characterizations at their own grain
+
+`LABEL` inventory is separate from the `qualities_available` boolean.
+
+Retain each materially represented source characterization, quality, state, comparison, identity term, self-label, evaluative phrase, question-label, contrast, rejection, or correction when it is independently selectable.
+Use the shortest complete source wording that carries the characterization.
+Preserve negation/question/uncertainty posture in the source cue and in the tag when needed to prevent reversal.
+Do not replace a source label with a synonym or inferred psychological meaning.
+
+### 7. Verbs: inventory lexical predicate increments, not only completed events
+
+Inventory the materially represented lexical predicates in source order.
+
+- Split matrix and embedded predicates when each is independently selectable.
+- Split coordinated predicate increments when they do different jobs.
+- Prefer the shortest complete lexical predicate construction, normally without its subject and optional objects.
+- Retain predicates appearing under negation, uncertainty, questions, intentions, hypotheticals, proposals, recurrence, or future language when the predicate itself is materially represented.
+
+Inventorying a predicate is not asserting that its event happened. Preserve source posture instead of deleting the predicate.
+Do not merge several source verbs into a polished event summary.
+
+### 8. Locators: inventory meaningful relation/path increments
+
+Retain materially useful spatial, directional, containment, path, proximity, movement, and relational locator constructions.
+Use the smallest complete meaningful construction rather than an isolated preposition.
+A single source episode may contain several locator increments, for example a broad setting relation, a contained setting relation, movement, accompaniment, destination, or containment relation. Keep them separate when independently selectable.
+
+### 9. Qualities are only availability
 
 `qualities_available` is a boolean.
-
-Set it true when the source supplies material qualities or descriptions associated with the coordinate. Otherwise set it false.
-
-Do not classify, interpret, score, or atomize those qualities merely to justify the boolean.
+Set it true when the source supplies material qualities/descriptions associated with the coordinate. Otherwise false.
+Do not interpret, classify, score, or atomize qualities merely to justify the boolean.
 `Q` is never a unit reference.
 
-### 5. Prefer actual represented people and happenings
+## Coverage procedure for every class
 
-Retain the speaker and actual represented human or social actors.
-Merge true aliases and coreference.
-Do not manufacture people from generic categories or rhetorical possibilities.
+For the requested class:
 
-For `VERB`, prioritize materially represented happenings and lexical predicates that actually occur in the represented case.
-Do not convert a negated, hypothetical, proposed, conditional, future, or merely possible action into a completed happening.
+1. Read the entire story before returning anything.
+2. Sweep from beginning to end and collect candidates in source progression.
+3. Include embedded, reported, remembered, relational, recurring, reflective, intended, hypothetical, negated, and prospective material when that class function is independently selectable; preserve posture rather than flattening it.
+4. Resolve aliases and dependencies before numbering.
+5. Remove only grammatical debris, duplicate mentions of the same coordinate, unsupported inference, and material that has no independent class function.
+6. Do a second end-to-end omission pass before returning the class.
 
-### 6. Sparse beats clever
+The target is comprehensive literal coverage with minimal interpretation.
 
-Prefer fewer strong coordinates over speculative, redundant, decorative, grammatical, or interpretive coordinates.
-When uncertain, do less.
-Do not inventory every noun, adjective, clause, preposition, particle, auxiliary, or descriptive fragment.
-Do not split one obvious thing into several grains unless the source represents independently selectable things.
+## Ordering and mechanical boundary
 
-## Class rules
+The apparatus, not the worker, owns final class order, canonical IDs, exact source-span validation, deterministic numbering, compound reference validation, `_Q` construction, SQL-ready row shaping, retries, and failure handling.
 
-### PLACE
-Retain materially represented settings and supported inferred scene places. A place need not be physically named. Do not emit bare prepositions.
+Default within-class order is first material source anchor after filtering and coreference resolution, with these semantic tie rules:
 
-### TIME
-Retain materially distinct occurrence or episode times. A time need not be a point on a clock or calendar. Do not emit tense alone.
+- required whole/broad setting before dependent part/contained setting when they first arise together;
+- PERSON follows the participation rule above;
+- memories, reports, hypotheticals, and future frames stay at their source position rather than being reordered into real-world chronology.
 
-### PERSON
-Retain the speaker plus actual represented people or social actors. Merge aliases/coreference. The speaker is `B`; code assigns other `H#` references.
-
-### OBJECT
-Retain materially represented concrete or abstract things that are independently useful. Prefer stronger wholes over incidental descriptive fragments.
-
-### LABEL
-Retain independently useful source characterizations, identities, comparisons, questions, contrasts, proposals, rejections, and corrections. Preserve posture exactly. Do not translate labels into synonyms or inferred meanings.
-
-### VERB
-Retain materially represented lexical happenings/predicates. Preserve source lexical wording. Do not invent event summaries.
-
-### LOCATOR
-Retain materially useful spatial, directional, containment, path, proximity, or relational locator constructions. Preserve exact wording. Do not emit isolated prepositions.
-
-## Mechanical boundary
-
-The apparatus, not the worker, owns:
-
-- final class ordering;
-- canonical IDs;
-- source-span validation;
-- alias survivor mechanics;
-- deterministic ordering;
-- compound reference validation;
-- `_Q` construction;
-- SQL-ready row shaping;
-- retries and failure handling.
-
-The worker must not depend on any preexisting canonical IDs.
+The worker must not depend on preexisting canonical IDs.
 
 ## Compounds
 
-After units are final, map only obvious major represented situations.
+After units are final, map the represented story at event/proposition grain rather than only a few broad scenes.
+
+Create a lightweight compound for each materially distinct represented situation, predicate relation, source characterization proposition, correction, question, reflection, or prospective relation that is useful for reconnecting the inventory.
 Use registered unit references only.
-Prefer fewer useful situation bundles over many overlapping pairs.
+Prefer one compound per distinct represented situation over many redundant permutations of the same situation.
 A compound cannot repair a missing unit.
 
 ## Forbidden work
 
 Do not perform APA parsing, protected-thread analysis, psychological interpretation, scoring, promotion, APA-ID creation, executive analysis, or Oval Office writes.
-
 Never present a candidate inventory as established truth.
