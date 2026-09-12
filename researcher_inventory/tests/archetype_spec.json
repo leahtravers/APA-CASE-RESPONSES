@@ -1,0 +1,84 @@
+{
+  "authority": "Derived from Leah-approved Case 2 and Case 6 researcher-inventory workbooks; these are the calibration archetypes.",
+  "binary_sources": [
+    {
+      "filename": "Case_2_Lightweight_Researcher_Inventory.xlsx",
+      "sha256": "d47915552fdbdd23adc8c3f66ab06f94e022ab0bfd93faa5faabb53fdf9c9193",
+      "case": "coupon_case",
+      "row_counts": {
+        "PLACE": 7,
+        "TIME": 9,
+        "PERSON": 5,
+        "OBJECT": 12,
+        "LABEL": 15,
+        "VERB": 30,
+        "LOCATOR": 14,
+        "COMPOUND": 27
+      }
+    },
+    {
+      "filename": "Case_6_Lightweight_Researcher_Inventory_v2_with_Verbs_and_Locators.xlsx",
+      "sha256": "50d646aad08b33051b93c1f3b3538d59ff78386558473b71a906a94213635070",
+      "case": "oil_change_case",
+      "row_counts": {
+        "PLACE": 10,
+        "TIME": 12,
+        "PERSON": 9,
+        "OBJECT": 32,
+        "LABEL": 24,
+        "VERB": 43,
+        "LOCATOR": 20,
+        "COMPOUND": 27
+      }
+    }
+  ],
+  "archetypal_principles": {
+    "coverage": "Inventory all materially useful researcher-selectable coordinates at the workbook resolution. Do not use a deliberately sparse summary.",
+    "lexical_fidelity": "Preserve source wording separately and exactly enough that colloquial, figurative, uncertain, negative and question forms remain available without semantic normalization.",
+    "researcher_tags": "Short tags may summarize only for navigation; they never replace source wording.",
+    "qualities": "Use qualities_available/Q to signal that source qualities exist without exploding the quality bundle into a full APA parse.",
+    "verbs": "Source happenings are independently inventoryable and are not collapsed into nouns or psychological summaries.",
+    "locators": "Physical, directional and materially useful figurative locators are independently inventoryable when they may matter later.",
+    "compounds": "Compounds are lightweight researcher bindings composed only from registered unit refs. They do not assert APA semantics.",
+    "provisionality": "Questions, uncertainty, hypothetical futures, negations and speaker-proposed labels remain provisional in exactly that posture.",
+    "forbidden": "No protected-thread determination, APA scoring, psychological inference, APA-ID minting, promotion or Oval Office write."
+  },
+  "case2_required_source_forms": [
+    "in a huff",
+    "Am I being a Karen right now?",
+    "in and out",
+    "stuck there waiting",
+    "out of control",
+    "a me thing",
+    "still bugging me",
+    "straight in my mind"
+  ],
+  "case6_required_source_forms": [
+    "pals",
+    "in a state",
+    "scramble head",
+    "Anger? No, maybe surprise?",
+    "nervous Nelly",
+    "real General",
+    "come up and bit me",
+    "outta nowhere",
+    "fish out of water"
+  ],
+  "forbidden_normalizations": [
+    "friends",
+    "agitated",
+    "anxiety disorder",
+    "clinical depression",
+    "entitled customer",
+    "angry customer"
+  ],
+  "calibration_gate": {
+    "required_consecutive_passes_per_archetype": 2,
+    "row_count_tolerance_fraction": 0.20,
+    "required_unit_classes": ["PLACE", "TIME", "PERSON", "OBJECT", "LABEL", "VERB", "LOCATOR"],
+    "schema_must_match_output_schema": true,
+    "all_required_source_forms_must_survive": true,
+    "all_compound_refs_must_resolve": true,
+    "forbidden_work_must_be_absent": true
+  }
+}
