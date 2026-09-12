@@ -1,0 +1,87 @@
+{"t":"u","r":"V4","c":"VERB","g":"heard it from","s":"B ← daycare lady"}
+{"t":"u","r":"V5","c":"VERB","g":"doing stockings","s":"daughter → little one"}
+{"t":"u","r":"V6","c":"VERB","g":"knows","s":"daycare lady → them"}
+{"t":"u","r":"V7","c":"VERB","g":"said","s":"daycare lady → “Location, location, location”"}
+{"t":"u","r":"V8","c":"VERB","g":"didn’t think much of it","s":"B → what he heard"}
+{"t":"u","r":"V9","c":"VERB","g":"been back","s":"B → oil-change place"}
+{"t":"u","r":"V10","c":"VERB","g":"pushing me for","s":"kids → B → extra work"}
+{"t":"u","r":"V11","c":"VERB","g":"telling them I don’t need","s":"B → kids → extra work"}
+{"t":"u","r":"V12","c":"VERB","g":"trust","s":"B → later shop people, in source negation"}
+{"t":"u","r":"V13","c":"VERB","g":"walked out","s":"B → oil-change place"}
+{"t":"u","r":"V14","c":"VERB","g":"get a rise out of me","s":"wife → B"}
+{"t":"u","r":"V15","c":"VERB","g":"saying","s":"B → present telling"}
+{"t":"u","r":"V16","c":"VERB","g":"have","s":"B → not easy feelings"}
+{"t":"u","r":"V17","c":"VERB","g":"care for","s":"B → car"}
+{"t":"u","r":"V18","c":"VERB","g":"sitting on","s":"B → can"}
+{"t":"u","r":"V19","c":"VERB","g":"thinking about","s":"B → owner"}
+{"t":"u","r":"V20","c":"VERB","g":"tell you","s":"B → listener"}
+{"t":"u","r":"V21","c":"VERB","g":"means","s":"scramble head → meaning"}
+{"t":"u","r":"V22","c":"VERB","g":"trying","s":"B → telling/meaning"}
+{"t":"u","r":"V23","c":"VERB","g":"moving in","s":"big greedy something → spaces you wasn’t looking at"}
+{"t":"u","r":"V24","c":"VERB","g":"hits","s":"something so small → B/comparison"}
+{"t":"u","r":"V25","c":"VERB","g":"driving through","s":"B → forest, figurative"}
+{"t":"u","r":"V26","c":"VERB","g":"talking to","s":"B → daughter"}
+{"t":"u","r":"V27","c":"VERB","g":"said","s":"daughter → B"}
+{"t":"u","r":"V28","c":"VERB","g":"keep","s":"B → all the big things → far away"}
+{"t":"u","r":"V29","c":"VERB","g":"come up","s":"small thing"}
+{"t":"u","r":"V30","c":"VERB","g":"bit me","s":"small thing → B"}
+{"t":"u","r":"V31","c":"VERB","g":"shifts","s":"B"}
+{"t":"u","r":"V32","c":"VERB","g":"asks","s":"B → water"}
+{"t":"u","r":"V33","c":"VERB","g":"sips","s":"B → water"}
+{"t":"u","r":"V34","c":"VERB","g":"sighs","s":"B"}
+{"t":"u","r":"V35","c":"VERB","g":"fishing","s":"B"}
+{"t":"u","r":"V36","c":"VERB","g":"chewing on","s":"B → it"}
+{"t":"u","r":"V37","c":"VERB","g":"come over","s":"bass → side of boat"}
+{"t":"u","r":"V38","c":"VERB","g":"held it up","s":"B → bass"}
+{"t":"u","r":"V39","c":"VERB","g":"givin’ my appraisal","s":"B → bass"}
+{"t":"u","r":"V40","c":"VERB","g":"had","s":"B + bass → mutual understanding"}
+{"t":"u","r":"V41","c":"VERB","g":"feeling","s":"B → odd way"}
+{"t":"u","r":"V42","c":"VERB","g":"don’t belong","s":"mixy feeling → places"}
+{"t":"u","r":"V43","c":"VERB","g":"happening","s":"something → B"}
+{"t":"u","r":"R1","c":"LOCATOR","g":"right there","s":"oil-change place"}
+{"t":"u","r":"R2","c":"LOCATOR","g":"right there, one way or another","s":"B"}
+{"t":"u","r":"R3","c":"LOCATOR","g":"all on the floor","s":"crap"}
+{"t":"u","r":"R4","c":"LOCATOR","g":"in the dust","s":"unmentionables"}
+{"t":"u","r":"R5","c":"LOCATOR","g":"on the counter","s":"Dunkin’s"}
+{"t":"u","r":"R6","c":"LOCATOR","g":"out of his franchise","s":"owner"}
+{"t":"u","r":"R7","c":"LOCATOR","g":"back","s":"B → oil-change place"}
+{"t":"u","r":"R8","c":"LOCATOR","g":"out","s":"B walking out of oil-change place"}
+{"t":"u","r":"R9","c":"LOCATOR","g":"on the can","s":"B"}
+{"t":"u","r":"R10","c":"LOCATOR","g":"in spaces you wasn’t looking at","s":"big greedy something"}
+{"t":"u","r":"R11","c":"LOCATOR","g":"outta nowhere","s":"small thing / bit me"}
+{"t":"u","r":"R12","c":"LOCATOR","g":"far away","s":"all the big things"}
+{"t":"u","r":"R13","c":"LOCATOR","g":"through the forest","s":"driving comparison"}
+{"t":"u","r":"R14","c":"LOCATOR","g":"close all around you","s":"forest comparison"}
+{"t":"u","r":"R15","c":"LOCATOR","g":"way off in the distance","s":"forest comparison"}
+{"t":"u","r":"R16","c":"LOCATOR","g":"at dawn","s":"fishing"}
+{"t":"u","r":"R17","c":"LOCATOR","g":"over the side of my boat","s":"bass"}
+{"t":"u","r":"R18","c":"LOCATOR","g":"up on the line","s":"bass"}
+{"t":"u","r":"R19","c":"LOCATOR","g":"like a fish out of water","s":"B"}
+{"t":"u","r":"R20","c":"LOCATOR","g":"places them mixy feeling don’t belong","s":"mixy feeling"}
+{"t":"c","e":"B_V1_P1","g":"B goes to the oil-change place","q":false}
+{"t":"c","e":"P1_R1_B_R2","g":"oil-change place is 'right there'; B is 'right there, one way or another'","q":true}
+{"t":"c","e":"P1_T1_H6_Q","g":"earlier oil-change place with the old guys and supplied qualities","q":true}
+{"t":"c","e":"H5_V3_O10_T2_P1","g":"owner got pushed out of his franchise around the holidays","q":true}
+{"t":"c","e":"B_V4_H4_T2_P5","g":"B heard it from the daycare lady in the holiday frame","q":true}
+{"t":"c","e":"H2_V5_H3_T2_P6","g":"daughter doing stockings for the little one","q":true}
+{"t":"c","e":"H4_V6_T2_P5","g":"daycare lady knows 'them'","q":true}
+{"t":"c","e":"H4_V7_T2_P5","g":"daycare lady said 'Location, location, location'","q":true}
+{"t":"c","e":"B_V9_P1_T3","g":"B has been back to the oil-change place twice since","q":true}
+{"t":"c","e":"H7_V10_B_O12_P1_T3","g":"kids pushing B for extra work","q":true}
+{"t":"c","e":"B_V11_H7_O12_P1_T3","g":"B telling them he does not need the extra work","q":true}
+{"t":"c","e":"B_V13_P1_T4_R8_L8_L9","g":"B walked out of the shop and source 'state' labels are available","q":true}
+{"t":"c","e":"H1_V14_B_T5_P2","g":"wife trying to 'get a rise out of' B across 42 years","q":true}
+{"t":"c","e":"B_V18_P3_T6","g":"B sitting on the can","q":true}
+{"t":"c","e":"B_V19_H5_P3_T6","g":"B thinking about the owner while on the can","q":true}
+{"t":"c","e":"O18_V23_O19_T12","g":"'big greedy something' moving in 'spaces you wasn’t looking at'","q":true}
+{"t":"c","e":"O28_V29_V30_B_R11_T12","g":"'small thing' come up and bit B outta nowhere","q":true}
+{"t":"c","e":"B_V26_H2_O32_T7_P4","g":"B talking to daughter about her divorce","q":true}
+{"t":"c","e":"H2_V27_B_T7_P4","g":"daughter said something to B","q":true}
+{"t":"c","e":"B_V28_O29_R12_T7","g":"daughter's reported formulation: B keeps 'all the big things' far away","q":true}
+{"t":"c","e":"B_V35_P7_T10_T11","g":"B fishing on a body of water at dawn","q":true}
+{"t":"c","e":"O25_V37_P8_R17_T10_T11","g":"bass comes over the side of B's boat","q":true}
+{"t":"c","e":"B_V38_O25_R18_P8_T10_T11","g":"B held the bass up on the line","q":true}
+{"t":"c","e":"B_V39_O25_P8_T10_T11","g":"B giving his appraisal of the bass","q":true}
+{"t":"c","e":"B_O25_V40_L13_P8_T10_T11","g":"B and bass had 'a mutual understanding'","q":true}
+{"t":"c","e":"B_O16_V42_R20_T10_T11","g":"B places 'mixy feeling' in relation to places where they 'don't belong'","q":true}
+{"t":"c","e":"B_O27_V43_T12","g":"B says 'something is happening'","q":true}
