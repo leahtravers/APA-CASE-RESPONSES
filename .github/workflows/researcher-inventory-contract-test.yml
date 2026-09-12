@@ -25,34 +25,49 @@ jobs:
       CONTRACT_VERSION: RI-CONTRACT-V1
       TEST_REPETITIONS: '2'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository without external actions
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth 1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
 
       - name: Verify route-specific secret exists
         shell: bash
         run: |
+          set -euo pipefail
           if [ -z "$OPENAI_API_KEY" ]; then
             echo 'CASES_INVENTORY_KEY is not available to this workflow.' >&2
             exit 1
           fi
 
       - name: Bootstrap dedicated saved agent and session
+        shell: bash
         run: python researcher_inventory/session_bootstrap.py
 
       - name: Run repeatability fixtures
         id: tests
+        shell: bash
         continue-on-error: true
         run: python researcher_inventory/test_runner.py
 
-      - name: Upload all training attempts, including failures
+      - name: Preserve all training attempts in workflow log
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: researcher-inventory-training-results
-          path: researcher_inventory/runtime/test_results.json
-          if-no-files-found: error
-          retention-days: 30
+        shell: bash
+        run: |
+          echo '=== APA RESEARCHER INVENTORY TRAINING PACKET BEGIN ==='
+          if [ -f researcher_inventory/runtime/test_results.json ]; then
+            cat researcher_inventory/runtime/test_results.json
+          else
+            echo '{"training_packet_missing":true}'
+          fi
+          echo '=== APA RESEARCHER INVENTORY TRAINING PACKET END ==='
 
       - name: Fail workflow if contract tests failed
         if: steps.tests.outcome == 'failure'
+        shell: bash
         run: exit 1
