@@ -1,6 +1,6 @@
 import unittest
 
-from researcher_inventory.inventory_apparatus import InventoryApparatus, ApparatusError
+from researcher_inventory.inventory_apparatus import InventoryApparatus, ApparatusError, Candidate
 
 
 SOURCE = "I met Gary at the office yesterday. Gary called the plan risky and walked out of the room."
@@ -87,6 +87,24 @@ class InventoryApparatusTests(unittest.TestCase):
             ["P1","P2","T1","B","H1","O1","L1","V1","V2","V3","R1","R2"],
         )
         self.assertEqual(len([u for u in result["units"] if u["unit_class"] == "PERSON"]), 2)
+
+    def test_person_order_uses_participation_before_possessive_only_actor(self):
+        rows = [
+            Candidate("PERSON", "B", "I", "I", "I bought", "speaker", False, 0, 0, 0),
+            Candidate("PERSON", "kids", "my kids", "my kids", "my kids’ cereal", None, False, 9, None, 0),
+            Candidate("PERSON", "attendant", "attendant", "attendant", "The attendant helped me", None, False, 30, 30, 0),
+            Candidate("PERSON", "partner", "partner", "partner", "I called my partner", None, False, 55, 55, 0),
+        ]
+        ordered = InventoryApparatus._merge_and_order(rows, "PERSON")
+        self.assertEqual([r.canonical_key for r in ordered], ["B", "attendant", "partner", "kids"])
+
+    def test_shared_order_anchor_uses_broad_before_contained_scope(self):
+        rows = [
+            Candidate("PLACE", "self-check", "self-check", "self-check", "at the self-check at the store", None, False, 10, 3, 1),
+            Candidate("PLACE", "store", "store", "store", "at the self-check at the store", None, False, 28, 3, 0),
+        ]
+        ordered = InventoryApparatus._merge_and_order(rows, "PLACE")
+        self.assertEqual([r.canonical_key for r in ordered], ["store", "self-check"])
 
     def test_q_is_constructed_mechanically(self):
         result = InventoryApparatus(FakeAdapter()).run(SOURCE, "TEST-1")
