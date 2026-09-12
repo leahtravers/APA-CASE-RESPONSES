@@ -1,0 +1,119 @@
+{"t":"u","r":"P1","c":"PLACE","g":"store","s":"“at the store”"}
+{"t":"u","r":"P2","c":"PLACE","g":"self-check","s":"“at the self-check”"}
+{"t":"u","r":"P3","c":"PLACE","g":"place of cereal box","s":"box is “right there”"}
+{"t":"u","r":"P4","c":"PLACE","g":"place manager is / attendant goes","s":"attendant walks away “to go get a manager”; exact place not specified"}
+{"t":"u","r":"P5","c":"PLACE","g":"place B is standing waiting","s":"same self-check/store area, provisionally distinct as waiting position"}
+{"t":"u","r":"P6","c":"PLACE","g":"place of B and partner","s":"place where B later explained it to partner; exact place not specified"}
+{"t":"u","r":"P7","c":"PLACE","g":"place of present telling","s":"current reporting setting; exact place not specified"}
+{"t":"u","r":"T1","c":"TIME","g":"coupon scan attempt","s":"B trying to scan coupon"}
+{"t":"u","r":"T2","c":"TIME","g":"attendant help episode","s":"attendant comes over and tries coupon"}
+{"t":"u","r":"T3","c":"TIME","g":"attendant walks away","s":"after coupon/date/box check"}
+{"t":"u","r":"T4","c":"TIME","g":"waiting episode","s":"B standing there waiting"}
+{"t":"u","r":"T5","c":"TIME","g":"intended quick-shopping period","s":"B “just wanted to be in and out for a few things”"}
+{"t":"u","r":"T6","c":"TIME","g":"later explanation to partner","s":"B tried to explain event to partner"}
+{"t":"u","r":"T7","c":"TIME","g":"regular-shopping span","s":"B shops there regularly"}
+{"t":"u","r":"T8","c":"TIME","g":"present reflection","s":"B says it is “still bugging me” and speaks about avoiding similar situations"}
+{"t":"u","r":"T9","c":"TIME","g":"future similar situations","s":"prospective time implied by “how to not get myself into these situations”"}
+{"t":"u","r":"B","c":"PERSON","g":"B","s":"speaker"}
+{"t":"u","r":"H1","c":"PERSON","g":"attendant","s":"store attendant"}
+{"t":"u","r":"H2","c":"PERSON","g":"manager","s":"manager attendant goes to get"}
+{"t":"u","r":"H3","c":"PERSON","g":"partner","s":"B later explains event to partner"}
+{"t":"u","r":"H4","c":"PERSON","g":"kids","s":"B’s kids; cereal belongs to / is for them"}
+{"t":"u","r":"O1","c":"OBJECT","g":"coupon","s":"coupon B is trying to scan"}
+{"t":"u","r":"O2","c":"OBJECT","g":"kids’ cereal","s":"“my kids’ cereal”"}
+{"t":"u","r":"O3","c":"OBJECT","g":"cereal box","s":"“the box is right there”"}
+{"t":"u","r":"O4","c":"OBJECT","g":"order","s":"B struggling to finish order"}
+{"t":"u","r":"O5","c":"OBJECT","g":"coupon date","s":"attendant sees date is valid"}
+{"t":"u","r":"O6","c":"OBJECT","g":"$1.25 off","s":"coupon value"}
+{"t":"u","r":"O7","c":"OBJECT","g":"few things","s":"B wanted to be in and out for a few things"}
+{"t":"u","r":"O8","c":"OBJECT","g":"coupon next step / decision","s":"what should happen next with coupon"}
+{"t":"u","r":"O9","c":"OBJECT","g":"choice to pay and walk out","s":"B considers just paying and leaving"}
+{"t":"u","r":"O10","c":"OBJECT","g":"regular shopping relation","s":"B shops regularly"}
+{"t":"u","r":"O11","c":"OBJECT","g":"situations","s":"“these situations”"}
+{"t":"u","r":"O12","c":"OBJECT","g":"my mind","s":"“get it straight in my mind”"}
+{"t":"u","r":"L1","c":"LABEL","g":"struggling","s":"B finishing order"}
+{"t":"u","r":"L2","c":"LABEL","g":"valid","s":"coupon date"}
+{"t":"u","r":"L3","c":"LABEL","g":"right there","s":"cereal box"}
+{"t":"u","r":"L4","c":"LABEL","g":"in a huff","s":"attendant walking away"}
+{"t":"u","r":"L5","c":"LABEL","g":"Karen","s":"B’s self-question: “Am I being a Karen right now?”"}
+{"t":"u","r":"L6","c":"LABEL","g":"in and out","s":"B’s intended shopping mode"}
+{"t":"u","r":"L7","c":"LABEL","g":"rude","s":"B’s question about paying and walking out"}
+{"t":"u","r":"L8","c":"LABEL","g":"frustrating","s":"coupon not working itself"}
+{"t":"u","r":"L9","c":"LABEL","g":"out of control","s":"B’s wording about decision on coupon’s next step"}
+{"t":"u","r":"L10","c":"LABEL","g":"stuck there waiting","s":"B’s wording"}
+{"t":"u","r":"L11","c":"LABEL","g":"super frustrating","s":"B’s wording for the part identified later"}
+{"t":"u","r":"L12","c":"LABEL","g":"not the attendant’s fault","s":"B’s explicit statement"}
+{"t":"u","r":"L13","c":"LABEL","g":"a me thing","s":"B’s explicit statement"}
+{"t":"u","r":"L14","c":"LABEL","g":"still bugging me","s":"B’s present wording"}
+{"t":"u","r":"L15","c":"LABEL","g":"straight in my mind","s":"B’s wording"}
+{"t":"u","r":"V1","c":"VERB","g":"am at","s":"B → self-check/store"}
+{"t":"u","r":"V2","c":"VERB","g":"trying to scan","s":"B → coupon"}
+{"t":"u","r":"V3","c":"VERB","g":"is not working","s":"coupon"}
+{"t":"u","r":"V4","c":"VERB","g":"sees","s":"attendant → B struggling"}
+{"t":"u","r":"V5","c":"VERB","g":"finish","s":"B → order"}
+{"t":"u","r":"V6","c":"VERB","g":"comes over","s":"attendant → B"}
+{"t":"u","r":"V7","c":"VERB","g":"help me with it","s":"attendant → B/coupon"}
+{"t":"u","r":"V8","c":"VERB","g":"won’t scan","s":"coupon for attendant too"}
+{"t":"u","r":"V9","c":"VERB","g":"look at","s":"attendant → coupon"}
+{"t":"u","r":"V10","c":"VERB","g":"see","s":"attendant → valid date / box"}
+{"t":"u","r":"V11","c":"VERB","g":"recall saying","s":"B → anything, source negation/uncertainty"}
+{"t":"u","r":"V12","c":"VERB","g":"walk away with","s":"attendant → coupon"}
+{"t":"u","r":"V13","c":"VERB","g":"go get","s":"attendant → manager"}
+{"t":"u","r":"V14","c":"VERB","g":"standing there waiting","s":"B"}
+{"t":"u","r":"V15","c":"VERB","g":"thinking to myself","s":"B"}
+{"t":"u","r":"V16","c":"VERB","g":"care about","s":"B → $1.25 off cereal"}
+{"t":"u","r":"V17","c":"VERB","g":"wanted to be","s":"B → in and out"}
+{"t":"u","r":"V18","c":"VERB","g":"pay and walk out","s":"B, candidate action"}
+{"t":"u","r":"V19","c":"VERB","g":"ask me","s":"attendant → B, source question/absence"}
+{"t":"u","r":"V20","c":"VERB","g":"tried to explain","s":"B → partner"}
+{"t":"u","r":"V21","c":"VERB","g":"felt out of control of","s":"B → decision on coupon next step"}
+{"t":"u","r":"V22","c":"VERB","g":"should be","s":"coupon next step / decision"}
+{"t":"u","r":"V23","c":"VERB","g":"stuck there waiting","s":"B"}
+{"t":"u","r":"V24","c":"VERB","g":"want to appear","s":"B → rude, source negation"}
+{"t":"u","r":"V25","c":"VERB","g":"shop regularly","s":"B"}
+{"t":"u","r":"V26","c":"VERB","g":"found","s":"B → identified part"}
+{"t":"u","r":"V27","c":"VERB","g":"think","s":"B → attendant fault, source negation"}
+{"t":"u","r":"V28","c":"VERB","g":"bugging me","s":"it → B"}
+{"t":"u","r":"V29","c":"VERB","g":"need to get","s":"B → it straight in my mind"}
+{"t":"u","r":"V30","c":"VERB","g":"get myself into","s":"B → these situations, source negation/prospective"}
+{"t":"u","r":"R1","c":"LOCATOR","g":"at the store","s":"B"}
+{"t":"u","r":"R2","c":"LOCATOR","g":"at the self-check","s":"B"}
+{"t":"u","r":"R3","c":"LOCATOR","g":"comes over","s":"attendant toward B"}
+{"t":"u","r":"R4","c":"LOCATOR","g":"right there","s":"cereal box"}
+{"t":"u","r":"R5","c":"LOCATOR","g":"walk away","s":"attendant"}
+{"t":"u","r":"R6","c":"LOCATOR","g":"with my coupon","s":"attendant walking away"}
+{"t":"u","r":"R7","c":"LOCATOR","g":"go get a manager","s":"attendant direction/purpose"}
+{"t":"u","r":"R8","c":"LOCATOR","g":"standing there","s":"B"}
+{"t":"u","r":"R9","c":"LOCATOR","g":"in and out","s":"B’s intended movement through store"}
+{"t":"u","r":"R10","c":"LOCATOR","g":"walk out","s":"B candidate action"}
+{"t":"u","r":"R11","c":"LOCATOR","g":"stuck there","s":"B"}
+{"t":"u","r":"R12","c":"LOCATOR","g":"when I shop regularly","s":"store recurring context"}
+{"t":"u","r":"R13","c":"LOCATOR","g":"into these situations","s":"B prospective recurrence"}
+{"t":"u","r":"R14","c":"LOCATOR","g":"in my mind","s":"B"}
+{"t":"c","e":"B_V1_P1_P2_R1_R2","g":"B is at the store/self-check","q":false}
+{"t":"c","e":"B_V2_O1_O2_T1_P2","g":"B trying to scan coupon for kids’ cereal","q":true}
+{"t":"c","e":"O1_V3_T1_P2","g":"coupon not working","q":true}
+{"t":"c","e":"H1_V4_B_L1_T2_P2","g":"attendant sees B struggling","q":true}
+{"t":"c","e":"H1_V6_V7_B_O1_T2_P2","g":"attendant comes over to help with coupon","q":true}
+{"t":"c","e":"O1_V8_H1_T2_P2","g":"coupon will not scan for attendant either","q":true}
+{"t":"c","e":"H1_V9_V10_O1_O5_O3_L2_L3_T2","g":"attendant looks at coupon, valid date, and box right there","q":true}
+{"t":"c","e":"B_V11_T2","g":"B does not recall saying anything","q":true}
+{"t":"c","e":"H1_V12_O1_L4_T3_R5_R6","g":"attendant walks away with coupon 'in a huff'","q":true}
+{"t":"c","e":"H1_V13_H2_T3_R7","g":"attendant goes to get manager","q":true}
+{"t":"c","e":"B_V14_V15_T4_P5","g":"B standing there waiting and thinking to self","q":true}
+{"t":"c","e":"B_L5_T4_P5","g":"B introduces 'Karen' label as a self-question","q":true}
+{"t":"c","e":"B_V16_O6_O2_T4","g":"B questions whether $1.25 off cereal matters","q":true}
+{"t":"c","e":"B_V17_O7_L6_T5_P1","g":"B wanted to be 'in and out' for a few things","q":true}
+{"t":"c","e":"B_V18_L7_T4_P5","g":"B considers paying and walking out; asks if that would be rude","q":true}
+{"t":"c","e":"H1_V19_B_O8_T4","g":"B asks why attendant did not ask what B wanted to do","q":true}
+{"t":"c","e":"B_V20_H3_T6_P6","g":"B later tries to explain event to partner","q":true}
+{"t":"c","e":"B_L8_O1_T6","g":"B marks coupon not working itself as 'frustrating'","q":true}
+{"t":"c","e":"B_V21_O8_L9_T6","g":"B says B felt 'out of control' of decision on coupon next step","q":true}
+{"t":"c","e":"B_V23_L10_T6","g":"B says B was 'stuck there waiting'","q":true}
+{"t":"c","e":"B_V24_L7_T6_T7","g":"B does not want to appear rude because B shops regularly","q":true}
+{"t":"c","e":"B_V26_L11_T6","g":"B identifies that part as 'super frustrating'","q":true}
+{"t":"c","e":"B_V27_H1_L12_T8","g":"B says B does not think it was attendant's fault","q":true}
+{"t":"c","e":"B_L13_T8","g":"B says 'It's a me thing'","q":true}
+{"t":"c","e":"B_V28_L14_T8","g":"B says it is 'still bugging me'","q":true}
+{"t":"c","e":"B_V29_O12_L15_T8","g":"B says B needs to get it 'straight in my mind'","q":true}
+{"t":"c","e":"B_V30_O11_T9_R13","g":"B refers prospectively to not getting self into 'these situations'","q":true}
