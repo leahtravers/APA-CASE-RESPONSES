@@ -10,7 +10,7 @@ from pathlib import Path
 
 API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
-CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V9")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V10")
 AGENT_ID_FILE = Path("researcher_inventory/runtime/extractor_agent_id.txt")
 CONTRACT_FILE = Path("researcher_inventory/AGENT_CONTRACT.md")
 
