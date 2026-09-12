@@ -24,7 +24,7 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V9
+      CONTRACT_VERSION: RI-CONTRACT-V10
       RI_MODEL_COMMAND: python researcher_inventory/openai_agents_adapter.py
     steps:
       - name: Checkout repository without external actions
@@ -98,7 +98,7 @@ jobs:
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
 
-          V9 sparse-literal apparatus passed two consecutive hidden-archetype verification batches on one calibration lineage. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
+          V10 comprehensive-literal apparatus passed two consecutive hidden-archetype verification batches on one calibration lineage. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
@@ -119,7 +119,7 @@ jobs:
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
 
-          V9 passed immutable workbook hash verification, deterministic code tests, repeated hidden Case 2/Case 6 calibration, one sealed Case 5 holdout on the calibration lineage, then Case 2/Case 6 and Case 5 again with a newly bootstrapped extractor that had no prior session history. No archetypes or holdout outputs were exposed to either worker.
+          V10 passed immutable workbook hash verification, deterministic code tests, repeated hidden Case 2/Case 6 calibration, one sealed Case 5 holdout on the calibration lineage, then Case 2/Case 6 and Case 5 again with a newly bootstrapped extractor that had no prior session history. No archetypes or holdout outputs were exposed to either worker.
           EOF
 
       - name: Commit durable status
@@ -129,7 +129,7 @@ jobs:
           set -euo pipefail
           git add researcher_inventory/status
           if ! git diff --cached --quiet; then
-            git commit -m "apparatus: certify researcher inventory v9 [skip ci]"
+            git commit -m "apparatus: certify researcher inventory v10 [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
