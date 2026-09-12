@@ -1,6 +1,7 @@
-"""Create the dedicated Researcher Inventory saved agent and session.
+"""Create the reusable Researcher Inventory saved agent.
 
 Requires OPENAI_API_KEY scoped to the APA Case Responses project.
+Actual researcher-inventory sessions are created per case with initial input.
 Prints only stable IDs and bounded API error metadata; never prints the API key.
 """
 from __future__ import annotations
@@ -14,7 +15,6 @@ from pathlib import Path
 API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
 AGENT_ID_FILE = Path("researcher_inventory/runtime/agent_id.txt")
-SESSION_ID_FILE = Path("researcher_inventory/runtime/session_id.txt")
 CONTRACT = Path("researcher_inventory/AGENT_CONTRACT.md")
 
 
@@ -54,10 +54,6 @@ def request(path: str, method: str = "GET", body=None):
 
 def main():
     instructions = CONTRACT.read_text(encoding="utf-8")
-
-    # Keep the saved-agent payload deliberately minimal. Contract behavior lives
-    # in the repository instructions; optional runtime knobs can be added only
-    # after this base contract is proven stable.
     agent = request(
         "/agents",
         method="POST",
@@ -73,29 +69,11 @@ def main():
         },
     )
     agent_id = agent["id"]
-
-    session = request(
-        "/agents/sessions",
-        method="POST",
-        body={
-            "agent_id": agent_id,
-            "environment": {"type": "none"},
-            "metadata": {
-                "apa_session_type": "researcher_inventory",
-                "contract_version": os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V1"),
-                "candidate_desk_only": "true",
-            },
-        },
-    )
-    session_id = session["id"]
-
     AGENT_ID_FILE.parent.mkdir(parents=True, exist_ok=True)
     AGENT_ID_FILE.write_text(agent_id + "\n", encoding="utf-8")
-    SESSION_ID_FILE.write_text(session_id + "\n", encoding="utf-8")
-
     print(f"agent_id={agent_id}")
-    print(f"session_id={session_id}")
     print(f"model={MODEL}")
+    print("session_policy=per_case_with_initial_input")
 
 
 if __name__ == "__main__":
