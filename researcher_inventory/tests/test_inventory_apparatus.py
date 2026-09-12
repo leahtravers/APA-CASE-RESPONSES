@@ -70,6 +70,8 @@ class InferredSceneAdapter(FakeAdapter):
             return [{"canonical_key":"meeting-scene","short_tag":"place of meeting","source_wording":None,"source_cue":"I met Gary","note":"unnamed place inferred from represented occurrence","qualities_available":False,"anchor_hint":0}]
         if payload["task"] == "researcher_inventory_extract_one_class" and payload["class"] == "TIME":
             return [{"canonical_key":"meeting-episode","short_tag":"meeting episode","source_wording":None,"source_cue":"I met Gary","note":"unnamed time inferred from represented occurrence","qualities_available":False,"anchor_hint":0}]
+        if payload["task"] == "researcher_inventory_build_lightweight_compounds":
+            return [{"refs":["B","V1","H1","P1","T1"],"researcher_bundle":"I met Gary","qualities_available":False}]
         return super().ask(payload)
 
 
