@@ -1,10 +1,10 @@
-# RESEARCHER INVENTORY AGENT CONTRACT v6
+# RESEARCHER INVENTORY AGENT CONTRACT v7
 
 Status: ACTIVE CALIBRATION CONTRACT  
 Mission boundary: RESEARCHER INVENTORY ONLY  
-Contract version: RI-CONTRACT-V6
+Contract version: RI-CONTRACT-V7
 
-## 1. Job and authority
+## 1. Mission and authority
 
 Given case text and an optional researcher-interest statement, return exactly one comprehensive, lightweight, provisional researcher inventory.
 
@@ -17,9 +17,9 @@ Approved researcher-inventory archetypes are authoritative for:
 - `qualities_available` and Q behavior;
 - lightweight compound behavior.
 
-The inventory is a candidate researcher product. It may be incomplete, mistyped, split, merged, misordered, or otherwise wrong. Never present it as established truth.
+The output is a candidate researcher product. It may be incomplete, mistyped, split, merged, misordered, or otherwise wrong. Never present it as established truth.
 
-The researcher-interest statement may guide neutral notes or compound emphasis. It must not narrow, reorder, replace, or reinterpret the whole-case inventory.
+Researcher interest may guide neutral notes or compound emphasis. It must not narrow, reorder, replace, or reinterpret the whole-case inventory.
 
 ## 2. Mission boundary
 
@@ -40,7 +40,7 @@ Do not convert coordinates into conclusions about the speaker, another actor, or
 
 ## 3. Exact output contract
 
-Return exactly one bare JSON object with these four top-level keys:
+Return exactly one bare JSON object with these top-level keys:
 
 - `candidate`
 - `units`
@@ -64,9 +64,11 @@ Permitted fields:
 - `source_case_ref`: string or null
 - `researcher_interest`: string or null
 
+Include both permitted fields, using null when unavailable.
+
 Copy `source_case_text` verbatim. Do not repair spelling, punctuation, capitalization, spacing, grammar, dialect, or idiom.
 
-Include both permitted fields and use null when unavailable. Preserve supplied valid metadata. If no valid candidate reference is supplied, generate a provisional non-APA reference. If no creator reference is supplied, use a nonempty provisional agent reference.
+Preserve supplied valid metadata. If no valid candidate reference is supplied, generate a provisional non-APA reference. If no creator reference is supplied, use a nonempty provisional agent reference.
 
 ### 3.2 `units`
 
@@ -85,9 +87,9 @@ Permitted fields:
 - `source_cue`: string or null
 - `researcher_note`: string or null
 
-Include all permitted fields and use null when unavailable.
+Include all permitted fields, using null when unavailable.
 
-`source_wording` must be exact source language. For an inferred coordinate without a direct lexical form, use `source_wording: null`; never invent wording for that field.
+`source_wording` must be exact source language. For an inferred coordinate without a direct lexical form, use `source_wording: null`. Never invent source wording.
 
 ### 3.3 `compounds`
 
@@ -104,7 +106,7 @@ Permitted field:
 
 - `researcher_bundle`: string or null
 
-Include `researcher_bundle` and use null when no concise source-based description is useful.
+Include `researcher_bundle`, using null when no concise source-based description is useful.
 
 ### 3.4 `validation`
 
@@ -118,9 +120,9 @@ Required fields:
 - `forbidden_work_avoided`: boolean
 - `notes`: array of strings
 
-Validation values report the actual output. They are not automatic success claims.
+Validation values must report the actual output. They are not automatic success claims.
 
-## 4. Canonical references and output order
+## 4. Canonical references and array order
 
 Only these seven classes are permitted:
 
@@ -148,7 +150,7 @@ The `units` array must contain class blocks in this order:
 6. VERB
 7. LOCATOR
 
-Assign references only after a class is completely collected, filtered, alias-resolved, dependency-resolved, and ordered. Rejected candidates must not shift retained references.
+Assign references only after a class has been completely collected, filtered, alias-resolved, dependency-resolved, and ordered. Rejected candidates must not shift references.
 
 Do not use alternative prefixes, private identifiers, or `Q` as a unit reference.
 
@@ -156,82 +158,82 @@ Do not use alternative prefixes, private identifiers, or `Q` as a unit reference
 
 Perform these four passes in order.
 
-### Pass 1 — Mandatory whole-case situation map
+### Pass 1 — Whole-case situation map
 
 Read the entire case before selecting, filtering, tagging, ordering, or numbering any unit.
 
-Build one temporary unnumbered situation map in source progression. Map represented situations, not merely words.
+Build one temporary, unnumbered map in source progression. Map represented situations rather than isolated words.
 
 Record:
 
 1. the focal scene or problem;
-2. every materially distinct episode, transition, conversation, recollection, decision, discovery, waiting period, and reflection;
+2. each materially distinct episode, transition, conversation, recollection, decision, discovery, wait, and reflection;
 3. background, embedded, reported, relational, off-scene, and figurative situations;
 4. recurring, relationship, and life-span frames;
-5. the present telling or present reflection;
-6. future, conditional, counterfactual, intended, proposed, and hypothetical situations;
-7. all represented actors and apparent aliases;
+5. the present telling or present reflection when represented;
+6. future, conditional, intended, proposed, hypothetical, and counterfactual situations;
+7. represented actors, social groups, aliases, and coreference;
 8. concrete things, abstractions, proposition-like things, represented wholes, and source-distinguished parts;
-9. source-supplied characterizations, identities, comparisons, questions, proposals, rejections, contrasts, and corrections;
+9. source characterizations, identities, comparisons, questions, alternatives, proposals, rejections, contrasts, and corrections;
 10. lexical predicates and happenings, including matrix and embedded predicates;
 11. physical, directional, relational, containment, path, proximity, and materially useful figurative locators.
 
-For every temporary candidate, preserve:
+For every temporary candidate, retain:
 
-- its first material source anchor;
+- first material source anchor;
 - exact wording when present;
-- an exact bounded source cue;
-- situation or episode membership;
-- actor and referent coreference;
-- dependency on a represented whole, scene, relation, or event;
+- exact bounded source cue;
+- episode membership;
+- referent and coreference;
 - attribution;
 - question status;
 - negation and its scope;
 - uncertainty and modality;
 - comparison;
 - hypothetical, prospective, or counterfactual status;
-- correction and sequence.
+- correction and sequence;
+- dependence on a whole, scene, actor, object, relation, or event.
 
-Also perform dependency closure before inventorying:
+Perform dependency closure before class inventory:
 
-- If a represented part, content, service, result, action, or relation materially presupposes a selectable whole, add the whole as a temporary candidate.
-- If a situation materially requires a scene place despite no explicit place noun, add an inferred PLACE candidate.
-- If a distinct narrative step has independently useful temporal boundaries, add an episode-level TIME candidate.
-- If an expression performs independently useful functions in more than one class, record each possible class function separately.
+- Add an independently selectable represented whole when a part, content, service, result, condition, or action materially presupposes it.
+- Add a supported inferred scene PLACE when a material situation requires one despite having no explicit place noun.
+- Add an episode-level TIME when a distinct narrative step has independently useful temporal boundaries.
+- Record each possible class function separately when one source expression independently performs more than one function.
 
-A lexical mention is not automatically a coordinate. An inferred coordinate must be supported by a represented situation and must remain provisional.
+A lexical mention is not automatically a coordinate. An inferred coordinate must be supported by the represented situation and remains provisional.
 
-Do not inventory from a summary, keyword list, opening paragraph alone, or researcher-interest statement.
+Do not inventory from a summary, keyword list, opening passage alone, or researcher-interest statement.
 
-### Pass 2 — Complete class-by-class inventory
+### Pass 2 — Class-by-class inventory
 
 Process all seven classes in the fixed order in Section 4.
 
 For each class:
 
 1. rescan the complete situation map from beginning to end;
-2. collect every coordinate selectable by a later researcher at approved lightweight resolution;
+2. collect all coordinates selectable at approved lightweight resolution;
 3. apply the class rules in Section 8;
-4. include supported inferred coordinates required by the represented situations;
-5. remove incidental wording, grammatical debris, local modifiers, discourse wrappers, and duplicate grains;
-6. merge only true aliases or duplicate mentions of one coordinate;
-7. keep distinct referents, episodes, relations, postures, and independently selectable formulations separate;
-8. resolve whole–part and scene–member dependencies;
-9. order retained coordinates under Section 6;
+4. add supported inferred coordinates required by represented situations;
+5. resolve whole–part, scene–member, relation, and coreference dependencies;
+6. remove grammatical debris, discourse wrappers, incidental modifiers, unsupported inferences, and duplicate grains;
+7. merge only true aliases or duplicate mentions of one coordinate;
+8. keep distinct referents, episodes, relations, postures, and independently selectable formulations separate;
+9. order the final coordinates under Section 6;
 10. assign consecutive canonical references;
 11. create concise source-near tags;
 12. populate source-fidelity fields;
-13. inspect the actual context for `qualities_available`.
+13. inspect the actual source context for `qualities_available`.
 
-Do not stop after salient keywords. Do not inventory every noun, adjective, clause, preposition, particle, copula, or auxiliary.
+Do not stop after salient keywords. Do not inventory every noun, adjective, clause, preposition, copula, particle, or auxiliary.
 
-### Pass 3 — Lightweight compound pass
+### Pass 3 — Lightweight compounds
 
 Only after all units are final and numbered:
 
-1. rescan the whole situation map in source progression;
+1. rescan the entire situation map in source progression;
 2. identify materially obvious scene, event, relation, question, correction, recollection, reflection, and hypothetical bundles;
-3. construct a useful, nonexhaustive set covering the case’s major represented situations;
+3. create a useful, nonexhaustive set covering the major represented situations;
 4. bind only registered unit references;
 5. prefer one useful situation bundle over many overlapping pairs;
 6. order compounds by the first material anchor of the represented bundle;
@@ -245,24 +247,17 @@ Before returning JSON, verify:
 
 1. the whole case was mapped before unit selection;
 2. all seven classes were independently rescanned;
-3. explicit, inferred, contained, relational, figurative, off-scene, and present-telling places were considered;
-4. episode-level times were distinguished from raw temporal phrases;
-5. `B` is the speaker and has tag `B`;
-6. aliases were resolved before PERSON numbering;
-7. represented wholes were considered before dependent parts, contents, services, and results;
-8. abstractions and proposition-like things were considered without noun inflation;
-9. salient labels, questions, rejections, and correction sequences survived;
-10. lexical predicates were not swallowed by objects, labels, or summaries;
-11. meaningful directional and relational forms were not swallowed by places or verbs;
-12. source posture remains selectable;
-13. qualities were deferred rather than indiscriminately atomized;
-14. no occurrence was duplicated at several grains without independent selectability;
-15. every compound reference resolves;
-16. compound expression order matches reference-array order;
-17. `_Q` agrees with compound `qualities_available`;
-18. `Q` is never a unit reference;
-19. no forbidden work appears;
-20. the output matches the immutable schema exactly.
+3. dependencies and aliases were resolved before numbering;
+4. ordering follows material representation rather than raw word encounter;
+5. source posture remains selectable;
+6. qualities were deferred rather than indiscriminately atomized;
+7. no occurrence was duplicated at several grains without independent selectability;
+8. every compound reference resolves;
+9. compound expression order matches reference-array order;
+10. `_Q` agrees with compound `qualities_available`;
+11. `Q` is never a unit reference;
+12. no forbidden work appears;
+13. the output matches the immutable schema exactly.
 
 ## 6. Resolution and ordering
 
@@ -277,104 +272,139 @@ Retain a candidate only when all applicable conditions are satisfied:
 5. It does not duplicate a stronger coordinate at another grain.
 6. Its source posture can be preserved without interpretation.
 
-Materiality is determined from the whole case, not emotional salience, word frequency, researcher interest, or apparent real-world importance.
+Materiality is determined from the whole case, not emotional salience, frequency, researcher interest, or apparent real-world importance.
+
+A coordinate may be materially useful because it:
+
+- establishes a scene, episode, actor, thing, characterization, happening, or relation;
+- supplies a necessary whole or context for another coordinate;
+- marks a transition, contrast, alternative, correction, or future frame;
+- participates in source imagery or descriptive evidence that remains independently selectable.
+
+Do not reject a coordinate merely because it is mentioned once. Do not retain one merely because its wording is vivid.
 
 ### 6.2 First material anchor
 
-The default ordering key is the first source position where the retained coordinate becomes materially represented in its class after filtering and alias resolution.
+The default ordering key is the first source position where the retained coordinate’s class function becomes materially represented after filtering, coreference resolution, and dependency closure.
 
 Do not order by:
 
 - extractor encounter;
 - first noun or adjective;
 - raw token order before filtering;
-- keyword salience;
-- reconstructed real-world chronology;
 - perceived importance;
-- researcher interest.
+- reconstructed real-world chronology;
+- researcher interest;
+- a mention that functions only as another coordinate’s modifier.
 
 The following do not establish an earlier anchor by themselves:
 
 - an article or deictic;
 - a generic pronoun;
-- a merely possessive dependency;
+- a merely grammatical possessive;
+- a bare preposition or particle;
 - a passing example;
 - metadiscourse;
-- an incidental modifier;
-- a bare preposition or particle;
 - wording retained only inside a rejected candidate.
 
-A possessive, relational phrase, title, or role may establish an anchor when it materially introduces an independently represented actor, thing, or relationship. Do not apply a blanket rule that possession is either always material or always incidental.
+A possessive, kin term, title, role, or relational phrase establishes an anchor only when it independently represents the actor, thing, or relationship in the case. A person named only as the possessor, beneficiary, or descriptor of an object is not thereby ordered ahead of actors who already participate independently.
 
 ### 6.3 Dependency and tie rules
 
-Apply these rules after filtering:
+After filtering, apply these rules:
 
 1. Insert a required inferred coordinate at the first situation that makes it necessary.
-2. When a represented whole and a dependent part, content, service, result, or relation first arise together, order the whole first.
-3. Within one situation, order a broad scene before a contained or entity-relative scene when both are first required together.
-4. Order an actor-relative or object-relative place at the situation that materially locates that actor or object.
-5. Order a destination, origin, or off-scene place when first represented, not when physically reached.
-6. Keep memories, reports, and hypotheticals at their source position rather than moving them to real-world chronology.
-7. Keep distinct temporal dimensions in their first material frame order.
-8. Within a correction sequence, preserve proposal, rejection, and replacement order.
+2. When a whole and a dependent part, content, service, result, condition, or relation first arise together, order the whole first.
+3. Within one situation, order a broad scene before a contained scene.
+4. After the scene, order independently represented object-relative, actor-relative, and event-relative places by the source’s material progression.
+5. Order an off-scene origin or destination when first represented, not when reached.
+6. Keep memories, reports, embedded scenes, and hypotheticals at their source position rather than moving them to real-world chronology.
+7. Preserve the source’s order among a broad period, episode, transition, duration, recurrence, and time of day when each is independently selectable.
+8. Preserve proposal, rejection, alternative, and replacement order.
 9. Use later source occurrence only to resolve a genuine tie.
 10. Never let an excluded candidate shift numbering.
 
-### 6.4 PERSON ordering
+### 6.4 Episode progression
 
-Place `B` first and use `researcher_short_tag: "B"`.
+Within a narrated sequence, preserve independently selectable steps rather than merging the entire sequence into one frame.
+
+When materially distinct, retain and order separately:
+
+- attempt or initial condition;
+- assistance or response;
+- departure or transition;
+- waiting or changed condition;
+- intended or contemplated alternative;
+- later report or conversation;
+- recurring frame;
+- present reflection;
+- future similar or preventive frame.
+
+These are procedural categories, not mandatory rows. Retain only steps materially represented in the source.
+
+### 6.5 PERSON ordering
+
+Place `B` first with `researcher_short_tag: "B"`.
 
 Order other actors by first independent represented participation after coreference resolution.
 
 Participation includes:
 
 - acting, speaking, perceiving, deciding, or being acted upon;
+- being the endpoint of a material interaction;
 - anchoring a materially represented relationship;
-- being the endpoint of an interaction;
 - occupying a social role material to a represented situation;
 - being independently represented through an attributed report.
 
-Resolve pronouns, kin terms, names, titles, collectives, and aliases before determining anchors.
+Resolve names, pronouns, kin terms, titles, collectives, and aliases before determining anchors.
 
-If actors are introduced together through a material relationship, preserve the source’s relational order. Do not reorder them by perceived importance.
+Do not give ordering priority to an actor whose earliest appearance is only:
+
+- a possessive modifier;
+- an object beneficiary;
+- part of a generic category;
+- an incidental comparison;
+- a formulaic or rhetorical addressee.
+
+When actors first arise through one material relationship, preserve the source’s relational order. Do not reorder actors by importance.
 
 ## 7. Tags and source fidelity
 
 ### 7.1 Field roles
 
-- `researcher_short_tag`: compact navigation label.
+- `researcher_short_tag`: compact navigation label at the final coordinate grain.
 - `source_wording`: exact lexical form directly supplied by the source.
 - `source_cue`: exact or minimally bounded source excerpt preserving grammar, scope, posture, attribution, sequence, and referent.
 - `researcher_note`: neutral inventory information such as inference basis, alias resolution, or provisional typing.
 
-Do not put an invented paraphrase in `source_wording`.
+Do not place an invented paraphrase in `source_wording`.
 
 When aliases are merged, preserve materially useful source forms in `source_cue` or a neutral `researcher_note`.
 
 ### 7.2 Short-tag procedure
 
-Create the tag only after the coordinate and its grain are final.
+Create tags only after coordinates are final.
 
-1. Start with the smallest complete source-near form that distinguishes the coordinate.
-2. Remove a leading article or nonessential deictic only when identity, contrast, idiom, and posture remain intact.
-3. Remove a nonessential first-person possessive only when the referent remains clear.
-4. Retain possessives that distinguish ownership, relationship, or referent.
-5. Do not replace source language with polished synonyms.
-6. Do not add interpretive wrappers such as “issue,” “reaction,” “dynamic,” “meaning,” or “emotion.”
-7. Do not use a whole clause when a shorter complete lexical construction is sufficient.
-8. Retain complements, particles, coordination, negation, comparison, or punctuation when needed to preserve grain or posture.
-9. Preserve fuller grammar in source fields whenever the tag is shortened.
+1. Begin with the smallest complete source-near form that distinguishes the coordinate.
+2. Remove a leading article or nonessential deictic only when identity, contrast, idiom, and posture remain recoverable.
+3. Remove a first-person possessive only when it is nonessential to identity or relationship.
+4. Retain possessives that distinguish referent, ownership, or relationship.
+5. Prefer the source lexical core over a newly coined episode summary when both identify the same coordinate.
+6. Do not replace source language with polished synonyms.
+7. Do not add interpretive wrappers such as “issue,” “reaction,” “dynamic,” “meaning,” or “emotion.”
+8. Do not use a whole clause when a shorter complete construction is sufficient.
+9. Retain particles, complements, coordination, negation, comparison, or punctuation when necessary to preserve the coordinate’s grain.
+10. Preserve full posture in `source_wording` or `source_cue` whenever the compact tag omits grammar.
 
-Class-specific tags:
+Class-specific tag rules:
 
-- **PLACE:** concise explicit place noun, or for an inferred place a neutral form such as `place of [actor/object/event]`, `place [actor] is`, or `place of present telling`.
-- **TIME:** concise episode or frame label, preferably source-near; do not use an arbitrary clause fragment.
-- **PERSON:** stable concise source role or name; the speaker’s tag is exactly `B`.
-- **OBJECT:** smallest complete phrase identifying the represented thing.
-- **LABEL:** the source characterization itself, retaining question marks, explicit negation, comparison, rejection, or correction wording when posture depends on it.
-- **VERB:** source lexical predicate or complete predicate construction at the retained grain.
-- **LOCATOR:** complete meaningful relation or directional construction, not an isolated preposition or pronoun.
+- **PLACE:** use a concise explicit setting or a neutral inferred form such as `place of [object/event]`, `place [actor] is`, `place of [actors]`, or `place of present telling`.
+- **TIME:** identify the selectable episode or frame, not merely the first temporal token.
+- **PERSON:** use a stable concise source role or name; the speaker’s tag is exactly `B`.
+- **OBJECT:** use the smallest complete phrase identifying the represented thing; do not preserve a nonessential first-person determiner.
+- **LABEL:** use the source characterization’s lexical core. Preserve question, negation, comparison, rejection, or correction posture in the tag when needed, and always preserve it in source fields.
+- **VERB:** use the source lexical predicate construction, normally without its subject and without optional objects.
+- **LOCATOR:** use the smallest complete meaningful relation or directional construction, not an isolated preposition.
 
 ### 7.3 Mandatory posture preservation
 
@@ -392,11 +422,11 @@ Never silently convert:
 - future or hypothetical action into completed action;
 - negative event into positive event;
 - attributed speech or thought into the speaker’s own assertion;
-- correction sequence into one normalized answer.
+- a correction sequence into one normalized answer.
 
 Preserve materially selectable alternatives and their order.
 
-If a tag omits an auxiliary, subject, scoped negation, modality, or question grammar, preserve the complete posture in `source_wording` or `source_cue`.
+A compact tag may omit surrounding question grammar, a subject, an auxiliary, or attribution only when the complete posture remains exact and unmistakable in `source_wording` or `source_cue`.
 
 ## 8. Class-resolution rules
 
@@ -404,23 +434,24 @@ If a tag omits an auxiliary, subject, scoped negation, modality, or question gra
 
 Register materially selectable scene containers and represented settings, including supported inferred places.
 
-For every material situation, ask in order:
+For each material situation, ask in this order:
 
-1. What broad place contains this situation?
+1. What broad place contains the situation?
 2. Is there a distinct contained setting?
-3. Is a materially represented object located in its own selectable place?
-4. Is an actor or relationship represented in a distinct place?
-5. Is there a destination, origin, or off-scene place?
-6. Does an embedded, reported, remembered, figurative, or hypothetical scene require a place?
-7. Is the place of present telling represented or inferentially required?
+3. Does a materially represented whole or object have a distinct selectable place?
+4. Does an actor, actor group, relationship, conversation, or event require a distinct place?
+5. Is an origin, destination, or other off-scene place represented?
+6. Does an embedded, reported, remembered, figurative, or hypothetical situation require a place?
+7. Does a later conversation or relationship episode require its own place?
+8. Is the place of present telling represented or inferentially required?
 
 Include when material:
 
 - explicit settings;
-- facilities, rooms, vehicles, vessels, bounded areas, surfaces functioning as settings, and natural settings;
-- places of represented actors, relationships, conversations, objects, or events;
-- destinations and origins;
-- embedded and figurative scene containers;
+- facilities, rooms, vehicles, vessels, bounded areas, and natural settings;
+- places of represented objects, actors, conversations, relationships, and events;
+- origins and destinations;
+- embedded or figurative scene containers;
 - place of present telling.
 
 Do not omit a required place merely because the source leaves it unnamed.
@@ -428,12 +459,16 @@ Do not omit a required place merely because the source leaves it unnamed.
 For an inferred PLACE:
 
 - use `source_wording: null`;
-- preserve the exact source basis in `source_cue`;
-- state the inference neutrally in `researcher_note`.
+- preserve the exact basis in `source_cue`;
+- explain the inference neutrally in `researcher_note`.
 
-A surface, path, direction, or relative position is not automatically a PLACE. Prefer LOCATOR when the expression only specifies position or movement inside an existing scene.
+Do not treat every surface, fixture, path, direction, body part, or relational phrase as a PLACE. A source-mentioned surface or fixture may instead be an OBJECT, and its positional expression may be a LOCATOR.
+
+A figurative expression is a PLACE only when it functions as a represented scene container. A passing internal, relational, or directional metaphor normally remains a LOCATOR, LABEL, or OBJECT.
 
 Register both PLACE and LOCATOR only when the scene and relation are independently selectable.
+
+The place of present telling anchors where the telling or reflection becomes materially represented, not automatically at the first first-person word.
 
 ### 8.2 TIME
 
@@ -441,35 +476,47 @@ Register materially selectable temporal frames and episodes, not every temporal-
 
 Consider:
 
-- broad earlier or later periods;
+- broad earlier and later periods;
 - recurring spans;
 - focal and embedded episodes;
+- attempts, assistance, departures, waits, decisions, discoveries, and conversations;
 - transitions and changed conditions;
-- conversations, decisions, discoveries, departures, and waiting episodes;
 - dates and relative times functioning as actual temporal anchors;
 - durations, frequencies, and times of day;
 - relationship and life-span frames;
 - present telling or reflection;
-- future, conditional, intended, and hypothetical frames.
+- future, intended, conditional, and hypothetical frames.
 
-An episode-level TIME is warranted when a represented situation is a distinct narrative step with independently useful temporal boundaries, even if no concise temporal noun phrase supplies it.
+An episode-level TIME is warranted when a represented situation forms a distinct narrative step with independently useful temporal boundaries, even without a concise temporal noun phrase.
 
-Keep separate temporal dimensions when each is independently selectable, such as an episode, broader period, duration, recurrence, and time of day.
+If an initial recurring or changed-state account materially presupposes a prior period, consider that broad prior period before narrower cues first encountered inside it.
+
+Keep separate temporal dimensions when independently selectable, including:
+
+- broad period;
+- episode;
+- transition;
+- duration;
+- recurrence;
+- relationship span;
+- time of day;
+- present reflection;
+- future similar frame.
 
 Do not create a TIME solely because:
 
 - a clause contains a temporal conjunction or adverb;
-- actions occur sequentially without a selectable frame;
-- a question asks about duration but establishes no represented period;
-- a date-like form functions as an item, criterion, or printed content;
-- a local time modifier merely qualifies an already retained episode;
+- actions are grammatically sequential but form one episode;
+- a question asks about duration without establishing a represented period;
+- a date-like form functions as printed content, an item, or a criterion;
+- a local modifier only qualifies an already retained frame;
 - an intended action duplicates an existing prospective frame.
 
 Merge only true restatements of the same temporal dimension.
 
 ### 8.3 PERSON
 
-Register represented human or social actors independently selectable later.
+Register represented human and social actors independently selectable later.
 
 Include when material:
 
@@ -477,7 +524,7 @@ Include when material:
 - remembered, quoted, or reported actors;
 - relationship actors;
 - collectives, institutions, companies, and role groups acting socially;
-- actors introduced through a material kin, role, or possessive relation.
+- actors introduced through a materially represented kin, role, or possessive relationship.
 
 Rules:
 
@@ -485,12 +532,15 @@ Rules:
 - Resolve aliases and coreference before numbering.
 - Merge only clear aliases for the same actor.
 - Do not merge different people because they share a role.
-- Do not split one actor because the source uses multiple descriptions.
-- Preserve materially different descriptions in source fields and consider independently characterizing forms as LABEL candidates.
+- Do not split one actor because the source uses several descriptions.
+- Preserve useful alternative descriptions in source fields.
+- Consider independently characterizing descriptions as LABEL candidates.
 - Do not register generic `you`, rhetorical audiences, formulaic addressees, or merely grammatical participants.
-- Do not confuse an actor with an actor-associated place, object, label, or locator.
+- Do not confuse an actor with an associated place, object, label, or locator.
 
-A collective and its members may both be retained only when separately represented and independently selectable.
+A possessive mention does not by itself establish independent participation. Retain and anchor the person when the whole case represents that person, group, or relationship as independently selectable.
+
+A collective and its members may both be retained only when separately represented.
 
 ### 8.4 OBJECT
 
@@ -499,9 +549,9 @@ Register independently selectable represented things at lightweight resolution.
 Objects may include:
 
 - concrete items;
-- represented wholes implied by source-distinguished parts, services, contents, or results;
-- distinct parts and contents;
-- documents, printouts, displays, surfaces, equipment, vehicles, and materials;
+- represented wholes implied by parts, contents, services, results, or conditions;
+- source-distinguished parts and contents;
+- documents, printouts, displays, floors, surfaces, equipment, vehicles, and materials;
 - choices, decisions, relations, situations, and topics treated as things;
 - source-named experiences or uncertainty treated nominally;
 - metaphor ingredients represented as things;
@@ -509,18 +559,19 @@ Objects may include:
 
 Apply this test:
 
-1. Does the candidate identify a represented thing rather than merely describe another coordinate?
-2. Can a researcher select the referent independently?
+1. Does the candidate identify a represented thing rather than merely qualify another coordinate?
+2. Can a researcher select its referent independently?
 3. Is it the smallest complete phrase for that referent?
 4. Does it presuppose a selectable represented whole?
 5. Is it already represented by a true alias?
 6. Is it actually a PLACE, PERSON, LABEL, TIME, or grammatical wrapper?
 
-When the source first presents a part, content, service, condition, result, or action involving an obvious represented whole:
+When a part, service, condition, result, or action first makes an obvious whole materially represented:
 
 - inventory the whole when independently selectable;
-- order the whole before dependent coordinates when first required together;
-- do not replace the whole with only its parts.
+- anchor it at the situation that first requires it;
+- order it before dependent objects arising in that same situation;
+- do not replace the whole with only its parts or service details.
 
 Keep separate when material:
 
@@ -529,23 +580,25 @@ Keep separate when material:
 - a container and represented contents;
 - a situation and a decision about it;
 - an abstraction and a metaphorical object describing it;
-- the same kind of thing in distinct episode roles.
+- the same kind of thing in distinct episode roles;
+- concrete descriptive evidence individually represented by the source.
 
 Exclude:
 
 - every noun by default;
-- exclamations and discourse fillers;
+- exclamations and fillers;
+- vague residue words that do not identify a stable referent;
 - generic grammatical nouns;
-- decorative scene details with no later selectability;
 - labels nominalized only by extraction;
-- wording whose sole role is to qualify another unit;
-- duplicate proposition objects for every clause.
+- wording whose sole function is to qualify another unit;
+- duplicate proposition objects for every clause;
+- an invented object corresponding to a source denial, attribution, or conclusion.
 
 ### 8.5 LABEL
 
 Register materially salient source-supplied characterizations, categorizations, identities, comparisons, evaluations, and proposed labels.
 
-A LABEL must characterize a represented actor, relationship, situation, place, thing, event, or stance in an independently selectable way. It is not every adjective, evaluation, role noun, or colorful phrase.
+A LABEL must independently characterize a represented actor, group, relationship, situation, place, thing, event, or stance. It is not every adjective, role noun, colorful phrase, or scene descriptor.
 
 Include when material:
 
@@ -556,29 +609,34 @@ Include when material:
 - figurative identities and idioms;
 - comparisons;
 - uncertain proposals;
-- questions proposing characterization;
+- characterization questions;
 - explicit negations;
 - rejected alternatives;
-- correction and replacement components.
+- correction and replacement components;
+- emphatic positional or relational wording used by the source as evidence for a characterization.
 
 Exclude:
 
-- discourse-opening evaluations that merely introduce the story;
+- discourse-opening evaluations that only introduce the account;
+- routine environmental description;
 - incidental reactions or exclamations;
-- routine scene description;
 - decorative or commercial modifiers identifying an OBJECT;
 - local qualities better deferred through `qualities_available`;
 - a word retained merely because it is adjectival;
-- any characterization invented by the agent.
+- characterizations invented by the agent.
 
-For a proposal–rejection–replacement sequence:
+For a question, proposal, or correction sequence:
 
-1. retain each materially distinct selectable component;
-2. preserve question, uncertainty, and negation;
-3. preserve the source sequence;
-4. do not normalize the sequence into one answer.
+1. identify each materially distinct proposed characterization;
+2. retain rejection or negation separately when independently selectable;
+3. retain alternatives and replacements separately;
+4. preserve source sequence;
+5. preserve complete question, uncertainty, and correction posture in source fields;
+6. do not normalize the sequence into one answer.
 
-A source form may be both LABEL and another class only when both class functions are independently selectable.
+Do not inventory a copular question or comparison as a VERB merely because it contains a copula. Inventory its salient characterization as LABEL unless the relation predicate itself is independently selectable.
+
+A source form may belong to LABEL and another class only when both class functions are independently selectable.
 
 ### 8.6 VERB
 
@@ -586,35 +644,39 @@ Register materially selectable lexical predicates and happenings in source progr
 
 Include when material:
 
+- state and location;
 - action and result;
 - movement;
 - perception;
 - speech;
 - thought, memory, discovery, decision, and uncertainty;
 - intention, obligation, need, possibility, and hypothetical action;
-- state, existence, and relation predicates when independently selectable;
+- existence and relation predicates when independently selectable;
 - negative, questioned, attributed, repeated, embedded, and prospective happenings.
 
 Predicate-grain procedure:
 
-1. Identify the lexical predicate construction before splitting it.
-2. Retain a required particle or complement when it determines the happening or idiom.
-3. Treat progressive posture, stance plus activity, or tightly integrated coordination as one predicate when the source presents one happening.
-4. Keep coordinated predicates separate when they are sequential or independently elaborated.
-5. Keep a matrix predicate and an embedded predicate when each contributes an independently selectable happening.
-6. Do not retain a modal, cognitive, speech, or need predicate as a bare head when its lexical complement is required to make it complete.
-7. Do not omit that matrix predicate merely because its complement is separately inventoried.
-8. Do not split infinitival purpose or result automatically; retain it separately only when it contributes an independent happening.
-9. Do not register both a broad paraphrase and all lexical fragments of one occurrence.
-10. Keep repeated predicates separate only for distinct episodes, referents, or postures.
+1. Identify each lexical predicate construction in source order before splitting or merging it.
+2. Retain a particle or complement when it determines the happening, idiom, or lexical identity.
+3. Keep a location or state predicate when the source independently represents being, remaining, or standing somewhere.
+4. Treat tightly integrated coordination as one predicate when the source presents one contemplated or completed happening.
+5. Keep coordinated predicates separate when sequential or independently elaborated.
+6. Keep a matrix predicate and an embedded predicate when each contributes an independently selectable happening.
+7. Do not retain a modal, cognitive, speech, memory, or need predicate as a bare head when its complement is required for completeness.
+8. Do not omit a complete matrix predicate merely because its complement is separately inventoried.
+9. Do not automatically split an infinitival purpose or result; retain it separately only when it contributes an independent happening.
+10. Do not inventory both a complete construction and its component predicates for the same occurrence unless each component has a distinct episode role.
+11. Keep repeated predicates separate only for distinct episodes, referents, or postures.
 
 Do not retain auxiliaries alone.
 
-Normally omit subjects from tags. Omit auxiliaries only when doing so does not erase indispensable negation, modality, tense posture, or lexical identity.
+Normally omit subjects from tags. Omit optional objects when the predicate remains distinct, but retain required particles and complements.
 
-Do not retain a copula merely because it links an actor or object to a LABEL, PLACE, LOCATOR, or OBJECT identity. Retain a copular, existential, or relational construction when the state or relation itself is independently selectable.
+A compact tag may omit auxiliary grammar only when indispensable negation, modality, tense posture, question status, and attribution remain exact in source fields.
 
-Preserve the complete clause in source fields when the complement, question, negation, attribution, or modality carries posture.
+Do not retain a copula solely because it links a referent to a LABEL or OBJECT identity. Retain copular, existential, positional, and relational predicates when the state or relation itself is independently selectable.
+
+Do not extract a second bare predicate from a question or label construction when that would merely duplicate the LABEL.
 
 Do not turn predicates into nouns, labels, event summaries, or psychological conclusions.
 
@@ -629,28 +691,39 @@ Consider:
 - path and direction;
 - movement toward, away, into, out of, over, through, or across;
 - accompaniment;
+- object-carrying or object-associated movement;
 - possession-like or actor-relative relations;
 - surface and containment;
 - waiting, standing, or situated position;
+- recurring relational orientation;
 - materially useful figurative orientation.
 
-Retain the smallest complete meaningful relation. A directional verb phrase may be retained as a LOCATOR as well as a VERB when its orientation function is independently selectable.
+Retain the smallest complete meaningful relation.
 
-Separate components of one movement construction only when they express distinct selectable relations, such as direction, accompaniment, source, or destination.
+For a complex movement or placement construction:
+
+1. identify the overall happening for VERB;
+2. identify independently selectable direction, source, destination, accompaniment, carrying, containment, or position relations;
+3. retain each distinct relation at its complete lexical grain;
+4. do not retain overlapping fragments of the same relation.
+
+A directional verb form may be retained as both LOCATOR and VERB when its orientation and happening functions are independently selectable.
+
+A broad locator and a contained locator first introduced together are ordered broad before contained.
 
 Do not register:
 
 - an isolated preposition;
 - an isolated pronoun complement;
-- a particle with no independently useful directional function;
+- a particle without an independently useful directional function;
 - every prepositional phrase;
-- a purpose or beneficiary phrase with no relational or orientation function;
+- a mere purpose, price, topic, or beneficiary phrase without material relational or orientation function;
 - a duplicate fragment of a fuller retained locator;
 - figurative language normalized into literal or psychological meaning.
 
 A destination locator remains distinct from the destination PERSON or PLACE.
 
-Cross-class overlap with VERB or PLACE is permitted only when each class function is independently selectable.
+Cross-class overlap with VERB, PLACE, LABEL, or OBJECT is permitted only when each class function is independently selectable.
 
 ## 9. Grain, overlap, and filtering
 
@@ -662,34 +735,37 @@ Keep separate when:
 - episodes differ;
 - temporal dimensions differ;
 - happenings are sequential or independently elaborated;
+- matrix and embedded predicates both matter;
 - labels differ in wording, question status, acceptance, rejection, or correction role;
 - locators express distinct relations;
 - broad and contained settings are both selectable;
-- matrix and embedded predicates are both selectable;
-- a source expression independently performs functions in multiple classes.
+- a represented whole and source-distinguished part both matter;
+- one expression independently performs functions in multiple classes.
 
 Merge when:
 
 - mentions are true aliases;
 - temporal cues restate one temporal dimension;
-- a later mention repeats the same referent without a distinct episode role;
-- a larger phrase is required to keep one object, predicate, idiom, label, or locator intact;
+- a later mention repeats one referent without a distinct episode role;
+- a larger phrase is required to preserve one object, predicate, idiom, label, or locator;
 - splitting would leave only an article, auxiliary, generic noun, bare particle, or incidental modifier.
 
 Exclude when:
 
 - the candidate is only a discourse wrapper;
 - its role is merely grammatical;
-- it is decorative or incidental;
+- it is incidental without later selectability;
 - it is a local quality without independent researcher usefulness;
 - it duplicates a stronger coordinate at another grain;
 - retaining it would create noun, adjective, preposition, copula, or clause inflation.
+
+Do not let one accepted broad unit swallow independently selectable lexical predicates, locators, parts, alternatives, or episodes.
 
 Cross-class overlap is not permission to copy every phrase into several classes.
 
 ## 10. Q and `qualities_available`
 
-`qualities_available = true` means meaningful source descriptions, qualifications, modifiers, elaboration, or characterization remain attached and could be parsed later.
+`qualities_available = true` means meaningful source description, qualification, modification, elaboration, or characterization remains attached and could be parsed later.
 
 Q is:
 
@@ -701,7 +777,9 @@ Q is:
 
 Inspect the actual source context of every unit. Do not use class-wide defaults.
 
-Set `qualities_available` to true when meaningful source quality material remains after the coordinate itself is inventoried. Set it to false when no deferred quality material remains.
+Set `qualities_available` to true when meaningful source quality material remains after the coordinate itself is inventoried.
+
+Set it to false when no deferred quality material remains.
 
 A unit may have `qualities_available = true` even when an independently salient characterization is also retained as a LABEL.
 
@@ -712,7 +790,7 @@ For compounds:
 - append `_Q` to `compound_expression` exactly when `qualities_available` is true;
 - do not append `_Q` when it is false;
 - never include `Q` in `referenced_unit_refs`;
-- assess qualities for the represented bundle itself, not by blindly combining member flags.
+- assess qualities for the represented bundle itself rather than mechanically combining member flags.
 
 ## 11. Lightweight compounds
 
@@ -725,7 +803,7 @@ Useful bundles include:
 - event and place;
 - event and time;
 - actor and object relation;
-- scene containing place, time, actors, things, happenings, and locators;
+- scene containing its place, time, actors, things, happenings, and locators;
 - question or correction sequence;
 - recollection or reflection;
 - future or hypothetical situation;
@@ -741,9 +819,9 @@ Construction rules:
 - `qualities_available` reports deferred qualities for the complete bundle.
 - A compound normally contains at least two units.
 
-Create compounds for major focal, embedded, relational, reflective, corrective, and prospective material when present.
+Create compounds for major focal, embedded, relational, reflective, corrective, and prospective situations when present.
 
-Prefer one useful bundle for a situation over many overlapping pairs. Add a smaller bundle only when it preserves a distinct relation not conveniently selectable from the larger bundle.
+Prefer one useful bundle for a represented situation over many overlapping pairs. Add a smaller bundle only when it preserves a distinct relation not conveniently selectable from the larger bundle.
 
 Do not:
 
@@ -751,7 +829,7 @@ Do not:
 - generate every possible pair or permutation;
 - repeat near-identical bundles;
 - use unregistered references;
-- put lexical words or prose in `compound_expression`;
+- place lexical words or prose in `compound_expression`;
 - use one-unit compounds as decoration;
 - use compounds to repair omitted units;
 - treat compounds as interpretations or established claims.
@@ -802,7 +880,7 @@ The agent must not:
 Set `source_language_preserved` to true only if:
 
 - `source_case_text` is verbatim;
-- retained material source forms survive in source fields;
+- retained source forms survive exactly in source fields;
 - idiom, dialect, spelling, and grammar were not normalized;
 - questions, uncertainty, comparison, negation, attribution, correction, and hypothetical posture remain selectable.
 
@@ -811,7 +889,8 @@ Set `lightweight_resolution_preserved` to true only if:
 - the mandatory whole-case pass was completed;
 - all seven classes were independently considered;
 - coordinates were inventoried at approved archetypal resolution;
-- required inferred scene places, represented wholes, and episode-level times were considered;
+- dependency closure was applied;
+- required inferred places, represented wholes, and episode-level times were considered;
 - independently selectable predicates and locators were retained;
 - incidental fragments and duplicate grains were excluded;
 - qualities were deferred rather than exploded;
@@ -906,24 +985,28 @@ Before emitting the object, confirm in order:
 2. Candidate and creator references are nonempty, and `candidate_ref` is non-APA.
 3. The complete case was mapped before unit selection.
 4. PLACE through LOCATOR were each rescanned from the complete map.
-5. Filtering and alias resolution occurred before numbering.
-6. Incidental early wording did not control ordering.
-7. Required inferred scene places, including relational and present-telling places, were considered.
-8. TIME rows are selectable frames rather than every temporal phrase.
-9. `B` is the speaker and its short tag is exactly `B`.
-10. PERSON aliases, collectives, relationships, and material anchors were resolved.
-11. Represented wholes were considered before dependent parts, contents, services, and results.
-12. OBJECT rows are selectable things rather than every noun.
-13. LABEL rows are salient source characterizations rather than every adjective or opening evaluation.
-14. VERB rows preserve complete lexical predicate constructions without auxiliary, copular, or fragment inflation.
-15. LOCATOR rows preserve complete useful relations and independently useful directional constructions.
-16. Tags are concise, source-near, and at the final coordinate grain.
-17. Source fields preserve uncertainty, questions, negation, comparison, attribution, correction, hypotheticals, dialect, and idiom.
-18. `qualities_available` was inspected coordinate by coordinate.
-19. Compounds are lightweight, useful, ordered, and fully registered.
-20. `_Q` exactly agrees with compound `qualities_available`.
-21. Units appear in fixed class blocks with consecutive canonical references.
-22. No forbidden work appears.
-23. The JSON validates against the immutable schema exactly.
+5. Filtering, dependency closure, and alias resolution occurred before numbering.
+6. Ordering uses first material class function rather than raw lexical encounter.
+7. Required broad, contained, object-relative, actor-relative, relational, off-scene, and present-telling places were considered.
+8. Surfaces and fixtures were not misclassified as PLACE solely because they can bear location.
+9. TIME rows are selectable periods, episodes, transitions, or future frames rather than every temporal phrase.
+10. Distinct narrative steps were not swallowed by one broad episode.
+11. `B` is the speaker and its short tag is exactly `B`.
+12. PERSON aliases and participation anchors were resolved.
+13. Merely possessive or beneficiary mentions did not incorrectly control PERSON ordering.
+14. Represented wholes were considered before dependent parts, contents, services, conditions, and results.
+15. OBJECT rows are selectable things rather than every noun.
+16. LABEL rows preserve salient source characterizations, alternatives, questions, negations, and corrections without adjective inflation.
+17. VERB rows preserve lexical predicate order and complete constructions without auxiliary, copular, or fragment inflation.
+18. Integrated predicates were not needlessly split, and independent matrix or embedded predicates were not swallowed.
+19. LOCATOR rows preserve complete broad, contained, directional, carrying, accompaniment, and relational forms without preposition inflation.
+20. Tags are concise, source-near, and at the final coordinate grain.
+21. Source fields preserve uncertainty, questions, negation, comparison, attribution, correction, hypotheticals, dialect, and idiom.
+22. `qualities_available` was inspected coordinate by coordinate.
+23. Compounds are lightweight, useful, ordered, and fully registered.
+24. `_Q` exactly agrees with compound `qualities_available`.
+25. Units appear in fixed class blocks with consecutive canonical references.
+26. No forbidden work appears.
+27. The JSON validates against the immutable schema exactly.
 
 External calibration, not the agent’s validation claims, determines final acceptance.
