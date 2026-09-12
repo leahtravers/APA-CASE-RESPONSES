@@ -71,19 +71,20 @@ jobs:
             echo "certified=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Calibrate hidden archetypes continuously inside this run
+      - name: Calibrate hidden archetypes on one bounded agent lineage
         id: calibration
         if: steps.final_state.outputs.certified != 'true'
         shell: bash
         run: |
           set -u
           mkdir -p researcher_inventory/runtime researcher_inventory/status
+          : > researcher_inventory/runtime/training_history.ndjson
+          python researcher_inventory/session_bootstrap.py
           PASS=0
           for ROUND in 1 2 3 4; do
             echo "=== CALIBRATION ROUND ${ROUND} ==="
-            python researcher_inventory/session_bootstrap.py
             if TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner; then
-              echo "first calibration pass; verifying same extractor again"
+              echo "first consecutive batch passed; checking the same saved extractor again"
               if TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner; then
                 PASS=1
                 break
@@ -97,10 +98,10 @@ jobs:
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
 
-          V9 sparse-literal apparatus passed two consecutive hidden-archetype verification batches. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
+          V9 sparse-literal apparatus passed two consecutive hidden-archetype verification batches on one calibration lineage. The worker had no archetype access. The immutable Case 2 and Case 6 workbook SHA-256 gate passed before calibration.
           EOF
 
-      - name: Run sealed Case 5 holdout
+      - name: Run sealed Case 5 exactly once on calibrated lineage
         id: holdout
         if: steps.calibration.outcome == 'success'
         shell: bash
@@ -118,7 +119,7 @@ jobs:
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
 
-          V9 passed immutable workbook hash verification, deterministic code tests, hidden Case 2/Case 6 calibration, sealed Case 5 holdout, then repeated calibration and holdout with a newly bootstrapped extractor. No archetypes were exposed to either worker.
+          V9 passed immutable workbook hash verification, deterministic code tests, repeated hidden Case 2/Case 6 calibration, one sealed Case 5 holdout on the calibration lineage, then Case 2/Case 6 and Case 5 again with a newly bootstrapped extractor that had no prior session history. No archetypes or holdout outputs were exposed to either worker.
           EOF
 
       - name: Commit durable status
@@ -139,7 +140,9 @@ jobs:
         run: |
           echo '=== ARCHETYPE INTEGRITY ==='
           test -f researcher_inventory/runtime/archetype_integrity.json && cat researcher_inventory/runtime/archetype_integrity.json || true
-          echo '=== CALIBRATION ==='
+          echo '=== COMPLETE CALIBRATION HISTORY ==='
+          test -f researcher_inventory/runtime/training_history.ndjson && cat researcher_inventory/runtime/training_history.ndjson || true
+          echo '=== LAST CALIBRATION BATCH ==='
           test -f researcher_inventory/runtime/test_results.json && cat researcher_inventory/runtime/test_results.json || true
           echo '=== HOLDOUT ==='
           test -f researcher_inventory/runtime/holdout_result.json && cat researcher_inventory/runtime/holdout_result.json || true
