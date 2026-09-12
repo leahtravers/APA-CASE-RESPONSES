@@ -1,8 +1,7 @@
-"""Create the reusable Researcher Inventory calibration agent.
+"""Create the replaceable semantic extractor used by inventory_apparatus.py.
 
-Requires OPENAI_API_KEY scoped to the APA Case Responses project.
-Actual researcher-inventory sessions are created per case with initial input.
-The agent receives both the behavioral contract and exact machine schema.
+The extractor does not own IDs, ordering, schema normalization, compounds, SQL rows,
+or access to archetypes. It answers bounded JSON extraction requests only.
 """
 from __future__ import annotations
 
@@ -14,10 +13,16 @@ from pathlib import Path
 
 API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
-CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V2")
-AGENT_ID_FILE = Path("researcher_inventory/runtime/agent_id.txt")
-CONTRACT = Path("researcher_inventory/AGENT_CONTRACT.md")
-OUTPUT_SCHEMA = Path("researcher_inventory/output_schema.json")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V8")
+AGENT_ID_FILE = Path("researcher_inventory/runtime/extractor_agent_id.txt")
+
+INSTRUCTIONS = """You are the APA Researcher Inventory semantic extraction subroutine.
+You receive one bounded JSON request at a time and return only the JSON value required by that request's response_schema.
+You never see or use approved archetypes, gold outputs, expected answers, expected counts, evaluator findings, or prior scored outputs.
+You do not assign final canonical IDs, decide database writes, promote records, score APA material, interpret psychology, or perform protected-thread analysis.
+Preserve exact source wording and source posture. Read the complete supplied source before extracting the requested class.
+Follow the supplied class rule and retention rule literally. Return JSON only, with no Markdown or explanation.
+"""
 
 
 def request(path: str, method: str = "GET", body=None):
@@ -42,49 +47,38 @@ def request(path: str, method: str = "GET", body=None):
             raw = exc.read(8192)
             payload = json.loads(raw) if raw else {}
             err = payload.get("error", {}) if isinstance(payload, dict) else {}
-            safe = {
+            detail += " " + json.dumps({
                 "type": err.get("type"),
                 "code": err.get("code"),
                 "param": err.get("param"),
                 "message": (err.get("message") or "")[:500],
-            }
-            detail += " " + json.dumps(safe, ensure_ascii=False)
+            }, ensure_ascii=False)
         except Exception:
             pass
         raise RuntimeError(f"OpenAI request failed: {detail}") from None
 
 
 def main():
-    contract = CONTRACT.read_text(encoding="utf-8")
-    schema = OUTPUT_SCHEMA.read_text(encoding="utf-8")
-    instructions = (
-        contract
-        + "\n\n## EXACT OUTPUT SCHEMA — OBEY LITERALLY\n"
-        + "The final answer MUST use these exact top-level keys and field names. Do not invent aliases such as unit_rows, compound_rows, validation_report, candidate_metadata, ref, source_text, researcher_tag, composition, or member_refs.\n\n"
-        + schema
-    )
     agent = request(
         "/agents",
         method="POST",
         body={
-            "name": f"APA Researcher Inventory {CONTRACT_VERSION}",
+            "name": f"APA Researcher Inventory Semantic Extractor {CONTRACT_VERSION}",
             "model": MODEL,
-            "instructions": instructions,
+            "instructions": INSTRUCTIONS,
             "metadata": {
-                "apa_role": "researcher_inventory",
+                "apa_role": "researcher_inventory_semantic_extractor",
                 "contract_version": CONTRACT_VERSION,
                 "promotion_authority": "none",
-                "training_mode": "archetype_calibration",
+                "archetype_access": "forbidden",
             },
         },
     )
-    agent_id = agent["id"]
     AGENT_ID_FILE.parent.mkdir(parents=True, exist_ok=True)
-    AGENT_ID_FILE.write_text(agent_id + "\n", encoding="utf-8")
-    print(f"agent_id={agent_id}")
+    AGENT_ID_FILE.write_text(agent["id"] + "\n", encoding="utf-8")
+    print(f"extractor_agent_id={agent['id']}")
     print(f"model={MODEL}")
     print(f"contract_version={CONTRACT_VERSION}")
-    print("session_policy=per_case_with_initial_input")
 
 
 if __name__ == "__main__":
