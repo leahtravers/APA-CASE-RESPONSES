@@ -1,6 +1,6 @@
 """Run repeatability fixtures against the dedicated Researcher Inventory saved agent.
 
-This runner does not write to Supabase. It tests behavior first.
+Every attempt is retained as training data, including failures.
 """
 from __future__ import annotations
 
@@ -16,6 +16,8 @@ API = "https://api.openai.com/v1"
 AGENT_ID_FILE = Path("researcher_inventory/runtime/agent_id.txt")
 FIXTURES = Path("researcher_inventory/tests/fixtures.json")
 RESULTS = Path("researcher_inventory/runtime/test_results.json")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V1")
+MODEL_REF = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
 
 
 def request(path: str, method: str = "GET", body=None):
@@ -68,6 +70,23 @@ def final_answer(session_id: str) -> str:
     return "\n".join(answers).strip()
 
 
+def classify(message: str) -> str:
+    m = message.lower()
+    if "valid json" in m or "unit class" in m or "self-validation" in m:
+        return "SCHEMA_VIOLATION"
+    if "forbidden normalization" in m:
+        return "OVER_NORMALIZATION"
+    if "missing preserved source phrase" in m:
+        return "SOURCE_FLATTENING"
+    if "over-granular" in m:
+        return "OVER_GRANULARITY"
+    if "under-inventory" in m:
+        return "UNDER_GRANULARITY"
+    if "unknown unit" in m:
+        return "BAD_COMPOUND"
+    return "OTHER"
+
+
 def validate_structure(payload: dict, fixture: dict):
     failures = []
     expected_classes = {"PLACE", "TIME", "PERSON", "OBJECT", "LABEL", "VERB", "LOCATOR"}
@@ -89,9 +108,6 @@ def validate_structure(payload: dict, fixture: dict):
         if phrase.lower() in searchable:
             failures.append(f"introduced forbidden normalization: {phrase}")
 
-    counts = {}
-    for u in payload.get("units", []):
-        counts[u.get("unit_class")] = counts.get(u.get("unit_class"), 0) + 1
     max_units = fixture.get("max_units")
     if max_units is not None and len(payload.get("units", [])) > max_units:
         failures.append(f"over-granular: {len(payload.get('units', []))} units > {max_units}")
@@ -108,53 +124,80 @@ def validate_structure(payload: dict, fixture: dict):
     ):
         if validation.get(key) is not True:
             failures.append(f"self-validation failed: {key}")
-    return failures, counts
+    return failures
 
 
 def run_fixture(agent_id: str, fixture: dict, iteration: int):
+    started = time.time()
+    training_run_ref = f"TRAIN-{fixture['name']}-R{iteration}-{int(started)}"
     prompt = (
         "Prepare researcher inventory. Return ONLY the JSON object required by your contract.\n\n"
         f"Candidate ref: {fixture['candidate_ref']}-R{iteration}\n"
         f"Researcher interest: {fixture.get('researcher_interest') or 'none supplied'}\n\n"
         "CASE TEXT:\n" + fixture["case_text"]
     )
-    session = request(
-        "/agents/sessions",
-        method="POST",
-        body={
-            "agent_id": agent_id,
-            "environment": {"type": "none"},
-            "input": prompt,
-            "metadata": {
-                "apa_session_type": "researcher_inventory_test",
-                "fixture": fixture["name"],
-                "iteration": str(iteration),
-            },
-        },
-    )
-    session_id = session["id"]
-    wait_for_terminal(session_id)
-    raw = final_answer(session_id)
+    session_id = None
+    raw = None
     try:
-        payload = json.loads(raw)
-    except json.JSONDecodeError:
-        return {
-            "fixture": fixture["name"],
-            "iteration": iteration,
-            "session_id": session_id,
-            "pass": False,
-            "failures": ["final answer was not bare valid JSON"],
+        session = request(
+            "/agents/sessions",
+            method="POST",
+            body={
+                "agent_id": agent_id,
+                "environment": {"type": "none"},
+                "input": prompt,
+                "metadata": {
+                    "apa_session_type": "researcher_inventory_test",
+                    "fixture": fixture["name"],
+                    "iteration": str(iteration),
+                    "training_run_ref": training_run_ref,
+                    "contract_version": CONTRACT_VERSION,
+                },
+            },
+        )
+        session_id = session["id"]
+        wait_for_terminal(session_id)
+        raw = final_answer(session_id)
+        try:
+            payload = json.loads(raw)
+        except json.JSONDecodeError:
+            failures = ["final answer was not bare valid JSON"]
+            payload = None
+        else:
+            failures = validate_structure(payload, fixture)
+    except Exception as exc:
+        failures = [f"runtime failure: {type(exc).__name__}: {exc}"]
+        payload = None
+
+    findings = [
+        {
+            "finding_ref": f"{training_run_ref}-F{i+1}",
+            "finding_class": classify(msg),
+            "severity": "ERROR",
+            "expected_behavior": "conform to Researcher Inventory contract and fixture invariants",
+            "observed_behavior": msg,
         }
-    failures, counts = validate_structure(payload, fixture)
+        for i, msg in enumerate(failures)
+    ]
+    finished = time.time()
     return {
+        "training_run_ref": training_run_ref,
+        "contract_version_ref": CONTRACT_VERSION,
         "fixture": fixture["name"],
-        "iteration": iteration,
-        "session_id": session_id,
+        "source_case_ref": fixture.get("source_case_ref"),
+        "source_case_text": fixture["case_text"],
+        "researcher_interest": fixture.get("researcher_interest"),
+        "model_ref": MODEL_REF,
+        "session_ref": session_id,
+        "attempt_no": iteration,
+        "run_status": "COMPLETED" if not failures else "FAILED",
+        "candidate_ref": payload.get("candidate_ref") if isinstance(payload, dict) else None,
+        "raw_output_text": raw,
+        "raw_output": payload,
+        "findings": findings,
         "pass": not failures,
-        "failures": failures,
-        "unit_counts": counts,
-        "unit_total": len(payload.get("units", [])),
-        "compound_total": len(payload.get("compounds", [])),
+        "started_unix": started,
+        "finished_unix": finished,
     }
 
 
@@ -167,7 +210,7 @@ def main():
         for iteration in range(1, repetitions + 1):
             result = run_fixture(agent_id, fixture, iteration)
             results.append(result)
-            print(json.dumps(result, ensure_ascii=False))
+            print(json.dumps({k: v for k, v in result.items() if k not in ("raw_output_text", "source_case_text")}, ensure_ascii=False))
     RESULTS.parent.mkdir(parents=True, exist_ok=True)
     RESULTS.write_text(json.dumps(results, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if not all(r["pass"] for r in results):
