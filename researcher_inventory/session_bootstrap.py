@@ -16,6 +16,7 @@ API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
 AGENT_ID_FILE = Path("researcher_inventory/runtime/agent_id.txt")
 CONTRACT = Path("researcher_inventory/AGENT_CONTRACT.md")
+OUTPUT_SCHEMA = Path("researcher_inventory/output_schema.json")
 
 
 def request(path: str, method: str = "GET", body=None):
@@ -53,7 +54,14 @@ def request(path: str, method: str = "GET", body=None):
 
 
 def main():
-    instructions = CONTRACT.read_text(encoding="utf-8")
+    contract = CONTRACT.read_text(encoding="utf-8")
+    schema = OUTPUT_SCHEMA.read_text(encoding="utf-8")
+    instructions = (
+        contract
+        + "\n\n## EXACT OUTPUT SCHEMA\n"
+        + "The final answer MUST use these exact top-level keys and field names. Do not invent aliases such as unit_rows, compound_rows, validation_report, candidate_metadata, ref, source_text, researcher_tag, composition, or member_refs.\n\n"
+        + schema
+    )
     agent = request(
         "/agents",
         method="POST",
