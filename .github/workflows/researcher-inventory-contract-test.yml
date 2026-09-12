@@ -1,0 +1,58 @@
+name: Researcher Inventory Contract Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'researcher_inventory/**'
+      - '.github/workflows/researcher-inventory-contract-test.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: researcher-inventory-contract-test
+  cancel-in-progress: false
+
+jobs:
+  repeatability-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
+      OPENAI_MODEL: gpt-5.6-sol
+      CONTRACT_VERSION: RI-CONTRACT-V1
+      TEST_REPETITIONS: '2'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify route-specific secret exists
+        shell: bash
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo 'CASES_INVENTORY_KEY is not available to this workflow.' >&2
+            exit 1
+          fi
+
+      - name: Bootstrap dedicated saved agent and session
+        run: python researcher_inventory/session_bootstrap.py
+
+      - name: Run repeatability fixtures
+        id: tests
+        continue-on-error: true
+        run: python researcher_inventory/test_runner.py
+
+      - name: Upload all training attempts, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: researcher-inventory-training-results
+          path: researcher_inventory/runtime/test_results.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Fail workflow if contract tests failed
+        if: steps.tests.outcome == 'failure'
+        run: exit 1
