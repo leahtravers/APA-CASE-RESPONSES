@@ -7,13 +7,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'researcher_inventory/AGENT_CONTRACT.md'
-      - 'researcher_inventory/inventory_apparatus.py'
-      - 'researcher_inventory/openai_agents_adapter.py'
-      - 'researcher_inventory/session_bootstrap.py'
-      - 'researcher_inventory/apparatus_calibration_runner.py'
-      - 'researcher_inventory/holdout_runner.py'
-      - 'researcher_inventory/tests/**'
+      - 'researcher_inventory/**'
       - '.github/workflows/researcher-inventory-contract-test.yml'
 
 permissions:
@@ -30,8 +24,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V8
+      CONTRACT_VERSION: RI-CONTRACT-V9
       RI_MODEL_COMMAND: python researcher_inventory/openai_agents_adapter.py
+      PYTHONPATH: .
     steps:
       - name: Checkout repository without external actions
         shell: bash
@@ -53,97 +48,68 @@ jobs:
           test -n "$OPENAI_API_KEY" || { echo 'CASES_INVENTORY_KEY missing' >&2; exit 1; }
 
       - name: Test deterministic apparatus mechanics without any model
-        shell: bash
         run: python -m unittest researcher_inventory.tests.test_inventory_apparatus -v
 
       - name: Stop when clean-room certification already exists
         id: final_state
-        shell: bash
         run: |
-          if [ -f researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md ]; then
-            echo "certified=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "certified=false" >> "$GITHUB_OUTPUT"
-          fi
+          if [ -f researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md ]; then echo "certified=true" >> "$GITHUB_OUTPUT"; else echo "certified=false" >> "$GITHUB_OUTPUT"; fi
 
       - name: Bootstrap replaceable semantic extractor
         if: steps.final_state.outputs.certified != 'true'
-        shell: bash
         run: python researcher_inventory/session_bootstrap.py
 
       - name: Hidden archetype calibration through mechanical apparatus
         id: calibration
         if: steps.final_state.outputs.certified != 'true'
         continue-on-error: true
-        shell: bash
         env:
           TEST_REPETITIONS: '3'
-        run: python researcher_inventory/apparatus_calibration_runner.py
+        run: python -m researcher_inventory.apparatus_calibration_runner
 
       - name: Mark apparatus archetype calibration passed
         if: steps.calibration.outcome == 'success'
-        shell: bash
         run: |
           mkdir -p researcher_inventory/status
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
-
-          The mechanical apparatus passed three independent runs of each approved hidden calibration case. The semantic extractor did not receive any archetype or expected answer. Canonical IDs, source-span validation, ordering, Q expression construction, compound integrity, and SQL-row shaping were owned by code.
+          Three independent runs of each hidden approved calibration case passed. The worker did not receive archetypes or expected answers.
           EOF
           git add researcher_inventory/status/ARCHETYPE_CALIBRATED.md
-          if ! git diff --cached --quiet; then
-            git commit -m "apparatus: mark hidden archetype calibration passed [skip ci]"
-            git pull --rebase origin main
-            git push origin main
-          fi
+          if ! git diff --cached --quiet; then git commit -m "apparatus: mark hidden archetype calibration passed [skip ci]"; git pull --rebase origin main; git push origin main; fi
 
       - name: Run sealed Case 5 through apparatus
         id: holdout
         if: steps.calibration.outcome == 'success'
         continue-on-error: true
-        shell: bash
-        run: python researcher_inventory/holdout_runner.py
+        run: python -m researcher_inventory.holdout_runner
 
       - name: Bootstrap brand-new extractor after holdout pass
         id: fresh
         if: steps.holdout.outcome == 'success'
-        shell: bash
         run: python researcher_inventory/session_bootstrap.py
 
       - name: Clean-room archetype verification with fresh extractor
         id: clean_archetypes
         if: steps.fresh.outcome == 'success'
         continue-on-error: true
-        shell: bash
         env:
           TEST_REPETITIONS: '1'
-        run: python researcher_inventory/apparatus_calibration_runner.py
+        run: python -m researcher_inventory.apparatus_calibration_runner
 
       - name: Clean-room Case 5 verification with fresh extractor
         id: clean_holdout
         if: steps.clean_archetypes.outcome == 'success'
         continue-on-error: true
-        shell: bash
-        run: python researcher_inventory/holdout_runner.py
+        run: python -m researcher_inventory.holdout_runner
 
       - name: Certify apparatus clean-room repeatability
         if: steps.clean_holdout.outcome == 'success'
-        shell: bash
         run: |
           mkdir -p researcher_inventory/status
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
-
-          Certified conditions:
-
-          1. Mechanical apparatus tests passed without a model.
-          2. Hidden Case 2 and Case 6 archetypes were never exposed to the worker/extractor.
-          3. Three repeated apparatus runs passed hidden archetype evaluation.
-          4. Sealed Case 5 passed only after calibration.
-          5. A brand-new semantic extractor was bootstrapped.
-          6. The fresh extractor passed hidden archetype verification and Case 5 again through the same apparatus.
-
-          Candidate/research status only. No APA IDs or Oval Office promotion.
+          Mechanical tests passed; hidden calibration passed; sealed Case 5 passed; a fresh extractor repeated both with no prior session history. Candidate/research status only. No APA IDs or Oval Office promotion.
           EOF
           git add researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md
           git commit -m "apparatus: clean-room certify researcher inventory [skip ci]"
@@ -152,7 +118,6 @@ jobs:
 
       - name: Preserve verification packets in log
         if: always() && steps.final_state.outputs.certified != 'true'
-        shell: bash
         run: |
           echo '=== APPARATUS CALIBRATION ==='
           if [ -f researcher_inventory/runtime/test_results.json ]; then cat researcher_inventory/runtime/test_results.json; else echo '{"not_run":true}'; fi
@@ -161,9 +126,8 @@ jobs:
 
       - name: Report continuation state
         if: always() && steps.final_state.outputs.certified != 'true'
-        shell: bash
         run: |
           if [ -f researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md ]; then echo 'CLEAN ROOM CERTIFIED'; exit 0; fi
-          if [ "${{ steps.calibration.outcome }}" != "success" ]; then echo 'Mechanical apparatus is intact; semantic extraction has not yet passed hidden archetype gate.'; exit 0; fi
+          if [ "${{ steps.calibration.outcome }}" != "success" ]; then echo 'Mechanical apparatus intact; semantic extraction has not yet passed hidden archetype gate.'; exit 0; fi
           if [ "${{ steps.holdout.outcome }}" != "success" ]; then echo 'Archetype gate passed; sealed holdout still requires correction.'; exit 0; fi
           echo 'Holdout passed; clean-room verification remains.'
