@@ -1,7 +1,7 @@
-"""Create or refresh the dedicated Researcher Inventory saved agent and session.
+"""Create the dedicated Researcher Inventory saved agent and session.
 
 Requires OPENAI_API_KEY scoped to the APA Case Responses project.
-Prints only stable IDs; never prints the API key.
+Prints only stable IDs and bounded API error metadata; never prints the API key.
 """
 from __future__ import annotations
 
@@ -35,13 +35,29 @@ def request(path: str, method: str = "GET", body=None):
             raw = response.read()
             return json.loads(raw) if raw.strip() else None
     except urllib.error.HTTPError as exc:
-        # Do not emit remote bodies because they can include sensitive request context.
-        raise RuntimeError(f"OpenAI request failed with HTTP {exc.code}") from None
+        detail = f"HTTP {exc.code}"
+        try:
+            raw = exc.read(8192)
+            payload = json.loads(raw) if raw else {}
+            err = payload.get("error", {}) if isinstance(payload, dict) else {}
+            safe = {
+                "type": err.get("type"),
+                "code": err.get("code"),
+                "param": err.get("param"),
+                "message": (err.get("message") or "")[:500],
+            }
+            detail += " " + json.dumps(safe, ensure_ascii=False)
+        except Exception:
+            pass
+        raise RuntimeError(f"OpenAI request failed: {detail}") from None
 
 
 def main():
     instructions = CONTRACT.read_text(encoding="utf-8")
 
+    # Keep the saved-agent payload deliberately minimal. Contract behavior lives
+    # in the repository instructions; optional runtime knobs can be added only
+    # after this base contract is proven stable.
     agent = request(
         "/agents",
         method="POST",
@@ -49,11 +65,9 @@ def main():
             "name": "APA Researcher Inventory",
             "model": MODEL,
             "instructions": instructions,
-            "reasoning": {"effort": "high"},
-            "multi_agent": {"enabled": False, "max_concurrent_subagents": 1},
             "metadata": {
                 "apa_role": "researcher_inventory",
-                "contract_version": "v1",
+                "contract_version": os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V1"),
                 "promotion_authority": "none",
             },
         },
@@ -68,7 +82,7 @@ def main():
             "environment": {"type": "none"},
             "metadata": {
                 "apa_session_type": "researcher_inventory",
-                "contract_version": "v1",
+                "contract_version": os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V1"),
                 "candidate_desk_only": "true",
             },
         },
