@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Hidden evaluator for the mechanical Researcher Inventory apparatus.
 
-The worker/apparatus never receives archetypes. This runner does.  The immutable
+The worker/apparatus never receives archetypes. This runner does. The immutable
 Case 2 and Case 6 workbook hashes are checked before any canonical extract is used.
-Every attempt is appended to durable runtime history for later database ingestion.
+Every attempt is appended to runtime history for later database ingestion.
+
+The comparator aligns units by class + normalized tag before checking canonical
+ordering. This prevents one early omission from creating a false cascade of tag
+mismatches for every later reference while still testing resolution, typing,
+ordering, Q, lexical preservation, and compound construction independently.
 """
 from __future__ import annotations
 
@@ -21,7 +26,7 @@ FIXTURES = Path("researcher_inventory/tests/fixtures.json")
 ARCHETYPES = Path("researcher_inventory/tests/archetypes")
 RESULTS = Path("researcher_inventory/runtime/test_results.json")
 HISTORY = Path("researcher_inventory/runtime/training_history.ndjson")
-CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V9")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V10")
 MODEL_REF = os.environ.get("OPENAI_MODEL", "unknown")
 ARCHETYPE_FILES = {
     "coupon_case": [ARCHETYPES / "coupon_case_archetype.ndjson"],
@@ -64,31 +69,103 @@ def load_archetype(name):
 def evaluate(payload, fixture):
     findings = []
     expected_units, expected_compounds = load_archetype(fixture["name"])
-    actual_units = {u["unit_ref"]: u for u in payload["units"]}
+    actual_units = list(payload["units"])
 
-    for ref, expected in expected_units.items():
-        actual = actual_units.get(ref)
-        if actual is None:
+    expected_order = list(expected_units)
+    unmatched_expected = set(expected_order)
+    unmatched_actual = set(range(len(actual_units)))
+    actual_to_expected: dict[str, str] = {}
+    expected_to_actual: dict[str, str] = {}
+
+    # First align exact semantic identity: same class + same normalized tag.
+    for i, actual in enumerate(actual_units):
+        atag = norm(actual.get("researcher_short_tag"))
+        candidates = [
+            ref for ref in expected_order
+            if ref in unmatched_expected
+            and expected_units[ref]["c"] == actual.get("unit_class")
+            and norm(expected_units[ref]["g"]) == atag
+        ]
+        if len(candidates) == 1:
+            ref = candidates[0]
+            actual_to_expected[actual["unit_ref"]] = ref
+            expected_to_actual[ref] = actual["unit_ref"]
+            unmatched_expected.remove(ref)
+            unmatched_actual.remove(i)
+
+    # Then detect class/type errors without turning them into missing+extra cascades.
+    for i in list(unmatched_actual):
+        actual = actual_units[i]
+        atag = norm(actual.get("researcher_short_tag"))
+        candidates = [
+            ref for ref in expected_order
+            if ref in unmatched_expected and norm(expected_units[ref]["g"]) == atag
+        ]
+        if len(candidates) == 1:
+            ref = candidates[0]
+            expected = expected_units[ref]
+            findings.append((
+                "TYPE_MISMATCH",
+                f"{actual['unit_ref']} tag {actual['researcher_short_tag']!r} typed {actual.get('unit_class')} but archetype types it {expected['c']} ({ref})",
+            ))
+            actual_to_expected[actual["unit_ref"]] = ref
+            expected_to_actual[ref] = actual["unit_ref"]
+            unmatched_expected.remove(ref)
+            unmatched_actual.remove(i)
+
+    for ref in expected_order:
+        if ref in unmatched_expected:
+            expected = expected_units[ref]
             findings.append(("MISSING_UNIT", f"missing {ref} [{expected['c']}] {expected['g']}"))
+
+    for i in sorted(unmatched_actual):
+        actual = actual_units[i]
+        findings.append(("EXTRA_UNIT", f"extra {actual['unit_ref']} [{actual['unit_class']}] {actual['researcher_short_tag']}"))
+
+    # Q is evaluated only on semantically aligned coordinates.
+    by_actual_ref = {u["unit_ref"]: u for u in actual_units}
+    for expected_ref, actual_ref in expected_to_actual.items():
+        expected = expected_units[expected_ref]
+        if "q" in expected and bool(by_actual_ref[actual_ref]["qualities_available"]) != bool(expected["q"]):
+            findings.append(("BAD_Q_FLAG", f"Q mismatch {expected_ref} ({expected['g']})"))
+
+    # Ordering is a separate diagnostic, not a cascade of false tag mismatches.
+    classes = []
+    for ref in expected_order:
+        cls = expected_units[ref]["c"]
+        if cls not in classes:
+            classes.append(cls)
+    for cls in classes:
+        expected_cls = [ref for ref in expected_order if expected_units[ref]["c"] == cls and ref in expected_to_actual]
+        actual_cls_refs = []
+        for actual in actual_units:
+            mapped = actual_to_expected.get(actual["unit_ref"])
+            if mapped and expected_units[mapped]["c"] == cls and actual["unit_class"] == cls:
+                actual_cls_refs.append(mapped)
+        if actual_cls_refs != expected_cls:
+            findings.append((
+                "ORDERING_MISMATCH",
+                f"{cls} semantic order {actual_cls_refs} != archetype order {expected_cls}",
+            ))
+
+    # Translate actual compound refs into archetype semantic refs before comparing.
+    mapped_compounds = {}
+    for compound in payload["compounds"]:
+        refs = compound.get("referenced_unit_refs", [])
+        if any(ref not in actual_to_expected for ref in refs):
+            missing = [ref for ref in refs if ref not in actual_to_expected]
+            findings.append(("BAD_COMPOUND", f"compound {compound.get('compound_ref')} uses unmatched unit refs {missing}"))
             continue
-        if actual["unit_class"] != expected["c"]:
-            findings.append(("OTHER", f"class mismatch {ref}: {actual['unit_class']} != {expected['c']}"))
-        if norm(actual["researcher_short_tag"]) != norm(expected["g"]):
-            findings.append(("OTHER", f"tag mismatch {ref}: {actual['researcher_short_tag']!r} != {expected['g']!r}"))
-        if "q" in expected and bool(actual["qualities_available"]) != bool(expected["q"]):
-            findings.append(("BAD_Q_FLAG", f"Q mismatch {ref}"))
+        mapped_refs = [actual_to_expected[ref] for ref in refs]
+        expression = "_".join(mapped_refs) + ("_Q" if bool(compound.get("qualities_available")) else "")
+        mapped_compounds[expression] = compound
 
-    for ref, actual in actual_units.items():
-        if ref not in expected_units:
-            findings.append(("EXTRA_UNIT", f"extra {ref} [{actual['unit_class']}] {actual['researcher_short_tag']}"))
-
-    actual_compounds = {c["compound_expression"]: c for c in payload["compounds"]}
     for expression in expected_compounds:
-        if expression not in actual_compounds:
-            findings.append(("BAD_COMPOUND", f"missing compound {expression}"))
-    for expression in actual_compounds:
+        if expression not in mapped_compounds:
+            findings.append(("BAD_COMPOUND", f"missing semantic compound {expression}"))
+    for expression in mapped_compounds:
         if expression not in expected_compounds:
-            findings.append(("BAD_COMPOUND", f"extra compound {expression}"))
+            findings.append(("BAD_COMPOUND", f"extra semantic compound {expression}"))
 
     searchable = norm(json.dumps(payload, ensure_ascii=False))
     for phrase in fixture.get("must_preserve", []):
