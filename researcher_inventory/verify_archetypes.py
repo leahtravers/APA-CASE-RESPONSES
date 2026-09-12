@@ -13,7 +13,9 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import struct
 import zipfile
+import zlib
 
 ROOT = Path(__file__).resolve().parent
 ARCHETYPES = ROOT / "tests" / "archetypes"
@@ -42,6 +44,85 @@ def _zip_members(raw: bytes) -> dict[str, bytes] | None:
         return None
 
 
+def _recover_local_entries(raw: bytes) -> dict[str, bytes]:
+    """Recover complete local-file entries when the outer ZIP central directory is missing."""
+    out: dict[str, bytes] = {}
+    pos = 0
+    sig = b"PK\x03\x04"
+    while True:
+        start = raw.find(sig, pos)
+        if start < 0 or start + 30 > len(raw):
+            break
+        try:
+            (
+                signature,
+                version,
+                flags,
+                method,
+                mtime,
+                mdate,
+                crc32,
+                comp_size,
+                uncomp_size,
+                name_len,
+                extra_len,
+            ) = struct.unpack_from("<IHHHHHIIIHH", raw, start)
+        except struct.error:
+            break
+        name_start = start + 30
+        data_start = name_start + name_len + extra_len
+        if data_start > len(raw):
+            break
+        name = raw[name_start:name_start + name_len].decode("utf-8", errors="replace")
+
+        data: bytes | None = None
+        end: int | None = None
+        if comp_size and data_start + comp_size <= len(raw):
+            compressed = raw[data_start:data_start + comp_size]
+            if method == 0:
+                data = compressed
+            elif method == 8:
+                try:
+                    data = zlib.decompress(compressed, -15)
+                except zlib.error:
+                    data = None
+            end = data_start + comp_size
+        elif method == 8:
+            # Data-descriptor form: deflate stream itself tells us where it ends.
+            d = zlib.decompressobj(-15)
+            try:
+                data = d.decompress(raw[data_start:]) + d.flush()
+                consumed = len(raw[data_start:]) - len(d.unused_data)
+                if d.eof and consumed > 0:
+                    end = data_start + consumed
+                else:
+                    data = None
+            except zlib.error:
+                data = None
+        elif method == 0:
+            # Stored entry with descriptor: next local header bounds the data.
+            nxt = raw.find(sig, data_start)
+            if nxt > data_start:
+                data = raw[data_start:nxt]
+                end = nxt
+
+        if data is not None:
+            if uncomp_size and len(data) != uncomp_size:
+                data = None
+            elif crc32 and (zlib.crc32(data) & 0xFFFFFFFF) != crc32:
+                data = None
+
+        if data is not None and name and not name.endswith("/"):
+            out[Path(name).name] = data
+
+        if end is None or end <= start:
+            pos = start + 4
+        else:
+            # Skip optional data descriptor if present; otherwise next scan is safe.
+            pos = end
+    return out
+
+
 def package_members() -> tuple[dict[str, bytes], str]:
     chunks = sorted(PACKAGE.glob("chunk_*.txt"))
     if not chunks:
@@ -64,6 +145,10 @@ def package_members() -> tuple[dict[str, bytes], str]:
         members = _zip_members(raw)
         if members is not None:
             return members, mode
+        recovered = _recover_local_entries(raw)
+        if recovered:
+            diagnostics[-1]["recovered_names"] = sorted(recovered)
+            return recovered, mode + ":local-entry-recovery"
 
     raise RuntimeError(f"authoritative package could not be decoded as ZIP; diagnostics={diagnostics}")
 
