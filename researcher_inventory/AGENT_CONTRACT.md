@@ -1,14 +1,14 @@
-# RESEARCHER INVENTORY WORKER CONTRACT v14
+# RESEARCHER INVENTORY WORKER CONTRACT v15
 
 Status: ACTIVE
-Contract version: RI-CONTRACT-V14
+Contract version: RI-CONTRACT-V15
 Mission: RESEARCHER INVENTORY ONLY
 
 ## Isolation
 
 The worker never receives or uses approved archetypes, gold outputs, expected answers, expected counts, evaluator findings, prior scored outputs, or sealed holdout outputs.
 
-The worker receives only the general job rules, one source story, optional neutral metadata, and the bounded task schema supplied by the apparatus.
+The worker receives only the durable general job rules, one source story, optional neutral metadata, a bounded task schema, and when explicitly supplied by the apparatus an unscored provisional output from another stateless pass under this same contract.
 
 ## Job
 
@@ -26,177 +26,202 @@ Then map the represented situations with lightweight compounds.
 
 This is an index, not an interpretation and not a grammatical parse.
 
-The inventory is intentionally sparse. A coordinate is retained only when it gives the researcher a distinct reusable handle that would otherwise be lost. Do not turn clauses into their grammatical parts. Do not create a row merely because a word, phrase, verb, noun, adjective, temporal expression, or preposition exists.
+Do less means less invention, less qualification, and less grammatical debris. It does not mean fewer materially represented coordinates.
 
-## Independent-coordinate gate
+Completeness means retaining every materially distinct researcher-selectable coordinate at the smallest sufficient functional grain. Do not stop after the salient items, but do not turn the source into a token inventory.
 
-For the requested class, ask of every candidate:
+## Class-local independent-coordinate gate
 
-> If this row were removed, would a materially distinct researcher-selectable function of this class disappear?
+Evaluate every bounded class independently.
 
-If no, omit it.
+For each candidate ask:
 
-A source span may support coordinates in more than one class when it truly performs different independent jobs. But grammatical describability in several classes is not enough. Do not duplicate one semantic job across classes.
+> If this candidate were removed from this requested class, would a materially distinct function of this class disappear from the inventory?
 
-Resolve aliases and coreference before applying the gate. Pronouns, restatements, support words, and grammatical fragments are not new coordinates when they only point to already represented material.
+- If yes, retain it.
+- If no, omit it.
+- Grammar alone never creates a coordinate.
+- Salience alone never creates a coordinate.
+- A source span may independently support more than one class when it performs different jobs in those classes.
+- Never omit a legitimate coordinate merely because the same wording or cue already supports another class.
+- Never duplicate one job merely because the wording can be grammatically described in several ways.
+- Resolve aliases and coreference before applying the gate.
+- Remove duplicate mentions and unsupported inference, not materially distinct source jobs.
 
-## Whole-source procedure
+## Whole-source coverage discipline
 
-For every class:
+For every requested class:
 
 1. Read the entire source before answering.
-2. Walk the represented story in source order.
-3. Consider remembered, reported, recurring, reflective, intended, questioned, hypothetical, negated, and prospective material without flattening its posture.
-4. Retain only distinct class functions.
-5. Resolve aliases and repeated mentions.
-6. Run one omission pass.
-7. Run one excess pass and delete anything whose removal loses no distinct requested-class function.
+2. Walk the represented story from beginning to end.
+3. Consider actual, remembered, reported, relational, recurring, reflective, intended, questioned, hypothetical, negated, corrected, and prospective material without flattening its posture.
+4. For each materially distinct represented situation or relation, ask whether this requested class needs a coordinate.
+5. Anchor every retained coordinate to exact source evidence.
+6. Resolve aliases, dependencies, and repeated mentions.
+7. Run an end-to-end omission pass.
+8. Run an end-to-end excess pass.
 
-Completeness means complete coverage of functional coordinates, not maximal linguistic decomposition.
+A situation may contain several coordinates of one class when those coordinates perform different reusable jobs. Conversely, several happenings may share one coordinate when they are merely substeps of the same class function.
 
 ## Literal-language rule
 
 Never substitute a synonym because it is convenient. Never polish, normalize, translate, or psychologically explain source wording.
 
-`source_wording` must be exact source text when the coordinate itself is explicitly worded. `source_cue` must be exact source text anchoring the coordinate. A materially required unnamed PLACE or TIME may use `source_wording = null` with an exact source cue and a neutral researcher tag.
+`source_wording` must be exact source text when the coordinate itself is explicitly worded. `source_cue` must be exact source text anchoring the coordinate.
 
-Use the shortest complete source-near form that preserves the coordinate's semantic job. `researcher_note` should normally be null and is reserved for necessary coreference or unnamed-coordinate bookkeeping.
+Use the shortest complete source-near form that preserves the coordinate's job. Do not absorb subjects, objects, neighboring predicates, explanations, or qualifiers unless they are needed to keep the coordinate complete.
+
+A materially required unnamed PLACE or TIME may use `source_wording = null`, an exact source cue, and a neutral researcher tag. Lack of a place name or clock/date expression never by itself defeats a PLACE or TIME.
+
+`researcher_note` should normally be null. Use it only for necessary coreference, unnamed-coordinate, or mechanical bookkeeping.
 
 ## PLACE
 
-PLACE is a site or position at which represented material is situated or occurs. It is not a vocabulary list of place-like phrases and it is not a list of every motion endpoint that can be imagined.
+PLACE is a represented site or occurrence-position needed to locate material. It is not merely a list of place nouns and it is not limited to unique physical venues.
 
-Retain:
+Retain when independently useful:
 
-- broad and contained settings when each independently locates represented material;
-- a materially represented object position when independently useful;
-- a represented destination or origin when the source actually establishes a distinct site/position;
-- the position of a distinct wait, encounter, later conversation, remembered occurrence, or present telling when that occurrence needs its own scene handle, even if the physical venue is unnamed or overlaps another place.
+- broad and contained settings;
+- a materially represented object's position;
+- a materially represented origin or destination;
+- the position of a distinct wait, encounter, conversation, remembered occurrence, or present telling;
+- an unnamed occurrence-position even when it physically overlaps another retained PLACE.
 
-Do not create PLACE merely from:
+Different events can require different PLACE coordinates even if the physical venue is the same or unnamed.
 
-- movement wording whose independent job is path/direction;
-- a contemplated exit or movement without a separately represented destination site;
-- a recurring activity that does not distinguish a separate setting;
-- a surface, container, body part, internal state, figurative phrase, or setting-like noun that does not independently locate represented material.
+Do not create PLACE merely because wording denotes a surface, container, body part, geographic term, figurative phrase, or motion. A contemplated exit or movement is not a new PLACE unless a distinct destination site/position is represented. A recurring activity is not a new PLACE unless its setting is independently distinguished.
 
-For unnamed places, `source_wording` is null and the tag is neutral. When broad and contained settings first arise together, broad comes first.
+For unnamed places, `source_wording` is null. When broad and contained settings arise together, broad precedes contained.
 
 ## TIME
 
-TIME is a coherent represented episode or frame. It is not a row per action, transition word, question, tense, aspect, frequency phrase, or future-looking predicate.
+TIME is a materially distinct represented episode or frame needed to reconnect the story. It does not require a clock, date, duration, or temporal noun.
 
-Several happenings may share one TIME. Several reflections in the current telling may share one present-reflection TIME. An action inside an existing episode does not create another TIME merely because it occurs later within that episode.
+Retain distinct frames such as an initial condition/attempt, a response episode, a materially distinct transition/departure episode, a wait, an intended period, a later conversation/report, a recurring span, present reflection, or a separately represented prospective/future frame.
 
-Retain a new TIME only when the story establishes a materially distinct frame needed to reconnect the material, such as a distinct earlier/later episode, wait, later conversation/report, recurring period, present reflection, or separately represented prospective/future frame.
+Do not create a TIME merely from tense, aspect, sequence language, frequency wording, a question, or every action inside an existing frame. Several substeps may share one TIME. Split only when a new episode/frame is materially represented.
 
-A contemplated action inside a current episode does not automatically create a prospective TIME. A transition or departure does not automatically create its own TIME. A reflective predicate does not automatically create its own TIME. Frequency, duration, sequence, tense, and aspect are evidence only.
+A contemplated action inside the current frame does not automatically create a prospective TIME. A prospective TIME is warranted only when the source separately represents the future/prospective frame. Likewise, multiple reflective predicates in the same current telling do not automatically create multiple present-reflection TIMES.
 
-For unnamed times, `source_wording` is null and the tag is a neutral episode description. Preserve questioned, intended, recurring, hypothetical, and prospective posture without asserting events occurred.
+For unnamed times, `source_wording` is null and the exact source cue anchors a neutral episode description. Preserve intended, questioned, recurring, hypothetical, and future posture without asserting that the content happened.
 
 ## PERSON
 
-Retain the speaker plus materially represented human or social actors that act, speak, perceive, are acted upon, or serve as materially represented endpoints of relations.
+Retain the speaker plus every materially represented human or social actor that acts, speaks, perceives, is acted upon, or serves as a materially represented endpoint of a relation.
 
 Merge true aliases and coreference. The speaker canonical key is `B`.
 
-For everyone else, ordering follows first independent represented participation. A person mentioned only as possessor, beneficiary, or descriptor does not outrank independently participating actors. If such a person never independently participates, retain them after participating actors in source order.
+Order non-speakers by first independent represented participation. A person mentioned only as possessor, beneficiary, or descriptor does not outrank independently participating actors. If such a person never independently participates, retain them after participating actors in source order.
 
-Do not create PERSON from generic audiences, hypothetical roles, discourse addressees, or pronouns without independent participation.
+Do not create PERSON for a generic audience, generic person, discourse addressee, hypothetical role, or pronoun without a materially represented actor.
 
 ## OBJECT
 
-OBJECT is a source-treated independently trackable referent, concrete or abstract. It is not every noun phrase and not every clause that can be nominalized.
+OBJECT is a source-treated independently selectable concrete or abstract thing. It is not every noun phrase and not every clause that can be nominalized.
 
-Retain physical things, source-distinguished wholes/parts, amounts or values, decisions/next steps, independently represented choices treated as things, recurring relations treated as things, named sets/categories, and internal represented objects when the source treats them as independently selectable referents.
+Retain when represented as independently trackable:
 
-Do not create OBJECT solely from:
+- physical things and materially distinguished wholes/parts;
+- amounts and values;
+- orders, services, results, or conditions treated as things;
+- decisions and next steps;
+- contemplated choices treated as whole selectable things;
+- recurring relations treated as things;
+- named sets/categories;
+- internal represented objects;
+- source-treated entities inside remembered, questioned, comparative, or hypothetical material.
 
-- an embedded proposition or grammatical complement;
-- a whole event restated as a noun phrase;
-- an idiomatic slot noun whose meaning belongs to a larger characterization or predicate;
-- a predicate complement that only completes a LABEL or VERB;
-- a pronoun or generic placeholder that only corefers;
-- incidental nouns inside description;
-- a PLACE whose only job is location;
-- a LABEL whose only job is characterization.
+Do not create OBJECT from a pronoun that only corefers, incidental nouns, discourse wording, a grammatical complement with no independent referential job, a whole proposition merely because it can be nominalized, a PLACE whose only job is location, or a LABEL whose only job is characterization.
 
-A contemplated choice is an OBJECT only when the choice as a whole is independently represented as something that can be selected later, not merely because its component verbs appear.
+Do not let evaluative or descriptive wording hide an independently represented referent. Do not discard a materially distinct part merely because its whole is also retained.
 
 ## LABEL
 
-LABEL is an independently selectable source-applied characterization. It is not every adjective, state predicate, negation, comparative phrase, or clause containing evaluative language.
+LABEL is an independently selectable source-applied characterization. LABEL is separate from `qualities_available`.
 
-Retain a characterization, quality, comparison, identity term, self-label, evaluation, contrast, rejection, correction, or characterization-question when the characterization itself is a distinct reusable handle.
+Retain materially represented qualities, states, comparisons, identity terms, self-labels, evaluations, contrasts, rejections, corrections, and characterization-questions when the characterization itself is a reusable source handle.
 
-Extract the characterization itself, not the surrounding stance or control predicate. If a source construction expresses wanting, thinking, asking, or appearing plus a characterization, do not turn the entire stance construction into a second LABEL when the characterization is the actual label.
+Use the shortest complete exact source wording that carries the characterization. Preserve negation, question, uncertainty, contrast, rejection, and correction posture when necessary to prevent reversal.
 
-Do not duplicate a VERB state as LABEL unless the wording independently functions as characterization. Do not create a second LABEL merely from comparative or intensifier wording that only modifies an already retained characterization. Conversely, locational or relational wording may also be LABEL when the source independently applies it as a salient characterization rather than merely locating something.
+Extract the characterization, not surrounding stance/control wording. Do not create a second LABEL merely from an intensifier or comparative wrapper around an already represented characterization. Do not duplicate an ordinary predicate as LABEL unless the source wording independently performs a characterization job.
 
-Preserve question, negation, uncertainty, contrast, and correction posture as needed to prevent reversal. Use the shortest complete exact source wording carrying the characterization.
+Locational or relational wording may also be LABEL when the source independently uses it as a characterization rather than merely as location/context.
 
 ## VERB
 
-VERB is a minimal semantic predicate increment, not a list of grammatical verb tokens.
+VERB inventories materially represented lexical predicate increments in source order. It is not a list of every grammatical verb token, but it is also not a list of only broad event summaries.
 
-A single VERB coordinate may contain more than one grammatical verb when those words form one semantic predicate construction. Keep semantically bound support/control/raising/infinitival/copular material together when separating it would create artificial rows. Coordinated actions may remain one VERB when the source presents them as one selectable alternative or action package.
+Use the smallest complete lexical predicate construction that preserves the distinct happening, state, stance, or relation and its source posture.
 
-Split predicates only when each contributes a genuinely different researcher-selectable semantic relation or happening.
+- Split matrix and embedded predicates when each contributes a different independently selectable predicate relation.
+- Split coordinated predicates when they perform different jobs.
+- Keep auxiliaries/support/aspect material with the lexical predicate when separating it would create grammatical debris.
+- Keep a semantically bound multiword predicate together when its pieces do not independently do different jobs.
+- Retain predicates under negation, uncertainty, questions, intentions, hypotheticals, proposals, recurrence, and future language.
+- A quality copula whose only semantic content is an independently retained LABEL is normally not a second VERB.
+- A locative copula whose only semantic content is an independently retained LOCATOR is normally not a second VERB unless the source independently represents the placement/existence relation itself as a predicate handle.
+- Do not create a VERB from an entire question or clause when a shorter lexical predicate carries the job.
+- Do not create new rows for repeated/coreferential mentions of the same predicate.
 
-Do not create separate VERB rows merely for:
-
-- auxiliaries, copulas, support verbs, participles, or infinitival pieces of one predicate construction;
-- a complete question clause when the useful predicate can be represented at predicate grain;
-- a copular restatement whose semantic job is already the retained LABEL or LOCATOR;
-- repeated or paraphrased mentions of an already retained predicate;
-- discourse management, filler, or quotation-introduction fragments unless that act itself materially matters.
-
-Keep distinct stance/relation predicates when the stance/relation materially matters. Keep a separately meaningful embedded modal/normative predicate when it carries an independent relation. Negation, questions, intentions, hypotheticals, recurrence, and future posture do not erase a distinct semantic predicate.
-
-Use the shortest source-near predicate form that preserves its semantic job and posture. Inventorying a predicate never asserts that its event happened.
+Inventorying a predicate never asserts that its event happened.
 
 ## LOCATOR
 
-LOCATOR is an independently useful location/path/containment/position/direction relation. It is not every prepositional phrase or contextual clause.
+LOCATOR is an independently useful where/which-position/which-path/which-context relation. It is broader than PLACE and is not limited to prepositions or literal physical space.
 
-Retain physical setting relations, contained-setting relations, movement/path relations, accompaniment when materially locational, destination/path constructions, position relations, and explicit internal/figurative location constructions when they genuinely function as a locating relation.
+Retain materially useful:
 
-Do not create LOCATOR from:
+- broad and contained setting relations;
+- position/proximity relations;
+- movement and path relations;
+- accompaniment when materially locational;
+- destination/origin constructions;
+- containment relations;
+- recurring or situational context relations when they independently reconnect represented material;
+- internal or figurative location relations when the source genuinely uses them as locating/context structure.
 
-- temporal subordinate clauses merely because they provide context;
-- possession, recipient, source, topic, comparison support, or grammatical complement marking;
-- abstract argument phrases that do not independently locate material;
-- ordinary predicate complements whose relation is already represented elsewhere.
+Use the smallest complete meaningful construction, not an isolated preposition.
 
-A repeated position wording may remain distinct when it supplies a materially different locating relation rather than merely repeating the same place. Evaluate LOCATOR independently from PLACE/TIME, but do not use it as a catch-all relational class.
+Do not create LOCATOR from routine possession, recipient, topic, argument/complement marking, or comparison support when no independent locating/path/context job would be lost. A temporal or subordinate construction may be a LOCATOR only when its source job independently supplies reusable context rather than merely grammar.
 
-When broad and contained setting relations arise together, broad comes first.
+Evaluate LOCATOR independently from PLACE and TIME. When broad and contained setting locators arise together, broad precedes contained.
 
 ## qualities_available
 
-`qualities_available` is only a boolean. Set true when the source supplies material qualities/descriptions associated with the coordinate, otherwise false. Do not create, split, score, or interpret qualities merely to justify the boolean. `Q` is never a unit reference.
+`qualities_available` is only a boolean. Set it true when the source supplies material qualities/descriptions associated with the coordinate, otherwise false. Do not create, split, classify, score, or interpret qualities merely to justify the boolean. `Q` is never a unit reference.
 
 ## Ordering and apparatus boundary
 
 The apparatus, not the worker, owns final canonical IDs, deterministic numbering, exact-source validation, ordering enforcement, compound reference validation, `_Q` construction, SQL-ready shaping, retries, and failure handling.
 
-Default within-class order is first material source anchor after filtering and coreference resolution, with these semantic tie rules:
+Default within-class order is first material source anchor after filtering/coreference resolution, with these tie rules:
 
 - whole/broad setting before dependent part/contained setting when first introduced together;
 - PERSON follows participation order;
-- memories, reports, hypotheticals, and future frames stay at source position rather than being reordered into real-world chronology.
+- remembered/reported/hypothetical/future frames stay at source position rather than being reordered into real-world chronology.
 
 The worker must not depend on preexisting canonical IDs.
 
+## Stateless verification pass
+
+The apparatus may send an unscored provisional output to a separate stateless session under this same contract.
+
+The provisional output is not gold, not evaluator feedback, not an expected answer, and not authoritative. Re-read the whole source and rebuild the requested result. Use the provisional only as an omission/excess checklist. Do not keep a row because the first pass produced it and do not omit a row because the first pass omitted related material.
+
 ## Compounds
 
-After units are final, map the story at lightweight event/proposition grain using only retained units.
+After units are final, map the represented story at lightweight event/proposition grain using only retained units.
 
-Create one compound for each materially distinct represented situation, assertion, question, correction, comparison, reflection, or prospective proposition useful for reconnecting the inventory.
+Create a compound for each materially distinct represented proposition, situation, predicate relation, characterization proposition, question, correction, comparison, reflection, or prospective relation that is useful for reconnecting the inventory.
 
-A compound binds already-retained coordinates. It must not create semantics, justify unnecessary units, or repair a missing unit. Keep jointly expressed pieces together when they form one proposition; split materially different propositions. Do not make compounds for grammatical fragments that failed the coordinate gate.
+A compound binds already-retained coordinates; it never repairs a missing unit or creates semantics.
 
-Use registered unit references only.
+- Prefer proposition-level coverage over a few broad scene summaries.
+- Split materially different propositions.
+- Keep pieces together when they jointly express one proposition.
+- Do not create compounds for grammatical fragments or rejected coordinates.
+- Do not create a compound merely because a unit exists.
+- Use registered unit references only.
 
 ## Forbidden work
 
