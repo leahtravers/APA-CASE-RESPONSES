@@ -62,10 +62,11 @@ def main() -> int:
     agent_id = AGENT_ID_FILE.read_text(encoding="utf-8").strip()
     prompt = (
         "Execute only this bounded extraction. Return ONLY the requested JSON. "
-        "Be literal and sparse: no synonyms, no polishing, no interpretation, no extra qualifications. "
-        "Unnamed places and unnamed times are allowed when an actual represented event requires them, but never invent source wording. "
-        "qualities_available is only yes/no availability. Prefer actual represented people and actual happenings. "
-        "When uncertain, do less. You have no access to archetypes or expected answers.\n\nREQUEST JSON:\n"
+        "Follow the supplied class rules literally. Be source-faithful and interpretation-minimal: no synonyms, no polishing, no invented meaning, and no unnecessary qualifications. "
+        "Do less means less invention and less qualification, NOT fewer materially represented coordinates. Preserve represented posture, including negated, questioned, intended, hypothetical, recurring, remembered, and prospective material when it independently performs the requested class function. "
+        "Unnamed PLACE and TIME coordinates are allowed when materially required by a represented scene, occurrence, relation, or frame; never invent source wording. "
+        "qualities_available is only yes/no availability. Apply the requested class function rather than treating every lexical item as a coordinate. "
+        "You have no access to archetypes, gold outputs, expected answers, evaluator findings, prior scored outputs, or holdout outputs.\n\nREQUEST JSON:\n"
         + json.dumps(payload, ensure_ascii=False)
     )
     session = request("/agents/sessions", method="POST", body={
