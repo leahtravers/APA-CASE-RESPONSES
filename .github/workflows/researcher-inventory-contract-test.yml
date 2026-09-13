@@ -26,7 +26,7 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
       CONTRACT_VERSION: RI-CONTRACT-V11
-      RI_MODEL_COMMAND: python researcher_inventory/openai_agents_adapter.py
+      RI_MODEL_COMMAND: python researcher_inventory/v11_openai_agents_adapter.py
     steps:
       - name: Checkout repository without external actions
         shell: bash
@@ -83,13 +83,13 @@ jobs:
           python researcher_inventory/session_bootstrap.py
 
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.apparatus_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v11_calibration_runner
 
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v11_calibration_runner
 
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v11_calibration_runner
 
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
@@ -110,7 +110,7 @@ jobs:
         run: |
           set -euo pipefail
           python researcher_inventory/session_bootstrap.py
-          TEST_REPETITIONS=2 python -m researcher_inventory.apparatus_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v11_calibration_runner
           python -m researcher_inventory.holdout_runner
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
