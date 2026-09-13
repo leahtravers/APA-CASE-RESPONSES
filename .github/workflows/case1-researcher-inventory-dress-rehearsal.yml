@@ -1,0 +1,146 @@
+name: Case 1 Researcher Inventory Dress Rehearsal
+
+on:
+  workflow_dispatch:
+    inputs:
+      launch_authority_ref:
+        description: "Exact presidential launch authority ref. Workflow fails closed unless active in rehearsal authority table."
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: case1-ri-dress-rehearsal
+  cancel-in-progress: false
+
+jobs:
+  rehearsal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
+      OPENAI_MODEL: gpt-5.6-sol
+      CONTRACT_VERSION: RI-CONTRACT-V15
+      RI_MODEL_COMMAND: python researcher_inventory/v15_openai_agents_adapter.py
+      GATEWAY_URL: https://uvzkiajzzlujxtywhubx.supabase.co/functions/v1/case1-ri-rehearsal-gateway
+      LAUNCH_AUTHORITY_REF: ${{ inputs.launch_authority_ref }}
+    steps:
+      - name: Checkout repository without external actions
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth 1 origin main
+          git checkout -B main FETCH_HEAD
+
+      - name: Verify current worker contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '^Contract version: RI-CONTRACT-V15$' researcher_inventory/AGENT_CONTRACT.md
+          test -f researcher_inventory/v15_openai_agents_adapter.py
+          test -n "$OPENAI_API_KEY"
+
+      - name: Obtain GitHub OIDC token
+        id: oidc
+        shell: bash
+        run: |
+          set -euo pipefail
+          TOKEN_JSON="$(curl -fsS -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=apa-case1-ri-rehearsal")"
+          TOKEN="$(python -c 'import json,sys; print(json.load(sys.stdin)["value"])' <<<"$TOKEN_JSON")"
+          test -n "$TOKEN"
+          echo "token=$TOKEN" >> "$GITHUB_OUTPUT"
+
+      - name: Fail closed unless launch authority is active
+        shell: bash
+        env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, urllib.request
+          body=json.dumps({"action":"preflight","launch_authority_ref":os.environ["LAUNCH_AUTHORITY_REF"]}).encode()
+          req=urllib.request.Request(os.environ["GATEWAY_URL"],data=body,headers={"Authorization":"Bearer "+os.environ["OIDC_TOKEN"],"Content-Type":"application/json"},method="POST")
+          with urllib.request.urlopen(req,timeout=60) as r: data=json.load(r)
+          print(json.dumps(data,indent=2))
+          if data.get("contract_version")!="RI-CONTRACT-V15": raise SystemExit("gateway contract mismatch")
+          if data.get("launch_authority_active") is not True: raise SystemExit("dress rehearsal launch authority is not active")
+          PY
+
+      - name: Retrieve exact Case 1 source through governed gateway
+        shell: bash
+        env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p researcher_inventory/runtime
+          python - <<'PY'
+          import json, os, urllib.request, pathlib
+          body=json.dumps({"action":"source","launch_authority_ref":os.environ["LAUNCH_AUTHORITY_REF"]}).encode()
+          req=urllib.request.Request(os.environ["GATEWAY_URL"],data=body,headers={"Authorization":"Bearer "+os.environ["OIDC_TOKEN"],"Content-Type":"application/json"},method="POST")
+          with urllib.request.urlopen(req,timeout=90) as r: data=json.load(r)
+          pathlib.Path("researcher_inventory/runtime/case1_source_package.json").write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
+          pathlib.Path("researcher_inventory/runtime/case1_source.txt").write_text(data["self_relation"],encoding="utf-8")
+          print("source_sha256="+data["source_sha256"])
+          print("chain_run_ref="+data["chain_run_ref"])
+          print("license_ref="+data["license_ref"])
+          PY
+
+      - name: Boot fresh V15 semantic extractor
+        shell: bash
+        run: |
+          set -euo pipefail
+          python researcher_inventory/session_bootstrap.py
+
+      - name: Run current Researcher Inventory apparatus on Case 1
+        shell: bash
+        run: |
+          set -euo pipefail
+          python researcher_inventory/inventory_apparatus.py \
+            --source-file researcher_inventory/runtime/case1_source.txt \
+            --source-case-ref case1_1_20260912T150754550138Z \
+            --researcher-interest 'lightweight researcher inventory only' \
+            --created-by-ref CASES-WORKER-RESEARCHER-INVENTORY-V15 \
+            > researcher_inventory/runtime/case1_inventory_output.json
+          python - <<'PY'
+          import json
+          x=json.load(open("researcher_inventory/runtime/case1_inventory_output.json",encoding="utf-8"))
+          assert isinstance(x.get("units"),list) and isinstance(x.get("compounds"),list)
+          print(f"units={len(x['units'])} compounds={len(x['compounds'])}")
+          PY
+
+      - name: Commit validated output to non-sovereign rehearsal tables
+        shell: bash
+        env:
+          OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, urllib.request, pathlib
+          pkg=json.load(open("researcher_inventory/runtime/case1_source_package.json",encoding="utf-8"))
+          output=json.load(open("researcher_inventory/runtime/case1_inventory_output.json",encoding="utf-8"))
+          body=json.dumps({"action":"write","launch_authority_ref":os.environ["LAUNCH_AUTHORITY_REF"],"source_sha256":pkg["source_sha256"],"output":output}).encode()
+          req=urllib.request.Request(os.environ["GATEWAY_URL"],data=body,headers={"Authorization":"Bearer "+os.environ["OIDC_TOKEN"],"Content-Type":"application/json"},method="POST")
+          with urllib.request.urlopen(req,timeout=120) as r: data=json.load(r)
+          pathlib.Path("researcher_inventory/runtime/case1_rehearsal_commit_receipt.json").write_text(json.dumps(data,indent=2),encoding="utf-8")
+          print(json.dumps(data,indent=2))
+          if data.get("status")!="COMMITTED": raise SystemExit("rehearsal commit did not reach COMMITTED")
+          PY
+
+      - name: Preserve local execution packet in workflow log
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          echo '=== SOURCE PACKAGE ==='
+          test -f researcher_inventory/runtime/case1_source_package.json && cat researcher_inventory/runtime/case1_source_package.json
+          echo '=== INVENTORY OUTPUT ==='
+          test -f researcher_inventory/runtime/case1_inventory_output.json && cat researcher_inventory/runtime/case1_inventory_output.json
+          echo '=== COMMIT RECEIPT ==='
+          test -f researcher_inventory/runtime/case1_rehearsal_commit_receipt.json && cat researcher_inventory/runtime/case1_rehearsal_commit_receipt.json
