@@ -5,10 +5,10 @@ The worker/apparatus never receives archetypes. This runner does. The immutable
 Case 2 and Case 6 workbook hashes are checked before any canonical extract is used.
 Every attempt is appended to runtime history for later database ingestion.
 
-The comparator aligns units by class + normalized tag before checking canonical
-ordering. This prevents one early omission from creating a false cascade of tag
-mismatches for every later reference while still testing resolution, typing,
-ordering, Q, lexical preservation, and compound construction independently.
+The evaluator must not require the worker to guess a hidden archetype's editor-only
+short-tag wording.  It therefore aligns coordinates mechanically from class,
+source-near tag wording, and source evidence before it judges type, order, Q, and
+compound construction.  Gold rows and evaluator findings never enter worker input.
 """
 from __future__ import annotations
 
@@ -33,6 +33,16 @@ ARCHETYPE_FILES = {
     "oil_change_case": [ARCHETYPES / "oil_change_case_archetype_part1.ndjson", ARCHETYPES / "oil_change_case_archetype_part2.ndjson"],
 }
 
+# Generic function words and evaluator-only descriptor words are weak evidence for
+# semantic identity.  Removing them prevents a phrase such as "place of ..." from
+# matching another place merely because both are places.
+WEAK_TOKENS = {
+    "a", "an", "the", "and", "or", "but", "of", "to", "for", "from", "in", "on", "at", "with", "by",
+    "is", "are", "was", "were", "be", "been", "being", "it", "this", "that", "these", "those",
+    "b", "place", "places", "time", "times", "episode", "period", "setting", "scene", "frame",
+    "exact", "specified", "unspecified", "not", "source", "represented", "current", "later", "earlier",
+}
+
 
 def assert_gold_integrity():
     wrong = {}
@@ -51,6 +61,13 @@ def norm(v):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def tokens(v):
+    return {
+        t for t in re.findall(r"[a-z0-9$]+(?:'[a-z0-9]+)?", norm(v))
+        if t not in WEAK_TOKENS and len(t) > 1
+    }
+
+
 def load_archetype(name):
     assert_gold_integrity()
     units, compounds = {}, {}
@@ -66,44 +83,145 @@ def load_archetype(name):
     return units, compounds
 
 
-def evaluate(payload, fixture):
-    findings = []
-    expected_units, expected_compounds = load_archetype(fixture["name"])
-    actual_units = list(payload["units"])
+def _actual_evidence(unit):
+    return " ".join(str(unit.get(k) or "") for k in (
+        "researcher_short_tag", "source_wording", "source_cue", "researcher_note"
+    ))
 
+
+def _expected_evidence(row):
+    return f"{row.get('g', '')} {row.get('s', '')}"
+
+
+def alignment_score(actual, expected):
+    """Mechanical source-evidence similarity; never shown to the worker.
+
+    Exact tag identity remains strongest.  Containment and shared content-bearing
+    source words allow a source-near worker tag to align with an editor shorthand
+    or an unnamed coordinate description without teaching the worker that wording.
+    """
+    atag = norm(actual.get("researcher_short_tag"))
+    etag = norm(expected.get("g"))
+    if atag and atag == etag:
+        return 1000.0
+    if atag and etag and min(len(atag), len(etag)) >= 4 and (atag in etag or etag in atag):
+        return 850.0
+
+    ae = tokens(_actual_evidence(actual))
+    ee = tokens(_expected_evidence(expected))
+    if not ae or not ee:
+        return 0.0
+    shared = ae & ee
+    if not shared:
+        return 0.0
+
+    # Coverage of the smaller evidence set rewards phrases that refer to the same
+    # coordinate even when one side is a longer source cue. Jaccard breaks ties.
+    coverage = len(shared) / min(len(ae), len(ee))
+    jaccard = len(shared) / len(ae | ee)
+    return 500.0 * coverage + 200.0 * jaccard + min(len(shared), 6)
+
+
+def align_units(actual_units, expected_units):
+    """Return actual<->expected mappings without requiring hidden tag phrasing.
+
+    Matching is class-bounded and monotonic enough for duplicate literal tags:
+    exact duplicate tags pair in their source order; remaining rows use a unique
+    best source-evidence match. Ambiguous weak matches are deliberately left
+    unmatched so the evaluator reports them rather than silently guessing.
+    """
     expected_order = list(expected_units)
     unmatched_expected = set(expected_order)
     unmatched_actual = set(range(len(actual_units)))
     actual_to_expected: dict[str, str] = {}
     expected_to_actual: dict[str, str] = {}
 
-    # First align exact semantic identity: same class + same normalized tag.
-    for i, actual in enumerate(actual_units):
-        atag = norm(actual.get("researcher_short_tag"))
-        candidates = [
-            ref for ref in expected_order
-            if ref in unmatched_expected
-            and expected_units[ref]["c"] == actual.get("unit_class")
-            and norm(expected_units[ref]["g"]) == atag
-        ]
-        if len(candidates) == 1:
-            ref = candidates[0]
-            actual_to_expected[actual["unit_ref"]] = ref
-            expected_to_actual[ref] = actual["unit_ref"]
-            unmatched_expected.remove(ref)
-            unmatched_actual.remove(i)
+    # Pair exact class+tag groups in source order, including repeated tags such as
+    # repeated speech predicates. This avoids refusing all duplicate exact matches.
+    for cls in dict.fromkeys(expected_units[r]["c"] for r in expected_order):
+        tags = []
+        for ref in expected_order:
+            if expected_units[ref]["c"] == cls:
+                tag = norm(expected_units[ref]["g"])
+                if tag not in tags:
+                    tags.append(tag)
+        for tag in tags:
+            egroup = [r for r in expected_order if r in unmatched_expected and expected_units[r]["c"] == cls and norm(expected_units[r]["g"]) == tag]
+            agroup = [i for i in sorted(unmatched_actual) if actual_units[i].get("unit_class") == cls and norm(actual_units[i].get("researcher_short_tag")) == tag]
+            for i, ref in zip(agroup, egroup):
+                actual_ref = actual_units[i]["unit_ref"]
+                actual_to_expected[actual_ref] = ref
+                expected_to_actual[ref] = actual_ref
+                unmatched_actual.remove(i)
+                unmatched_expected.remove(ref)
 
-    # Then detect class/type errors without turning them into missing+extra cascades.
-    for i in list(unmatched_actual):
+    # Source-evidence alignment inside the same class. Require meaningful lexical
+    # evidence and a clear best candidate; do not force a match on weak ambiguity.
+    progress = True
+    while progress:
+        progress = False
+        proposals = []
+        for i in sorted(unmatched_actual):
+            actual = actual_units[i]
+            candidates = []
+            for ref in expected_order:
+                if ref not in unmatched_expected or expected_units[ref]["c"] != actual.get("unit_class"):
+                    continue
+                score = alignment_score(actual, expected_units[ref])
+                if score > 0:
+                    candidates.append((score, ref))
+            candidates.sort(reverse=True)
+            if not candidates:
+                continue
+            best_score, best_ref = candidates[0]
+            second_score = candidates[1][0] if len(candidates) > 1 else 0.0
+            # 260 corresponds to substantial shared source evidence. For a lower
+            # score, demand a much larger margin so generic wording cannot align.
+            threshold = 260.0
+            margin = 35.0
+            if best_score >= threshold and best_score - second_score >= margin:
+                proposals.append((best_score, -i, i, best_ref))
+
+        # Resolve collisions by strongest evidence first, then source order.
+        for _, _, i, ref in sorted(proposals, reverse=True):
+            if i not in unmatched_actual or ref not in unmatched_expected:
+                continue
+            actual_ref = actual_units[i]["unit_ref"]
+            actual_to_expected[actual_ref] = ref
+            expected_to_actual[ref] = actual_ref
+            unmatched_actual.remove(i)
+            unmatched_expected.remove(ref)
+            progress = True
+
+    return actual_to_expected, expected_to_actual, unmatched_actual, unmatched_expected
+
+
+def evaluate(payload, fixture):
+    findings = []
+    expected_units, expected_compounds = load_archetype(fixture["name"])
+    actual_units = list(payload["units"])
+
+    expected_order = list(expected_units)
+    actual_to_expected, expected_to_actual, unmatched_actual, unmatched_expected = align_units(actual_units, expected_units)
+
+    # Detect class/type errors among still-unmatched rows by strongest tag/evidence
+    # match across classes. This remains diagnostic only and never changes worker input.
+    for i in list(sorted(unmatched_actual)):
         actual = actual_units[i]
-        atag = norm(actual.get("researcher_short_tag"))
-        candidates = [
-            ref for ref in expected_order
-            if ref in unmatched_expected and norm(expected_units[ref]["g"]) == atag
-        ]
-        if len(candidates) == 1:
-            ref = candidates[0]
-            expected = expected_units[ref]
+        scored = []
+        for ref in expected_order:
+            if ref not in unmatched_expected:
+                continue
+            score = alignment_score(actual, expected_units[ref])
+            if score > 0:
+                scored.append((score, ref))
+        scored.sort(reverse=True)
+        if not scored:
+            continue
+        best_score, ref = scored[0]
+        second = scored[1][0] if len(scored) > 1 else 0.0
+        expected = expected_units[ref]
+        if best_score >= 500 and best_score - second >= 80 and expected["c"] != actual.get("unit_class"):
             findings.append((
                 "TYPE_MISMATCH",
                 f"{actual['unit_ref']} tag {actual['researcher_short_tag']!r} typed {actual.get('unit_class')} but archetype types it {expected['c']} ({ref})",
