@@ -2,9 +2,9 @@
 """V11 adapter: keep the durable agent contract authoritative.
 
 The apparatus may carry legacy per-request helper prose for provider-neutral
-adapters.  V11 calibration must not let that transport prose override or conflict
-with the durable contract installed on the saved agent.  This adapter therefore
-passes only the bounded task data/schema plus mechanical retry corrections.
+adapters. V11 calibration must not let that transport prose override or conflict
+with the durable contract installed on the saved agent. This adapter therefore
+passes only bounded task data/schema plus mechanical retry corrections.
 No archetype, expected output, evaluator finding, or holdout material is added.
 """
 from __future__ import annotations
@@ -12,12 +12,9 @@ from __future__ import annotations
 import json
 import sys
 
-from researcher_inventory.openai_agents_adapter import (
-    AGENT_ID_FILE,
-    final_answer,
-    request,
-    wait,
-)
+# This file is executed by path from the repository root. In that mode Python puts
+# researcher_inventory/ itself on sys.path, so import the sibling module directly.
+from openai_agents_adapter import AGENT_ID_FILE, final_answer, request, wait
 
 
 def _bounded_request(payload: dict) -> dict:
