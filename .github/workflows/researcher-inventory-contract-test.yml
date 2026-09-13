@@ -129,6 +129,44 @@ jobs:
             git push origin main
           fi
 
+      - name: Preserve calibration evidence durably
+        if: always() && steps.final_state.outputs.certified != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          HISTORY_DIR="calibration_history/researcher_inventory/${GITHUB_RUN_ID}"
+          mkdir -p "$HISTORY_DIR"
+
+          if [ -f researcher_inventory/runtime/archetype_integrity.json ]; then
+            cp researcher_inventory/runtime/archetype_integrity.json "$HISTORY_DIR/archetype_integrity.json"
+          fi
+          if [ -f researcher_inventory/runtime/training_history.ndjson ]; then
+            cp researcher_inventory/runtime/training_history.ndjson "$HISTORY_DIR/training_history.ndjson"
+          fi
+          if [ -f researcher_inventory/runtime/test_results.json ]; then
+            cp researcher_inventory/runtime/test_results.json "$HISTORY_DIR/test_results.json"
+          fi
+
+          python - <<'PY' > "$HISTORY_DIR/run_manifest.json"
+          import json, os
+          print(json.dumps({
+              "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "workflow_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+              "commit_sha": os.environ.get("GITHUB_SHA"),
+              "contract_version": os.environ.get("CONTRACT_VERSION"),
+              "model": os.environ.get("OPENAI_MODEL"),
+              "event": os.environ.get("GITHUB_EVENT_NAME"),
+              "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+          }, sort_keys=True, indent=2))
+          PY
+
+          git add "$HISTORY_DIR"
+          if ! git diff --cached --quiet; then
+            git commit -m "training-history: preserve researcher inventory run ${GITHUB_RUN_ID} [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
       - name: Preserve results in workflow log
         if: always() && steps.final_state.outputs.certified != 'true'
         shell: bash
@@ -139,5 +177,5 @@ jobs:
           test -f researcher_inventory/runtime/training_history.ndjson && cat researcher_inventory/runtime/training_history.ndjson || true
           echo '=== LAST CALIBRATION BATCH ==='
           test -f researcher_inventory/runtime/test_results.json && cat researcher_inventory/runtime/test_results.json || true
-          echo '=== HOLDOUT ==='
-          test -f researcher_inventory/runtime/holdout_result.json && cat researcher_inventory/runtime/holdout_result.json || true
+          echo '=== HOLDOUT EVIDENCE OMITTED FROM DURABLE PUBLIC HISTORY ==='
+          test -f researcher_inventory/runtime/holdout_result.json && echo 'holdout_result.json exists in runtime but is not committed' || true
