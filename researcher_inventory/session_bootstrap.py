@@ -10,9 +10,9 @@ from pathlib import Path
 
 API = "https://api.openai.com/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
-CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V17")
+CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V18")
 AGENT_ID_FILE = Path("researcher_inventory/runtime/extractor_agent_id.txt")
-CONTRACT_FILE = Path(os.environ.get("RI_CONTRACT_FILE", "researcher_inventory/AGENT_CONTRACT_V17.md"))
+CONTRACT_FILE = Path(os.environ.get("RI_CONTRACT_FILE", "researcher_inventory/AGENT_CONTRACT_V18.md"))
 
 BOOT_PREFIX = """You are the APA Researcher Inventory semantic extraction subroutine.
 The durable contract below is your complete behavioral authority.
