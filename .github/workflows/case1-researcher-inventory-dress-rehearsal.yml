@@ -71,9 +71,10 @@ jobs:
           print(json.dumps(data,indent=2))
           if data.get("contract_version")!="RI-CONTRACT-V15": raise SystemExit("gateway contract mismatch")
           if data.get("launch_authority_active") is not True: raise SystemExit("dress rehearsal launch authority is not active")
+          if not data.get("sandbox_case_blockchain_id"): raise SystemExit("sandbox case is not bound")
           PY
 
-      - name: Retrieve exact Case 1 source through governed gateway
+      - name: Retrieve exact sandbox Case 1 copy through governed gateway
         shell: bash
         env:
           OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
@@ -87,9 +88,10 @@ jobs:
           with urllib.request.urlopen(req,timeout=90) as r: data=json.load(r)
           pathlib.Path("researcher_inventory/runtime/case1_source_package.json").write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
           pathlib.Path("researcher_inventory/runtime/case1_source.txt").write_text(data["self_relation"],encoding="utf-8")
+          print("sandbox_case_blockchain_id="+data["sandbox_case_blockchain_id"])
+          print("root_case_blockchain_id="+data["root_case_blockchain_id"])
           print("source_sha256="+data["source_sha256"])
           print("chain_run_ref="+data["chain_run_ref"])
-          print("license_ref="+data["license_ref"])
           PY
 
       - name: Boot fresh V15 semantic extractor
@@ -98,13 +100,14 @@ jobs:
           set -euo pipefail
           python researcher_inventory/session_bootstrap.py
 
-      - name: Run current Researcher Inventory apparatus on Case 1
+      - name: Run current Researcher Inventory apparatus on sandbox Case 1 copy
         shell: bash
         run: |
           set -euo pipefail
+          SANDBOX_REF="$(python -c 'import json; print(json.load(open("researcher_inventory/runtime/case1_source_package.json"))["sandbox_case_blockchain_id"])')"
           python researcher_inventory/inventory_apparatus.py \
             --source-file researcher_inventory/runtime/case1_source.txt \
-            --source-case-ref case1_1_20260912T150754550138Z \
+            --source-case-ref "$SANDBOX_REF" \
             --researcher-interest 'lightweight researcher inventory only' \
             --created-by-ref CASES-WORKER-RESEARCHER-INVENTORY-V15 \
             > researcher_inventory/runtime/case1_inventory_output.json
@@ -125,7 +128,7 @@ jobs:
           import json, os, urllib.request, pathlib
           pkg=json.load(open("researcher_inventory/runtime/case1_source_package.json",encoding="utf-8"))
           output=json.load(open("researcher_inventory/runtime/case1_inventory_output.json",encoding="utf-8"))
-          body=json.dumps({"action":"write","launch_authority_ref":os.environ["LAUNCH_AUTHORITY_REF"],"source_sha256":pkg["source_sha256"],"output":output}).encode()
+          body=json.dumps({"action":"write","launch_authority_ref":os.environ["LAUNCH_AUTHORITY_REF"],"source_sha256":pkg["source_sha256"],"sandbox_case_blockchain_id":pkg["sandbox_case_blockchain_id"],"output":output}).encode()
           req=urllib.request.Request(os.environ["GATEWAY_URL"],data=body,headers={"Authorization":"Bearer "+os.environ["OIDC_TOKEN"],"Content-Type":"application/json"},method="POST")
           with urllib.request.urlopen(req,timeout=120) as r: data=json.load(r)
           pathlib.Path("researcher_inventory/runtime/case1_rehearsal_commit_receipt.json").write_text(json.dumps(data,indent=2),encoding="utf-8")
