@@ -1,0 +1,9 @@
+{
+  "commit_sha": "fe81351bf213f01b62b8ebec73e314e175cd8720",
+  "contract_version": "RI-CONTRACT-V12",
+  "event": "schedule",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "model": "gpt-5.6-sol",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "34751809431"
+}
