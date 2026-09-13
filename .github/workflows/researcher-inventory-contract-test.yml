@@ -1,4 +1,5 @@
 name: Researcher Inventory Apparatus Verification
+# Calibration evidence is durably preserved outside researcher_inventory so failed attempts remain inspectable without retrigger loops.
 
 on:
   workflow_dispatch:
