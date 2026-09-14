@@ -25,9 +25,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V30
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V30.md
-      RI_MODEL_COMMAND: python researcher_inventory/v30_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V31
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V31.md
+      RI_MODEL_COMMAND: python researcher_inventory/v31_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
     steps:
       - name: Checkout repository without external actions
@@ -85,18 +85,18 @@ jobs:
           python researcher_inventory/session_bootstrap.py
 
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.v30_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v31_calibration_runner
 
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v30_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v31_calibration_runner
 
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v30_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v31_calibration_runner
 
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
 
-          V30 passed the immutable Case 2/Case 6 workbook SHA-256 gate, the diagnostic batch, and two further repeated verification batches under the same finalized durable contract and same saved-agent lineage. The worker had no archetype access.
+          V31 passed the immutable Case 2/Case 6 workbook SHA-256 gate, the diagnostic batch, and two further repeated verification batches under the same finalized durable contract and same saved-agent lineage. The worker had no archetype access.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
@@ -105,7 +105,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m researcher_inventory.v30_holdout_runner
+          python -m researcher_inventory.v31_holdout_runner
           cp researcher_inventory/runtime/extractor_agent_id.txt researcher_inventory/runtime/retired_calibration_agent_id.txt
           cp researcher_inventory/runtime/holdout_result.json researcher_inventory/runtime/calibrated_lineage_holdout_result.json
 
@@ -120,11 +120,11 @@ jobs:
           # never receives prior sessions, prior outputs, archetypes, or the first
           # holdout output.
           python researcher_inventory/session_bootstrap.py
-          python -m researcher_inventory.v30_holdout_runner
+          python -m researcher_inventory.v31_holdout_runner
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
 
-          V30 passed immutable workbook hash verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage then passed sealed Case 5 exactly once. That lineage was retired from active use. A brand-new saved agent was bootstrapped from the finalized durable V30 instructions only, with no prior session or holdout output, and passed sealed Case 5 in a new session as clean-room verification. No archetype or holdout output was exposed to either worker.
+          V31 passed immutable workbook hash verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage then passed sealed Case 5 exactly once. That lineage was retired from active use. A brand-new saved agent was bootstrapped from the finalized durable V31 instructions only, with no prior session or holdout output, and passed sealed Case 5 in a new session as clean-room verification. No archetype or holdout output was exposed to either worker.
           EOF
 
       - name: Commit durable status
@@ -134,7 +134,7 @@ jobs:
           set -euo pipefail
           git add researcher_inventory/status
           if ! git diff --cached --quiet; then
-            git commit -m "apparatus: certify researcher inventory v30 [skip ci]"
+            git commit -m "apparatus: certify researcher inventory v31 [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
