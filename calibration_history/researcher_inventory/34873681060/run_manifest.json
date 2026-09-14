@@ -1,0 +1,10 @@
+{
+  "commit_sha": "714234f275d49172fe71c0bd34e4c638d0e16fcd",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V29.md",
+  "contract_version": "RI-CONTRACT-V29",
+  "event": "push",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "model": "gpt-5.6-sol",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "34873681060"
+}
