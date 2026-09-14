@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 65,
+        "canonical_key": "coupon",
+        "note": "Merged with later mentions of “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "coupon",
+        "source_cue": "this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "anchor_hint": 81,
+        "canonical_key": "kids_cereal",
+        "note": "Merged with later “the box” and “my cereal” mentions.",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "kids’ cereal",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "anchor_hint": 169,
+        "canonical_key": "order",
+        "note": "The speaker’s tracked store transaction.",
+        "order_cue": "my order",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "order",
+        "source_cue": "finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "anchor_hint": 558,
+        "canonical_key": "coupon_discount",
+        "note": "The specific coupon value considered by the speaker.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "$1.25 off my cereal",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "anchor_hint": 961,
+        "canonical_key": "coupon_next_step_decision",
+        "note": "The unresolved next-step decision treated as a distinct object of concern.",
+        "order_cue": "what the decision on the coupon’s next step should be",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "what the decision on the coupon’s next step should be"
+      }
+    ],
+    "session_id": "sess_0355bdfeee28e13d006aa87829c254819192353f2d12b8f531",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0efbdf5dbcd0c312006aa87ca38d288191a32727c299e68197",
+    "status": "in_progress"
+  }
+}
