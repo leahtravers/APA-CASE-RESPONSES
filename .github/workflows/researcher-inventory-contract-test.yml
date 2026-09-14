@@ -156,6 +156,9 @@ jobs:
           if [ -f researcher_inventory/runtime/test_results.json ]; then
             cp researcher_inventory/runtime/test_results.json "$HISTORY_DIR/test_results.json"
           fi
+          if [ -d researcher_inventory/runtime/v32_session_recovery ]; then
+            cp -R researcher_inventory/runtime/v32_session_recovery "$HISTORY_DIR/v32_session_recovery"
+          fi
           if [ -f "$RI_CONTRACT_FILE" ]; then
             cp "$RI_CONTRACT_FILE" "$HISTORY_DIR/iteration_contract.md"
           fi
