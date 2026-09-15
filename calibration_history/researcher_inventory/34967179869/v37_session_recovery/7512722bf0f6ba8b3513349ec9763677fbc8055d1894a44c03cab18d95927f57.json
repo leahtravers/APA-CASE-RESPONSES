@@ -1,0 +1,386 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 55,
+        "canonical_key": "V001",
+        "note": "Attempted scanning relation; the wording preserves the attempt posture.",
+        "order_cue": "trying to scan",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "trying to scan",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal",
+        "source_wording": "trying to scan"
+      },
+      {
+        "anchor_hint": 116,
+        "canonical_key": "V002",
+        "note": "Negated functioning relation for the coupon.",
+        "order_cue": "is not working",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "is not working",
+        "source_cue": "it is not working",
+        "source_wording": "is not working"
+      },
+      {
+        "anchor_hint": 149,
+        "canonical_key": "V003",
+        "note": "Perception relation with the speaker’s difficulty as its content.",
+        "order_cue": "sees",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "sees",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "sees"
+      },
+      {
+        "anchor_hint": 159,
+        "canonical_key": "V004",
+        "note": "Difficulty relation directed toward completing the order.",
+        "order_cue": "struggling to finish",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "struggling to finish",
+        "source_cue": "I am struggling to finish my order",
+        "source_wording": "struggling to finish"
+      },
+      {
+        "anchor_hint": 195,
+        "canonical_key": "V005",
+        "note": "Approach relation by the attendant.",
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "anchor_hint": 209,
+        "canonical_key": "V006",
+        "note": "Prospective assistance relation motivating the attendant’s approach.",
+        "order_cue": "help",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "help",
+        "source_cue": "to help me with it",
+        "source_wording": "help"
+      },
+      {
+        "anchor_hint": 226,
+        "canonical_key": "V007",
+        "note": "Repeated failed-scanning relation during the attendant’s attempt.",
+        "order_cue": "won’t scan",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "won’t scan",
+        "source_cue": "It won’t scan for them either",
+        "source_wording": "won’t scan"
+      },
+      {
+        "anchor_hint": 263,
+        "canonical_key": "V008",
+        "note": "Inspection relation directed toward the coupon.",
+        "order_cue": "look at",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "look at",
+        "source_cue": "they look at it",
+        "source_wording": "look at"
+      },
+      {
+        "anchor_hint": 278,
+        "canonical_key": "V009",
+        "note": "Perception relation whose presented contents are the date’s validity and the box’s location.",
+        "order_cue": "see",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "see",
+        "source_cue": "see the date is valid and the box is right there",
+        "source_wording": "see"
+      },
+      {
+        "anchor_hint": 332,
+        "canonical_key": "V010",
+        "note": "Negated recollection relation; it does not establish whether speech occurred.",
+        "order_cue": "don’t recall",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "don’t recall",
+        "source_cue": "I really don’t recall saying anything",
+        "source_wording": "don’t recall"
+      },
+      {
+        "anchor_hint": 345,
+        "canonical_key": "V011",
+        "note": "Possible speech relation represented within the negated recollection.",
+        "order_cue": "saying",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "saying",
+        "source_cue": "don’t recall saying anything",
+        "source_wording": "saying"
+      },
+      {
+        "anchor_hint": 376,
+        "canonical_key": "V012",
+        "note": "Departure relation preserving the speaker’s qualified presentation.",
+        "order_cue": "sort of just walk away",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "sort of just walk away",
+        "source_cue": "they sort of just walk away with my coupon in a huff",
+        "source_wording": "sort of just walk away"
+      },
+      {
+        "anchor_hint": 431,
+        "canonical_key": "V013",
+        "note": "Purpose relation for seeking a manager.",
+        "order_cue": "go get",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "go get",
+        "source_cue": "to go get a manager",
+        "source_wording": "go get"
+      },
+      {
+        "anchor_hint": 472,
+        "canonical_key": "V014",
+        "note": "The speaker’s standing relation during the wait; later standing wording restates the same episode.",
+        "order_cue": "standing",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "standing",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing"
+      },
+      {
+        "anchor_hint": 487,
+        "canonical_key": "V015",
+        "note": "Waiting relation established after the attendant’s departure and restated later.",
+        "order_cue": "waiting",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "waiting",
+        "source_cue": "standing there waiting",
+        "source_wording": "waiting"
+      },
+      {
+        "anchor_hint": 496,
+        "canonical_key": "V016",
+        "note": "Thought relation introducing the speaker’s self-directed questions.",
+        "order_cue": "thinking",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "thinking",
+        "source_cue": "thinking to myself",
+        "source_wording": "thinking"
+      },
+      {
+        "anchor_hint": 560,
+        "canonical_key": "V017",
+        "note": "Questioned concern relation.",
+        "order_cue": "care about",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "care about",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "care about"
+      },
+      {
+        "anchor_hint": 606,
+        "canonical_key": "V018",
+        "note": "Prior intention for a brief shopping visit.",
+        "order_cue": "wanted",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "wanted",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "wanted"
+      },
+      {
+        "anchor_hint": 694,
+        "canonical_key": "V019",
+        "note": "Questioned prospective-duration relation.",
+        "order_cue": "take",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "take",
+        "source_cue": "How long will this take?",
+        "source_wording": "take"
+      },
+      {
+        "anchor_hint": 735,
+        "canonical_key": "V020",
+        "note": "Hypothetical payment relation.",
+        "order_cue": "pay",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "pay",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "pay"
+      },
+      {
+        "anchor_hint": 743,
+        "canonical_key": "V021",
+        "note": "Hypothetical departure relation following payment.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "walk out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "walk out"
+      },
+      {
+        "anchor_hint": 773,
+        "canonical_key": "V022",
+        "note": "Questioned, negated request-for-preference relation.",
+        "order_cue": "ask",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "ask",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "ask"
+      },
+      {
+        "anchor_hint": 787,
+        "canonical_key": "V023",
+        "note": "The speaker’s desired response concerning the coupon, distinct from the earlier wish for a brief visit.",
+        "order_cue": "wanted",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "wanted",
+        "source_cue": "what I wanted to do",
+        "source_wording": "wanted"
+      },
+      {
+        "anchor_hint": 875,
+        "canonical_key": "V024",
+        "note": "Attempted explanation relation directed to the speaker’s partner.",
+        "order_cue": "tried to explain",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "tried to explain",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "tried to explain"
+      },
+      {
+        "anchor_hint": 971,
+        "canonical_key": "V025",
+        "note": "Experienced-state relation with “out of control” as its characterization.",
+        "order_cue": "felt",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "felt",
+        "source_cue": "I felt out of control",
+        "source_wording": "felt"
+      },
+      {
+        "anchor_hint": 1127,
+        "canonical_key": "V026",
+        "note": "Negated desire relation concerning how the speaker might appear.",
+        "order_cue": "don’t want",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "don’t want",
+        "source_cue": "I don’t want to appear rude",
+        "source_wording": "don’t want"
+      },
+      {
+        "anchor_hint": 1141,
+        "canonical_key": "V027",
+        "note": "Prospective appearance relation with “rude” as its characterization.",
+        "order_cue": "appear",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "appear",
+        "source_cue": "to appear rude",
+        "source_wording": "appear"
+      },
+      {
+        "anchor_hint": 1158,
+        "canonical_key": "V028",
+        "note": "Recurring shopping relation.",
+        "order_cue": "shop",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "shop",
+        "source_cue": "when I shop regularly",
+        "source_wording": "shop"
+      },
+      {
+        "anchor_hint": 1176,
+        "canonical_key": "V029",
+        "note": "Realization relation about which part was especially frustrating.",
+        "order_cue": "found",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "found",
+        "source_cue": "I found that that was the part that was super frustrating",
+        "source_wording": "found"
+      },
+      {
+        "anchor_hint": 1266,
+        "canonical_key": "V030",
+        "note": "Negated belief relation concerning fault.",
+        "order_cue": "do not think",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "do not think",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "do not think"
+      },
+      {
+        "anchor_hint": 1338,
+        "canonical_key": "V031",
+        "note": "Continuing bother relation.",
+        "order_cue": "is still bugging",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "is still bugging",
+        "source_cue": "it is still bugging me",
+        "source_wording": "is still bugging"
+      },
+      {
+        "anchor_hint": 1361,
+        "canonical_key": "V032",
+        "note": "Necessity relation directed toward mental clarification.",
+        "order_cue": "need",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "need",
+        "source_cue": "I need to get it straight in my mind",
+        "source_wording": "need"
+      },
+      {
+        "anchor_hint": 1369,
+        "canonical_key": "V033",
+        "note": "Mental-clarification relation retained as a source phrasal predicate.",
+        "order_cue": "get it straight",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "get it straight",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "get it straight"
+      },
+      {
+        "anchor_hint": 1399,
+        "canonical_key": "V034",
+        "note": "Prospective relation presented under avoidance negation.",
+        "order_cue": "get myself into",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "get myself into",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "get myself into"
+      }
+    ],
+    "session_id": "sess_05bddb6faef4127c006aa9355b27308191a61f6690ac5f7fda",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0cefc56260511ed9006aa935dfdf708191915dbd2a90b605fd",
+    "status": "in_progress"
+  }
+}
