@@ -1,0 +1,62 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker; resolves I, me, my, myself.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 83,
+        "canonical_key": "P1",
+        "note": "Stable group represented through the speaker's kinship relation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 137,
+        "canonical_key": "P2",
+        "note": "Resolves them, they, and attendant’s.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 434,
+        "canonical_key": "P3",
+        "note": "Peripheral role actor sought by the attendant.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 879,
+        "canonical_key": "P4",
+        "note": null,
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0b046dae5642b66a006aa8dcd3a440819184e83f6ea94e14f9",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_055c434d69155e49006aa8dcec1c088191ab2bb2e7becaf82a",
+    "status": "in_progress"
+  }
+}
