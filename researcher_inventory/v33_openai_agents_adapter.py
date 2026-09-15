@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 from openai_agents_adapter import AGENT_ID_FILE
-from researcher_inventory import v32_openai_agents_adapter as recovery
+import v32_openai_agents_adapter as recovery
 
 recovery.RECOVERY_DIR = Path("researcher_inventory/runtime/v33_session_recovery")
 
