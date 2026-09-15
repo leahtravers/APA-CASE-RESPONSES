@@ -1,0 +1,70 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "LOC_STORE",
+        "note": "Broad scene orientation containing the self-check.",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "LOC_SELF_CHECK",
+        "note": "Contained checkout orientation; later uses of there and here are coreferential.",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "LOC_BOX_THERE",
+        "note": "Orients the cereal box within the checkout scene.",
+        "qualities_available": false,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "LOC_AWAY_WITH_COUPON",
+        "note": "Combines departure direction with carrying the coupon.",
+        "qualities_available": false,
+        "short_tag": "away with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away with my coupon"
+      },
+      {
+        "canonical_key": "LOC_IN_AND_OUT",
+        "note": "Intended entry-and-exit path through the shopping episode.",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "LOC_MIND",
+        "note": "Mental orientation for getting the experience straight.",
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "canonical_key": "LOC_SITUATIONS",
+        "note": "Materially spatialized figurative orientation toward recurring situations.",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_0c0ca090a8a7ca57006aa9672d774881919b77c882c2a2f46e",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0ba85ce46781c7e2006aa9675a62d48191b9fd319fadc07766",
+    "status": "in_progress"
+  }
+}

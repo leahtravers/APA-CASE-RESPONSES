@@ -1,0 +1,261 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "V_TRY_SCAN_COUPON",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "trying to scan",
+        "source_cue": "I am trying to scan this coupon",
+        "source_wording": "am trying to scan"
+      },
+      {
+        "canonical_key": "V_COUPON_NOT_WORK",
+        "note": "The later wording “the coupon not working” restates this same relation.",
+        "qualities_available": true,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "is not working"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_SEE_STRUGGLE",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "sees",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "sees"
+      },
+      {
+        "canonical_key": "V_STRUGGLE_FINISH_ORDER",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "struggling to finish",
+        "source_cue": "I am struggling to finish my order",
+        "source_wording": "am struggling to finish"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_COME_OVER",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_HELP",
+        "note": "Purpose relation associated with the attendant coming over.",
+        "qualities_available": false,
+        "short_tag": "help me with it",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "to help me with it"
+      },
+      {
+        "canonical_key": "V_COUPON_NOT_SCAN_FOR_ATTENDANT",
+        "note": "A distinct failed scanning relation involving the attendant.",
+        "qualities_available": true,
+        "short_tag": "won’t scan",
+        "source_cue": "It won’t scan for them either",
+        "source_wording": "won’t scan"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_LOOK_AT_COUPON",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "look at it",
+        "source_cue": "they look at it",
+        "source_wording": "look at it"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_SEE_COUPON_DETAILS",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "see",
+        "source_cue": "see the date is valid and the box is right there",
+        "source_wording": "see"
+      },
+      {
+        "canonical_key": "V_SPEAKER_NOT_RECALL_SAYING",
+        "note": "Preserves the negated recollection posture governing the possible saying.",
+        "qualities_available": true,
+        "short_tag": "don’t recall saying anything",
+        "source_cue": "I really don’t recall saying anything",
+        "source_wording": "don’t recall saying anything"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_WALK_AWAY",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "walk away",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "walk away"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_GO_GET_MANAGER",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "go get a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "go get a manager"
+      },
+      {
+        "canonical_key": "V_SPEAKER_STAND",
+        "note": "The later standing and stuck-there wording refers to the same ongoing store episode.",
+        "qualities_available": true,
+        "short_tag": "standing",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "am standing"
+      },
+      {
+        "canonical_key": "V_SPEAKER_WAIT",
+        "note": "Later waiting wording continues the same waiting relation.",
+        "qualities_available": true,
+        "short_tag": "waiting",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "waiting"
+      },
+      {
+        "canonical_key": "V_SPEAKER_THINK_TO_SELF",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "thinking to myself",
+        "source_cue": "thinking to myself",
+        "source_wording": "thinking to myself"
+      },
+      {
+        "canonical_key": "V_SPEAKER_QUESTION_CARE",
+        "note": "Questioned rather than asserted.",
+        "qualities_available": true,
+        "short_tag": "really care about",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "Do I really care about"
+      },
+      {
+        "canonical_key": "V_SPEAKER_WANT_IN_AND_OUT",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "wanted to be in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "wanted to be in and out"
+      },
+      {
+        "canonical_key": "V_WAIT_TAKE_TIME",
+        "note": "Prospective question about the waiting duration.",
+        "qualities_available": true,
+        "short_tag": "will this take",
+        "source_cue": "How long will this take?",
+        "source_wording": "will this take"
+      },
+      {
+        "canonical_key": "V_SPEAKER_PAY",
+        "note": "Hypothetical action inside the speaker’s question.",
+        "qualities_available": true,
+        "short_tag": "pay",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "pay"
+      },
+      {
+        "canonical_key": "V_SPEAKER_WALK_OUT",
+        "note": "Hypothetical action sequenced after paying.",
+        "order_cue": "pay and walk out",
+        "qualities_available": true,
+        "short_tag": "walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "walk out"
+      },
+      {
+        "canonical_key": "V_ATTENDANT_NOT_ASK",
+        "note": "Negated relation presented as a question.",
+        "qualities_available": true,
+        "short_tag": "didn’t they ask me",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "didn’t they ask me"
+      },
+      {
+        "canonical_key": "V_SPEAKER_WANT_TO_DO",
+        "note": "The desired action is left unspecified by the source.",
+        "qualities_available": false,
+        "short_tag": "wanted to do",
+        "source_cue": "what I wanted to do",
+        "source_wording": "wanted to do"
+      },
+      {
+        "canonical_key": "V_SPEAKER_TRY_EXPLAIN",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "tried to explain",
+        "source_cue": "I tried to explain this to my partner",
+        "source_wording": "tried to explain"
+      },
+      {
+        "canonical_key": "V_SPEAKER_FEEL_OUT_OF_CONTROL",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "felt out of control",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "felt out of control"
+      },
+      {
+        "canonical_key": "V_SPEAKER_NOT_WANT_APPEAR_RUDE",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "don’t want to appear rude",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "don’t want to appear rude"
+      },
+      {
+        "canonical_key": "V_SPEAKER_SHOP_REGULARLY",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "shop regularly"
+      },
+      {
+        "canonical_key": "V_SPEAKER_FIND_FRUSTRATING_PART",
+        "note": "Present-reflection recognition relation.",
+        "qualities_available": false,
+        "short_tag": "found",
+        "source_cue": "I found that that was the part that was super frustrating",
+        "source_wording": "found"
+      },
+      {
+        "canonical_key": "V_SPEAKER_NOT_THINK_FAULT",
+        "note": "Negated judgment relation.",
+        "qualities_available": true,
+        "short_tag": "do not think",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "do not think"
+      },
+      {
+        "canonical_key": "V_SITUATION_BUG_SPEAKER",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me",
+        "source_wording": "is still bugging me"
+      },
+      {
+        "canonical_key": "V_SPEAKER_NEED_GET_STRAIGHT",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "need to get it straight",
+        "source_cue": "I need to get it straight in my mind",
+        "source_wording": "need to get it straight in my mind"
+      },
+      {
+        "canonical_key": "V_SPEAKER_NOT_GET_INTO_SITUATIONS",
+        "note": "Prospective avoidance relation.",
+        "qualities_available": true,
+        "short_tag": "not get myself into",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0f5b70fd3efdfccc006aa9672cfd4c819187ed7f8dfcfb958b",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e69a97d6dbbbdf8006aa96776eee481918323cf6bdcc82788",
+    "status": "in_progress"
+  }
+}

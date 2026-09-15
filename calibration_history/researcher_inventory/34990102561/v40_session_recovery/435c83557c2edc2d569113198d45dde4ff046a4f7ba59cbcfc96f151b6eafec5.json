@@ -1,0 +1,92 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with later “it,” “my coupon,” and “the coupon.”",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "cereal",
+        "note": "Corefers with later “my cereal.”",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "order",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "coupon_date",
+        "note": "The date associated with the coupon.",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal_box",
+        "note": "The box of cereal associated with the coupon.",
+        "qualities_available": false,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "cereal_discount",
+        "note": "The coupon’s stated cereal discount.",
+        "qualities_available": true,
+        "short_tag": "$1.25 off",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "the $1.25 off my cereal"
+      },
+      {
+        "canonical_key": "shopping_items",
+        "note": "The items the speaker intended to shop for.",
+        "qualities_available": true,
+        "short_tag": "few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "speaker_point",
+        "note": "The content the speaker tried to explain to their partner.",
+        "qualities_available": true,
+        "short_tag": "my point",
+        "source_cue": "my point was that I was more frustrated",
+        "source_wording": "my point"
+      },
+      {
+        "canonical_key": "coupon_next_step_decision",
+        "note": "The decision whose outcome the speaker felt unable to control.",
+        "qualities_available": true,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "canonical_key": "recurring_situations",
+        "note": "The type of situation the speaker wants to avoid entering.",
+        "qualities_available": false,
+        "short_tag": "these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_09c44af2bb84b3dc006aa9672d1a2481918cbfa193d64968fd",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e5a1161ebfcc72e006aa96763ca208191bfaac83514b5116a",
+    "status": "in_progress"
+  }
+}
