@@ -1,0 +1,75 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with later mentions of “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "cereal",
+        "note": "Corefers with the later wording “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "coupon_date",
+        "note": "The date associated with the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal_box",
+        "note": "The box corresponding to the cereal named by the coupon.",
+        "order_cue": "the box",
+        "qualities_available": true,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "coupon_discount",
+        "note": "The discount offered by the coupon.",
+        "order_cue": "the $1.25 off my cereal",
+        "qualities_available": false,
+        "short_tag": "$1.25 off",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "the $1.25 off my cereal"
+      },
+      {
+        "canonical_key": "coupon_next_step_decision",
+        "note": "The decision whose control is presented as the speaker’s central frustration.",
+        "order_cue": "the decision on the coupon’s next step",
+        "qualities_available": true,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "canonical_key": "situations_like_this",
+        "note": "Generalizes the narrated encounter as a type of situation the speaker wants to avoid.",
+        "order_cue": "these situations",
+        "qualities_available": false,
+        "short_tag": "these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_0743576581937a56006aa94869578c8191b78662cb96433422",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0d8609bf22a4b751006aa948b2061081919ab5d0d3e31da7eb",
+    "status": "in_progress"
+  }
+}

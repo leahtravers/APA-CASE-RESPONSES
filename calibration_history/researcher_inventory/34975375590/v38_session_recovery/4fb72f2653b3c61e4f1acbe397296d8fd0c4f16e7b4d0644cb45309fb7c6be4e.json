@@ -1,0 +1,89 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 28,
+        "canonical_key": "L_STORE",
+        "note": "Broad physical setting containing the self-check.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "anchor_hint": 10,
+        "canonical_key": "L_SELF_CHECK",
+        "note": "Contained position where the checkout episode occurs.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "anchor_hint": 306,
+        "canonical_key": "L_BOX_PROXIMITY",
+        "note": "Proximity orientation supporting inspection of the coupon against the cereal box.",
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "anchor_hint": 399,
+        "canonical_key": "L_COUPON_CARRYING",
+        "note": "Carrying orientation linking the attendant's departure to the speaker's coupon.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "anchor_hint": 604,
+        "canonical_key": "L_IN_AND_OUT",
+        "note": "Intended quick entry-and-exit trajectory contrasted with the prolonged wait.",
+        "order_cue": "I just wanted to be in and out for a few things",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 722,
+        "canonical_key": "L_HYPOTHETICAL_EXIT",
+        "note": "Exit orientation within the speaker's hypothetical choice.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "anchor_hint": 1012,
+        "canonical_key": "L_OUT_OF_CONTROL",
+        "note": "Relational orientation expressing the speaker's central lack of control over the coupon decision.",
+        "order_cue": "my point was that I was more frustrated that I felt out of control",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "out of control of",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "out of control of"
+      }
+    ],
+    "session_id": "sess_0fa68f5fad36cd95006aa94874fdc081918c9293a8ba0d25b5",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_07096b3176229be7006aa948b66a048191818dc84153dcacc2",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "First-person speaker; later first-person forms corefer.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 128,
+        "canonical_key": "attendant",
+        "note": "Singular attendant; later them and they corefer.",
+        "order_cue": "the attendant sees I am struggling to finish my order",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 434,
+        "canonical_key": "manager",
+        "note": "Prospective role-based actor sought by the attendant.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 933,
+        "canonical_key": "partner",
+        "note": "Recipient in the later explanation frame.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0d06b34c6387fafa006aa94869b174819198d9688ab79d298b",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_08a52162a03258af006aa948b44b38819192af61d92eead63a",
+    "status": "in_progress"
+  }
+}
