@@ -1,0 +1,45 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "T_STORE_INCIDENT",
+        "note": "Supported unnamed time frame for the represented store incident.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 1014,
+        "canonical_key": "T_PARTNER_EXPLANATION",
+        "note": "Distinct later explanation frame.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "anchor_hint": 1553,
+        "canonical_key": "T_PRESENT_REFLECTION",
+        "note": "Supported unnamed present reflection frame, with ongoing posture marked by \"still\".",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0bdfef4b24f0c75e006aa9480aef448191b336bc54efa6af9c",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0506bd0b1e65085f006aa9484a41ec81919f5f1d9aefee1289",
+    "status": "in_progress"
+  }
+}

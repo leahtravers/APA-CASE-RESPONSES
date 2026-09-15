@@ -1,0 +1,82 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "LOC_STORE",
+        "note": "Broad setting orientation.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "LOC_SELF_CHECK",
+        "note": "Contained scene orientation within the store.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "LOC_AWAY_WITH_COUPON",
+        "note": "Departure and carrying orientation for the attendant’s removal of the coupon.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "away with my coupon",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "away with my coupon"
+      },
+      {
+        "canonical_key": "LOC_IN_AND_OUT",
+        "note": "Intended quick entry-and-exit orientation.",
+        "order_cue": "wanted to be in and out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "LOC_WALK_OUT",
+        "note": "Prospective exit orientation in the speaker’s contemplated choice.",
+        "order_cue": "pay and walk out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "out"
+      },
+      {
+        "canonical_key": "LOC_OUT_OF_CONTROL",
+        "note": "Relational orientation central to the speaker’s stated frustration.",
+        "order_cue": "felt out of control",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "out of control"
+      },
+      {
+        "canonical_key": "LOC_INTO_SITUATIONS",
+        "note": "Figurative orientation in the speaker’s prospective effort to avoid recurrence.",
+        "order_cue": "get myself into these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_0340106d693d0d39006aa9480a587c8191950436b0479fd995",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_01e48aa4b1f68c30006aa948580b6c8191ae1db36aa5fa9fec",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 70,
+        "canonical_key": "coupon",
+        "note": "Corefers with later instances of “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "trying to scan this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "anchor_hint": 86,
+        "canonical_key": "cereal_box",
+        "note": "The later wordings “the box” and “my cereal” refer to the cereal product associated with the coupon.",
+        "order_cue": "this coupon for my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "anchor_hint": 497,
+        "canonical_key": "coupon_discount",
+        "note": "The coupon’s stated discount is represented as the object of the speaker’s question about whether it matters.",
+        "order_cue": "Do I really care about the $1.25 off my cereal?",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "the $1.25 off my cereal"
+      },
+      {
+        "anchor_hint": 986,
+        "canonical_key": "coupon_next_step_decision",
+        "note": "Abstract decision referent tracked as the focus of the speaker’s felt loss of control.",
+        "order_cue": "what the decision on the coupon’s next step should be",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      }
+    ],
+    "session_id": "sess_0e005f5a0939059f006aa9480a08848191a416998c7d64d49b",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0319f3f8be2ed522006aa94849cfdc8191a1e8a698e2617b15",
+    "status": "in_progress"
+  }
+}
