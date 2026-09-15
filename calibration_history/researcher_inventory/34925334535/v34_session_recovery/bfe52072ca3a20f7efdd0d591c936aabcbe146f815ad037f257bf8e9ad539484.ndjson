@@ -1,0 +1,4 @@
+{"detail": null, "event": "session_created", "session_id": "sess_0a24628d513c8b69006aa8bd596adc8191aa1596aa2238a147", "session_type": "researcher_inventory_v34_extract", "status": "in_progress", "unix": 1789443419.1747093}
+{"detail": null, "event": "session_completed", "session_id": "sess_0a24628d513c8b69006aa8bd596adc8191aa1596aa2238a147", "session_type": "researcher_inventory_v34_extract", "status": "completed", "unix": 1789443502.1168122}
+{"detail": null, "event": "session_created", "session_id": "sess_0cda55811c6e62c6006aa8bdae93a08191b64a344e0cec1d33", "session_type": "researcher_inventory_v34_adjudication", "status": "in_progress", "unix": 1789443504.2168446}
+{"detail": null, "event": "session_completed", "session_id": "sess_0cda55811c6e62c6006aa8bdae93a08191b64a344e0cec1d33", "session_type": "researcher_inventory_v34_adjudication", "status": "completed", "unix": 1789443596.997607}
