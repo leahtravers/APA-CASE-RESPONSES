@@ -1,0 +1,76 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with later “it,” “my coupon,” and “the coupon.”",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon for my kids’ cereal",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "kids_cereal",
+        "note": "Corefers with later “my cereal.”",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "order",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "coupon_date",
+        "note": "The date associated with the coupon.",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal_box",
+        "note": "The box associated with the cereal.",
+        "qualities_available": false,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "cereal_discount",
+        "note": "The coupon benefit considered by the speaker.",
+        "qualities_available": false,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "the $1.25 off my cereal"
+      },
+      {
+        "canonical_key": "shopping_items",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "a few things",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "coupon_next_step_decision",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      }
+    ],
+    "session_id": "sess_0dcda00214a0bfc2006aa966cbe9c88191b0e8efd3a9d854fa",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0688c19a577a6c3c006aa96709042481919ab045a3d8ad8fee",
+    "status": "in_progress"
+  }
+}
