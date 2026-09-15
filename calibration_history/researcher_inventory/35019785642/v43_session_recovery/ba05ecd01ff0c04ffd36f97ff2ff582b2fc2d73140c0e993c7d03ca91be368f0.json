@@ -1,0 +1,89 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "time_store_self_check_episode",
+        "note": "Supported unnamed broad time frame for the store incident.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "self-check at the store",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 390,
+        "canonical_key": "time_waiting_phase",
+        "note": "Contained waiting phase within the store incident; later waiting references are consolidated here.",
+        "order_cue": "And so then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "then",
+        "source_cue": "And so then I am standing there waiting",
+        "source_wording": "then"
+      },
+      {
+        "anchor_hint": 561,
+        "canonical_key": "time_intended_brief_shop",
+        "note": "Intended brief-shopping frame contrasted with the prolonged incident.",
+        "order_cue": "I just wanted to be in and out for a few things",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 640,
+        "canonical_key": "time_questioned_wait_duration",
+        "note": "Questioned prospective duration of the ongoing wait.",
+        "order_cue": "How long will this take?",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "How long",
+        "source_cue": "How long will this take?",
+        "source_wording": "How long"
+      },
+      {
+        "anchor_hint": 841,
+        "canonical_key": "time_partner_explanation",
+        "note": "Later represented frame in which the store incident was explained to the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "anchor_hint": 1137,
+        "canonical_key": "time_regular_shopping",
+        "note": "Recurring shopping frame.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1340,
+        "canonical_key": "time_present_reflection",
+        "note": "Present reflection frame marked as continuing after the incident.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "still",
+        "source_cue": "it is still bugging me",
+        "source_wording": "still"
+      }
+    ],
+    "session_id": "sess_0c4ba704cffab669006aa9aa5442e48191919ba2919a785256",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e7a17cf22ed84d5006aa9aa84e6608191932ad9232e094980",
+    "status": "in_progress"
+  }
+}

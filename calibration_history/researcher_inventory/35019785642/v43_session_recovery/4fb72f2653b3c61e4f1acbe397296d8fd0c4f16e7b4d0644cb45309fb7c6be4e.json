@@ -1,0 +1,95 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "locator_store",
+        "note": "Broad location containing the self-check scene.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "locator_self_check",
+        "note": "Contained orientation for the speaker; later “there” and “here” refer to this checkout position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "locator_attendant_over",
+        "note": "Direction of the attendant’s approach toward the speaker.",
+        "order_cue": "comes over to help me with it",
+        "qualities_available": false,
+        "short_tag": "over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "over"
+      },
+      {
+        "canonical_key": "locator_box_right_there",
+        "note": "Proximal orientation of the cereal box in the checkout scene.",
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "locator_attendant_away",
+        "note": "Direction of the attendant’s departure from the checkout interaction.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away"
+      },
+      {
+        "canonical_key": "locator_coupon_with_attendant",
+        "note": "Carrying orientation linking the coupon to the departing attendant.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "canonical_key": "locator_in_and_out",
+        "note": "Intended quick ingress-and-egress orientation for the shopping episode.",
+        "order_cue": "I just wanted to be in and out for a few things",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "locator_walk_out",
+        "note": "Contemplated exit orientation after paying.",
+        "order_cue": "just pay and walk out",
+        "qualities_available": false,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "canonical_key": "locator_into_situations",
+        "note": "Figurative entry orientation linking the speaker to recurring situations.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_003b242a49c0bbec006aa9aa53f4ec8191a7e0de017dc0a9ec",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_042796409ea6ee1b006aa9aa8834c4819191929484c8f6731b",
+    "status": "in_progress"
+  }
+}
