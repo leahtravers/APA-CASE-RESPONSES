@@ -74,9 +74,70 @@ jobs:
             echo "certified=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Detect prior sealed holdout consumption
+        id: holdout_history
+        if: steps.final_state.outputs.certified != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+
+          root = Path("calibration_history/researcher_inventory")
+          attempts = []
+          if root.exists():
+              for state_path in sorted(root.glob("*/holdout_stage_state.json")):
+                  try:
+                      state = json.loads(state_path.read_text())
+                  except Exception:
+                      continue
+                  if state.get("calibrated_lineage_holdout_attempted"):
+                      attempts.append((state_path.parent.name, state))
+
+          print(f"consumed={'true' if attempts else 'false'}")
+          print(f"attempt_count={len(attempts)}")
+          if attempts:
+              run_id, state = attempts[0]
+              print(f"source_run={run_id}")
+              print(f"calibrated_pass={'true' if state.get('calibrated_lineage_holdout_pass') else 'false'}")
+              print(f"clean_room_agent_created={'true' if state.get('clean_room_agent_created') else 'false'}")
+              print(f"latest_holdout_pass={'true' if state.get('latest_holdout_pass') else 'false'}")
+          PY
+
+      - name: Hold automatic reuse after sealed holdout consumption
+        if: steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p researcher_inventory/status
+          cat > researcher_inventory/status/HOLDOUT_CONSUMED_HOLD.md <<EOF
+          # Researcher Inventory Sealed Holdout Hold
+
+          Sealed Case 5 has already been attempted on a calibrated lineage in workflow run `${{ steps.holdout_history.outputs.source_run }}`. Automatic calibration-lineage or clean-room reuse is prohibited. Preserve the prior result and resolve from durable non-content metadata; do not reopen or expose the sealed source for calibration.
+
+          Recorded attempt count: `${{ steps.holdout_history.outputs.attempt_count }}`
+          Calibrated-lineage pass recorded: `${{ steps.holdout_history.outputs.calibrated_pass }}`
+          Clean-room agent creation recorded: `${{ steps.holdout_history.outputs.clean_room_agent_created }}`
+          Latest clean-room/holdout pass recorded: `${{ steps.holdout_history.outputs.latest_holdout_pass }}`
+          EOF
+          echo "SEALED HOLDOUT ALREADY CONSUMED — AUTOMATIC REUSE HELD"
+
+      - name: Commit durable one-shot hold
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add researcher_inventory/status/HOLDOUT_CONSUMED_HOLD.md
+          if ! git diff --cached --quiet; then
+            git commit -m "apparatus: hold consumed sealed holdout [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
       - name: Calibrate hidden archetypes on one bounded agent lineage
         id: calibration
-        if: steps.final_state.outputs.certified != 'true'
+        if: steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -101,7 +162,7 @@ jobs:
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
         id: holdout
-        if: steps.calibration.outcome == 'success'
+        if: steps.calibration.outcome == 'success' && steps.holdout_history.outputs.consumed != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -140,7 +201,7 @@ jobs:
           fi
 
       - name: Preserve calibration evidence durably
-        if: always() && steps.final_state.outputs.certified != 'true'
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -204,7 +265,7 @@ jobs:
           fi
 
       - name: Preserve results in workflow log
-        if: always() && steps.final_state.outputs.certified != 'true'
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
         shell: bash
         run: |
           echo '=== ARCHETYPE INTEGRITY ==='
