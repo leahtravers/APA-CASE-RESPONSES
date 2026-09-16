@@ -1,0 +1,45 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": "Broad physical scene containing the represented shopping activity.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "store:self-check",
+        "note": "Contained occurrence position; later uses of \"there\" and \"here\" corefer to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 418,
+        "canonical_key": "store:manager-location",
+        "note": "Supported unnamed offscreen destination associated with retrieving the manager.",
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "manager location",
+        "source_cue": "to go get a manager",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_09961901b0fb8d63006aaafa77d89081919a239789a8dfaea6",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0085a9d1c9988d2d006aaafaa6e39c819195a1834b9a859969",
+    "status": "in_progress"
+  }
+}

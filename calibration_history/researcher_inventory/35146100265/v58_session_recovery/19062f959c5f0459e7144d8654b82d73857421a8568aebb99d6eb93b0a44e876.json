@@ -1,0 +1,62 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker; first-person references including me, my, and myself corefer to B.",
+        "order_cue": "I am at the self-check",
+        "qualities_available": true,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 81,
+        "canonical_key": "B_KIDS",
+        "note": "The speaker’s kids, established through the possessive relation to the cereal.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 125,
+        "canonical_key": "ATTENDANT",
+        "note": "Singular they, them, and the later possessive attendant’s corefer to the attendant.",
+        "order_cue": "the attendant sees",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 429,
+        "canonical_key": "MANAGER",
+        "note": "Offscreen social actor introduced as the person the attendant goes to get.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 880,
+        "canonical_key": "PARTNER",
+        "note": "The speaker’s partner, represented as the recipient of the later explanation.",
+        "order_cue": "I tried to explain this to my partner",
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0b1f42bf5429b2d7006aaafa77fd6c819195cb5dae01ea9e8f",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0efb9ca1f6597322006aaafaad4b4c81919d994723a1ee490a",
+    "status": "in_progress"
+  }
+}

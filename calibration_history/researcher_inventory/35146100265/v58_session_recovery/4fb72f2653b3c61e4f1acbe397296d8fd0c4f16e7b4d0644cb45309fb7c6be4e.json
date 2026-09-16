@@ -1,0 +1,140 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 9,
+        "canonical_key": "LOCATOR_AT_SELF_CHECK",
+        "note": "Later “there” and “here” references resolve to this occurrence position.",
+        "order_cue": "at the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "I am at the self-check",
+        "source_wording": "at the self-check"
+      },
+      {
+        "anchor_hint": 27,
+        "canonical_key": "LOCATOR_AT_STORE",
+        "note": "Broad containment orientation for the self-check position.",
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "anchor_hint": 189,
+        "canonical_key": "LOCATOR_OVER_TO_B",
+        "note": "Movement toward the speaker’s position.",
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "over",
+        "source_cue": "comes over to help me",
+        "source_wording": "over"
+      },
+      {
+        "anchor_hint": 315,
+        "canonical_key": "LOCATOR_RIGHT_THERE",
+        "note": "Positions the box within the represented checkout scene.",
+        "order_cue": "right there",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "anchor_hint": 401,
+        "canonical_key": "LOCATOR_AWAY",
+        "note": "Direction away from the checkout interaction.",
+        "order_cue": "away",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away"
+      },
+      {
+        "anchor_hint": 406,
+        "canonical_key": "LOCATOR_WITH_COUPON",
+        "note": "Carrying/accompaniment orientation in the attendant’s movement.",
+        "order_cue": "with my coupon",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "anchor_hint": 529,
+        "canonical_key": "LOCATOR_PRESENT_MOMENT",
+        "note": "The later “now” refers to the same current waiting period.",
+        "order_cue": "right now",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "right now",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "right now"
+      },
+      {
+        "anchor_hint": 610,
+        "canonical_key": "LOCATOR_IN_AND_OUT",
+        "note": "Compact entry-and-exit path orientation for the intended shopping trip.",
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 732,
+        "canonical_key": "LOCATOR_OUT_OF_STORE",
+        "note": "Exit orientation from the checkout/store scene.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "anchor_hint": 1231,
+        "canonical_key": "LOCATOR_REGULAR_SHOPPING",
+        "note": "Recurring temporal orientation for the concern about appearing rude.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1524,
+        "canonical_key": "LOCATOR_IN_B_MIND",
+        "note": "Internal orientation for getting the matter straight.",
+        "order_cue": "in my mind",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "anchor_hint": 1562,
+        "canonical_key": "LOCATOR_INTO_SITUATIONS",
+        "note": "Figurative entry orientation involving the speaker and recurring situations.",
+        "order_cue": "into these situations",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_04dd9f566c2ce360006aaafa77b8408191aa9c1e8e84178466",
+    "status": "completed"
+  }
+}
