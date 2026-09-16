@@ -1,0 +1,57 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": "speaker",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "KIDS",
+        "note": "speaker's children; represented as a stable group",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "ATTENDANT",
+        "note": "corefers with they, them, and the attendant’s",
+        "order_cue": "the attendant sees I am struggling to finish my order",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "MANAGER",
+        "note": "prospective represented role",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "PARTNER",
+        "note": "speaker's partner",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_02d38d250e76a8b4006aaa8782eeb48191b2e4be650657f5bc",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0c719d8d27729cf7006aaa87a0dccc819183c57b6508a69319",
+    "status": "in_progress"
+  }
+}
