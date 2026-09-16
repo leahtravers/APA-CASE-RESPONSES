@@ -1,0 +1,30 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "PLACE_STORE",
+        "note": null,
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 12,
+        "canonical_key": "PLACE_SELF_CHECK",
+        "note": "Contained checkout position within the store; later occurrences of “there” and “here” refer back to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      }
+    ],
+    "session_id": "sess_06e8ed987d9f0312006aaa75d0ef108191b2e362cafa92423e",
+    "status": "completed"
+  }
+}
