@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "store",
+        "note": null,
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 12,
+        "canonical_key": "self_check",
+        "note": "Contained physical setting within the store.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 293,
+        "canonical_key": "box_position",
+        "note": "Unnamed represented physical position of the box.",
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "box right there",
+        "source_cue": "the box is right there",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 452,
+        "canonical_key": "B_waiting_position",
+        "note": "Unnamed waiting position of B, coreferentially situated at the self-check.",
+        "order_cue": "I am standing there waiting",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "I am standing there waiting",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0874aa233ea92af0006aab02af55048191bc24daae0fd38a8f",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_02bb67d422dce46c006aab02e9a5308191876b51df2b2cedb8",
+    "status": "in_progress"
+  }
+}

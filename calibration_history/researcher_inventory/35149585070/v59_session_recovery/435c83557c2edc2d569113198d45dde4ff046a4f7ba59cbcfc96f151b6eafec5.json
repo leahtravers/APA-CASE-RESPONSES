@@ -1,0 +1,152 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with later instances of “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "this coupon",
+        "source_cue": "this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "cereal",
+        "note": "Corefers with later “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "my kids’ cereal",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "order",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my order",
+        "source_cue": "finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "coupon_date",
+        "note": "The date represented on the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the date",
+        "source_cue": "the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal_box",
+        "note": "The box associated with the cereal.",
+        "order_cue": "the box",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "cereal_discount",
+        "note": "The coupon discount amount.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "$1.25 off my cereal",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "canonical_key": "shopping_items",
+        "note": "A small set of items the speaker intended to obtain.",
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "a few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "speaker_preferred_choice",
+        "note": "The speaker’s unresolved preferred choice in the situation.",
+        "order_cue": "what I wanted to do",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "what I wanted to do",
+        "source_cue": "what I wanted to do",
+        "source_wording": "what I wanted to do"
+      },
+      {
+        "canonical_key": "speaker_point",
+        "note": "The content the speaker tried to explain to the partner.",
+        "order_cue": "my point",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my point",
+        "source_cue": "my point was that",
+        "source_wording": "my point"
+      },
+      {
+        "canonical_key": "coupon_next_step_decision",
+        "note": "The decision whose control the speaker felt had been lost.",
+        "order_cue": "the decision on the coupon’s next step",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the decision on the coupon’s next step",
+        "source_cue": "the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "canonical_key": "coupon_next_step",
+        "note": "The prospective next step that is the subject of the decision.",
+        "order_cue": "the coupon’s next step",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the coupon’s next step",
+        "source_cue": "the coupon’s next step",
+        "source_wording": "the coupon’s next step"
+      },
+      {
+        "canonical_key": "frustrating_part",
+        "note": "Refers to the previously described loss of control and resulting wait.",
+        "order_cue": "the part",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the part",
+        "source_cue": "the part that was super frustrating",
+        "source_wording": "the part"
+      },
+      {
+        "canonical_key": "speaker_mind",
+        "note": "The speaker’s internal referent.",
+        "order_cue": "my mind",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my mind",
+        "source_cue": "straight in my mind",
+        "source_wording": "my mind"
+      },
+      {
+        "canonical_key": "these_situations",
+        "note": "A category of situations including the recounted interaction.",
+        "order_cue": "these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_0d1dc7a5cb318fb9006aab02aef07c8191bf2d5fc85e42c682",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0340ab99bf3f6a81006aab02fcfb488191bc702917feecdfb8",
+    "status": "in_progress"
+  }
+}
