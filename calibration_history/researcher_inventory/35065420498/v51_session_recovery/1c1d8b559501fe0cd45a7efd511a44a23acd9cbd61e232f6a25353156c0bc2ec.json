@@ -1,0 +1,34 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "PLACE_STORE",
+        "note": "Broad store scene containing the self-check episode.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 12,
+        "canonical_key": "PLACE_SELF_CHECK",
+        "note": "Contained checkout position where the coupon-scanning and waiting episode occurs; later “there” and “here” refer back to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      }
+    ],
+    "session_id": "sess_0af98bceb20ca93a006aaa3bc69b9c81919a0a06302ff78307",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_00d677a3e8e79203006aaa3be201c0819185bcafca045be110",
+    "status": "in_progress"
+  }
+}
