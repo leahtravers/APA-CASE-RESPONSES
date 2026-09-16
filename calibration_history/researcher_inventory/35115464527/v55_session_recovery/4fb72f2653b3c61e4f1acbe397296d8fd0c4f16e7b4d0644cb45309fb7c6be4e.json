@@ -1,0 +1,113 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "store_orientation",
+        "note": "Broad orientation containing the self-check.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "self_check_orientation",
+        "note": "Contained orientation within the store; later deictic there and here wording returns to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "attendant_over_to_speaker_orientation",
+        "note": "Movement toward the speaker's position.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "canonical_key": "box_right_there_orientation",
+        "note": "Deictic position assigned to the box in the shared self-check scene.",
+        "order_cue": null,
+        "qualities_available": true,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "attendant_away_with_coupon_orientation",
+        "note": "Binds movement away with the coupon accompanying the attendant.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "away with my coupon",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "away with my coupon"
+      },
+      {
+        "canonical_key": "speaker_standing_there_orientation",
+        "note": "Placement at the self-check while waiting; standing here and stuck there are later coreferential returns.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "standing there",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing there"
+      },
+      {
+        "canonical_key": "intended_in_and_out_orientation",
+        "note": "Intended entry-and-exit path through the shopping visit.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "prospective_walk_out_orientation",
+        "note": "Questioned prospective exit orientation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "walk out"
+      },
+      {
+        "canonical_key": "regular_shopping_context",
+        "note": "Recurring shopping context.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "mind_internal_orientation",
+        "note": "Internal orientation for getting the matter straight.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "canonical_key": "into_these_situations_orientation",
+        "note": "Figurative orientation into the recurring situations referenced by the speaker.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_0fccc54ff394cc6d006aaab56c5c888191b92e99c9123b3939",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_01ff7c8d383e8888006aaab5bbaf2c8191b36195e5f3733c4f",
+    "status": "in_progress"
+  }
+}

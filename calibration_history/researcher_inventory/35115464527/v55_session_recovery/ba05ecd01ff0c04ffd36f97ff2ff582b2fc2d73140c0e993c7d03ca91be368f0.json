@@ -1,0 +1,57 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "TIME_COUPON_SCAN_EPISODE",
+        "note": "Unnamed initial self-check episode involving the coupon problem and attendant interaction.",
+        "order_cue": null,
+        "qualities_available": true,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "TIME_WAITING_PHASE",
+        "note": "Distinct waiting phase after the attendant leaves to get a manager.",
+        "order_cue": "then",
+        "qualities_available": true,
+        "short_tag": "standing there waiting",
+        "source_cue": "And so then I am standing there waiting",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "TIME_PARTNER_EXPLANATION_EPISODE",
+        "note": "Later remembered episode in which the speaker explained the incident to their partner.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "TIME_REGULAR_SHOPPING_FRAME",
+        "note": "Recurring shopping frame.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "TIME_CURRENT_REFLECTION_FRAME",
+        "note": "Current reflection frame following the store incident and partner explanation.",
+        "order_cue": "still",
+        "qualities_available": true,
+        "short_tag": "it is still bugging me",
+        "source_cue": "And wow, it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_014860d67795c493006aaab56c40dc8191b5d6e6a334b3ca39",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_03426847603c8bd3006aaab59fd9f88191b72c18e7f4c8b6c7",
+    "status": "in_progress"
+  }
+}
