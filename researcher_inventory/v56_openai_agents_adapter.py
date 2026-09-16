@@ -5,7 +5,7 @@ Reuses the V55 transport/session implementation only; V56 durable contract and t
 """
 import os
 from pathlib import Path
-import researcher_inventory.v55_openai_agents_adapter as base
+import v55_openai_agents_adapter as base
 
 base.CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V56").strip() or "RI-CONTRACT-V56"
 base.recovery.RECOVERY_DIR = Path("researcher_inventory/runtime/v56_session_recovery")
