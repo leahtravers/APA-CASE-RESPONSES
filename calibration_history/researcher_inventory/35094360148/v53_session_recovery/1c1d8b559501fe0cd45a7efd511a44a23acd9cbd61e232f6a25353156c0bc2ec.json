@@ -1,0 +1,34 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "store",
+        "note": "Broad physical scene containing the self-check.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 12,
+        "canonical_key": "self-check at the store",
+        "note": "Contained occurrence position; later references to standing there and here refer to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      }
+    ],
+    "session_id": "sess_06c141c539395e0e006aaa875dbc508191a84adf4c326072d8",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_072c449b80787f4f006aaa877437b08191a39fdc8330e503cc",
+    "status": "in_progress"
+  }
+}
