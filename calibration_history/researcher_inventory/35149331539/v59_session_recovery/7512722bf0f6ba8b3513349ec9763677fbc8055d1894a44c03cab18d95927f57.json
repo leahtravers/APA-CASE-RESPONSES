@@ -1,0 +1,372 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "try_scan",
+        "note": null,
+        "order_cue": "am trying",
+        "qualities_available": false,
+        "short_tag": "am trying",
+        "source_cue": "I am trying to scan this coupon",
+        "source_wording": "am trying"
+      },
+      {
+        "canonical_key": "scan_coupon",
+        "note": null,
+        "order_cue": "scan",
+        "qualities_available": false,
+        "short_tag": "scan",
+        "source_cue": "scan this coupon",
+        "source_wording": "scan"
+      },
+      {
+        "canonical_key": "coupon_not_working",
+        "note": "“it” refers to the coupon.",
+        "order_cue": "is not working",
+        "qualities_available": false,
+        "short_tag": "is not working",
+        "source_cue": "it is not working",
+        "source_wording": "is not working"
+      },
+      {
+        "canonical_key": "attendant_see_struggling",
+        "note": null,
+        "order_cue": "sees",
+        "qualities_available": false,
+        "short_tag": "sees",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "sees"
+      },
+      {
+        "canonical_key": "struggle_finish_order",
+        "note": null,
+        "order_cue": "am struggling",
+        "qualities_available": false,
+        "short_tag": "am struggling",
+        "source_cue": "I am struggling to finish my order",
+        "source_wording": "am struggling"
+      },
+      {
+        "canonical_key": "finish_order",
+        "note": null,
+        "order_cue": "finish",
+        "qualities_available": false,
+        "short_tag": "finish",
+        "source_cue": "finish my order",
+        "source_wording": "finish"
+      },
+      {
+        "canonical_key": "attendant_come_over",
+        "note": null,
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "canonical_key": "attendant_help",
+        "note": null,
+        "order_cue": "help",
+        "qualities_available": false,
+        "short_tag": "help",
+        "source_cue": "help me with it",
+        "source_wording": "help"
+      },
+      {
+        "canonical_key": "coupon_wont_scan",
+        "note": "“It” refers to the coupon; “them” refers to the attendant.",
+        "order_cue": "won’t scan",
+        "qualities_available": false,
+        "short_tag": "won’t scan",
+        "source_cue": "It won’t scan for them either",
+        "source_wording": "won’t scan"
+      },
+      {
+        "canonical_key": "attendant_look_at_coupon",
+        "note": "“they” refers to the attendant and “it” to the coupon.",
+        "order_cue": "look at",
+        "qualities_available": false,
+        "short_tag": "look at",
+        "source_cue": "they look at it",
+        "source_wording": "look at"
+      },
+      {
+        "canonical_key": "attendant_see_date",
+        "note": "The perceiver is the attendant.",
+        "order_cue": "see",
+        "qualities_available": false,
+        "short_tag": "see",
+        "source_cue": "see the date is valid",
+        "source_wording": "see"
+      },
+      {
+        "canonical_key": "B_not_recall",
+        "note": null,
+        "order_cue": "don’t recall",
+        "qualities_available": false,
+        "short_tag": "don’t recall",
+        "source_cue": "I really don’t recall saying anything",
+        "source_wording": "don’t recall"
+      },
+      {
+        "canonical_key": "B_say_anything",
+        "note": null,
+        "order_cue": "saying",
+        "qualities_available": false,
+        "short_tag": "saying",
+        "source_cue": "saying anything",
+        "source_wording": "saying"
+      },
+      {
+        "canonical_key": "attendant_walk_away",
+        "note": null,
+        "order_cue": "walk away",
+        "qualities_available": true,
+        "short_tag": "walk away",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "walk away"
+      },
+      {
+        "canonical_key": "attendant_go",
+        "note": null,
+        "order_cue": "go",
+        "qualities_available": false,
+        "short_tag": "go",
+        "source_cue": "go get a manager",
+        "source_wording": "go"
+      },
+      {
+        "canonical_key": "attendant_get_manager",
+        "note": null,
+        "order_cue": "get",
+        "qualities_available": false,
+        "short_tag": "get",
+        "source_cue": "get a manager",
+        "source_wording": "get"
+      },
+      {
+        "canonical_key": "B_standing",
+        "note": "The later “I am standing here” revisits the same waiting situation.",
+        "order_cue": "am standing",
+        "qualities_available": false,
+        "short_tag": "am standing",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "am standing"
+      },
+      {
+        "canonical_key": "B_waiting",
+        "note": "The later “stuck there waiting” revisits the same wait.",
+        "order_cue": "waiting",
+        "qualities_available": false,
+        "short_tag": "waiting",
+        "source_cue": "standing there waiting",
+        "source_wording": "waiting"
+      },
+      {
+        "canonical_key": "B_thinking_to_self",
+        "note": null,
+        "order_cue": "thinking to myself",
+        "qualities_available": false,
+        "short_tag": "thinking to myself",
+        "source_cue": "thinking to myself",
+        "source_wording": "thinking to myself"
+      },
+      {
+        "canonical_key": "B_care_about_discount",
+        "note": "Question posture is source-present.",
+        "order_cue": "Do I really care about",
+        "qualities_available": false,
+        "short_tag": "Do I really care about",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "Do I really care about"
+      },
+      {
+        "canonical_key": "B_want_quick_visit",
+        "note": null,
+        "order_cue": "wanted",
+        "qualities_available": false,
+        "short_tag": "wanted",
+        "source_cue": "I just wanted to be in and out",
+        "source_wording": "wanted"
+      },
+      {
+        "canonical_key": "B_be_in_and_out",
+        "note": null,
+        "order_cue": "be in and out",
+        "qualities_available": false,
+        "short_tag": "be in and out",
+        "source_cue": "be in and out for a few things",
+        "source_wording": "be in and out"
+      },
+      {
+        "canonical_key": "wait_take_time",
+        "note": "Question and future posture are source-present.",
+        "order_cue": "will this take?",
+        "qualities_available": false,
+        "short_tag": "will this take?",
+        "source_cue": "How long will this take?",
+        "source_wording": "will this take?"
+      },
+      {
+        "canonical_key": "B_pay",
+        "note": "Presented hypothetically.",
+        "order_cue": "pay",
+        "qualities_available": false,
+        "short_tag": "pay",
+        "source_cue": "just pay and walk out",
+        "source_wording": "pay"
+      },
+      {
+        "canonical_key": "B_walk_out",
+        "note": "Presented hypothetically.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "short_tag": "walk out",
+        "source_cue": "walk out",
+        "source_wording": "walk out"
+      },
+      {
+        "canonical_key": "attendant_not_ask",
+        "note": "“they” refers to the attendant; question and negation are source-present.",
+        "order_cue": "didn’t they ask",
+        "qualities_available": false,
+        "short_tag": "didn’t they ask",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "didn’t they ask"
+      },
+      {
+        "canonical_key": "B_want_action_choice",
+        "note": null,
+        "order_cue": "wanted",
+        "qualities_available": false,
+        "short_tag": "wanted",
+        "source_cue": "what I wanted to do",
+        "source_wording": "wanted"
+      },
+      {
+        "canonical_key": "B_do",
+        "note": null,
+        "order_cue": "do",
+        "qualities_available": false,
+        "short_tag": "do",
+        "source_cue": "what I wanted to do",
+        "source_wording": "do"
+      },
+      {
+        "canonical_key": "B_try_explain",
+        "note": null,
+        "order_cue": "tried",
+        "qualities_available": false,
+        "short_tag": "tried",
+        "source_cue": "I tried to explain this to my partner",
+        "source_wording": "tried"
+      },
+      {
+        "canonical_key": "B_explain_to_partner",
+        "note": null,
+        "order_cue": "explain",
+        "qualities_available": false,
+        "short_tag": "explain",
+        "source_cue": "explain this to my partner",
+        "source_wording": "explain"
+      },
+      {
+        "canonical_key": "B_felt",
+        "note": null,
+        "order_cue": "felt",
+        "qualities_available": false,
+        "short_tag": "felt",
+        "source_cue": "I felt out of control",
+        "source_wording": "felt"
+      },
+      {
+        "canonical_key": "B_not_want_appear_rude",
+        "note": null,
+        "order_cue": "don’t want",
+        "qualities_available": false,
+        "short_tag": "don’t want",
+        "source_cue": "I don’t want to appear rude",
+        "source_wording": "don’t want"
+      },
+      {
+        "canonical_key": "B_appear_rude",
+        "note": null,
+        "order_cue": "appear",
+        "qualities_available": false,
+        "short_tag": "appear",
+        "source_cue": "appear rude",
+        "source_wording": "appear"
+      },
+      {
+        "canonical_key": "B_shop",
+        "note": null,
+        "order_cue": "shop",
+        "qualities_available": true,
+        "short_tag": "shop",
+        "source_cue": "when I shop regularly",
+        "source_wording": "shop"
+      },
+      {
+        "canonical_key": "B_found",
+        "note": null,
+        "order_cue": "found",
+        "qualities_available": false,
+        "short_tag": "found",
+        "source_cue": "I found that that was the part",
+        "source_wording": "found"
+      },
+      {
+        "canonical_key": "B_not_think",
+        "note": null,
+        "order_cue": "do not think",
+        "qualities_available": false,
+        "short_tag": "do not think",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "do not think"
+      },
+      {
+        "canonical_key": "situation_bugging_B",
+        "note": "“it” refers to the represented situation.",
+        "order_cue": "is still bugging",
+        "qualities_available": false,
+        "short_tag": "is still bugging",
+        "source_cue": "it is still bugging me",
+        "source_wording": "is still bugging"
+      },
+      {
+        "canonical_key": "B_need",
+        "note": null,
+        "order_cue": "need",
+        "qualities_available": false,
+        "short_tag": "need",
+        "source_cue": "I need to get it straight in my mind",
+        "source_wording": "need"
+      },
+      {
+        "canonical_key": "B_get_straight_in_mind",
+        "note": "“it” refers to the represented situation or understanding of it.",
+        "order_cue": "get it straight in my mind",
+        "qualities_available": false,
+        "short_tag": "get it straight in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "get it straight in my mind"
+      },
+      {
+        "canonical_key": "B_not_get_self_into_situations",
+        "note": "Negation is intrinsic to the prospective relation.",
+        "order_cue": "not get myself into",
+        "qualities_available": false,
+        "short_tag": "not get myself into",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "not get myself into"
+      }
+    ],
+    "session_id": "sess_0adc886f002415fb006aab021559388191b80959560c0a0e29",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0d2fb65f26e39ab3006aab028525f081919b45f35540fddadb",
+    "status": "in_progress"
+  }
+}

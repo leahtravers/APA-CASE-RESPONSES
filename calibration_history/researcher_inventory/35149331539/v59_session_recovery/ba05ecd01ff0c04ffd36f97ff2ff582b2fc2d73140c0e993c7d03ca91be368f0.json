@@ -1,0 +1,112 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "time:self-check_store_situation",
+        "note": "Broad store occurrence frame containing the scan, assistance, and waiting phases.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "at the self-check at the store",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "at the self-check at the store"
+      },
+      {
+        "canonical_key": "time:trying_to_scan_coupon",
+        "note": "Initial coupon-scanning attempt within the store situation.",
+        "order_cue": "I am trying to scan this coupon",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal",
+        "source_wording": "trying to scan this coupon"
+      },
+      {
+        "canonical_key": "time:attendant_help_attempt",
+        "note": "Contained assistance and second scanning-attempt phase.",
+        "order_cue": "comes over to help me with it",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "comes over to help me with it",
+        "source_cue": "comes over to help me with it. It won’t scan for them either",
+        "source_wording": "comes over to help me with it"
+      },
+      {
+        "canonical_key": "time:attendant_goes_for_manager",
+        "note": "Prospective manager-fetching phase established when the attendant leaves.",
+        "order_cue": "to go get a manager",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "to go get a manager",
+        "source_cue": "walk away with my coupon in a huff to go get a manager",
+        "source_wording": "to go get a manager"
+      },
+      {
+        "canonical_key": "time:standing_waiting",
+        "note": "Waiting phase after the attendant walks away; later 'stuck there waiting' corefers with this phase.",
+        "order_cue": "then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "then I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "canonical_key": "time:hypothetical_pay_and_leave",
+        "note": "Hypothetical immediate alternative considered during the wait.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "just pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "just pay and walk out"
+      },
+      {
+        "canonical_key": "time:explaining_to_partner",
+        "note": "Later remembered reporting episode about the store situation.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "time:regular_shopping",
+        "note": "Recurring shopping frame.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "time:present_lingering_reflection",
+        "note": "Present-reflection frame in which the incident continues to bother the speaker.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "And wow, it is still bugging me",
+        "source_wording": "it is still bugging me"
+      },
+      {
+        "canonical_key": "time:prospective_similar_situations",
+        "note": "Prospective recurring frame of avoiding similar situations.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "I need to get it straight in my mind how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0db7c4b8ee625f2b006aab02155d108191954e0dbd255a646c",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_00e02daebfa1c0a5006aab024c882c8191bdd618a0321d3894",
+    "status": "in_progress"
+  }
+}
