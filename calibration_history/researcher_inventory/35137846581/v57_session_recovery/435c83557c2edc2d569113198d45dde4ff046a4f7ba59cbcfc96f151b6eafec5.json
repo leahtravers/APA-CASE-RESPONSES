@@ -1,0 +1,188 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 67,
+        "canonical_key": "coupon",
+        "note": "Corefers with later instances of “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "coupon",
+        "source_cue": "scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "anchor_hint": 83,
+        "canonical_key": "cereal",
+        "note": "Corefers with later “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "kids’ cereal",
+        "source_cue": "for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "anchor_hint": 173,
+        "canonical_key": "order",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "order",
+        "source_cue": "finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "anchor_hint": 280,
+        "canonical_key": "coupon_date",
+        "note": "The date inspected on the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "date",
+        "source_cue": "the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "anchor_hint": 302,
+        "canonical_key": "cereal_box",
+        "note": "The box associated with the cereal.",
+        "order_cue": "the box",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "anchor_hint": 564,
+        "canonical_key": "coupon_discount",
+        "note": "The coupon benefit considered by the speaker.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off",
+        "source_cue": "the $1.25 off my cereal",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "anchor_hint": 631,
+        "canonical_key": "few_things",
+        "note": "The speaker’s intended purchases.",
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "anchor_hint": 713,
+        "canonical_key": "pay_and_walk_out_option",
+        "note": "A contemplated course of action.",
+        "order_cue": "just pay and walk out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "just pay and walk out"
+      },
+      {
+        "anchor_hint": 761,
+        "canonical_key": "wanted_course",
+        "note": "The speaker’s unasked-for preferred course of action.",
+        "order_cue": "what I wanted to do",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "what I wanted to do",
+        "source_cue": "ask me what I wanted to do",
+        "source_wording": "what I wanted to do"
+      },
+      {
+        "anchor_hint": 913,
+        "canonical_key": "speaker_point",
+        "note": "The content the speaker tried to explain to the partner.",
+        "order_cue": "my point",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my point",
+        "source_cue": "my point was that I was more frustrated",
+        "source_wording": "my point"
+      },
+      {
+        "anchor_hint": 1003,
+        "canonical_key": "coupon_decision",
+        "note": "The decision whose control concerned the speaker.",
+        "order_cue": "the decision on the coupon’s next step",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "decision",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "anchor_hint": 1019,
+        "canonical_key": "coupon_next_step",
+        "note": "The prospective course addressed by the decision.",
+        "order_cue": "the coupon’s next step",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "coupon’s next step",
+        "source_cue": "the coupon’s next step should be",
+        "source_wording": "the coupon’s next step"
+      },
+      {
+        "anchor_hint": 1176,
+        "canonical_key": "frustrating_part",
+        "note": "Corefers with the source-described aspect involving lack of control and being stuck waiting.",
+        "order_cue": "the part",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the part",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "the part"
+      },
+      {
+        "anchor_hint": 1391,
+        "canonical_key": "mind",
+        "note": null,
+        "order_cue": "my mind",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "my mind"
+      },
+      {
+        "anchor_hint": 1399,
+        "canonical_key": "avoidance_knowledge",
+        "note": "The procedural content the speaker wants to get straight in mind.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      },
+      {
+        "anchor_hint": 1429,
+        "canonical_key": "recurring_situations",
+        "note": "The recurring class of situations referenced by the speaker.",
+        "order_cue": "these situations",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_04861fd7e8c3e1a9006aaae72b86708191a95edccec611284a",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_08e72a8a272e6efc006aaae775ef148191956cebd374ed2208",
+    "status": "in_progress"
+  }
+}

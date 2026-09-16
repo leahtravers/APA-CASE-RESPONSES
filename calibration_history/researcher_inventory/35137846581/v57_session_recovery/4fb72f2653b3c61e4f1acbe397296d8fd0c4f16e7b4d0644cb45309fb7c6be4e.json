@@ -1,0 +1,113 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "store_position",
+        "note": "Broad physical orientation containing the self-check position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "self_check_position",
+        "note": "Contained physical orientation of the speaker; later there and here references resolve to this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "toward_speaker",
+        "note": "Movement orientation toward the speaker.",
+        "order_cue": "comes over to help me",
+        "qualities_available": false,
+        "short_tag": "over",
+        "source_cue": "comes over to help me",
+        "source_wording": "over"
+      },
+      {
+        "canonical_key": "box_position",
+        "note": "Physical orientation of the box at the interaction position.",
+        "order_cue": "the box is right there",
+        "qualities_available": true,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "away_from_interaction",
+        "note": "Movement orientation away from the interaction position.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away"
+      },
+      {
+        "canonical_key": "coupon_carrying",
+        "note": "Carrying orientation binding the coupon to the attendant's movement.",
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "canonical_key": "intended_entry_exit",
+        "note": "Combined entry-and-exit movement orientation.",
+        "order_cue": "I just wanted to be in and out for a few things",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "exit_from_store",
+        "note": "Contemplated exit orientation.",
+        "order_cue": "just pay and walk out",
+        "qualities_available": false,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "canonical_key": "outside_control",
+        "note": "Figurative orientation relative to control.",
+        "order_cue": "I felt out of control",
+        "qualities_available": false,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control",
+        "source_wording": "out of control"
+      },
+      {
+        "canonical_key": "within_mind",
+        "note": "Internal mental orientation.",
+        "order_cue": "get it straight in my mind",
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "canonical_key": "into_situations",
+        "note": "Figurative movement orientation into recurring situations.",
+        "order_cue": "get myself into these situations",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_0ceede7300313dc4006aaae72c02288191947e5696fdb98f07",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_05a47901382add70006aaae76689cc8191ac71059c6999c94c",
+    "status": "in_progress"
+  }
+}

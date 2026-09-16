@@ -1,0 +1,129 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon not working",
+        "note": "State of the coupon during the speaker’s scan attempt.",
+        "order_cue": "it is not working",
+        "qualities_available": false,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "it is not working"
+      },
+      {
+        "canonical_key": "coupon date valid",
+        "note": "Validity classification of the coupon date.",
+        "order_cue": "the date is valid",
+        "qualities_available": false,
+        "short_tag": "date is valid",
+        "source_cue": "the date is valid",
+        "source_wording": "the date is valid"
+      },
+      {
+        "canonical_key": "speaker being a Karen",
+        "note": "Questioned self-classification.",
+        "order_cue": "Am I being a Karen right now?",
+        "qualities_available": false,
+        "short_tag": "being a Karen",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "Am I being a Karen right now?"
+      },
+      {
+        "canonical_key": "duration unknown",
+        "note": "Foregrounded question about the waiting episode’s duration.",
+        "order_cue": "How long will this take?",
+        "qualities_available": false,
+        "short_tag": "How long",
+        "source_cue": "How long will this take?",
+        "source_wording": "How long will this take?"
+      },
+      {
+        "canonical_key": "paying and leaving rude",
+        "note": "Questioned characterization of the contemplated action.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": false,
+        "short_tag": "rude",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "canonical_key": "coupon failure frustrating",
+        "note": "Evaluation of the coupon malfunction.",
+        "order_cue": "the coupon not working itself was frustrating",
+        "qualities_available": false,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "the coupon not working itself was frustrating"
+      },
+      {
+        "canonical_key": "speaker more frustrated",
+        "note": "Comparative emotional state of the speaker.",
+        "order_cue": "I was more frustrated",
+        "qualities_available": false,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated that I felt out of control",
+        "source_wording": "I was more frustrated"
+      },
+      {
+        "canonical_key": "speaker out of control",
+        "note": "Speaker’s foregrounded state concerning control over the coupon decision.",
+        "order_cue": "out of control",
+        "qualities_available": false,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "out of control of what the decision on the coupon’s next step should be"
+      },
+      {
+        "canonical_key": "speaker stuck waiting",
+        "note": "Speaker’s foregrounded constrained state.",
+        "order_cue": "stuck there waiting",
+        "qualities_available": false,
+        "short_tag": "stuck there waiting",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there waiting"
+      },
+      {
+        "canonical_key": "speaker appear rude",
+        "note": "Characterization the speaker wishes to avoid in the recurring shopping context.",
+        "order_cue": "appear rude",
+        "qualities_available": false,
+        "short_tag": "appear rude",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "appear rude when I shop regularly"
+      },
+      {
+        "canonical_key": "loss of control super frustrating",
+        "note": "Evaluation of the loss-of-control aspect identified by the preceding context.",
+        "order_cue": "super frustrating",
+        "qualities_available": false,
+        "short_tag": "super frustrating",
+        "source_cue": "I found that that was the part that was super frustrating",
+        "source_wording": "that was the part that was super frustrating"
+      },
+      {
+        "canonical_key": "attendant not at fault",
+        "note": "Rejected attribution of fault to the attendant.",
+        "order_cue": "I do not think it was the attendant’s fault",
+        "qualities_available": false,
+        "short_tag": "not the attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "I do not think it was the attendant’s fault"
+      },
+      {
+        "canonical_key": "speaker responsibility",
+        "note": "Speaker’s self-attribution of the issue.",
+        "order_cue": "It’s a me thing",
+        "qualities_available": false,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing",
+        "source_wording": "It’s a me thing"
+      }
+    ],
+    "session_id": "sess_0656bf0e919c8bcf006aaae72c0e3c8191a99cb704f995bb51",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0341499732eb6843006aaae7673e8c8191b671de1187a4ffa2",
+    "status": "in_progress"
+  }
+}
