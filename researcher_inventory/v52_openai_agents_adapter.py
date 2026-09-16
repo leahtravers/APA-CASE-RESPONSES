@@ -19,6 +19,21 @@ def _bounded_request(payload: dict) -> dict:
     return bounded
 
 
+def _normalize_optional_fields(result, task: str):
+    """Normalize schema-optional nulls without changing semantic selections.
+
+    The apparatus documents scope_rank as optional with default rank 0. Models may
+    emit JSON null for an optional field; treating that as a fatal integer parse
+    error is a harness defect, not agent behavior. Preserve all selected rows and
+    only materialize the documented default.
+    """
+    if task == "researcher_inventory_extract_one_class" and isinstance(result, list):
+        for row in result:
+            if isinstance(row, dict) and row.get("scope_rank") is None:
+                row["scope_rank"] = 0
+    return result
+
+
 def _attention_for(bounded: dict) -> str:
     correction = recovery._mechanical_correction(bounded.get("correction"))
     correction_note = ""
@@ -72,6 +87,7 @@ def main() -> int:
     )
     try:
         provisional = recovery._session(agent_id, initial_prompt, "researcher_inventory_v52_contract_isolated_extract", state_path, trace_path, "provisional")
+        provisional = _normalize_optional_fields(provisional, bounded.get("task", ""))
         verify_prompt = (
             "Perform a separate adjudication in a new session under the SAME installed durable V52 contract. Re-read the complete source and independently "
             "rebuild the requested result before comparing with the provisional output. For units, begin with broad source-coordinate coverage, then fix grain, "
@@ -82,6 +98,7 @@ def main() -> int:
             + "\n\nPROVISIONAL_UNSCORED_OUTPUT:\n" + json.dumps(provisional, ensure_ascii=False)
         )
         verified = recovery._session(agent_id, verify_prompt, "researcher_inventory_v52_contract_isolated_adjudication", state_path, trace_path, "verified")
+        verified = _normalize_optional_fields(verified, bounded.get("task", ""))
     except recovery.SessionUncertain:
         raise
     except Exception:
