@@ -1,0 +1,2061 @@
+[
+  {
+    "training_run_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154",
+    "contract_version_ref": "RI-CONTRACT-V58",
+    "fixture": "coupon_case",
+    "source_case_ref": "coupon_case",
+    "source_case_text": "So, I am at the self-check at the store, and I am trying to scan this coupon for my kids’ cereal, and it is not working. So the attendant sees I am struggling to finish my order and comes over to help me with it. It won’t scan for them either, so they look at it and see the date is valid and the box is right there. I really don’t recall saying anything, but then they sort of just walk away with my coupon in a huff to go get a manager.\n\nAnd so then I am standing there waiting, thinking to myself: Am I being a Karen right now? Do I really care about the $1.25 off my cereal? I just wanted to be in and out for a few things, and now I am standing here. How long will this take? Would it be rude for me to just pay and walk out? Why didn’t they ask me what I wanted to do?\n\nAnd it’s like, yes, the coupon not working itself was frustrating, but when I tried to explain this to my partner, my point was that I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be. And then I was sort of stuck there waiting because I don’t want to appear rude when I shop regularly. I found that that was the part that was super frustrating.\n\nAnd sincerely, I do not think it was the attendant’s fault. It’s a me thing. And wow, it is still bugging me, and I need to get it straight in my mind how to not get myself into these situations.",
+    "researcher_interest": "lightweight researcher inventory only",
+    "model_ref": "gpt-5.6-sol",
+    "session_ref": null,
+    "attempt_no": 1,
+    "run_status": "FAILED",
+    "candidate_ref": "RI-coupon_case-d35eb6452e016143",
+    "raw_output": {
+      "candidate": {
+        "candidate_ref": "RI-coupon_case-d35eb6452e016143",
+        "source_case_ref": "coupon_case",
+        "source_case_text": "So, I am at the self-check at the store, and I am trying to scan this coupon for my kids’ cereal, and it is not working. So the attendant sees I am struggling to finish my order and comes over to help me with it. It won’t scan for them either, so they look at it and see the date is valid and the box is right there. I really don’t recall saying anything, but then they sort of just walk away with my coupon in a huff to go get a manager.\n\nAnd so then I am standing there waiting, thinking to myself: Am I being a Karen right now? Do I really care about the $1.25 off my cereal? I just wanted to be in and out for a few things, and now I am standing here. How long will this take? Would it be rude for me to just pay and walk out? Why didn’t they ask me what I wanted to do?\n\nAnd it’s like, yes, the coupon not working itself was frustrating, but when I tried to explain this to my partner, my point was that I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be. And then I was sort of stuck there waiting because I don’t want to appear rude when I shop regularly. I found that that was the part that was super frustrating.\n\nAnd sincerely, I do not think it was the attendant’s fault. It’s a me thing. And wow, it is still bugging me, and I need to get it straight in my mind how to not get myself into these situations.",
+        "researcher_interest": "lightweight researcher inventory only",
+        "created_by_ref": "RI-APPARATUS"
+      },
+      "units": [
+        {
+          "unit_ref": "P1",
+          "unit_class": "PLACE",
+          "researcher_short_tag": "the store",
+          "source_wording": "the store",
+          "source_cue": "at the self-check at the store",
+          "researcher_note": "Broad physical scene containing the self-check and the represented shopping interactions.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "P2",
+          "unit_class": "PLACE",
+          "researcher_short_tag": "the self-check",
+          "source_wording": "the self-check",
+          "source_cue": "at the self-check at the store",
+          "researcher_note": "Contained occurrence position where the scanning, assistance, and waiting bindings occur; later uses of \"there\" and \"here\" corefer to this position.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "T1",
+          "unit_class": "TIME",
+          "researcher_short_tag": "store episode",
+          "source_wording": null,
+          "source_cue": "I am at the self-check at the store",
+          "researcher_note": "Broad represented shopping episode containing the coupon interaction and waiting phase.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "T2",
+          "unit_class": "TIME",
+          "researcher_short_tag": "coupon interaction phase",
+          "source_wording": null,
+          "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working. So the attendant sees I am struggling to finish my order and comes over to help me with it.",
+          "researcher_note": "Contained coupon-scanning and attendant-interaction phase before the waiting phase.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "T3",
+          "unit_class": "TIME",
+          "researcher_short_tag": "standing there waiting",
+          "source_wording": "standing there waiting",
+          "source_cue": "And so then I am standing there waiting",
+          "researcher_note": "Contained waiting phase after the attendant walks away to get a manager.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "T4",
+          "unit_class": "TIME",
+          "researcher_short_tag": "when I tried to explain this to my partner",
+          "source_wording": "when I tried to explain this to my partner",
+          "source_cue": "when I tried to explain this to my partner",
+          "researcher_note": "Distinct later explanation episode.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "T5",
+          "unit_class": "TIME",
+          "researcher_short_tag": "when I shop regularly",
+          "source_wording": "when I shop regularly",
+          "source_cue": "when I shop regularly",
+          "researcher_note": "Recurring shopping frame anchoring the concern about appearing rude.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "T6",
+          "unit_class": "TIME",
+          "researcher_short_tag": "present reflection",
+          "source_wording": null,
+          "source_cue": "it is still bugging me",
+          "researcher_note": "Present reflection frame in which the experience remains bothersome and the speaker seeks to understand it.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "B",
+          "unit_class": "PERSON",
+          "researcher_short_tag": "B",
+          "source_wording": "I",
+          "source_cue": "I am at the self-check",
+          "researcher_note": "Speaker; merges I, me, my, myself, and self-directed references.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "H1",
+          "unit_class": "PERSON",
+          "researcher_short_tag": "the attendant",
+          "source_wording": "the attendant",
+          "source_cue": "the attendant sees",
+          "researcher_note": "Merges the attendant with the singular them and they references.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "H2",
+          "unit_class": "PERSON",
+          "researcher_short_tag": "a manager",
+          "source_wording": "a manager",
+          "source_cue": "go get a manager",
+          "researcher_note": "Offscreen manager whom the attendant goes to get.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "H3",
+          "unit_class": "PERSON",
+          "researcher_short_tag": "my partner",
+          "source_wording": "my partner",
+          "source_cue": "explain this to my partner",
+          "researcher_note": "Speaker's partner and recipient of the explanation.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "H4",
+          "unit_class": "PERSON",
+          "researcher_short_tag": "my kids",
+          "source_wording": "my kids",
+          "source_cue": "my kids’ cereal",
+          "researcher_note": "Speaker's children, represented through their relation to the cereal.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "O1",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "coupon",
+          "source_wording": "coupon",
+          "source_cue": "this coupon for my kids’ cereal",
+          "researcher_note": "Later instances of “it,” “my coupon,” and “the coupon” refer to this coupon.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O2",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "my kids’ cereal",
+          "source_wording": "my kids’ cereal",
+          "source_cue": "my kids’ cereal",
+          "researcher_note": "Later “my cereal” refers to the same cereal.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O3",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "my order",
+          "source_wording": "my order",
+          "source_cue": "finish my order",
+          "researcher_note": null,
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O4",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "the date",
+          "source_wording": "the date",
+          "source_cue": "the date is valid",
+          "researcher_note": "The date is associated with the coupon.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O5",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "the box",
+          "source_wording": "the box",
+          "source_cue": "the box is right there",
+          "researcher_note": "In context, this is the box of cereal associated with the coupon.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O6",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "$1.25 off my cereal",
+          "source_wording": "$1.25 off my cereal",
+          "source_cue": "the $1.25 off my cereal",
+          "researcher_note": "The coupon discount is treated as the content of the speaker’s concern.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O7",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "a few things",
+          "source_wording": "a few things",
+          "source_cue": "in and out for a few things",
+          "researcher_note": "An unspecified group of intended purchases.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O8",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "what I wanted to do",
+          "source_wording": "what I wanted to do",
+          "source_cue": "ask me what I wanted to do",
+          "researcher_note": "The speaker’s intended choice is represented as the content the attendant could have asked about.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "O9",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "my point",
+          "source_wording": "my point",
+          "source_cue": "my point was that I was more frustrated",
+          "researcher_note": "The speaker’s communicated point is treated as stable content in the explanation to the partner.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O10",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "the decision on the coupon’s next step",
+          "source_wording": "the decision on the coupon’s next step",
+          "source_cue": "what the decision on the coupon’s next step should be",
+          "researcher_note": "The decision is stable content concerning what should happen next with the coupon.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "O11",
+          "unit_class": "OBJECT",
+          "researcher_short_tag": "these situations",
+          "source_wording": "these situations",
+          "source_cue": "get myself into these situations",
+          "researcher_note": "The phrase revisits situations of the kind represented by the narrated episode.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L1",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "not working",
+          "source_wording": "not working",
+          "source_cue": "it is not working",
+          "researcher_note": "Foregrounded state of the coupon.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L2",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "valid",
+          "source_wording": "valid",
+          "source_cue": "the date is valid",
+          "researcher_note": "Validity classification of the coupon date.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L3",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "Am I being a Karen right now?",
+          "source_wording": "Am I being a Karen right now?",
+          "source_cue": "Am I being a Karen right now?",
+          "researcher_note": "Speaker's interrogative self-classification.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L4",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "in and out",
+          "source_wording": "in and out",
+          "source_cue": "I just wanted to be in and out for a few things",
+          "researcher_note": "Desired brief-shopping state contrasted with the speaker's continued waiting.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L5",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "How long will this take?",
+          "source_wording": "How long will this take?",
+          "source_cue": "How long will this take?",
+          "researcher_note": "Interrogative value concerning the prospective duration.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L6",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "Would it be rude for me to just pay and walk out?",
+          "source_wording": "Would it be rude for me to just pay and walk out?",
+          "source_cue": "Would it be rude for me to just pay and walk out?",
+          "researcher_note": "Interrogative evaluation of the contemplated action.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L7",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "frustrating",
+          "source_wording": "frustrating",
+          "source_cue": "the coupon not working itself was frustrating",
+          "researcher_note": "Evaluation of the coupon's failure to work.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L8",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "more frustrated",
+          "source_wording": "more frustrated",
+          "source_cue": "I was more frustrated",
+          "researcher_note": "Speaker's comparative frustration state.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L9",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "out of control",
+          "source_wording": "out of control",
+          "source_cue": "I felt out of control",
+          "researcher_note": "Speaker's foregrounded felt state.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L10",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "sort of stuck",
+          "source_wording": "sort of stuck",
+          "source_cue": "I was sort of stuck there waiting",
+          "researcher_note": "Qualified state of the speaker during the wait.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L11",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "rude",
+          "source_wording": "rude",
+          "source_cue": "I don’t want to appear rude",
+          "researcher_note": "Social evaluation the speaker does not want to appear to have.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L12",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "super frustrating",
+          "source_wording": "super frustrating",
+          "source_cue": "that was the part that was super frustrating",
+          "researcher_note": "Intensified evaluation of the identified loss-of-control part of the experience.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L13",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "I do not think it was the attendant’s fault.",
+          "source_wording": "I do not think it was the attendant’s fault.",
+          "source_cue": "I do not think it was the attendant’s fault.",
+          "researcher_note": "Negated attribution of fault to the attendant.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "L14",
+          "unit_class": "LABEL",
+          "researcher_short_tag": "a me thing",
+          "source_wording": "a me thing",
+          "source_cue": "It’s a me thing",
+          "researcher_note": "Speaker-centered classification of the situation.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V1",
+          "unit_class": "VERB",
+          "researcher_short_tag": "am at",
+          "source_wording": "am at",
+          "source_cue": "I am at the self-check at the store",
+          "researcher_note": "Locative relation binding B to the self-check scene.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V2",
+          "unit_class": "VERB",
+          "researcher_short_tag": "trying to scan",
+          "source_wording": "trying to scan",
+          "source_cue": "I am trying to scan this coupon",
+          "researcher_note": "Attempted scanning relation binding B to the coupon.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V3",
+          "unit_class": "VERB",
+          "researcher_short_tag": "is not working",
+          "source_wording": "is not working",
+          "source_cue": "it is not working",
+          "researcher_note": "Negative functioning relation attributed to the coupon.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V4",
+          "unit_class": "VERB",
+          "researcher_short_tag": "sees",
+          "source_wording": "sees",
+          "source_cue": "the attendant sees I am struggling",
+          "researcher_note": "Perception relation first binding the attendant to B's difficulty and later to the coupon date's validity.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V5",
+          "unit_class": "VERB",
+          "researcher_short_tag": "struggling to finish",
+          "source_wording": "struggling to finish",
+          "source_cue": "I am struggling to finish my order",
+          "researcher_note": "Difficulty relation binding B to completion of the order.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V6",
+          "unit_class": "VERB",
+          "researcher_short_tag": "comes over",
+          "source_wording": "comes over",
+          "source_cue": "comes over to help me with it",
+          "researcher_note": "Movement relation of the attendant toward B's position.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V7",
+          "unit_class": "VERB",
+          "researcher_short_tag": "help",
+          "source_wording": "help",
+          "source_cue": "to help me with it",
+          "researcher_note": "Assistance relation involving the attendant, B, and the coupon problem.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V8",
+          "unit_class": "VERB",
+          "researcher_short_tag": "won’t scan",
+          "source_wording": "won’t scan",
+          "source_cue": "It won’t scan for them either",
+          "researcher_note": "Failed scanning relation represented during the attendant's attempt.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V9",
+          "unit_class": "VERB",
+          "researcher_short_tag": "look at",
+          "source_wording": "look at",
+          "source_cue": "they look at it",
+          "researcher_note": "Inspection relation binding the attendant to the coupon.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V10",
+          "unit_class": "VERB",
+          "researcher_short_tag": "is right there",
+          "source_wording": "is right there",
+          "source_cue": "the box is right there",
+          "researcher_note": "Locative relation establishing the box's represented position.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V11",
+          "unit_class": "VERB",
+          "researcher_short_tag": "don’t recall",
+          "source_wording": "don’t recall",
+          "source_cue": "I really don’t recall saying anything",
+          "researcher_note": "Negated memory relation attributed to B.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V12",
+          "unit_class": "VERB",
+          "researcher_short_tag": "saying",
+          "source_wording": "saying",
+          "source_cue": "saying anything",
+          "researcher_note": "Speech relation represented within B's negated recollection.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V13",
+          "unit_class": "VERB",
+          "researcher_short_tag": "walk away",
+          "source_wording": "walk away",
+          "source_cue": "walk away with my coupon in a huff",
+          "researcher_note": "Departure relation of the attendant while carrying B's coupon.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "V14",
+          "unit_class": "VERB",
+          "researcher_short_tag": "go get",
+          "source_wording": "go get",
+          "source_cue": "to go get a manager",
+          "researcher_note": "Serial movement-and-retrieval relation directed toward obtaining a manager.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V15",
+          "unit_class": "VERB",
+          "researcher_short_tag": "am standing",
+          "source_wording": "am standing",
+          "source_cue": "I am standing there waiting",
+          "researcher_note": "Standing relation for B during the waiting phase, later restated with \"standing here\".",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V16",
+          "unit_class": "VERB",
+          "researcher_short_tag": "waiting",
+          "source_wording": "waiting",
+          "source_cue": "standing there waiting",
+          "researcher_note": "Waiting relation for B after the attendant leaves, later repeated in \"stuck there waiting\".",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V17",
+          "unit_class": "VERB",
+          "researcher_short_tag": "care about",
+          "source_wording": "care about",
+          "source_cue": "Do I really care about the $1.25 off my cereal?",
+          "researcher_note": "Questioned concern relation directed toward the discount.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V18",
+          "unit_class": "VERB",
+          "researcher_short_tag": "wanted",
+          "source_wording": "wanted",
+          "source_cue": "I just wanted to be in and out for a few things",
+          "researcher_note": "Desire relation first binding B to the intended brief shopping trip and later to B's preferred response.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V19",
+          "unit_class": "VERB",
+          "researcher_short_tag": "be in and out",
+          "source_wording": "be in and out",
+          "source_cue": "to be in and out for a few things",
+          "researcher_note": "Intended brief entry-and-exit relation represented as the object of B's desire.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V20",
+          "unit_class": "VERB",
+          "researcher_short_tag": "will this take",
+          "source_wording": "will this take",
+          "source_cue": "How long will this take?",
+          "researcher_note": "Prospective duration relation posed as a question about the delay.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V21",
+          "unit_class": "VERB",
+          "researcher_short_tag": "pay",
+          "source_wording": "pay",
+          "source_cue": "Would it be rude for me to just pay and walk out?",
+          "researcher_note": "Payment action represented hypothetically for B.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V22",
+          "unit_class": "VERB",
+          "researcher_short_tag": "walk out",
+          "source_wording": "walk out",
+          "source_cue": "Would it be rude for me to just pay and walk out?",
+          "researcher_note": "Exit relation represented hypothetically after payment.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V23",
+          "unit_class": "VERB",
+          "researcher_short_tag": "didn’t they ask",
+          "source_wording": "didn’t they ask",
+          "source_cue": "Why didn’t they ask me what I wanted to do?",
+          "researcher_note": "Negated questioned communication relation from the attendant to B.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V24",
+          "unit_class": "VERB",
+          "researcher_short_tag": "tried to explain",
+          "source_wording": "tried to explain",
+          "source_cue": "I tried to explain this to my partner",
+          "researcher_note": "Attempted explanation relation from B to B's partner.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V25",
+          "unit_class": "VERB",
+          "researcher_short_tag": "felt",
+          "source_wording": "felt",
+          "source_cue": "I felt out of control",
+          "researcher_note": "Experiential relation binding B to the represented state of being out of control.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V26",
+          "unit_class": "VERB",
+          "researcher_short_tag": "don’t want",
+          "source_wording": "don’t want",
+          "source_cue": "I don’t want to appear rude",
+          "researcher_note": "Negated desire relation concerning B's possible social presentation.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V27",
+          "unit_class": "VERB",
+          "researcher_short_tag": "shop",
+          "source_wording": "shop",
+          "source_cue": "when I shop regularly",
+          "researcher_note": "Recurring shopping relation attributed to B.",
+          "qualities_available": true
+        },
+        {
+          "unit_ref": "V28",
+          "unit_class": "VERB",
+          "researcher_short_tag": "found",
+          "source_wording": "found",
+          "source_cue": "I found that that was the part that was super frustrating",
+          "researcher_note": "Cognition relation through which B identifies the especially frustrating part.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V29",
+          "unit_class": "VERB",
+          "researcher_short_tag": "do not think",
+          "source_wording": "do not think",
+          "source_cue": "I do not think it was the attendant’s fault",
+          "researcher_note": "Negated cognition relation concerning attribution of fault to the attendant.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V30",
+          "unit_class": "VERB",
+          "researcher_short_tag": "is still bugging",
+          "source_wording": "is still bugging",
+          "source_cue": "it is still bugging me",
+          "researcher_note": "Continuing affective-impact relation directed toward B.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V31",
+          "unit_class": "VERB",
+          "researcher_short_tag": "need to get it straight in my mind",
+          "source_wording": "need to get it straight in my mind",
+          "source_cue": "I need to get it straight in my mind",
+          "researcher_note": "Need-and-clarification relation concerning B's understanding of the situation.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "V32",
+          "unit_class": "VERB",
+          "researcher_short_tag": "not get myself into",
+          "source_wording": "not get myself into",
+          "source_cue": "how to not get myself into these situations",
+          "researcher_note": "Negated prospective entry relation between B and similar situations.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R1",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "at the self-check",
+          "source_wording": "at the self-check",
+          "source_cue": "I am at the self-check",
+          "researcher_note": "Positions the speaker at the self-check; later “there” and “here” expressions corefer with this orientation.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R2",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "at the store",
+          "source_wording": "at the store",
+          "source_cue": "at the self-check at the store",
+          "researcher_note": "Positions the self-check and the speaker’s activity within the store.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R3",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "comes over",
+          "source_wording": "comes over",
+          "source_cue": "comes over to help me",
+          "researcher_note": "Orients the attendant’s movement toward the speaker.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R4",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "right there",
+          "source_wording": "right there",
+          "source_cue": "the box is right there",
+          "researcher_note": "Positions the box at the ongoing interaction scene.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R5",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "away",
+          "source_wording": "away",
+          "source_cue": "walk away with my coupon",
+          "researcher_note": "Orients the attendant’s movement away from the interaction.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R6",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "with my coupon",
+          "source_wording": "with my coupon",
+          "source_cue": "walk away with my coupon",
+          "researcher_note": "Represents the coupon as carried with the attendant.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R7",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "right now",
+          "source_wording": "right now",
+          "source_cue": "Am I being a Karen right now?",
+          "researcher_note": "Temporally positions the speaker’s self-question in the current episode.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R8",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "in and out",
+          "source_wording": "in and out",
+          "source_cue": "I just wanted to be in and out",
+          "researcher_note": "Represents the speaker’s intended entry-and-exit path through the shopping episode.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R9",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "out",
+          "source_wording": "out",
+          "source_cue": "pay and walk out",
+          "researcher_note": "Orients the speaker’s contemplated exit from the store.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R10",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "when I shop regularly",
+          "source_wording": "when I shop regularly",
+          "source_cue": "appear rude when I shop regularly",
+          "researcher_note": "Temporally positions the concern about appearing rude within recurring shopping.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R11",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "in my mind",
+          "source_wording": "in my mind",
+          "source_cue": "get it straight in my mind",
+          "researcher_note": "Internally orients the content within the speaker’s mind.",
+          "qualities_available": false
+        },
+        {
+          "unit_ref": "R12",
+          "unit_class": "LOCATOR",
+          "researcher_short_tag": "into these situations",
+          "source_wording": "into these situations",
+          "source_cue": "get myself into these situations",
+          "researcher_note": "Figuratively orients the speaker as entering these situations.",
+          "qualities_available": false
+        }
+      ],
+      "compounds": [
+        {
+          "compound_ref": "C1",
+          "compound_expression": "B_L10_V16_R1_P2_P1_T3_T1_Q",
+          "researcher_bundle": "B was sort of stuck at the self-check waiting during the waiting phase.",
+          "referenced_unit_refs": [
+            "B",
+            "L10",
+            "V16",
+            "R1",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C2",
+          "compound_expression": "B_L14_T6",
+          "researcher_bundle": "During the present reflection, B classifies the experience as a me thing.",
+          "referenced_unit_refs": [
+            "B",
+            "L14",
+            "T6"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C3",
+          "compound_expression": "B_L3_R7_P2_P1_T3_T1",
+          "researcher_bundle": "At the self-check while waiting, B asks, “Am I being a Karen right now?”",
+          "referenced_unit_refs": [
+            "B",
+            "L3",
+            "R7",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C4",
+          "compound_expression": "B_L5_V20_P2_P1_T3_T1",
+          "researcher_bundle": "While waiting at the self-check, B asks, “How long will this take?”",
+          "referenced_unit_refs": [
+            "B",
+            "L5",
+            "V20",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C5",
+          "compound_expression": "B_L6_V21_V22_R9_P1_T3_T1_Q",
+          "researcher_bundle": "While waiting, B questions whether it would be rude to just pay and walk out of the store.",
+          "referenced_unit_refs": [
+            "B",
+            "L6",
+            "V21",
+            "V22",
+            "R9",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C6",
+          "compound_expression": "B_L9_O10_O1_L12_Q",
+          "researcher_bundle": "Being out of control of the decision on the coupon’s next step was super frustrating to B.",
+          "referenced_unit_refs": [
+            "B",
+            "L9",
+            "O10",
+            "O1",
+            "L12"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C7",
+          "compound_expression": "B_V11_V12_P2_P1_T2_T1_Q",
+          "researcher_bundle": "B really doesn’t recall saying anything during the coupon interaction.",
+          "referenced_unit_refs": [
+            "B",
+            "V11",
+            "V12",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C8",
+          "compound_expression": "B_V15_V16_R1_P2_P1_T3_T1_Q",
+          "researcher_bundle": "B is standing at the self-check waiting during the waiting phase.",
+          "referenced_unit_refs": [
+            "B",
+            "V15",
+            "V16",
+            "R1",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C9",
+          "compound_expression": "B_V17_O6_P2_P1_T3_T1_Q",
+          "researcher_bundle": "While waiting at the self-check, B questions whether B really cares about the $1.25 off the cereal.",
+          "referenced_unit_refs": [
+            "B",
+            "V17",
+            "O6",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C10",
+          "compound_expression": "B_V18_O8_P2_P1_T3_T1",
+          "researcher_bundle": "While waiting at the self-check, B had a preferred choice about what B wanted to do.",
+          "referenced_unit_refs": [
+            "B",
+            "V18",
+            "O8",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C11",
+          "compound_expression": "B_V18_V19_L4_R8_O7_P1_T3_T1_Q",
+          "researcher_bundle": "While waiting, B reflects that B just wanted to be in and out of the store for a few things.",
+          "referenced_unit_refs": [
+            "B",
+            "V18",
+            "V19",
+            "L4",
+            "R8",
+            "O7",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C12",
+          "compound_expression": "B_V1_R1_P2_R2_P1_T1",
+          "researcher_bundle": "B is at the self-check at the store during the store episode.",
+          "referenced_unit_refs": [
+            "B",
+            "V1",
+            "R1",
+            "P2",
+            "R2",
+            "P1",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C13",
+          "compound_expression": "B_V26_L11_R10_T5_V27_Q",
+          "researcher_bundle": "B doesn’t want to appear rude when B shops regularly.",
+          "referenced_unit_refs": [
+            "B",
+            "V26",
+            "L11",
+            "R10",
+            "T5",
+            "V27"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C14",
+          "compound_expression": "B_V27_T5_Q",
+          "researcher_bundle": "B shops regularly during the recurring shopping frame.",
+          "referenced_unit_refs": [
+            "B",
+            "V27",
+            "T5"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C15",
+          "compound_expression": "B_V28_L9_O10_O1_L12_Q",
+          "researcher_bundle": "B found that being out of control of the decision on the coupon’s next step was the part that was super frustrating.",
+          "referenced_unit_refs": [
+            "B",
+            "V28",
+            "L9",
+            "O10",
+            "O1",
+            "L12"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C16",
+          "compound_expression": "B_V29_L13_H1_T6_Q",
+          "researcher_bundle": "During the present reflection, B sincerely does not think it was the attendant’s fault.",
+          "referenced_unit_refs": [
+            "B",
+            "V29",
+            "L13",
+            "H1",
+            "T6"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C17",
+          "compound_expression": "B_V2_O1_H4_O2_P2_P1_T2_T1_Q",
+          "researcher_bundle": "B is trying to scan the coupon for B’s kids’ cereal at the self-check during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "B",
+            "V2",
+            "O1",
+            "H4",
+            "O2",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C18",
+          "compound_expression": "B_V31_R11_V32_R12_O11_T6",
+          "researcher_bundle": "B needs to get it straight in B’s mind how to not get B into these situations.",
+          "referenced_unit_refs": [
+            "B",
+            "V31",
+            "R11",
+            "V32",
+            "R12",
+            "O11",
+            "T6"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C19",
+          "compound_expression": "B_V32_R12_O11_T6",
+          "researcher_bundle": "During the present reflection, B considers how to not get B into these situations.",
+          "referenced_unit_refs": [
+            "B",
+            "V32",
+            "R12",
+            "O11",
+            "T6"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C20",
+          "compound_expression": "B_V5_O3_P2_P1_T2_T1_Q",
+          "researcher_bundle": "B is struggling to finish B’s order at the self-check during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "B",
+            "V5",
+            "O3",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C21",
+          "compound_expression": "H1_V13_R5_R6_B_O1_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The attendant walks away from the self-check with B’s coupon in a huff.",
+          "referenced_unit_refs": [
+            "H1",
+            "V13",
+            "R5",
+            "R6",
+            "B",
+            "O1",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C22",
+          "compound_expression": "H1_V14_H2_P1_T2_T1",
+          "researcher_bundle": "The attendant goes to get a manager during the store episode.",
+          "referenced_unit_refs": [
+            "H1",
+            "V14",
+            "H2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C23",
+          "compound_expression": "H1_V23_B_O8_P2_P1_T3_T1",
+          "researcher_bundle": "While B waits at the self-check, B questions why the attendant didn’t ask B what B wanted to do.",
+          "referenced_unit_refs": [
+            "H1",
+            "V23",
+            "B",
+            "O8",
+            "P2",
+            "P1",
+            "T3",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C24",
+          "compound_expression": "H1_V4_B_V5_O3_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The attendant sees B struggling to finish B’s order during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "H1",
+            "V4",
+            "B",
+            "V5",
+            "O3",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C25",
+          "compound_expression": "H1_V4_O1_O4_L2_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The attendant sees that the coupon’s date is valid during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "H1",
+            "V4",
+            "O1",
+            "O4",
+            "L2",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C26",
+          "compound_expression": "H1_V6_R3_B_P2_P1_T2_T1",
+          "researcher_bundle": "The attendant comes over toward B at the self-check during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "H1",
+            "V6",
+            "R3",
+            "B",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C27",
+          "compound_expression": "H1_V7_B_O3_P2_P1_T2_T1",
+          "researcher_bundle": "The attendant comes to help B with B’s order during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "H1",
+            "V7",
+            "B",
+            "O3",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C28",
+          "compound_expression": "H1_V9_O1_P2_P1_T2_T1",
+          "researcher_bundle": "The attendant looks at the coupon during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "H1",
+            "V9",
+            "O1",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C29",
+          "compound_expression": "O1_V3_L1_L7_B_T1_Q",
+          "researcher_bundle": "The coupon not working itself was frustrating to B during the store episode.",
+          "referenced_unit_refs": [
+            "O1",
+            "V3",
+            "L1",
+            "L7",
+            "B",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C30",
+          "compound_expression": "O1_V3_L1_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The coupon is not working at the self-check during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "O1",
+            "V3",
+            "L1",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C31",
+          "compound_expression": "O1_V8_H1_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The coupon won’t scan for the attendant either during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "O1",
+            "V8",
+            "H1",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C32",
+          "compound_expression": "O4_L2_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The coupon date is valid during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "O4",
+            "L2",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C33",
+          "compound_expression": "O5_V10_R4_P2_P1_T2_T1_Q",
+          "researcher_bundle": "The cereal box is right there at the self-check during the coupon interaction phase.",
+          "referenced_unit_refs": [
+            "O5",
+            "V10",
+            "R4",
+            "P2",
+            "P1",
+            "T2",
+            "T1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C34",
+          "compound_expression": "T4_B_L8_V25_L9_O10_O1_Q",
+          "researcher_bundle": "B was more frustrated because B felt out of control of the decision on the coupon’s next step.",
+          "referenced_unit_refs": [
+            "T4",
+            "B",
+            "L8",
+            "V25",
+            "L9",
+            "O10",
+            "O1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C35",
+          "compound_expression": "T4_B_V24_H3_O9",
+          "researcher_bundle": "When B tried to explain the experience to B’s partner, B communicated B’s point.",
+          "referenced_unit_refs": [
+            "T4",
+            "B",
+            "V24",
+            "H3",
+            "O9"
+          ],
+          "qualities_available": false
+        },
+        {
+          "compound_ref": "C36",
+          "compound_expression": "T4_B_V25_L9_O10_O1_Q",
+          "researcher_bundle": "B felt out of control of what the decision on the coupon’s next step should be.",
+          "referenced_unit_refs": [
+            "T4",
+            "B",
+            "V25",
+            "L9",
+            "O10",
+            "O1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C37",
+          "compound_expression": "T4_O9_B_L8_V25_L9_O10_O1_Q",
+          "researcher_bundle": "B’s point was that B was more frustrated because B felt out of control of the decision on the coupon’s next step.",
+          "referenced_unit_refs": [
+            "T4",
+            "O9",
+            "B",
+            "L8",
+            "V25",
+            "L9",
+            "O10",
+            "O1"
+          ],
+          "qualities_available": true
+        },
+        {
+          "compound_ref": "C38",
+          "compound_expression": "V30_B_T6_Q",
+          "researcher_bundle": "The experience is still bugging B during the present reflection.",
+          "referenced_unit_refs": [
+            "V30",
+            "B",
+            "T6"
+          ],
+          "qualities_available": true
+        }
+      ],
+      "validation": {
+        "source_language_preserved": true,
+        "lightweight_resolution_preserved": true,
+        "all_compound_refs_registered": true,
+        "forbidden_work_avoided": true,
+        "notes": [
+          "mechanical source-span, literal-language, semantic-order, ID, Q, and reference checks passed"
+        ]
+      }
+    },
+    "findings": [
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F1",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing P3 [PLACE] place of cereal box"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F2",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing P4 [PLACE] place manager is / attendant goes"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F3",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing P5 [PLACE] place B is standing waiting"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F4",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing P6 [PLACE] place of B and partner"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F5",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing P7 [PLACE] place of present telling"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F6",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing T1 [TIME] coupon scan attempt"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F7",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing T3 [TIME] attendant walks away"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F8",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing T5 [TIME] intended quick-shopping period"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F9",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing T9 [TIME] future similar situations"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F10",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing O9 [OBJECT] choice to pay and walk out"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F11",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing O10 [OBJECT] regular shopping relation"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F12",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing O12 [OBJECT] my mind"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F13",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing L1 [LABEL] struggling"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F14",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing L3 [LABEL] right there"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F15",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing L4 [LABEL] in a huff"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F16",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing L14 [LABEL] still bugging me"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F17",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing L15 [LABEL] straight in my mind"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F18",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing V10 [VERB] see"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F19",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing V15 [VERB] thinking to myself"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F20",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing V22 [VERB] should be"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F21",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing R7 [LOCATOR] go get a manager"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F22",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing R8 [LOCATOR] standing there"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F23",
+        "finding_class": "MISSING_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing R11 [LOCATOR] stuck there"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F24",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra T1 [TIME] store episode"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F25",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra O8 [OBJECT] what I wanted to do"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F26",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra O9 [OBJECT] my point"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F27",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra L1 [LABEL] not working"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F28",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra L5 [LABEL] How long will this take?"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F29",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra L6 [LABEL] Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F30",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra L8 [LABEL] more frustrated"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F31",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra V10 [VERB] is right there"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F32",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra V11 [VERB] don’t recall"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F33",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra V19 [VERB] be in and out"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F34",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra V20 [VERB] will this take"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F35",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra V21 [VERB] pay"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F36",
+        "finding_class": "EXTRA_UNIT",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra R7 [LOCATOR] right now"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F37",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C1 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F38",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C3 uses unmatched unit refs ['R7', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F39",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C4 uses unmatched unit refs ['L5', 'V20', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F40",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C5 uses unmatched unit refs ['L6', 'V21', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F41",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C7 uses unmatched unit refs ['V11', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F42",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C8 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F43",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C9 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F44",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C10 uses unmatched unit refs ['O8', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F45",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C11 uses unmatched unit refs ['V19', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F46",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C12 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F47",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C17 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F48",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C20 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F49",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C21 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F50",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C22 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F51",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C23 uses unmatched unit refs ['O8', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F52",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C24 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F53",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C25 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F54",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C26 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F55",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C27 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F56",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C28 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F57",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C29 uses unmatched unit refs ['L1', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F58",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C30 uses unmatched unit refs ['L1', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F59",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C31 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F60",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C32 uses unmatched unit refs ['T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F61",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C33 uses unmatched unit refs ['V10', 'T1']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F62",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C34 uses unmatched unit refs ['L8']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F63",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C35 uses unmatched unit refs ['O9']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F64",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "compound C37 uses unmatched unit refs ['O9', 'L8']"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F65",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V1_P1_P2_R1_R2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F66",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V2_O1_O2_T1_P2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F67",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound O1_V3_T1_P2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F68",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V4_B_L1_T2_P2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F69",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V6_V7_B_O1_T2_P2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F70",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound O1_V8_H1_T2_P2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F71",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V9_V10_O1_O5_O3_L2_L3_T2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F72",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V11_T2"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F73",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V12_O1_L4_T3_R5_R6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F74",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V13_H2_T3_R7"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F75",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V14_V15_T4_P5"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F76",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_L5_T4_P5"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F77",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V16_O6_O2_T4"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F78",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V17_O7_L6_T5_P1"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F79",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V18_L7_T4_P5"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F80",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound H1_V19_B_O8_T4"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F81",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V20_H3_T6_P6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F82",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_L8_O1_T6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F83",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V21_O8_L9_T6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F84",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V23_L10_T6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F85",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V24_L7_T6_T7"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F86",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V26_L11_T6"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F87",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V27_H1_L12_T8"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F88",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V28_L14_T8"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F89",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V29_O12_L15_T8"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F90",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "missing semantic compound B_V30_O11_T9_R13"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F91",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_L9_O8_O1_L11_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F92",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V24_L7_R12_T7_V25_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F93",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V25_T7_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F94",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V26_L9_O8_O1_L11_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F95",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V27_L12_H1_T8_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F96",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V29_R14_V30_R13_O11_T8"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F97",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound B_V30_R13_O11_T8"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F98",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound T6_B_V21_L9_O8_O1_Q"
+      },
+      {
+        "finding_ref": "TRAIN-APP-coupon_case-R1-1789585289285211154-F99",
+        "finding_class": "BAD_COMPOUND",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "extra semantic compound V28_B_T8_Q"
+      }
+    ],
+    "pass": false,
+    "started_unix": 1789585289.2852104,
+    "finished_unix": 1789585782.8773577
+  },
+  {
+    "training_run_ref": "TRAIN-APP-oil_change_case-R1-1789585782878098651",
+    "contract_version_ref": "RI-CONTRACT-V58",
+    "fixture": "oil_change_case",
+    "source_case_ref": "oil_change_case",
+    "source_case_text": "There’s this funny thing about the oil-change place I go to. One of those chain places. Tires, brake pads, a ‘free’ printout that says you need something else every time.\n\nOurs is right there, and I’m right there, one way or another. The place was always disarray. Crap all on the floor, unpacked boxes with unmentionables written in the dust, Dunkin’s next-penicillin on the counter. You get the idea.\n\nWell, the guys were a real fine team. Little rough around the edges, sure, parts may have had questionable origins. But the guys themselves were salt of the earth folks. Knew cars upside down and backwards. Seemed like they’d been pals a long time.\n\nBack around the holidays, guy who owned it got pushed out of his franchise by corporate, heard it from my grandbaby’s daycare lady while my daughter was doing stockings for the little one. Lady knows them. Small town. Location, location, location was what she said.\n\nDidn’t think much of it at the time. Been back twice since. Yeah, it’s clean. There’s new fancy lifts now. But, believe you me, everything else is terrible. Salesmen. A paper is one thing, but these kids are pushing me for extra work Im telling them I don’t need! I don’t trust ‘em as far as I can throw them.\n\nWhen I walked out a few weeks ago, I was in a state. About as much of a state as I get. I’m a level guy. My wife has spent 42 years trying to ‘get a rise out of me.’ Still doesn’t have that notch in her belt. (Laughs.)\n\nAlright let me get on with it, this is going to sound like I’m coming down with the dementia, but I’ll be damned… See, this is hard. Right here. Hard to say, I am saying it and I still don’t think I’ve said it!\n\nIt’s not like I don’t know about feelings! Get this. What gets me, now that I’m coming to it, is how many not easy feelings I have about that place and those guys.\n\nAnd it’s this dumb oil-change spot. Sure I care for my car, but this ain’t about that, something about those guys and their loud music and pinups on the wall and all those crumpled receipts. Who cares right?! Why am I sitting on the can thinking about some owner I don’t know who got pushed out? I wish I could tell you what my scramble head really means. I am trying….\n\nAll right. How to say it? It’s like grief, when you didn’t even know the guy. Loss, deep, of somethin’ wasn’t yours. Anger? No, maybe surprise? Some big greedy something is moving in spaces you wasn’t looking at. Confusion? Yeah, damn straight it’s confusing how somethin’ so small hits like a tractor tailer with its lights off.\n\nMaybe it is like driving through the forest at night. It’s close all around you, but ends way off in the distance.\n\nI was talking to my daughter about her divorce. She said, frustrated, something like (pantomimes) you keep all the big things so far away. Then, I’ll be damned, this small thing come up and bit me outta nowhere! Little she know…\n\nI’m a little (shifts uncomfortably). Is this water? (Sips, sighs)\n\nMaybe my whole life… Well, not that I’m a nervous Nelly or anything, but maybe haven’t been a real General, neither.\n\nFew days back, I’m fishing at dawn. Just me and the sunrise. My mind oughta be crystal as the water. Son of a gun, I’m still chewing on it.\n\nThis big-mouthed beaut come over the side of my boat, and as I held it up on the line givin’ my appraisal… that bass and I… we had a mutual understanding. This odd way I’ve been feeling, places them mixy feeling don’t belong.\n\nI don’t know what’s happen with me, but something is happening and I’m like a fish out of water. (Laughs)",
+    "researcher_interest": "lightweight researcher inventory only",
+    "model_ref": "gpt-5.6-sol",
+    "session_ref": null,
+    "attempt_no": 1,
+    "run_status": "FAILED",
+    "candidate_ref": null,
+    "raw_output": null,
+    "findings": [
+      {
+        "finding_ref": "TRAIN-APP-oil_change_case-R1-1789585782878098651-F1",
+        "finding_class": "OTHER",
+        "severity": "ERROR",
+        "expected_behavior": "match hidden Leah-approved Researcher Inventory archetype without worker access to that archetype",
+        "observed_behavior": "runtime failure: ApparatusError: LOCATOR extraction failed after retries: model adapter failed rc=1: Traceback (most recent call last):\n  File \"/home/runner/work/APA-CASE-RESPONSES/APA-CASE-RESPONSES/researcher_inventory/v58_openai_agents_adapter.py\", line 14, in <module>\n    raise SystemExit(base.main())\n                     ^^^^^^^^^^^\n  File \"/home/runner/work/APA-CASE-RESPONSES/APA-CASE-RESPONSES/researcher_inventory/v55_openai_agents_adapter.py\", line 99, in main\n    provisional = recovery._session(\n                  ^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/APA-CASE-RESPONSES/APA-CASE-RESPONSES/researcher_inventory/v32_openai_agents_adapter.py\", line 171, in _session\n    wait(session_id, timeout=SESSION_WAIT_SECONDS)\n  File \"/home/runner/work/APA-CASE-RESPONSES/APA-CASE-RESPONSES/researcher_inventory/openai_agents_adapter.py\", line 35, in wait\n    state = request(f\"/agents/sessions/{session_id}\")\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/APA-CASE-RESPONSES/APA-CASE-RESPONSES/researcher_inventory/openai_agents_adapter.py\", line 30, in request\n    raise RuntimeError(detail) from None\nRuntimeError: HTTP 500: An internal error occurred.\n"
+      }
+    ],
+    "pass": false,
+    "started_unix": 1789585782.878098,
+    "finished_unix": 1789586074.048478
+  }
+]
