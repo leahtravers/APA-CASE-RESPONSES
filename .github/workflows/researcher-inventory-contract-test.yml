@@ -1,5 +1,6 @@
 name: Researcher Inventory Apparatus Verification
 # V53 prospectively supersedes V52 for new calibration. Predecessor contracts/runs remain historical evidence.
+# Harness correction 2026-09-16: V53 semantic authority remains unchanged; route through version-correct adapter successor.
 
 on:
   workflow_dispatch:
@@ -27,7 +28,7 @@ jobs:
       OPENAI_MODEL: gpt-5.6-sol
       CONTRACT_VERSION: RI-CONTRACT-V53
       RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V53.md
-      RI_MODEL_COMMAND: python researcher_inventory/v53_openai_agents_adapter.py
+      RI_MODEL_COMMAND: python researcher_inventory/v53_openai_agents_adapter_v2.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
     steps:
       - name: Checkout repository without external actions
