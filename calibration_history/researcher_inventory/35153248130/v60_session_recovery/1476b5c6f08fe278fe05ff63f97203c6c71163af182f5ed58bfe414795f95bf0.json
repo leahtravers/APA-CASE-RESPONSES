@@ -1,0 +1,155 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 115,
+        "canonical_key": "coupon_not_working",
+        "note": "Condition attributed to the coupon.",
+        "order_cue": "it is not working",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "not working"
+      },
+      {
+        "anchor_hint": 304,
+        "canonical_key": "date_valid",
+        "note": "Validity classification of the coupon date.",
+        "order_cue": "the date is valid",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "valid",
+        "source_cue": "the date is valid",
+        "source_wording": "valid"
+      },
+      {
+        "anchor_hint": 416,
+        "canonical_key": "attendant_in_a_huff",
+        "note": "Manner-state attributed to the attendant's departure.",
+        "order_cue": "in a huff",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "in a huff",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "in a huff"
+      },
+      {
+        "anchor_hint": 538,
+        "canonical_key": "B_being_a_Karen_question",
+        "note": "Speaker's questioned self-classification.",
+        "order_cue": "Am I being a Karen right now?",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "Am I being a Karen right now?",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "Am I being a Karen right now?"
+      },
+      {
+        "anchor_hint": 736,
+        "canonical_key": "pay_and_walk_out_rude_question",
+        "note": "Questioned social classification of the contemplated action.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "Would it be rude for me to just pay and walk out?",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "anchor_hint": 917,
+        "canonical_key": "coupon_not_working_frustrating",
+        "note": "Evaluation of the coupon's failure.",
+        "order_cue": "frustrating",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "frustrating"
+      },
+      {
+        "anchor_hint": 1042,
+        "canonical_key": "B_more_frustrated",
+        "note": "Comparative frustration state of the speaker.",
+        "order_cue": "more frustrated",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated",
+        "source_wording": "more frustrated"
+      },
+      {
+        "anchor_hint": 1069,
+        "canonical_key": "B_out_of_control",
+        "note": "Speaker's represented condition concerning the coupon decision.",
+        "order_cue": "out of control",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control",
+        "source_wording": "out of control"
+      },
+      {
+        "anchor_hint": 1168,
+        "canonical_key": "B_stuck",
+        "note": "Speaker's condition while awaiting the coupon's next step.",
+        "order_cue": "stuck",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "stuck",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck"
+      },
+      {
+        "anchor_hint": 1220,
+        "canonical_key": "B_appear_rude",
+        "note": "Anticipated social classification the speaker wants to avoid.",
+        "order_cue": "appear rude",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "appear rude",
+        "source_cue": "I don’t want to appear rude",
+        "source_wording": "appear rude"
+      },
+      {
+        "anchor_hint": 1308,
+        "canonical_key": "part_super_frustrating",
+        "note": "Intensified evaluation of the loss-of-control aspect.",
+        "order_cue": "super frustrating",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "super frustrating",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "super frustrating"
+      },
+      {
+        "anchor_hint": 1351,
+        "canonical_key": "not_attendants_fault",
+        "note": "Speaker rejects fault attribution to the attendant.",
+        "order_cue": "do not think it was the attendant’s fault",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "do not think it was the attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "do not think it was the attendant’s fault"
+      },
+      {
+        "anchor_hint": 1402,
+        "canonical_key": "a_me_thing",
+        "note": "Speaker's corrective attribution of the issue to themself.",
+        "order_cue": "a me thing",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing",
+        "source_wording": "a me thing"
+      }
+    ],
+    "session_id": "sess_01530addd6a47a41006aab0bb9f4308191b9ccc9ad27aa9834",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_03913c1a25958d1a006aab0bfddd7481918957e580c3928e89",
+    "status": "in_progress"
+  }
+}

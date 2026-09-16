@@ -1,0 +1,122 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 73,
+        "canonical_key": "coupon",
+        "note": "Same coupon later referenced by “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "coupon",
+        "source_cue": "scan this coupon",
+        "source_wording": "coupon"
+      },
+      {
+        "anchor_hint": 92,
+        "canonical_key": "kids’ cereal",
+        "note": "Same cereal later referenced as “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "kids’ cereal",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "kids’ cereal"
+      },
+      {
+        "anchor_hint": 176,
+        "canonical_key": "order",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "order",
+        "source_cue": "finish my order",
+        "source_wording": "order"
+      },
+      {
+        "anchor_hint": 282,
+        "canonical_key": "coupon date",
+        "note": "The date examined on the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "date",
+        "source_cue": "the date is valid",
+        "source_wording": "date"
+      },
+      {
+        "anchor_hint": 304,
+        "canonical_key": "box",
+        "note": "The cereal box.",
+        "order_cue": "the box",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "box"
+      },
+      {
+        "anchor_hint": 531,
+        "canonical_key": "$1.25 off my cereal",
+        "note": "The coupon discount amount.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "the $1.25 off my cereal",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "anchor_hint": 594,
+        "canonical_key": "a few things",
+        "note": "The set of things the speaker intended to shop for.",
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "scope_rank": null,
+        "short_tag": "a few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "anchor_hint": 882,
+        "canonical_key": "my point",
+        "note": "The speaker’s reified point in the explanation to their partner.",
+        "order_cue": "my point",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "my point",
+        "source_cue": "my point was that",
+        "source_wording": "my point"
+      },
+      {
+        "anchor_hint": 964,
+        "canonical_key": "the decision on the coupon’s next step",
+        "note": "The explicitly represented decision about the coupon’s next step.",
+        "order_cue": "the decision on the coupon’s next step",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "the decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "anchor_hint": 1424,
+        "canonical_key": "these situations",
+        "note": "The stable situation category to which the speaker relates the episode.",
+        "order_cue": "these situations",
+        "qualities_available": false,
+        "scope_rank": null,
+        "short_tag": "these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_0fd8a0973e15397e006aab0bb9496c81918794f2d91c985924",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0439137e075a32be006aab0bf447cc8191bc816cdce9524b88",
+    "status": "in_progress"
+  }
+}

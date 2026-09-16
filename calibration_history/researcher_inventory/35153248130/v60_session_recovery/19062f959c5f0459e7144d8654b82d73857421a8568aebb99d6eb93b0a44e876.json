@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker; later me, my, myself, and I references corefer.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 81,
+        "canonical_key": "B_kids",
+        "note": "Speaker's kids; represented possessively as a stable social group.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 124,
+        "canonical_key": "attendant",
+        "note": "Later them, they, and attendant’s references corefer.",
+        "order_cue": "the attendant sees",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 428,
+        "canonical_key": "manager",
+        "note": "Offscreen manager represented as the person the attendant goes to get.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 879,
+        "canonical_key": "B_partner",
+        "note": "Speaker's partner, represented as the recipient of the later explanation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my partner",
+        "source_cue": "explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_09324e47667a50fc006aab0bb972448191adf806fdb8fd1493",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e9a79cd25f9aa3e006aab0c0ac8908191b477368f422955cc",
+    "status": "in_progress"
+  }
+}

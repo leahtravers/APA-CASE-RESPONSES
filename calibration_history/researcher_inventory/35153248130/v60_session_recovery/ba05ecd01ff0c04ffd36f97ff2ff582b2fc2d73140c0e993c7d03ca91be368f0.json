@@ -1,0 +1,72 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "time:self-check_episode",
+        "note": "Unnamed checkout episode organizing the represented store interactions.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "time:coupon_scan_attempt",
+        "note": "Contained coupon-scanning attempt within the self-check episode.",
+        "order_cue": "I am trying to scan this coupon",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon",
+        "source_wording": "trying to scan this coupon"
+      },
+      {
+        "canonical_key": "time:waiting_phase",
+        "note": "Contained waiting phase after the attendant walks away with the coupon.",
+        "order_cue": "I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "canonical_key": "time:partner_explanation",
+        "note": "Later explanation frame in which the store experience is recounted to the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "time:regular_shopping",
+        "note": "Recurring shopping frame associated with concern about appearing rude.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "time:present_reflection",
+        "note": "Unnamed present reflection frame distinguished from the recounted store episode.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "present reflection",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_037ed247c6aa80a9006aab0bb9713881919a980574823a379d",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_025be98620e8285c006aab0bf1a48081918c1dd78e23edc70f",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "comes over",
+        "note": "The attendant approaches B.",
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "canonical_key": "walk away",
+        "note": "The attendant moves away from B's occurrence position.",
+        "order_cue": "walk away",
+        "qualities_available": true,
+        "short_tag": "walk away",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "walk away"
+      },
+      {
+        "canonical_key": "with my coupon",
+        "note": "The attendant carries B's coupon while moving away.",
+        "order_cue": "with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "canonical_key": "standing there",
+        "note": "The later wording “standing here” corefers to B remaining at the same self-check occurrence position.",
+        "order_cue": "standing there",
+        "qualities_available": false,
+        "short_tag": "standing there",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing there"
+      },
+      {
+        "canonical_key": "in and out",
+        "note": "B represents an intended entry-and-exit orientation through the shopping situation.",
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "walk out",
+        "note": "B questions a prospective exit from the store.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "short_tag": "walk out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "walk out"
+      },
+      {
+        "canonical_key": "stuck there",
+        "note": "B represents being situationally held at the self-check occurrence position.",
+        "order_cue": "stuck there",
+        "qualities_available": false,
+        "short_tag": "stuck there",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there"
+      },
+      {
+        "canonical_key": "get myself into these situations",
+        "note": "Figurative orientation of B entering situations of this kind.",
+        "order_cue": "get myself into these situations",
+        "qualities_available": false,
+        "short_tag": "get myself into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "get myself into these situations"
+      }
+    ],
+    "session_id": "sess_021db6812e42c7bf006aab0bb988588191a26a6a4a39a1067d",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0c643a6aee24f477006aab0c0762588191a490b2bbf945dadb",
+    "status": "in_progress"
+  }
+}
