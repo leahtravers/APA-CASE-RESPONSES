@@ -1,0 +1,45 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "store",
+        "note": "Broad physical setting containing the self-check scene.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "self-check",
+        "note": "Contained occurrence position where the scanning, assistance, and waiting unfold; later there and here references corefer with it.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 314,
+        "canonical_key": "box-position",
+        "note": "Separately presented location of the cereal box within the store situation.",
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      }
+    ],
+    "session_id": "sess_0709b4cebd3554cb006aaa149149b481919f86475f368dd2df",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0f2f6f3c9f57688c006aaa14b1f1c48191b54eb9740fcfcb0b",
+    "status": "in_progress"
+  }
+}
