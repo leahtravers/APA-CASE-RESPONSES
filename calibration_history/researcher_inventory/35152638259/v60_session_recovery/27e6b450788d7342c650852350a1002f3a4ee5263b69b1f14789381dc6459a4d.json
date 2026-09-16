@@ -1,0 +1,324 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "I am at the self-check at the store"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V1",
+          "O1",
+          "O2",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "I am trying to scan this coupon for my kids’ cereal"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "H4",
+          "O2"
+        ],
+        "researcher_bundle": "my kids’ cereal"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O1",
+          "L1",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "this coupon is not working"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "V3",
+          "B",
+          "V4",
+          "O3",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "the attendant sees I am struggling to finish my order"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "R1",
+          "V5",
+          "B",
+          "O1",
+          "O3",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "the attendant comes over to help me with it"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O1",
+          "V6",
+          "H1",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "It won’t scan for them either"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "V7",
+          "O1",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "they look at it"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "V2",
+          "O4",
+          "L2",
+          "O2",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "they see the date is valid and the box is right there"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V8",
+          "V9",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "I really don’t recall saying anything"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "R2",
+          "R3",
+          "O1",
+          "V10",
+          "H2",
+          "T1",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "they sort of just walk away with my coupon in a huff to go get a manager"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "R4",
+          "V11",
+          "L8",
+          "V20",
+          "L9",
+          "V21",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "I was sort of stuck there waiting because I don’t want to appear rude when I shop regularly"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V12",
+          "L3",
+          "R5",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "thinking to myself: Am I being a Karen right now?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V12",
+          "V13",
+          "O5",
+          "O2",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "thinking to myself: Do I really care about the $1.25 off my cereal?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V12",
+          "V14",
+          "R6",
+          "O6",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "thinking to myself: I just wanted to be in and out for a few things"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V12",
+          "L4",
+          "V15",
+          "R7",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "thinking to myself: Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V12",
+          "H1",
+          "V16",
+          "O7",
+          "V17",
+          "T1",
+          "T2",
+          "P1",
+          "P2"
+        ],
+        "researcher_bundle": "thinking to myself: Why didn’t they ask me what I wanted to do?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O8",
+          "L5",
+          "T1"
+        ],
+        "researcher_bundle": "the coupon not working itself was frustrating"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V18",
+          "O9",
+          "H3",
+          "T3"
+        ],
+        "researcher_bundle": "I tried to explain this to my partner, my point"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O9",
+          "B",
+          "L6",
+          "V19",
+          "L7",
+          "O7",
+          "T3"
+        ],
+        "researcher_bundle": "my point was that I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V22",
+          "L7",
+          "O7",
+          "L10"
+        ],
+        "researcher_bundle": "I found that that was the part that was super frustrating"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V23",
+          "L11",
+          "H1"
+        ],
+        "researcher_bundle": "I do not think it was the attendant’s fault"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "L12"
+        ],
+        "researcher_bundle": "It’s a me thing"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "V24",
+          "B",
+          "T4"
+        ],
+        "researcher_bundle": "it is still bugging me"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V25",
+          "R8",
+          "R9",
+          "O10",
+          "T4"
+        ],
+        "researcher_bundle": "I need to get it straight in my mind how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0e7393a0e916cedc006aab0b1dbfd081919b597c4988d7ca7a",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_037714249d763569006aab0ba128dc8191b611c45250695b2c",
+    "status": "in_progress"
+  }
+}
