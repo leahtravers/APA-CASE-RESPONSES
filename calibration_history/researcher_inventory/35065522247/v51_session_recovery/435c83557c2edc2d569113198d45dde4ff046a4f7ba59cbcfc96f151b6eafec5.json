@@ -1,0 +1,120 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "O_COUPON",
+        "note": "Corefers with later occurrences of “it,” “my coupon,” “the coupon,” and “the coupon’s.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "scan this coupon for my kids’ cereal",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "O_CEREAL",
+        "note": "Corefers with later “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "O_ORDER",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": false,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "O_DATE",
+        "note": "The source presents this as the coupon’s relevant date.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "O_BOX",
+        "note": "The source context presents this as the cereal box.",
+        "order_cue": "the box",
+        "qualities_available": false,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "O_SPEECH_CONTENT",
+        "note": "Negated or unrecalled speech content.",
+        "order_cue": "anything",
+        "qualities_available": false,
+        "short_tag": "anything",
+        "source_cue": "I really don’t recall saying anything",
+        "source_wording": "anything"
+      },
+      {
+        "canonical_key": "O_DISCOUNT",
+        "note": "The coupon’s represented discount value.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": true,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "canonical_key": "O_PURCHASE_ITEMS",
+        "note": null,
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "short_tag": "a few things",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "O_DESIRED_ACTION",
+        "note": "Questioned content of the speaker’s unrequested preference.",
+        "order_cue": "what I wanted to do",
+        "qualities_available": false,
+        "short_tag": "what I wanted to do",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "what I wanted to do"
+      },
+      {
+        "canonical_key": "O_COUPON_DECISION",
+        "note": "The represented decision content over which the speaker felt out of control.",
+        "order_cue": "what the decision on the coupon’s next step should be",
+        "qualities_available": true,
+        "short_tag": "what the decision on the coupon’s next step should be",
+        "source_cue": "out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "what the decision on the coupon’s next step should be"
+      },
+      {
+        "canonical_key": "O_AVOIDANCE_METHOD",
+        "note": "Represented content the speaker wants to clarify.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": false,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "get it straight in my mind how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      },
+      {
+        "canonical_key": "O_SITUATIONS",
+        "note": "The recurring situation category referenced within the avoidance content.",
+        "order_cue": "these situations",
+        "qualities_available": false,
+        "short_tag": "these situations",
+        "source_cue": "not get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_0c9f258f08ee1aa4006aaa3c2807ac819191053ab7da1600b2",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_08e8463f54d9a7f1006aaa3c74f3ac8191a8a104bfc9488eda",
+    "status": "in_progress"
+  }
+}
