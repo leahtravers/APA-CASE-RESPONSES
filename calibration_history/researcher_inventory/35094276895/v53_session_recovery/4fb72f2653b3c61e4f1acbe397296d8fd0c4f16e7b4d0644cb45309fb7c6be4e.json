@@ -1,0 +1,111 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 29,
+        "canonical_key": "at the store",
+        "note": "Broad physical orientation containing the self-check position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "anchor_hint": 11,
+        "canonical_key": "at the self-check",
+        "note": "Contained physical orientation within the store.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "anchor_hint": 169,
+        "canonical_key": "over to the speaker",
+        "note": "Movement toward the speaker.",
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "anchor_hint": 299,
+        "canonical_key": "right there",
+        "note": "Deictic position of the box.",
+        "order_cue": "right there",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "anchor_hint": 388,
+        "canonical_key": "away carrying the coupon",
+        "note": "Movement away while carrying the speaker's coupon.",
+        "order_cue": "away with my coupon",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "away with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away with my coupon"
+      },
+      {
+        "anchor_hint": 601,
+        "canonical_key": "in and out",
+        "note": "Intended entry-and-exit path through the store.",
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 732,
+        "canonical_key": "out of the store",
+        "note": "Questioned exit from the store.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "walk out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "walk out"
+      },
+      {
+        "anchor_hint": 1351,
+        "canonical_key": "in my mind",
+        "note": "Internal orientation for getting the matter straight.",
+        "order_cue": "in my mind",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "anchor_hint": 1384,
+        "canonical_key": "into these situations",
+        "note": "Figurative destination represented by the situations.",
+        "order_cue": "into these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_0adc214fc003d29a006aaa872945088191bf79a08f430e7e2e",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_033e390bdd97bf13006aaa874e043c8191ae1c0be79336858f",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "T1",
+        "note": "Broad checkout episode containing the initial coupon interaction and subsequent waiting phase.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "T2",
+        "note": "Contained waiting phase beginning after the attendant walks away with the coupon.",
+        "order_cue": "And so then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "And so then I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "canonical_key": "T3",
+        "note": "Later episode in which the speaker recounted the checkout experience to their partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "T4",
+        "note": "Recurring shopping frame represented by the speaker.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "T5",
+        "note": "Present reflection following the checkout episode and the explanation to the partner.",
+        "order_cue": "And wow, it is still bugging me",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "And wow, it is still bugging me",
+        "source_wording": "it is still bugging me"
+      }
+    ],
+    "session_id": "sess_02c4207788a8c8cd006aaa872945948191b55e2a35f227dcae",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_00725b3b962d6b45006aaa874c68d8819197694424ec4b314e",
+    "status": "in_progress"
+  }
+}

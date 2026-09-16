@@ -1,0 +1,62 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": "Speaker.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "KIDS",
+        "note": "Speaker’s children; represented as a stable group through the possessive wording.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "ATTENDANT",
+        "note": "Later references using “them” and “they” resolve to the attendant.",
+        "order_cue": "the attendant sees I am struggling to finish my order",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "MANAGER",
+        "note": "Prospective store-role actor.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "PARTNER",
+        "note": "Speaker’s partner and represented recipient of the explanation.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_08d17d36973e6f67006aaa872947048191920c1c5b49be9f0d",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_06c5b86702c5972e006aaa874c36708191ac2c9018a25fb982",
+    "status": "in_progress"
+  }
+}
