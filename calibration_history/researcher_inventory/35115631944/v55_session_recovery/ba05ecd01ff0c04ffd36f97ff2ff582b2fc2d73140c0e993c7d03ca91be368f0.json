@@ -1,0 +1,72 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "self-check coupon episode",
+        "note": "Supported unnamed active checkout episode encompassing the coupon scan and attendant assistance.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "self-check",
+        "source_cue": "I am at the self-check at the store, and I am trying to scan this coupon",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "coupon date",
+        "note": "Temporal coordinate used to establish the coupon's validity.",
+        "order_cue": "the date is valid",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the date",
+        "source_cue": "the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "store waiting phase",
+        "note": "Distinct waiting phase after the attendant walks away with the coupon.",
+        "order_cue": "then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "canonical_key": "partner explanation episode",
+        "note": "Later remembered episode in which the speaker explained the store experience.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "regular shopping frame",
+        "note": "Recurring shopping frame.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "current reflection frame",
+        "note": "Supported unnamed current reflection frame, temporally distinguished from the remembered store and partner interactions.",
+        "order_cue": "still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0abc88f76484816b006aaab5ca766c819182096572f01f65ae",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_09cd51dc8da7f933006aaab6024394819190b34916cd86495d",
+    "status": "in_progress"
+  }
+}

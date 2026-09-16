@@ -1,0 +1,166 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 124,
+        "canonical_key": "coupon_not_working",
+        "note": "State of the coupon during the attempted scan.",
+        "order_cue": "it is not working",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "not working"
+      },
+      {
+        "anchor_hint": 300,
+        "canonical_key": "coupon_date_valid",
+        "note": "Characterization of the coupon date.",
+        "order_cue": "the date is valid",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "valid",
+        "source_cue": "the date is valid",
+        "source_wording": "valid"
+      },
+      {
+        "anchor_hint": 494,
+        "canonical_key": "B_being_a_Karen_question",
+        "note": "Speaker's questioned self-characterization.",
+        "order_cue": "Am I being a Karen right now?",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "being a Karen",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "Am I being a Karen right now?"
+      },
+      {
+        "anchor_hint": 607,
+        "canonical_key": "B_in_and_out",
+        "note": "Desired shopping state presented by the speaker.",
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 694,
+        "canonical_key": "pay_and_walk_out_rude_question",
+        "note": "Questioned evaluation of the speaker's contemplated action.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "rude",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "anchor_hint": 870,
+        "canonical_key": "coupon_not_working_frustrating",
+        "note": "Evaluation of the coupon malfunction.",
+        "order_cue": "frustrating",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "frustrating"
+      },
+      {
+        "anchor_hint": 968,
+        "canonical_key": "B_more_frustrated_about_lost_control",
+        "note": "Speaker's comparative frustration with its stated scope preserved.",
+        "order_cue": "more frustrated",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "more frustrated that I felt out of control of what the decision on the coupon’s next step should be"
+      },
+      {
+        "anchor_hint": 995,
+        "canonical_key": "B_out_of_control_of_coupon_decision",
+        "note": "Source-distinguished state underlying the speaker's greater frustration.",
+        "order_cue": "out of control",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "out of control of what the decision on the coupon’s next step should be"
+      },
+      {
+        "anchor_hint": 1089,
+        "canonical_key": "B_stuck_there_waiting",
+        "note": "Speaker's waiting-state characterization.",
+        "order_cue": "stuck there waiting",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "stuck there waiting",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there waiting"
+      },
+      {
+        "anchor_hint": 1143,
+        "canonical_key": "B_appear_rude",
+        "note": "Appearance characterization the speaker wants to avoid.",
+        "order_cue": "appear rude",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "appear rude",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "appear rude"
+      },
+      {
+        "anchor_hint": 1226,
+        "canonical_key": "lost_control_part_super_frustrating",
+        "note": "Intensified evaluation of the identified part of the experience.",
+        "order_cue": "super frustrating",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "super frustrating",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "super frustrating"
+      },
+      {
+        "anchor_hint": 1274,
+        "canonical_key": "attendant_not_at_fault",
+        "note": "Speaker's explicitly negated attribution of fault.",
+        "order_cue": "I do not think it was the attendant’s fault",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "I do not think it was the attendant’s fault"
+      },
+      {
+        "anchor_hint": 1320,
+        "canonical_key": "B_a_me_thing",
+        "note": "Speaker's self-attribution of the issue.",
+        "order_cue": "It’s a me thing",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing",
+        "source_wording": "It’s a me thing"
+      },
+      {
+        "anchor_hint": 1378,
+        "canonical_key": "B_straight_in_my_mind",
+        "note": "Desired cognitive state concerning the experience.",
+        "order_cue": "straight in my mind",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "straight in my mind",
+        "source_cue": "I need to get it straight in my mind",
+        "source_wording": "straight in my mind"
+      }
+    ],
+    "session_id": "sess_088f3b1a9dd2ce8c006aaab5ca7c308191ac59160887ba4d72",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_080444b282ff7fc6006aaab60de7c48191880bdb7351227e5b",
+    "status": "in_progress"
+  }
+}
