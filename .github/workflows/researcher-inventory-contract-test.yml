@@ -1,5 +1,5 @@
 name: Researcher Inventory Apparatus Verification
-# V48 prospectively supersedes V47 for new calibration. Predecessor contracts/runs remain historical evidence.
+# V49 prospectively supersedes V48 for new calibration. Predecessor contracts/runs remain historical evidence.
 
 on:
   workflow_dispatch:
@@ -25,9 +25,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V48
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V48.md
-      RI_MODEL_COMMAND: python researcher_inventory/v48_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V49
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V49.md
+      RI_MODEL_COMMAND: python researcher_inventory/v49_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
     steps:
       - name: Checkout repository without external actions
@@ -124,14 +124,14 @@ jobs:
           : > researcher_inventory/runtime/training_history.ndjson
           python researcher_inventory/session_bootstrap.py
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.v48_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v49_calibration_runner
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v48_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v49_calibration_runner
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v48_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v49_calibration_runner
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
-          V48 passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
+          V49 passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
@@ -140,7 +140,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m researcher_inventory.v48_holdout_runner
+          python -m researcher_inventory.v49_holdout_runner
           cp researcher_inventory/runtime/extractor_agent_id.txt researcher_inventory/runtime/retired_calibration_agent_id.txt
           cp researcher_inventory/runtime/holdout_result.json researcher_inventory/runtime/calibrated_lineage_holdout_result.json
 
@@ -151,10 +151,10 @@ jobs:
         run: |
           set -euo pipefail
           python researcher_inventory/session_bootstrap.py
-          python -m researcher_inventory.v48_holdout_runner
+          python -m researcher_inventory.v49_holdout_runner
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
-          V48 passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V48 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
+          V49 passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V49 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
           EOF
 
       - name: Commit durable status
@@ -163,7 +163,7 @@ jobs:
         run: |
           set -euo pipefail
           git add researcher_inventory/status
-          if ! git diff --cached --quiet; then git commit -m "apparatus: certify researcher inventory v48 [skip ci]"; git pull --rebase origin main; git push origin main; fi
+          if ! git diff --cached --quiet; then git commit -m "apparatus: certify researcher inventory v49 [skip ci]"; git pull --rebase origin main; git push origin main; fi
 
       - name: Preserve calibration evidence durably
         if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
@@ -175,7 +175,7 @@ jobs:
           test ! -f researcher_inventory/runtime/archetype_integrity.json || cp researcher_inventory/runtime/archetype_integrity.json "$HISTORY_DIR/archetype_integrity.json"
           test ! -f researcher_inventory/runtime/training_history.ndjson || cp researcher_inventory/runtime/training_history.ndjson "$HISTORY_DIR/training_history.ndjson"
           test ! -f researcher_inventory/runtime/test_results.json || cp researcher_inventory/runtime/test_results.json "$HISTORY_DIR/test_results.json"
-          test ! -d researcher_inventory/runtime/v48_session_recovery || cp -R researcher_inventory/runtime/v48_session_recovery "$HISTORY_DIR/v48_session_recovery"
+          test ! -d researcher_inventory/runtime/v49_session_recovery || cp -R researcher_inventory/runtime/v49_session_recovery "$HISTORY_DIR/v49_session_recovery"
           test ! -f "$RI_CONTRACT_FILE" || cp "$RI_CONTRACT_FILE" "$HISTORY_DIR/iteration_contract.md"
           python - <<'PY' > "$HISTORY_DIR/run_manifest.json"
           import json,os
