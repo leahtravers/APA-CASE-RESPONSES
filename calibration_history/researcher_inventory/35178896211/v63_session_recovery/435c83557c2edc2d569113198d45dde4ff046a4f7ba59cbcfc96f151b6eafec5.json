@@ -1,0 +1,116 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with “it,” “my coupon,” and “the coupon.”",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "kids’ cereal",
+        "note": "Later referred to as “my cereal.”",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "order",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": false,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "coupon date",
+        "note": "The date shown on the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal box",
+        "note": "The box associated with the cereal purchase.",
+        "order_cue": "the box",
+        "qualities_available": false,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "$1.25 off",
+        "note": "The coupon discount under consideration.",
+        "order_cue": "$1.25 off my cereal",
+        "qualities_available": false,
+        "short_tag": "$1.25 off",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "canonical_key": "few things",
+        "note": "The speaker’s intended set of purchases.",
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "short_tag": "few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "speaker’s preferred action",
+        "note": "The speaker’s unasked choice about how to proceed.",
+        "order_cue": "what I wanted to do",
+        "qualities_available": false,
+        "short_tag": "what I wanted to do",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "what I wanted to do"
+      },
+      {
+        "canonical_key": "coupon next-step decision",
+        "note": "The decision about how the coupon should be handled next.",
+        "order_cue": "the decision on the coupon’s next step",
+        "qualities_available": true,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "canonical_key": "attendant fault attribution",
+        "note": "A fault attribution explicitly rejected by the speaker.",
+        "order_cue": "the attendant’s fault",
+        "qualities_available": true,
+        "short_tag": "attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "the attendant’s fault"
+      },
+      {
+        "canonical_key": "speaker’s mind",
+        "note": "The internal referent in which the speaker wants to clarify the experience.",
+        "order_cue": "my mind",
+        "qualities_available": false,
+        "short_tag": "my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "my mind"
+      },
+      {
+        "canonical_key": "situations",
+        "note": "The category of situations the speaker wants to avoid entering.",
+        "order_cue": "these situations",
+        "qualities_available": true,
+        "short_tag": "these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_059e5d8322d7ad90006aab60a635d481919d4a9209e65c4a63",
+    "status": "completed"
+  }
+}

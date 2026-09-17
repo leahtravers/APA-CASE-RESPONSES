@@ -1,0 +1,60 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 12,
+        "canonical_key": "self-check position",
+        "note": "The speaker’s checkout position, later referenced by “there” and “here.”",
+        "order_cue": "the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 30,
+        "canonical_key": "store",
+        "note": "Broad physical setting containing the self-check and shopping interactions.",
+        "order_cue": "the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "canonical_key": "box position",
+        "note": "Unnamed nearby physical position of the cereal box.",
+        "order_cue": "right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "box position",
+        "source_cue": "the box is right there",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "manager destination",
+        "note": "Unnamed offscreen destination toward which the attendant departs to get a manager.",
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "manager destination",
+        "source_cue": "walk away with my coupon in a huff to go get a manager",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "walk-out destination",
+        "note": "Unnamed prospective position beyond the store reached by walking out.",
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "walk-out destination",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0ce0ad1b32c30b03006aab60a60d908191ade786ebd6f6017e",
+    "status": "completed"
+  }
+}
