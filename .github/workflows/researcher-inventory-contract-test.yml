@@ -1,6 +1,7 @@
 name: Researcher Inventory Apparatus Verification
 # V64 prospectively supersedes V63 for new calibration. Predecessor contracts/runs remain historical evidence.
 # V64 separates scene/frame completeness from bounded lightweight primitive admission.
+# 2026-09-17 evaluator-only harness correction: semantic compound identity is membership + Q, not internal ref order. RI-CONTRACT-V64 is unchanged.
 
 on:
   workflow_dispatch:
@@ -61,7 +62,7 @@ jobs:
         run: |
           set -euo pipefail
           test -n "$OPENAI_API_KEY"
-          python -m unittest researcher_inventory.tests.test_inventory_apparatus -v
+          python -m unittest researcher_inventory.tests.test_inventory_apparatus researcher_inventory.tests.test_v64_compound_order_harness -v
 
       - name: Stop if already clean-room certified
         id: final_state
@@ -125,11 +126,11 @@ jobs:
           : > researcher_inventory/runtime/training_history.ndjson
           python researcher_inventory/session_bootstrap.py
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.v64_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v64_compound_order_calibration_runner
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v64_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v64_compound_order_calibration_runner
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v64_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v64_compound_order_calibration_runner
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
           V64 passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
