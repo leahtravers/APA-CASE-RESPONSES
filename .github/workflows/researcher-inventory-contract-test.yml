@@ -2,6 +2,7 @@ name: Researcher Inventory Apparatus Verification
 # V66 prospectively supersedes V65 for new calibration. V65 contracts/runs remain historical evidence.
 # V66 preserves independent class consideration but restores bounded class-local admission grain.
 # The V64 evaluator-only semantic-compound order correction remains in force unchanged.
+# The 2026-09-17 V66 harness correction fixes evaluator/task mechanics without changing RI-CONTRACT-V66.
 
 on:
   workflow_dispatch:
@@ -62,7 +63,7 @@ jobs:
         run: |
           set -euo pipefail
           test -n "$OPENAI_API_KEY"
-          python -m unittest researcher_inventory.tests.test_inventory_apparatus researcher_inventory.tests.test_v64_compound_order_harness -v
+          python -m unittest researcher_inventory.tests.test_inventory_apparatus researcher_inventory.tests.test_v64_compound_order_harness researcher_inventory.tests.test_v66_harness_correction -v
 
       - name: Stop if already clean-room certified
         id: final_state
@@ -126,14 +127,14 @@ jobs:
           : > researcher_inventory/runtime/training_history.ndjson
           python researcher_inventory/session_bootstrap.py
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.v66_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v66_harness_calibration_runner
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v66_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v66_harness_calibration_runner
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v66_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v66_harness_calibration_runner
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
-          V66 passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
+          V66 with the additive harness correction passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
@@ -142,7 +143,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m researcher_inventory.v66_holdout_runner
+          python -m researcher_inventory.v66_harness_holdout_runner
           cp researcher_inventory/runtime/extractor_agent_id.txt researcher_inventory/runtime/retired_calibration_agent_id.txt
           cp researcher_inventory/runtime/holdout_result.json researcher_inventory/runtime/calibrated_lineage_holdout_result.json
 
@@ -153,10 +154,10 @@ jobs:
         run: |
           set -euo pipefail
           python researcher_inventory/session_bootstrap.py
-          python -m researcher_inventory.v66_holdout_runner
+          python -m researcher_inventory.v66_harness_holdout_runner
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
-          V66 passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V66 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
+          V66 with the additive harness correction passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V66 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
           EOF
 
       - name: Commit durable status
@@ -181,7 +182,7 @@ jobs:
           test ! -f "$RI_CONTRACT_FILE" || cp "$RI_CONTRACT_FILE" "$HISTORY_DIR/iteration_contract.md"
           python - <<'PY' > "$HISTORY_DIR/run_manifest.json"
           import json,os
-          print(json.dumps({'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'commit_sha':os.environ.get('GITHUB_SHA'),'contract_version':os.environ.get('CONTRACT_VERSION'),'contract_file':os.environ.get('RI_CONTRACT_FILE'),'model':os.environ.get('OPENAI_MODEL'),'event':os.environ.get('GITHUB_EVENT_NAME'),'evidence_policy':'calibration-only; sealed holdout source/output deliberately excluded'},sort_keys=True,indent=2))
+          print(json.dumps({'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'commit_sha':os.environ.get('GITHUB_SHA'),'contract_version':os.environ.get('CONTRACT_VERSION'),'contract_file':os.environ.get('RI_CONTRACT_FILE'),'model':os.environ.get('OPENAI_MODEL'),'event':os.environ.get('GITHUB_EVENT_NAME'),'evidence_policy':'calibration-only; sealed holdout source/output deliberately excluded','harness_correction':'V66_HARNESS_CORRECTION_2026-09-17'},sort_keys=True,indent=2))
           PY
           python - <<'PY' > "$HISTORY_DIR/holdout_stage_state.json"
           import json
