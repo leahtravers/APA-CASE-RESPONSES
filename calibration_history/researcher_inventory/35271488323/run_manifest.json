@@ -1,0 +1,12 @@
+{
+  "commit_sha": "c06a185c7d9245a9933cba4f713380fa02f3dbfb",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V71.md",
+  "contract_version": "RI-CONTRACT-V71",
+  "event": "schedule",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "harness_correction": "V66_HARNESS_CORRECTION_2026-09-17",
+  "model": "gpt-5.6-sol",
+  "semantic_successor": "V71",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "35271488323"
+}
