@@ -1,0 +1,112 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 184,
+        "canonical_key": "attendant_approach_direction",
+        "note": null,
+        "order_cue": "comes over",
+        "qualities_available": false,
+        "short_tag": "over",
+        "source_cue": "comes over to help me",
+        "source_wording": "over"
+      },
+      {
+        "anchor_hint": 322,
+        "canonical_key": "box_deictic_position",
+        "note": null,
+        "order_cue": "right there",
+        "qualities_available": false,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "anchor_hint": 413,
+        "canonical_key": "attendant_departure_direction",
+        "note": null,
+        "order_cue": "walk away",
+        "qualities_available": false,
+        "short_tag": "away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away"
+      },
+      {
+        "anchor_hint": 418,
+        "canonical_key": "coupon_accompaniment",
+        "note": null,
+        "order_cue": "with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "anchor_hint": 510,
+        "canonical_key": "speaker_waiting_position",
+        "note": "Corefers with the later deictic position in “standing here” and “stuck there waiting.”",
+        "order_cue": "standing there waiting",
+        "qualities_available": false,
+        "short_tag": "there",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "there"
+      },
+      {
+        "anchor_hint": 681,
+        "canonical_key": "intended_shopping_path",
+        "note": null,
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "anchor_hint": 787,
+        "canonical_key": "prospective_exit_direction",
+        "note": null,
+        "order_cue": "walk out",
+        "qualities_available": false,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "anchor_hint": 1245,
+        "canonical_key": "regular_shopping_context",
+        "note": null,
+        "order_cue": "when I shop regularly",
+        "qualities_available": false,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1512,
+        "canonical_key": "speaker_internal_orientation",
+        "note": null,
+        "order_cue": "in my mind",
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "anchor_hint": 1549,
+        "canonical_key": "situational_entry_orientation",
+        "note": "Figurative destination orientation.",
+        "order_cue": "into these situations",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_02f23c01f847f7d0006aac5c3bbc94819bb01dc0859454b2f7",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0737a29f21e2e60b006aac5c74a54c819b8681a48abd67c0aa",
+    "status": "in_progress"
+  }
+}

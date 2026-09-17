@@ -1,0 +1,66 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "initial_coupon_scan_attempt",
+        "note": "Unnamed initial attempt and coupon-failure episode.",
+        "order_cue": "I am trying to scan this coupon for my kids’ cereal",
+        "qualities_available": true,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "attendant_help_episode",
+        "note": "Unnamed response and help episode following the initial scan attempt.",
+        "order_cue": "comes over to help me with it",
+        "qualities_available": false,
+        "short_tag": "comes over to help me with it",
+        "source_cue": "the attendant sees I am struggling to finish my order and comes over to help me with it. It won’t scan for them either, so they look at it and see the date is valid and the box is right there.",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "attendant_departure_transition",
+        "note": "Unnamed departure and transition toward obtaining a manager.",
+        "order_cue": "walk away with my coupon in a huff to go get a manager",
+        "qualities_available": true,
+        "short_tag": "walk away with my coupon",
+        "source_cue": "they sort of just walk away with my coupon in a huff to go get a manager",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "checkout_waiting_episode",
+        "note": "Unnamed waiting episode that frames the speaker’s questions and deliberation; later references to being stuck there waiting corefer with this episode.",
+        "order_cue": "And so then I am standing there waiting",
+        "qualities_available": true,
+        "short_tag": "standing there waiting",
+        "source_cue": "And so then I am standing there waiting, thinking to myself",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "partner_explanation_episode",
+        "note": "Unnamed later conversation with the speaker’s partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": true,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner, my point was that I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "present_reflection_episode",
+        "note": "Unnamed present reflection following the remembered store and partner-conversation episodes.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "short_tag": "it is still bugging me",
+        "source_cue": "And wow, it is still bugging me, and I need to get it straight in my mind how to not get myself into these situations.",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_079e5fae8ea8108e006aac5c3bb6d0819a84fe5f008528943c",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_00c8c15466c35094006aac5c677cc4819b9a2a9d7fbb42277e",
+    "status": "in_progress"
+  }
+}
