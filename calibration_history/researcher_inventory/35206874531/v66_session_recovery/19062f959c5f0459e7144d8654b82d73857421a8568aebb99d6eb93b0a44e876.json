@@ -1,0 +1,63 @@
+{
+  "provisional": {
+    "last_error": "HTTP 500: An internal error occurred.",
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": "speaker",
+        "order_cue": "I am at the self-check",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "B's kids",
+        "note": "speaker's children; relation-only group",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "attendant",
+        "note": "later referenced by singular they/them and the attendant’s",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "manager",
+        "note": "prospective offscreen actor",
+        "order_cue": "go get a manager",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "B's partner",
+        "note": "speaker's partner",
+        "order_cue": "my partner",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_079d70b6098ba9ef006aabb6cf55608191ac0632e199440d1a",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0eb9427bd5026e1f006aabb6eb1ca88191a416d480cd9dbf2b",
+    "status": "in_progress"
+  }
+}
