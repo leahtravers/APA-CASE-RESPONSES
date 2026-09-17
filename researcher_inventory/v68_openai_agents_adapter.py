@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-"""V68 OpenAI Agents adapter: reuse proven transport/session machinery with V68 contract binding."""
+"""V68 contract-version adapter preserving the proven transport/session recovery implementation."""
+from __future__ import annotations
+
 import os
+from pathlib import Path
 
-from researcher_inventory import v60_openai_agents_adapter as prior
+import v60_openai_agents_adapter as prior
 
-os.environ.setdefault("CONTRACT_VERSION", "RI-CONTRACT-V68")
-os.environ.setdefault("RI_CONTRACT_FILE", "researcher_inventory/AGENT_CONTRACT_V68.md")
-os.environ.setdefault("RI_SESSION_RECOVERY_DIR", "researcher_inventory/runtime/v68_session_recovery")
+prior.base.CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "RI-CONTRACT-V68").strip() or "RI-CONTRACT-V68"
+RECOVERY_DIR = Path("researcher_inventory/runtime/v68_session_recovery")
+prior.recovery.RECOVERY_DIR = RECOVERY_DIR
+prior.base.recovery.RECOVERY_DIR = RECOVERY_DIR
 
 if __name__ == "__main__":
-    prior.main()
+    raise SystemExit(prior.base.main())
