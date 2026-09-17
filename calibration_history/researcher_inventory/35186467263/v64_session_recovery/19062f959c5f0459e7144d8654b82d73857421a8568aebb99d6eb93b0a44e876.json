@@ -1,0 +1,63 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "speaker",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 79,
+        "canonical_key": "B's kids",
+        "note": "speaker's kids; possessively represented stable group",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 130,
+        "canonical_key": "attendant",
+        "note": "corefers with them and they",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 390,
+        "canonical_key": "manager",
+        "note": "offscreen prospective actor",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 869,
+        "canonical_key": "B's partner",
+        "note": "speaker's partner; recipient of explanation",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_020287378881e3cb006aab7cb0865c819196c5da14f2742264",
+    "status": "completed"
+  }
+}
