@@ -1,0 +1,57 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": "Speaker; first-person references corefer to B.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "B's kids",
+        "note": "Possessively referenced stable group related to B.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "store attendant",
+        "note": "Later singular-they references and possessive \"attendant’s\" corefer to the attendant.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "manager",
+        "note": "Prospective offscreen actor.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "B's partner",
+        "note": "Relationally identified actor to whom B tried to explain the experience.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0eae70591c3b261b006aabb7435f7c819199cdcba77414747d",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0bfb232dd82cf776006aabb75ffbe88191a4317a2f839a941d",
+    "status": "in_progress"
+  }
+}

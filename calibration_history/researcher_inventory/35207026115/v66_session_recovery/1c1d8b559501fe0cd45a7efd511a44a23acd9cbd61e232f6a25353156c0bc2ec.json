@@ -1,0 +1,34 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 16,
+        "canonical_key": "self-check",
+        "note": "Contained checkout position within the store; later “there” and “here” corefer with this position.",
+        "order_cue": "self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check",
+        "source_wording": "self-check"
+      },
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": "Broad physical setting containing the self-check position.",
+        "order_cue": "store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the store",
+        "source_wording": "store"
+      }
+    ],
+    "session_id": "sess_04ae846594579da7006aabb7430b7481919bce2fd85304dbc1",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_04a8f8baa288396b006aabb75a919c8191b80cf82d9791bc6d",
+    "status": "in_progress"
+  }
+}
