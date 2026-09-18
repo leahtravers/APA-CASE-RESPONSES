@@ -1,0 +1,45 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": null,
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "store self-check",
+        "note": "Contained setting within the store.",
+        "order_cue": "at the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 913,
+        "canonical_key": "partner explanation setting",
+        "note": "Supported unnamed setting for the distinct interpersonal explanation scene.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_028dd4aee9153117006aad8c80852c819aa42a4a06ca86f08c",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0a312f06855202f8006aad8cadc2ac81998f3670c9b1d337cd",
+    "status": "in_progress"
+  }
+}
