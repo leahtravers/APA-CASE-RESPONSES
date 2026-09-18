@@ -1,0 +1,34 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": "Broad physical setting containing the self-check episode.",
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the store",
+        "source_wording": "store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "self-check",
+        "note": "Specific occurrence-position for scanning, assistance, and waiting; later references to standing there and standing here corefer with this position.",
+        "order_cue": "at the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "self-check"
+      }
+    ],
+    "session_id": "sess_03ea1b513eb9fb88006aacb252c5508199b81945580a2e1949",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_03d0ab4efac35a76006aacb266dcc0819abe409438b3013cf3",
+    "status": "in_progress"
+  }
+}
