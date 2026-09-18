@@ -1,0 +1,45 @@
+"""V76 semantic task rules: sparse represented graph, primary-job reconciliation, anchor backchain, and sparse binding compounds."""
+
+V76_BASE_RULES = r'''
+V76 ARCHETYPAL LIGHTWEIGHT RULE: recover a SPARSE REPRESENTED RESEARCH GRAPH at natural source-native grain. Coordinate-complete does not mean lexical/grammatical census.
+
+FIRST silently build source-order EPISODES, STABLE COORDINATES, MATERIAL BINDINGS, and ORIENTATIONS. A material binding is a distinct represented proposition/relation a researcher could later reconnect; a clause is not automatically a binding.
+
+ADMIT a primitive only when it is source-grounded, performs one real class job, has durable coordinate identity, has research-reconstruction value, uses the smallest semantically complete natural source span, and is not a true alias/support-shell/spatial-support/alternate-decomposition duplicate.
+
+PRIMARY-JOB RECONCILIATION precedes overlap. Spatial support nouns whose only job is location normally belong to PLACE/LOCATOR rather than duplicate OBJECT. Temporal/spatial anchor cues do not receive unrelated second classes. Relation-internal complements do not become OBJECT without independent referential identity. Descriptive modifiers do not become LABEL unless source stages a value/state. Prepositional complements do not become LOCATOR without genuine orientation.
+
+PLACE uses BINDING BACKCHAIN: for every material interaction/action stage ask where represented participants/objects/action are positioned. Keep broad/local/nested and supported unnamed positions when distinct, including object positions, movement destinations, waiting positions, later conversation/reporting scenes, remembered/prospective scenes, and present telling. Do not create PLACE from every deictic/preposition/surface token.
+
+TIME comes from the EPISODE LEDGER: distinct episode/period/stage/wait/recurrence/remembered/reported/prospective/present-telling frames may be explicit or supported unnamed. Do not classify a physical place phrase as TIME merely because it opens a scene. Intended actions, duration questions, sequence words, tense/aspect, adverbs, and predicates are not TIME unless they establish a temporal frame.
+
+PERSON = B plus every represented actor/stable group after true coreference, including minor, indirect, possessive, offscreen, reported, remembered, prospective, or comparison actors. Exclude non-referential generic/rhetorical addressees.
+
+OBJECT = stable represented concrete/abstract referent at natural grain. Keep scene/environment props, products/documents/parts/amounts, mental referents, stable reified choices/decisions/relationships/recurring situations, plans/categories, and comparison referents when source treats them as content. Suppress generic filler, spatial supports already captured by PLACE/LOCATOR, relation-internal complements without independent identity, discourse shells/proposition wrappers, arbitrary parts, and aliases. Course-of-action/decision/relationship content may be OBJECT even if its surface form is verbal/relational when source weighs, lacks control over, intends, avoids, or recurrently invokes it as stable content.
+
+LABEL = source-STAGED characterization/state/evaluation/classification/comparison/correction/rejection/status value. The source must meaningfully assert, question, reject, compare, or foreground the value; ordinary descriptive texture/modifiers are not enough. Preserve question/negation/uncertainty posture and the shortest complete source-native value.
+
+VERB = one MATERIAL LEXICAL RELATION EDGE at natural grain, not every predicate token. Preserve complete phrasal/idiomatic relation identity including required particle/reflexive/directional/lexical complement. Do not independently mint relation-internal noun material unless it has its own coordinate identity. Keep movement, possession, experience, cognition, staged speech/reporting, perception, intention, comparison, waiting, gesture, etc. when they establish their own represented edge. Suppress auxiliaries/support/aspect fragments, duplicate restatements, generic narration/report shells whose reporting act is not itself staged, and predicate tokens that only support another retained value/edge.
+
+LOCATOR = genuine orientation/context relation: position, containment, path, direction, origin/destination, accompaniment, embodied/internal orientation, or relative position. Prepositional grammar, beneficiary/topic/recipient/purpose/possession/evidentiary-source/ordinary idiom arguments are not LOCATOR unless they independently express where/which-way/from/to/relative-position orientation.
+
+LITERAL LOCK: preserve source language character-for-character for source-derived fields. No synonym, repair, normalization, number change, expanded contraction, punctuation cleanup, or inferred wording. Only genuinely unnamed PLACE/TIME may use null source_wording with exact source cue.
+
+PRIMITIVE FREEZE uses FOUR passes: (A) coordinate coverage; (B) episode-anchor backchain; (C) primary-job + lexical-relation reconciliation; (D) anti-census. Remove arbitrary noun subparts, shell/proposition wrappers, support OBJECT/LABEL/VERB/LOCATOR projections, clause-level anchor inflation, and alternate decompositions. Freeze units before compounds.
+
+COMPOUNDS serialize only the SPARSE MATERIAL BINDING SKELETON, not every primitive and not every clause. For each distinct material binding create one complete local compound containing its defining VERB/LABEL/LOCATOR primitive(s), all actually co-bound PERSON/OBJECT/value coordinates, and applicable PLACE/TIME anchors. Background props/qualities may remain valid primitives without their own compound. No pairwise subsets, nested partial duplicates, alternate decompositions, one-compound-per-predicate, or scene-wide mega-bundles.
+
+FINAL AUDIT: sparse graph not summary/census; complete stable coordinates; backchained anchors; primary-job duplicate suppression; stable choices/relations preserved; staged values only; material lexical relation edges only; real orientation only; exact source strings; sparse complete compounds; candidate-only status; sealed holdout isolation.
+
+Never target hidden counts or infer gold. Never interpret APA, promote records, mint APA IDs, or access the sealed holdout during calibration.
+'''.strip()
+
+V76_CLASS_RULES = {
+    "PLACE": r'''PLACE = represented physical setting/occurrence-position. Backchain from material bindings and episode stages. Keep broad/local/nested and supported unnamed object/action/wait/conversation/remembered/prospective/present-telling positions when distinct. Do not create PLACE from every deictic, surface, preposition, or movement token. Spatial support nouns with no independent thing job should not also become OBJECT.'''.strip(),
+    "TIME": r'''TIME = represented episode/period/stage/wait/recurrence/remembered/reported/prospective/present-telling frame from the episode ledger. Supported unnamed frames may be required. Physical place phrases, intended actions, duration questions, sequence words, tense/aspect, adverbs, and predicates are not TIME unless they establish a temporal frame.'''.strip(),
+    "PERSON": r'''PERSON = B plus every represented actor/stable group after true coreference, including minor, possessive, indirect, offscreen, reported, remembered, prospective, or comparison actors. Exclude only non-referential rhetorical/generic addressees.'''.strip(),
+    "OBJECT": r'''OBJECT = stable concrete/abstract referent at natural grain: scene props, products/documents/parts/amounts, mental referents, stable reified choices/decisions/relationships/recurring situations, plans/categories, comparison referents. Suppress generic filler, spatial supports already captured as PLACE/LOCATOR, relation-internal complements without independent identity, discourse shells/proposition wrappers, arbitrary subparts, and aliases.'''.strip(),
+    "LABEL": r'''LABEL = source-staged characterization/state/evaluation/classification/comparison/correction/rejection/status value. The source must meaningfully assert/question/reject/compare/foreground it; ordinary descriptive texture/modifiers are not enough. Preserve uncertainty/negation/question posture and shortest complete source-native value.'''.strip(),
+    "VERB": r'''VERB = one material lexical relation edge at natural source-native grain. Keep required phrasal/idiomatic particles/complements when relation identity needs them. Suppress auxiliaries/support/aspect fragments, generic narration/report shells whose reporting act is not staged, duplicate local restatements, and predicate tokens that only support another retained value/edge. Relation-internal nouns need independent coordinate identity before separate OBJECT admission.'''.strip(),
+    "LOCATOR": r'''LOCATOR = genuine orientation/context relation: position, containment, path, direction, origin/destination, accompaniment, embodied/internal orientation, relative position. Prepositional grammar or beneficiary/topic/recipient/purpose/possession/evidentiary-source/ordinary idiom argument alone is insufficient.'''.strip(),
+}
