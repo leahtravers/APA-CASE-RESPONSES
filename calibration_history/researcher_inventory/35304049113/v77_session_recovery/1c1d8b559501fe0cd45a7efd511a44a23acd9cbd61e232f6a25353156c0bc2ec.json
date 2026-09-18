@@ -1,0 +1,45 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 11,
+        "canonical_key": "self_check",
+        "note": "Specific position within the store where the scanning, assistance, and waiting occur.",
+        "order_cue": "the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 29,
+        "canonical_key": "store",
+        "note": "Broader physical setting containing the self-check episode.",
+        "order_cue": "the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 315,
+        "canonical_key": "box_position",
+        "note": "Deictic physical position of the cereal box in the self-check scene.",
+        "order_cue": "right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      }
+    ],
+    "session_id": "sess_04ca3621af096995006aacb295d6248199a46a40f9fe03b871",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e4ab4b7646e010d006aacb2b47ed4819ab3427a2ab52c2c29",
+    "status": "in_progress"
+  }
+}

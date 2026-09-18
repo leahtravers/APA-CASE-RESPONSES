@@ -1,0 +1,63 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 9,
+        "canonical_key": "self_check_episode",
+        "note": "Unnamed time frame for the initial self-check interaction.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 410,
+        "canonical_key": "waiting_episode",
+        "note": "Wait frame following the attendant's departure.",
+        "order_cue": "then",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "And so then I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "anchor_hint": 892,
+        "canonical_key": "partner_explanation_episode",
+        "note": "Later explanation frame involving the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "anchor_hint": 1221,
+        "canonical_key": "regular_shopping_frame",
+        "note": "Recurring shopping frame.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1430,
+        "canonical_key": "present_reflection_frame",
+        "note": "Present continuing-reflection frame.",
+        "order_cue": "still",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": "still"
+      }
+    ],
+    "session_id": "sess_0f25f9efae41bc4e006aacb2957ea0819889c39e64af243d76",
+    "status": "completed"
+  }
+}
