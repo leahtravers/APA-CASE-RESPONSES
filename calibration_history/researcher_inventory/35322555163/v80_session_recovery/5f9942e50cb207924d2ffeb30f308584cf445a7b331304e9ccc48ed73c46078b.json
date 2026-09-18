@@ -1,0 +1,376 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "qualities_available": false,
+        "refs": [
+          "B",
+          "V1",
+          "R2",
+          "P2",
+          "R1",
+          "P1",
+          "T1"
+        ],
+        "researcher_bundle": "I am at the self-check at the store"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "B",
+          "V2",
+          "V3",
+          "O1",
+          "R3",
+          "H4",
+          "O2",
+          "T2",
+          "P2"
+        ],
+        "researcher_bundle": "I am trying to scan this coupon for my kids’ cereal"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O1",
+          "V4",
+          "L1",
+          "O3",
+          "T2",
+          "P2"
+        ],
+        "researcher_bundle": "it is not working"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "H1",
+          "V5",
+          "B",
+          "V6",
+          "L2",
+          "V7",
+          "O4",
+          "T1",
+          "P2"
+        ],
+        "researcher_bundle": "the attendant sees I am struggling to finish my order"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "H1",
+          "V8",
+          "R4",
+          "R5",
+          "V9",
+          "B",
+          "R6",
+          "O3",
+          "T3",
+          "P2"
+        ],
+        "researcher_bundle": "comes over to help me with it"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O1",
+          "V10",
+          "H1",
+          "L1",
+          "T4",
+          "P2"
+        ],
+        "researcher_bundle": "It won’t scan for them either"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "H1",
+          "V11",
+          "R7",
+          "O1",
+          "T4"
+        ],
+        "researcher_bundle": "they look at it"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "V12",
+          "O5",
+          "V13",
+          "L3",
+          "T4"
+        ],
+        "researcher_bundle": "see the date is valid"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O6",
+          "V14",
+          "L4",
+          "R8",
+          "P3",
+          "T4"
+        ],
+        "researcher_bundle": "the box is right there"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "L5",
+          "V15",
+          "V16",
+          "T5"
+        ],
+        "researcher_bundle": "I really don’t recall saying anything"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "H1",
+          "V17",
+          "R10",
+          "R11",
+          "O1",
+          "L6",
+          "R12",
+          "R13",
+          "V18",
+          "V19",
+          "H2",
+          "P4",
+          "T6"
+        ],
+        "researcher_bundle": "walk away with my coupon in a huff to go get a manager"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V20",
+          "R9",
+          "P2",
+          "V21",
+          "V22",
+          "R14",
+          "T7"
+        ],
+        "researcher_bundle": "I am standing there waiting, thinking to myself"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "B",
+          "V23",
+          "L7",
+          "T7"
+        ],
+        "researcher_bundle": "Am I being a Karen right now?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V24",
+          "L8",
+          "O7",
+          "O8",
+          "R15",
+          "O2",
+          "T7"
+        ],
+        "researcher_bundle": "Do I really care about the $1.25 off my cereal?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V25",
+          "L9",
+          "V26",
+          "R16",
+          "R17",
+          "O9",
+          "T8",
+          "P1"
+        ],
+        "researcher_bundle": "I just wanted to be in and out for a few things"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "B",
+          "V27",
+          "L10",
+          "T7"
+        ],
+        "researcher_bundle": "How long will this take?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V28",
+          "L11",
+          "O10",
+          "V29",
+          "V30",
+          "R18",
+          "P5",
+          "T9"
+        ],
+        "researcher_bundle": "Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "H1",
+          "V31",
+          "B",
+          "O11",
+          "V32",
+          "T10",
+          "T7"
+        ],
+        "researcher_bundle": "Why didn’t they ask me what I wanted to do?"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "L12",
+          "O3",
+          "V33",
+          "L13"
+        ],
+        "researcher_bundle": "yes, the coupon not working itself was frustrating"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "B",
+          "V34",
+          "V35",
+          "R19",
+          "H3",
+          "P6",
+          "T11"
+        ],
+        "researcher_bundle": "when I tried to explain this to my partner"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "O12",
+          "V36",
+          "B",
+          "V37",
+          "L14",
+          "V38",
+          "L15",
+          "R20",
+          "O13",
+          "R21",
+          "O14",
+          "V39",
+          "T12",
+          "T11"
+        ],
+        "researcher_bundle": "my point was that I was more frustrated that I felt out of control of what the decision on the coupon’s next step should be"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V40",
+          "L16",
+          "R9",
+          "P2",
+          "V21",
+          "T7",
+          "V41",
+          "L17",
+          "V42",
+          "R22",
+          "T13"
+        ],
+        "researcher_bundle": "I was sort of stuck there waiting because I don’t want to appear rude when I shop regularly"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V44",
+          "V45",
+          "O15",
+          "V46",
+          "L18"
+        ],
+        "researcher_bundle": "I found that that was the part that was super frustrating"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "L19",
+          "B",
+          "V47",
+          "L20",
+          "O16",
+          "V48",
+          "H1"
+        ],
+        "researcher_bundle": "sincerely, I do not think it was the attendant’s fault"
+      },
+      {
+        "qualities_available": false,
+        "refs": [
+          "V49",
+          "L21",
+          "B"
+        ],
+        "researcher_bundle": "It’s a me thing"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "L22",
+          "T1",
+          "V50",
+          "B",
+          "L23",
+          "T14"
+        ],
+        "researcher_bundle": "wow, it is still bugging me"
+      },
+      {
+        "qualities_available": true,
+        "refs": [
+          "B",
+          "V51",
+          "L24",
+          "V52",
+          "R23",
+          "O17",
+          "O18",
+          "V53",
+          "R24",
+          "O19",
+          "T15",
+          "T14"
+        ],
+        "researcher_bundle": "I need to get it straight in my mind how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0021e2fec41775ef006aacf15010d88199b0925acb32e2f065",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0408cd489f9af82c006aacf18079a0819aae77d792f93120a7",
+    "status": "in_progress"
+  }
+}
