@@ -1,0 +1,78 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 30,
+        "canonical_key": "store",
+        "note": "Broad physical setting containing the self-check interaction.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 12,
+        "canonical_key": "store_self_check",
+        "note": "Contained position of the scanning, assistance, and waiting interactions; later \"there\" and \"here\" references corefer with this position.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 341,
+        "canonical_key": "box_position",
+        "note": "Spatially staged position of the cereal box within the self-check scene.",
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "anchor_hint": 451,
+        "canonical_key": "manager_retrieval_scene",
+        "note": "Unnamed position of the attendant's materially distinct manager-retrieval scene.",
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "go get a manager",
+        "source_cue": "walk away with my coupon in a huff to go get a manager",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 979,
+        "canonical_key": "partner_explanation_scene",
+        "note": "Unnamed position of the distinct conversation with the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 1319,
+        "canonical_key": "regular_shopping_setting",
+        "note": "Unnamed recurring shopping setting represented by the source.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0b3acb9c366a05c5006aacf078223c8198a3f9c419564bce38",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0f37e4b38bcb693a006aacf0a1171c8199a3a5797d6fdf32f1",
+    "status": "in_progress"
+  }
+}

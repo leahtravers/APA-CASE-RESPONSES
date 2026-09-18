@@ -1,0 +1,155 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 6,
+        "canonical_key": "self_checkout_incident",
+        "note": "Broad checkout incident containing the represented scan, help, departure, and waiting stages.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 56,
+        "canonical_key": "coupon_scan_attempt",
+        "note": "Initial coupon-scanning attempt within the checkout incident.",
+        "order_cue": "trying to scan this coupon",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "source_wording": "trying to scan this coupon"
+      },
+      {
+        "anchor_hint": 181,
+        "canonical_key": "attendant_help_episode",
+        "note": "Attendant help interaction within the checkout incident.",
+        "order_cue": "comes over to help me",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "comes over to help me",
+        "source_cue": "the attendant sees I am struggling to finish my order and comes over to help me with it",
+        "source_wording": "comes over to help me"
+      },
+      {
+        "anchor_hint": 217,
+        "canonical_key": "attendant_scan_and_check_episode",
+        "note": "Attendant's scanning and coupon-checking stage.",
+        "order_cue": "It won’t scan for them either",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "It won’t scan for them either",
+        "source_cue": "It won’t scan for them either, so they look at it and see the date is valid",
+        "source_wording": "It won’t scan for them either"
+      },
+      {
+        "anchor_hint": 275,
+        "canonical_key": "coupon_validity_date",
+        "note": "Coupon date represented as locating its validity.",
+        "order_cue": "the date is valid",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "anchor_hint": 399,
+        "canonical_key": "manager_retrieval_transition",
+        "note": "Prospective manager-retrieval frame established by the attendant's departure.",
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "to go get a manager",
+        "source_cue": "walk away with my coupon in a huff to go get a manager",
+        "source_wording": "to go get a manager"
+      },
+      {
+        "anchor_hint": 449,
+        "canonical_key": "checkout_waiting_episode",
+        "note": "Waiting and internal-questioning stage; later 'stuck there waiting' is a coreferential restatement.",
+        "order_cue": "standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "I am standing there waiting, thinking to myself",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "anchor_hint": 594,
+        "canonical_key": "intended_quick_shopping_frame",
+        "note": "Intended quick-shopping frame represented during the wait.",
+        "order_cue": "wanted to be in and out for a few things",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "be in and out for a few things",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "be in and out for a few things"
+      },
+      {
+        "anchor_hint": 701,
+        "canonical_key": "prospective_pay_and_exit_frame",
+        "note": "Questioned prospective exit frame represented during the wait.",
+        "order_cue": "just pay and walk out",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "just pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "just pay and walk out"
+      },
+      {
+        "anchor_hint": 885,
+        "canonical_key": "partner_explanation_episode",
+        "note": "Later explanation interaction with the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner, my point was that I was more frustrated",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "anchor_hint": 1129,
+        "canonical_key": "regular_shopping_span",
+        "note": "Recurring shopping span supplying context for the concern about appearing rude.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1282,
+        "canonical_key": "present_reflection",
+        "note": "Present reflection frame following the reported checkout incident.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 1348,
+        "canonical_key": "prospective_avoidance_frame",
+        "note": "Prospective frame for avoiding recurrence of represented situations.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_08e0c807e60676e9006aacf0780008819a953c176efb246c18",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0a2bbf2621a234f8006aacf0aced588198a6152474b8193eb8",
+    "status": "in_progress"
+  }
+}

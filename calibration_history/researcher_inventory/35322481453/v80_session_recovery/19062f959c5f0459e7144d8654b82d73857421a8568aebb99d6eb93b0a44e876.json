@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker; includes I, me, my, myself, and a Karen as a questioned classification of the speaker.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 75,
+        "canonical_key": "speaker_kids",
+        "note": "Speaker's children, represented through the possessive relation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 135,
+        "canonical_key": "attendant",
+        "note": "Includes subsequent they and them references.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 404,
+        "canonical_key": "manager",
+        "note": "Prospective store actor whom the attendant goes to get.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 823,
+        "canonical_key": "partner",
+        "note": "Speaker's partner and recipient of the later explanation.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0116260a30a01c21006aacf0781138819bb7ddddf0b462e032",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0c2246fff9936bf1006aacf098048c819ba6ed72a48cbc97c8",
+    "status": "in_progress"
+  }
+}

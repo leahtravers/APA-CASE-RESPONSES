@@ -1,0 +1,164 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon",
+        "note": "Corefers with later instances of “it,” “my coupon,” and “the coupon.”",
+        "qualities_available": true,
+        "short_tag": "coupon",
+        "source_cue": "trying to scan this coupon",
+        "source_wording": "this coupon"
+      },
+      {
+        "canonical_key": "kids_cereal",
+        "note": "Corefers with later “my cereal.”",
+        "qualities_available": true,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "canonical_key": "order",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "canonical_key": "coupon_date",
+        "note": "The date associated with the coupon.",
+        "qualities_available": true,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "canonical_key": "cereal_box",
+        "note": "The box associated with the cereal.",
+        "qualities_available": true,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "canonical_key": "coupon_discount",
+        "note": "The coupon’s represented discount value.",
+        "qualities_available": true,
+        "short_tag": "$1.25 off",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "canonical_key": "shopping_items",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "a few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "canonical_key": "pay_and_leave_choice",
+        "note": "A prospective course of action represented as a choice.",
+        "qualities_available": false,
+        "short_tag": "just pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "just pay and walk out"
+      },
+      {
+        "canonical_key": "wanted_course_of_action",
+        "note": "The speaker’s represented desired course of action.",
+        "qualities_available": false,
+        "short_tag": "what I wanted to do",
+        "source_cue": "Why didn’t they ask me what I wanted to do?",
+        "source_wording": "what I wanted to do"
+      },
+      {
+        "canonical_key": "coupon_not_working_situation",
+        "note": "The malfunction is treated as an identifiable situation.",
+        "qualities_available": true,
+        "short_tag": "coupon not working",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "the coupon not working itself"
+      },
+      {
+        "canonical_key": "speaker_point",
+        "note": "An identifiable content of the speaker’s explanation.",
+        "qualities_available": false,
+        "short_tag": "my point",
+        "source_cue": "my point was that I was more frustrated",
+        "source_wording": "my point"
+      },
+      {
+        "canonical_key": "coupon_next_step_decision",
+        "note": "The decision concerning the coupon’s prospective next step.",
+        "qualities_available": false,
+        "short_tag": "decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      },
+      {
+        "canonical_key": "coupon_next_step",
+        "note": "A represented prospective course for the coupon.",
+        "qualities_available": true,
+        "short_tag": "coupon’s next step",
+        "source_cue": "the decision on the coupon’s next step",
+        "source_wording": "the coupon’s next step"
+      },
+      {
+        "canonical_key": "frustrating_part",
+        "note": "Corefers with the preceding loss-of-control and waiting aspect of the experience.",
+        "qualities_available": true,
+        "short_tag": "the part",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "the part"
+      },
+      {
+        "canonical_key": "attendant_fault",
+        "note": "An explicitly considered and rejected attribution of fault.",
+        "qualities_available": true,
+        "short_tag": "attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "the attendant’s fault"
+      },
+      {
+        "canonical_key": "me_thing",
+        "note": "The experience is classified as a speaker-associated pattern or issue.",
+        "qualities_available": true,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing.",
+        "source_wording": "a me thing"
+      },
+      {
+        "canonical_key": "speaker_mind",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "my mind"
+      },
+      {
+        "canonical_key": "recurring_situations",
+        "note": "A represented class of situations including the recounted experience.",
+        "qualities_available": true,
+        "short_tag": "these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": "these situations"
+      },
+      {
+        "canonical_key": "avoidance_mental_content",
+        "note": "Mental content concerning how to avoid entering such situations.",
+        "qualities_available": false,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "get it straight in my mind how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0672f3c5c5d5a840006aacf07862408198b230f2990cbd6db1",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0d171f0efdad9040006aacf0aef0d8819ba2594e84571d339c",
+    "status": "in_progress"
+  }
+}
