@@ -1,0 +1,144 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 303,
+        "canonical_key": "coupon_date_validity",
+        "note": null,
+        "order_cue": "valid",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "valid",
+        "source_cue": "see the date is valid",
+        "source_wording": "valid"
+      },
+      {
+        "anchor_hint": 436,
+        "canonical_key": "attendant_huff_state",
+        "note": null,
+        "order_cue": "in a huff",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "in a huff",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "in a huff"
+      },
+      {
+        "anchor_hint": 540,
+        "canonical_key": "B_karen_identity",
+        "note": "Questioned self-classification.",
+        "order_cue": "a Karen",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a Karen",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "a Karen"
+      },
+      {
+        "anchor_hint": 723,
+        "canonical_key": "prospective_rudeness",
+        "note": "Questioned evaluation also recurs in “appear rude.”",
+        "order_cue": "rude",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "rude",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "rude"
+      },
+      {
+        "anchor_hint": 902,
+        "canonical_key": "coupon_failure_frustrating",
+        "note": null,
+        "order_cue": "frustrating",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "frustrating"
+      },
+      {
+        "anchor_hint": 1004,
+        "canonical_key": "B_more_frustrated",
+        "note": "Comparative experiential state.",
+        "order_cue": "more frustrated",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated that I felt out of control",
+        "source_wording": "more frustrated"
+      },
+      {
+        "anchor_hint": 1035,
+        "canonical_key": "B_out_of_control",
+        "note": null,
+        "order_cue": "out of control",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control",
+        "source_wording": "out of control"
+      },
+      {
+        "anchor_hint": 1136,
+        "canonical_key": "B_stuck",
+        "note": null,
+        "order_cue": "stuck",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "stuck",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck"
+      },
+      {
+        "anchor_hint": 1265,
+        "canonical_key": "loss_of_control_part_super_frustrating",
+        "note": "Intensified evaluation of the previously described loss-of-control part.",
+        "order_cue": "super frustrating",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "super frustrating",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "super frustrating"
+      },
+      {
+        "anchor_hint": 1332,
+        "canonical_key": "attendant_fault",
+        "note": "Explicitly rejected fault attribution.",
+        "order_cue": "the attendant’s fault",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "the attendant’s fault"
+      },
+      {
+        "anchor_hint": 1358,
+        "canonical_key": "B_me_thing_classification",
+        "note": "Correction following the rejected attendant-fault attribution.",
+        "order_cue": "a me thing",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing.",
+        "source_wording": "a me thing"
+      },
+      {
+        "anchor_hint": 1427,
+        "canonical_key": "matter_straight_in_B_mind",
+        "note": "Intended epistemic state.",
+        "order_cue": "straight in my mind",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "straight in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "straight in my mind"
+      }
+    ],
+    "session_id": "sess_006ab8cd21945ba2006aac96fe62f08199811077487da1582a",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0237395e74d8babe006aac973a5870819b83b265bcc3c19b52",
+    "status": "in_progress"
+  }
+}

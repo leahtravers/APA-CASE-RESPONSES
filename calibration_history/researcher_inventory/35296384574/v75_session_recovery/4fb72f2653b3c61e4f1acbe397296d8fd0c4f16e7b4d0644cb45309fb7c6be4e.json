@@ -1,0 +1,104 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "orientation:at_the_self-check",
+        "note": "Local orientation contained within the broader store orientation.",
+        "order_cue": "at the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "orientation:at_the_store",
+        "note": "Broad orientation containing the self-check orientation.",
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "direction:over",
+        "note": null,
+        "order_cue": "over",
+        "qualities_available": false,
+        "short_tag": "over",
+        "source_cue": "comes over to help me",
+        "source_wording": "over"
+      },
+      {
+        "canonical_key": "position:right_there",
+        "note": null,
+        "order_cue": "right there",
+        "qualities_available": false,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "direction:away",
+        "note": null,
+        "order_cue": "away",
+        "qualities_available": false,
+        "short_tag": "away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "away"
+      },
+      {
+        "canonical_key": "accompaniment:with_my_coupon",
+        "note": "The coupon accompanies the attendant's movement.",
+        "order_cue": "with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "canonical_key": "path:in_and_out",
+        "note": null,
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "direction:out",
+        "note": null,
+        "order_cue": "out",
+        "qualities_available": false,
+        "short_tag": "out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "out"
+      },
+      {
+        "canonical_key": "internal_orientation:in_my_mind",
+        "note": null,
+        "order_cue": "in my mind",
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "canonical_key": "figurative_path:into_these_situations",
+        "note": "Figurative path into recurring situations.",
+        "order_cue": "into these situations",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_01d0146129795821006aac96fe8eb4819b881fd3c79d038140",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_04ab5c6042b45e40006aac972f5c70819a926b552b41f4d31f",
+    "status": "in_progress"
+  }
+}

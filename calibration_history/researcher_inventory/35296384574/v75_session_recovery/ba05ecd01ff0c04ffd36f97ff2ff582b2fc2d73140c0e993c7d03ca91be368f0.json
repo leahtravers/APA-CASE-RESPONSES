@@ -1,0 +1,102 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "store_incident",
+        "note": "Broad narrated store episode containing the local action stages.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "at the self-check at the store",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "coupon_scan_attempt",
+        "note": "Initial coupon-scanning stage of the store episode.",
+        "order_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "attendant_assistance",
+        "note": "Local assistance and shared scanning stage.",
+        "order_cue": "the attendant sees I am struggling to finish my order and comes over to help me with it",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "comes over to help me",
+        "source_cue": "the attendant sees I am struggling to finish my order and comes over to help me with it",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "attendant_departure_transition",
+        "note": "Transition stage from the attendant interaction into the speaker's wait.",
+        "order_cue": "they sort of just walk away with my coupon in a huff to go get a manager",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "walk away with my coupon",
+        "source_cue": "they sort of just walk away with my coupon in a huff to go get a manager",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "store_wait",
+        "note": "Waiting and self-questioning stage after the attendant leaves; later wording about being stuck waiting corefers with this frame.",
+        "order_cue": "then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "then I am standing there waiting, thinking to myself",
+        "source_wording": "then I am standing there waiting"
+      },
+      {
+        "canonical_key": "partner_explanation",
+        "note": "Later remembered episode in which the speaker explained the store experience.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "regular_shopping_recurrence",
+        "note": "Recurring shopping frame associated with the speaker's concern about appearing rude.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "present_reflection",
+        "note": "Present-telling frame in which the incident continues to bother the speaker.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "prospective_similar_situations",
+        "note": "Prospective frame of avoiding future situations of the represented kind.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "how to not get myself into these situations",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0aedec3c026df052006aac96fe5cb0819bb862b632571a3c43",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0e4834f518607b3f006aac9731af508198b260b31144b94a40",
+    "status": "in_progress"
+  }
+}

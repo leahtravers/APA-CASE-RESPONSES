@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker.",
+        "order_cue": "I am at the self-check",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 81,
+        "canonical_key": "B's kids",
+        "note": "Speaker's children; represented possessively without independent participation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 124,
+        "canonical_key": "store attendant",
+        "note": "Singular attendant later referenced by they/them.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 413,
+        "canonical_key": "manager",
+        "note": "Prospective offscreen actor represented as the person the attendant goes to get.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 1030,
+        "canonical_key": "B's partner",
+        "note": "Speaker's partner, represented as the recipient in a later explanation episode.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0b69193aaf662cfa006aac96fee64c819a82658f8c267ca487",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0b5e8e9afdddf727006aac97281084819ba9761a190eb51997",
+    "status": "in_progress"
+  }
+}
