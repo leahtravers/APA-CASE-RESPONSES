@@ -1,0 +1,53 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": "Speaker; I, me, my, and myself corefer.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "short_tag": "B",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "B's kids",
+        "note": "Stable group represented through the speaker's possessive relation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "store attendant",
+        "note": "The attendant, them, and they corefer.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "manager",
+        "note": "Offscreen prospective actor represented as the person the attendant intends to get.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "B's partner",
+        "note": "Offscreen actor represented as the recipient in a remembered explanation.",
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0cbc2bbb90e4afc0006aac974f198c819aad0620d53402353a",
+    "status": "completed"
+  }
+}
