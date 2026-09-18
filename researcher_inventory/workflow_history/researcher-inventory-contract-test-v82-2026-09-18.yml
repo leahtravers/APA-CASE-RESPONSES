@@ -1,7 +1,7 @@
 name: Researcher Inventory Apparatus Verification
-# V83 prospectively supersedes V82 for new calibration. All prior contracts/runs remain historical evidence.
-# V83 retains the V66 evaluator/task harness corrections and V82 rerun-attempt durability correction; changes worker semantics only.
-# Workflow-attempt evidence includes GITHUB_RUN_ATTEMPT so reruns cannot replace visible prior-attempt history.
+# V82 prospectively supersedes V81 for new calibration. All prior contracts/runs remain historical evidence.
+# V82 retains the V66 evaluator/task harness corrections and changes worker semantics only.
+# Workflow-attempt evidence now includes GITHUB_RUN_ATTEMPT so reruns cannot replace visible prior-attempt history.
 
 on:
   workflow_dispatch:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V83
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V83.md
-      RI_MODEL_COMMAND: python researcher_inventory/v83_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V82
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V82.md
+      RI_MODEL_COMMAND: python researcher_inventory/v82_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
     steps:
       - name: Checkout repository without external actions
@@ -126,14 +126,14 @@ jobs:
           : > researcher_inventory/runtime/training_history.ndjson
           python researcher_inventory/session_bootstrap.py
           echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
-          TEST_REPETITIONS=1 python -m researcher_inventory.v83_harness_calibration_runner
+          TEST_REPETITIONS=1 python -m researcher_inventory.v82_harness_calibration_runner
           echo '=== REPEATABILITY BATCH 1 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v83_harness_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v82_harness_calibration_runner
           echo '=== REPEATABILITY BATCH 2 ==='
-          TEST_REPETITIONS=2 python -m researcher_inventory.v83_harness_calibration_runner
+          TEST_REPETITIONS=2 python -m researcher_inventory.v82_harness_calibration_runner
           cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
           # Researcher Inventory Apparatus Archetype Calibration
-          V83 with retained V66 harness corrections passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
+          V82 with retained V66 harness corrections passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
           EOF
 
       - name: Run sealed Case 5 exactly once on calibrated lineage
@@ -142,7 +142,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m researcher_inventory.v83_harness_holdout_runner
+          python -m researcher_inventory.v82_harness_holdout_runner
           cp researcher_inventory/runtime/extractor_agent_id.txt researcher_inventory/runtime/retired_calibration_agent_id.txt
           cp researcher_inventory/runtime/holdout_result.json researcher_inventory/runtime/calibrated_lineage_holdout_result.json
 
@@ -153,10 +153,10 @@ jobs:
         run: |
           set -euo pipefail
           python researcher_inventory/session_bootstrap.py
-          python -m researcher_inventory.v83_harness_holdout_runner
+          python -m researcher_inventory.v82_harness_holdout_runner
           cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
           # Researcher Inventory Apparatus Clean-Room Certification
-          V83 with retained V66 harness corrections passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V83 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
+          V82 with retained V66 harness corrections passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V82 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
           EOF
 
       - name: Commit durable status
@@ -165,7 +165,7 @@ jobs:
         run: |
           set -euo pipefail
           git add researcher_inventory/status
-          if ! git diff --cached --quiet; then git commit -m "apparatus: certify researcher inventory v83 [skip ci]"; git pull --rebase origin main; git push origin main; fi
+          if ! git diff --cached --quiet; then git commit -m "apparatus: certify researcher inventory v82 [skip ci]"; git pull --rebase origin main; git push origin main; fi
 
       - name: Preserve calibration evidence durably
         if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
@@ -177,11 +177,11 @@ jobs:
           test ! -f researcher_inventory/runtime/archetype_integrity.json || cp researcher_inventory/runtime/archetype_integrity.json "$HISTORY_DIR/archetype_integrity.json"
           test ! -f researcher_inventory/runtime/training_history.ndjson || cp researcher_inventory/runtime/training_history.ndjson "$HISTORY_DIR/training_history.ndjson"
           test ! -f researcher_inventory/runtime/test_results.json || cp researcher_inventory/runtime/test_results.json "$HISTORY_DIR/test_results.json"
-          test ! -d researcher_inventory/runtime/v83_session_recovery || cp -R researcher_inventory/runtime/v83_session_recovery "$HISTORY_DIR/v83_session_recovery"
+          test ! -d researcher_inventory/runtime/v82_session_recovery || cp -R researcher_inventory/runtime/v82_session_recovery "$HISTORY_DIR/v82_session_recovery"
           test ! -f "$RI_CONTRACT_FILE" || cp "$RI_CONTRACT_FILE" "$HISTORY_DIR/iteration_contract.md"
           python - <<'PY' > "$HISTORY_DIR/run_manifest.json"
           import json,os
-          print(json.dumps({'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'commit_sha':os.environ.get('GITHUB_SHA'),'contract_version':os.environ.get('CONTRACT_VERSION'),'contract_file':os.environ.get('RI_CONTRACT_FILE'),'model':os.environ.get('OPENAI_MODEL'),'event':os.environ.get('GITHUB_EVENT_NAME'),'evidence_policy':'calibration-only; sealed holdout source/output deliberately excluded','harness_correction':'V66_HARNESS_CORRECTION_2026-09-17 + V82_ATTEMPT_HISTORY_DURABILITY','semantic_successor':'V83'},sort_keys=True,indent=2))
+          print(json.dumps({'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'commit_sha':os.environ.get('GITHUB_SHA'),'contract_version':os.environ.get('CONTRACT_VERSION'),'contract_file':os.environ.get('RI_CONTRACT_FILE'),'model':os.environ.get('OPENAI_MODEL'),'event':os.environ.get('GITHUB_EVENT_NAME'),'evidence_policy':'calibration-only; sealed holdout source/output deliberately excluded','harness_correction':'V66_HARNESS_CORRECTION_2026-09-17 + V82_ATTEMPT_HISTORY_DURABILITY','semantic_successor':'V82'},sort_keys=True,indent=2))
           PY
           python - <<'PY' > "$HISTORY_DIR/holdout_stage_state.json"
           import json
