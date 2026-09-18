@@ -1,0 +1,61 @@
+"""V79 semantic task rules: relation-licensed coordinate completeness at episode/complete-lexical grain."""
+
+V79_BASE_RULES = r'''
+V79 ARCHETYPAL LIGHTWEIGHT RULE: recover the RESEARCHER-RECONNECTABLE REPRESENTED GRAPH. The target is neither a sparse proposition skeleton nor a census of every explicit mention.
+
+READ THE WHOLE SOURCE FIRST. Silently build, in source order:
+(1) an EPISODE LEDGER of materially distinct scenes, interactions, waits, transitions, remembered/reported scenes, recurring periods, prospective/comparison scenes, and present telling;
+(2) a RELATION LEDGER of materially distinct source-represented relations/states;
+(3) the COORDINATES needed to reconnect those episodes and relations; then
+(4) a RESTRAINED ORPHAN PASS for independently source-established coordinates with genuine research identity even when no dedicated compound is required.
+
+A PRIMITIVE IS ENTITLED only when it has an independent research job as one of:
+A) actor/referent/content/value in a material represented relation;
+B) episode-scale PLACE/TIME setting or frame;
+C) standalone source-established referent/value/context with stable independent research identity;
+D) complete source-native lexical relation/event;
+E) independent orientation/context relation.
+Explicit mention alone is not entitlement. Proposition indispensability is not required.
+
+ANTI-CENSUS: suppress auxiliaries/support/aspect/glue; physical support surfaces/containers/body parts used only to locate another retained thing; temporal adverbs/frequency words/action phrases/clause boundaries that do not establish episode/period frames; entire questions/clauses reified as OBJECT merely because their content is represented; relation-internal noun fragments with no independent identity; alternate tokenizations of one complete relation; aliases/coreference duplicates; arbitrary subparts; and prepositions/particles with no separate orientation job.
+
+GRAIN: choose the SMALLEST COMPLETE SEMANTIC GRAIN, not the smallest token. For VERB keep particles, reflexives, directional or relational complements, negation-bearing construction, and idiomatic material when removing them changes relation identity. Do not split one complete lexical relation into token-level verbs. For LABEL keep the shortest complete source-native staged value/state. PLACE/TIME operate at scene/episode/period scale, not clause-token scale.
+
+TYPE BY RESEARCH JOB, NOT PART OF SPEECH. PLACE=scene-level physical/institutional setting or occurrence position. TIME=episode/period/frame. PERSON=human/social actor/group. OBJECT=independently identified concrete/abstract referent/content. LABEL=staged value/state/quality/classification/evaluation/comparison/status. VERB=complete lexical relation/event. LOCATOR=independent orientation/path/context relation.
+
+MULTI-JOB PROJECTION: identical source wording may appear in multiple classes only if each projection performs a genuinely different reconnectable job (referent, value/state, relation, orientation, frame). Alternative grammatical parses do not justify duplication. If a source phrase distinctly stages both a state/value and a relation/orientation, preserve both jobs.
+
+PLACE: retain scene-level settings, institutions, materially distinct occurrence positions, interaction/wait/destination settings, remembered/reported/prospective/comparison scene settings, and present telling when source-established. Broad and contained settings can both survive when independently useful. Supported unnamed PLACE is allowed for a clearly represented interaction/relationship/scene position with exact source cue. Do NOT promote floors, counters, walls, sides, containers, body parts, vague distance words, path particles, or similar support wording into PLACE unless they function as a distinct scene/setting coordinate.
+
+TIME: retain materially distinct episode/period frames: interactions/actions, waits/transitions, remembered/reported scenes, recurring periods, prospective/future frames, comparison/imagined scenes, present reflection/telling, and dates/durations/time-of-day that locate a material episode/period. Supported unnamed TIME is allowed. Do NOT turn every now/then/always/every-time phrase, action clause, duration question, tense/aspect cue, or embedded event phrase into TIME. It must function as an independent episode/period/frame.
+
+PERSON: B plus each distinctly represented human/social actor or stable group after coreference when the actor participates in a retained relation or has source-established independent social identity. Minor, possessive, offscreen, remembered, reported, prospective, institutional, relational, and comparison actors may qualify. Merge true aliases. Exclude nonreferential generic/rhetorical addressees. A social term may also be LABEL only when the source independently stages it as a characterization.
+
+OBJECT: retain concrete/abstract referents with independent source-established identity: materially represented entities, products/documents/parts, amounts/values, plans, choices, decisions, relationships, recurring situations, mental contents, comparison vehicles, and explicitly reified relations. One-off referents may qualify. Do NOT turn an entire question, sentence, clause, or proposition into OBJECT merely because it is said/thought/asked; inventory the independent content/referents/value/relation inside it unless the source itself treats the proposition/course of action/situation as an identifiable thing, choice, decision, plan, relationship, or content. Do not duplicate a setting as OBJECT when its only job is PLACE.
+
+LABEL: retain source-staged values, states, qualities, classifications, evaluations, comparisons, corrections, rejections, identities, manner/state descriptions, and statuses. Preserve question/negation/uncertainty/contrast/intensity/attribution. The same wording may also be VERB/LOCATOR when those are genuinely separate jobs. Do not create LABEL from every adjective/adverb, generic modifier, negation token, or descriptive fragment.
+
+VERB: retain materially represented lexical relations/events at the smallest COMPLETE source-native grain. Include movement, possession, experience, cognition, speech/reporting, perception, intention, comparison, waiting, gesture, stance, and other represented relations. Keep required particles/reflexives/relational complements/idiomatic material when needed for relation identity. Suppress auxiliaries/support/aspect fragments and token-level decomposition of one relation. Retain a nested verb separately only when it is a genuinely distinct represented relation.
+
+LOCATOR: retain source-native orientation relations that independently situate/path-link represented material: relative position, containment, direction, origin/destination, path, proximity, accompaniment, embodied/internal orientation, scene-relative recurrence, or comparison/context orientation. A preposition alone is not enough. A movement phrase may have both VERB and LOCATOR jobs when action and orientation are independently reconnectable.
+
+LITERAL LOCK: every source-derived non-null string must preserve source language character-for-character where schema requires source text. No synonym, repair, normalization, number change, contraction expansion, punctuation cleanup, inferred wording, or dialect cleanup. Only genuinely unnamed PLACE/TIME may use null source_wording with exact source cue.
+
+PRIMITIVE FREEZE ORDER: (1) episode/relation ledger; (2) relation-role coverage; (3) episode-scale anchor backchain; (4) restrained orphan pass; (5) complete-grain audit; (6) multi-job audit; (7) anti-census audit; (8) literal lock. Compounds cannot add or repair primitives.
+
+COMPOUNDS COME FROM THE RELATION LEDGER AFTER PRIMITIVE FREEZE. Emit one materially complete local compound for each materially distinct represented relation/state. Include defining VERB/LABEL/LOCATOR primitive(s), retained PERSON/OBJECT/value roles, and useful applicable PLACE/TIME frame(s). Valid standalone primitives need no compound. Do not emit pairwise subsets, nested partial duplicates, alternate tokenizations, one-compound-per-mention, clause-support bundles, or scene-wide mega-bundles.
+
+FINAL AUDIT: for every primitive ask what independent research job it performs. Valid answers are relational role, episode/setting anchor, standalone source-established referent/value/context, complete lexical relation, or independent orientation. "It appears in the text" is not enough. For every compound identify the one materially distinct represented relation/state it reconnects. Then verify source order, coreference, type assignment, qualities flags, literal strings, candidate-only status, and sealed-holdout isolation.
+
+Never target hidden counts or infer gold. Never interpret APA, promote records, mint APA IDs, or access the sealed holdout during calibration.
+'''.strip()
+
+V79_CLASS_RULES = {
+    "PLACE": r'''PLACE is a scene-level physical or institutional setting or materially distinct occurrence position. Retain broad/contained settings, interaction/wait/destination settings, scene-level institutions, and supported unnamed relationship/conversation/present-telling settings when independently useful. Do not promote support surfaces, walls, sides, containers, body parts, vague distance words, or path fragments into PLACE unless they are themselves distinct scene/setting coordinates.'''.strip(),
+    "TIME": r'''TIME is an episode-scale or period-scale frame organizing represented relations. Retain material interaction/action episodes, waits/transitions, remembered/reported scenes, recurring periods, prospective/comparison frames, present reflection/telling, and dates/durations/time-of-day that locate such a frame. Do not promote local adverbs, frequency modifiers, action phrases, questions, or clause boundaries into TIME unless they independently establish an episode/period.'''.strip(),
+    "PERSON": r'''PERSON is B plus each distinctly represented human/social actor or stable group after coreference when the actor participates in a retained relation or has independent social identity. Minor, possessive, offscreen, remembered, reported, prospective, institutional, relational, and comparison actors may qualify. Merge true aliases; exclude nonreferential generic/rhetorical addressees.'''.strip(),
+    "OBJECT": r'''OBJECT is a concrete or abstract referent/content with independent source-established identity: materially represented entities, products/documents/parts, amounts/values, plans, choices, decisions, relationships, recurring situations, mental contents, comparison vehicles, or explicitly reified relations. One-off referents may qualify. Never reify an entire question/clause/proposition solely because it is represented; retain the independent content inside it unless the source itself treats that proposition/course of action/situation as an identifiable thing.'''.strip(),
+    "LABEL": r'''LABEL is a source-staged value/state/quality/classification/evaluation/comparison/correction/rejection/identity/status at the shortest complete source-native grain. Preserve question, negation, uncertainty, contrast, intensity, and attribution. A phrase may also have a distinct VERB/LOCATOR job when independently reconnectable; do not create labels from every modifier or descriptive token.'''.strip(),
+    "VERB": r'''VERB is a materially represented lexical relation/event at the smallest COMPLETE source-native grain, not the smallest token. Preserve required particles, reflexives, relational complements, direction, and idiomatic material when needed for relation identity. Suppress auxiliaries/support/aspect fragments and token-level decomposition of one relation; retain nested predicates separately only when they represent genuinely distinct relations.'''.strip(),
+    "LOCATOR": r'''LOCATOR is a source-native orientation relation with independent reconnectable work: relative position, containment, direction, origin/destination, path, proximity, accompaniment, embodied/internal orientation, scene-relative recurrence, or comparison/context orientation. Mere prepositional grammar is insufficient. A movement phrase may also be VERB only when action and orientation are distinct jobs.'''.strip(),
+}
