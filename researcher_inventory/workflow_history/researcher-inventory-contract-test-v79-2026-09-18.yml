@@ -1,0 +1,207 @@
+name: Researcher Inventory Apparatus Verification
+# V79 prospectively supersedes V78 for new calibration. All prior contracts/runs remain historical evidence.
+# V79 retains the V66 evaluator/task harness corrections and changes worker semantics only.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'researcher_inventory/**'
+      - '.github/workflows/researcher-inventory-contract-test.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: researcher-inventory-apparatus-verification
+  cancel-in-progress: ${{ github.event_name == 'push' }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
+      OPENAI_MODEL: gpt-5.6-sol
+      CONTRACT_VERSION: RI-CONTRACT-V79
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V79.md
+      RI_MODEL_COMMAND: python researcher_inventory/v79_openai_agents_adapter.py
+      RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
+    steps:
+      - name: Checkout repository without external actions
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth 1 origin main
+          git checkout -B main FETCH_HEAD
+          git config user.name "APA Cases Apparatus"
+          git config user.email "apa-cases-apparatus@users.noreply.github.com"
+
+      - name: Verify immutable Leah-approved archetype workbooks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m researcher_inventory.verify_archetypes
+          git add researcher_inventory/tests/archetypes/Case_2_Lightweight_Researcher_Inventory.xlsx researcher_inventory/tests/archetypes/Case_6_Lightweight_Researcher_Inventory_v2_with_Verbs_and_Locators.xlsx
+          if ! git diff --cached --quiet; then
+            git commit -m "tests: restore immutable researcher inventory archetypes [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Verify secret and deterministic apparatus
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$OPENAI_API_KEY"
+          python -m unittest researcher_inventory.tests.test_inventory_apparatus researcher_inventory.tests.test_v64_compound_order_harness researcher_inventory.tests.test_v66_harness_correction -v
+
+      - name: Stop if already clean-room certified
+        id: final_state
+        shell: bash
+        run: |
+          if [ -f researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md ]; then echo "certified=true" >> "$GITHUB_OUTPUT"; else echo "certified=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Detect prior sealed holdout consumption
+        id: holdout_history
+        if: steps.final_state.outputs.certified != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          root = Path('calibration_history/researcher_inventory')
+          attempts=[]
+          if root.exists():
+              for p in sorted(root.glob('*/holdout_stage_state.json')):
+                  try: s=json.loads(p.read_text())
+                  except Exception: continue
+                  if s.get('calibrated_lineage_holdout_attempted'): attempts.append((p.parent.name,s))
+          print(f"consumed={'true' if attempts else 'false'}")
+          print(f"attempt_count={len(attempts)}")
+          if attempts:
+              run_id,state=attempts[0]
+              print(f"source_run={run_id}")
+              print(f"calibrated_pass={'true' if state.get('calibrated_lineage_holdout_pass') else 'false'}")
+              print(f"clean_room_agent_created={'true' if state.get('clean_room_agent_created') else 'false'}")
+              print(f"latest_holdout_pass={'true' if state.get('latest_holdout_pass') else 'false'}")
+          PY
+
+      - name: Hold automatic reuse after sealed holdout consumption
+        if: steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p researcher_inventory/status
+          cat > researcher_inventory/status/HOLDOUT_CONSUMED_HOLD.md <<EOF
+          # Researcher Inventory Sealed Holdout Hold
+          Sealed Case 5 has already been attempted on a calibrated lineage in workflow run `${{ steps.holdout_history.outputs.source_run }}`. Automatic reuse is prohibited. Preserve the prior result and do not reopen or expose the sealed source for calibration.
+          EOF
+          echo "SEALED HOLDOUT ALREADY CONSUMED — AUTOMATIC REUSE HELD"
+
+      - name: Commit durable one-shot hold
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add researcher_inventory/status/HOLDOUT_CONSUMED_HOLD.md
+          if ! git diff --cached --quiet; then git commit -m "apparatus: hold consumed sealed holdout [skip ci]"; git pull --rebase origin main; git push origin main; fi
+
+      - name: Calibrate hidden archetypes on one bounded agent lineage
+        id: calibration
+        if: steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p researcher_inventory/runtime researcher_inventory/status
+          : > researcher_inventory/runtime/training_history.ndjson
+          python researcher_inventory/session_bootstrap.py
+          echo '=== DIAGNOSTIC ARCHETYPE BATCH ==='
+          TEST_REPETITIONS=1 python -m researcher_inventory.v79_harness_calibration_runner
+          echo '=== REPEATABILITY BATCH 1 ==='
+          TEST_REPETITIONS=2 python -m researcher_inventory.v79_harness_calibration_runner
+          echo '=== REPEATABILITY BATCH 2 ==='
+          TEST_REPETITIONS=2 python -m researcher_inventory.v79_harness_calibration_runner
+          cat > researcher_inventory/status/ARCHETYPE_CALIBRATED.md <<'EOF'
+          # Researcher Inventory Apparatus Archetype Calibration
+          V79 with retained V66 harness corrections passed the immutable Case 2/Case 6 SHA-256 gate, diagnostic batch, and two repeated verification batches under the same finalized durable contract and saved-agent lineage. The worker had no archetype access.
+          EOF
+
+      - name: Run sealed Case 5 exactly once on calibrated lineage
+        id: holdout
+        if: steps.calibration.outcome == 'success' && steps.holdout_history.outputs.consumed != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m researcher_inventory.v79_harness_holdout_runner
+          cp researcher_inventory/runtime/extractor_agent_id.txt researcher_inventory/runtime/retired_calibration_agent_id.txt
+          cp researcher_inventory/runtime/holdout_result.json researcher_inventory/runtime/calibrated_lineage_holdout_result.json
+
+      - name: Fresh-agent clean-room proof
+        id: clean_room
+        if: steps.holdout.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python researcher_inventory/session_bootstrap.py
+          python -m researcher_inventory.v79_harness_holdout_runner
+          cat > researcher_inventory/status/CLEAN_ROOM_CERTIFIED.md <<'EOF'
+          # Researcher Inventory Apparatus Clean-Room Certification
+          V79 with retained V66 harness corrections passed immutable workbook verification and repeated hidden Case 2/Case 6 calibration under one finalized contract. The calibrated lineage passed sealed Case 5 exactly once and was retired. A brand-new saved agent bootstrapped from finalized V79 instructions only, with no prior session or holdout output, passed sealed Case 5 in a new session.
+          EOF
+
+      - name: Commit durable status
+        if: steps.clean_room.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add researcher_inventory/status
+          if ! git diff --cached --quiet; then git commit -m "apparatus: certify researcher inventory v79 [skip ci]"; git pull --rebase origin main; git push origin main; fi
+
+      - name: Preserve calibration evidence durably
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          HISTORY_DIR="calibration_history/researcher_inventory/${GITHUB_RUN_ID}"
+          mkdir -p "$HISTORY_DIR"
+          test ! -f researcher_inventory/runtime/archetype_integrity.json || cp researcher_inventory/runtime/archetype_integrity.json "$HISTORY_DIR/archetype_integrity.json"
+          test ! -f researcher_inventory/runtime/training_history.ndjson || cp researcher_inventory/runtime/training_history.ndjson "$HISTORY_DIR/training_history.ndjson"
+          test ! -f researcher_inventory/runtime/test_results.json || cp researcher_inventory/runtime/test_results.json "$HISTORY_DIR/test_results.json"
+          test ! -d researcher_inventory/runtime/v79_session_recovery || cp -R researcher_inventory/runtime/v79_session_recovery "$HISTORY_DIR/v79_session_recovery"
+          test ! -f "$RI_CONTRACT_FILE" || cp "$RI_CONTRACT_FILE" "$HISTORY_DIR/iteration_contract.md"
+          python - <<'PY' > "$HISTORY_DIR/run_manifest.json"
+          import json,os
+          print(json.dumps({'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'commit_sha':os.environ.get('GITHUB_SHA'),'contract_version':os.environ.get('CONTRACT_VERSION'),'contract_file':os.environ.get('RI_CONTRACT_FILE'),'model':os.environ.get('OPENAI_MODEL'),'event':os.environ.get('GITHUB_EVENT_NAME'),'evidence_policy':'calibration-only; sealed holdout source/output deliberately excluded','harness_correction':'V66_HARNESS_CORRECTION_2026-09-17','semantic_successor':'V79'},sort_keys=True,indent=2))
+          PY
+          python - <<'PY' > "$HISTORY_DIR/holdout_stage_state.json"
+          import json
+          from pathlib import Path
+          r=Path('researcher_inventory/runtime')
+          out={'sealed_source_committed':False,'holdout_output_committed':False,'calibrated_lineage_holdout_attempted':(r/'calibrated_lineage_holdout_result.json').exists() or (r/'holdout_result.json').exists(),'clean_room_agent_created':(r/'retired_calibration_agent_id.txt').exists() and (r/'extractor_agent_id.txt').exists()}
+          if (r/'calibrated_lineage_holdout_result.json').exists(): out['calibrated_lineage_holdout_pass']=bool(json.loads((r/'calibrated_lineage_holdout_result.json').read_text()).get('pass'))
+          if (r/'retired_calibration_agent_id.txt').exists() and (r/'holdout_result.json').exists(): out['latest_holdout_pass']=bool(json.loads((r/'holdout_result.json').read_text()).get('pass'))
+          print(json.dumps(out,sort_keys=True,indent=2))
+          PY
+          git add "$HISTORY_DIR"
+          if ! git diff --cached --quiet; then git commit -m "training-history: preserve researcher inventory run ${GITHUB_RUN_ID} [skip ci]"; git pull --rebase origin main; git push origin main; fi
+
+      - name: Preserve results in workflow log
+        if: always() && steps.final_state.outputs.certified != 'true' && steps.holdout_history.outputs.consumed != 'true'
+        shell: bash
+        run: |
+          echo '=== ARCHETYPE INTEGRITY ==='
+          test -f researcher_inventory/runtime/archetype_integrity.json && cat researcher_inventory/runtime/archetype_integrity.json || true
+          echo '=== COMPLETE CALIBRATION HISTORY ==='
+          test -f researcher_inventory/runtime/training_history.ndjson && cat researcher_inventory/runtime/training_history.ndjson || true
+          echo '=== LAST CALIBRATION BATCH ==='
+          test -f researcher_inventory/runtime/test_results.json && cat researcher_inventory/runtime/test_results.json || true
+          echo '=== SEALED HOLDOUT CONTENT/OUTPUT OMITTED FROM DURABLE PUBLIC HISTORY ==='
