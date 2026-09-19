@@ -1,6 +1,6 @@
 name: Researcher Inventory Apparatus Verification
-# V101 prospectively supersedes V100 for new calibration. V100 and all earlier contracts/runs remain historical evidence.
-# V101 restores coordinate-first primitive inventory, relation-kernel grain, semantic PLACE/TIME support frames, and selective downstream compound construction.
+# V102 prospectively supersedes V101 for new calibration. V101 and all earlier contracts/runs remain historical evidence.
+# V102 restores lightweight research-handle admission, explicit anti-tokenization compression, relation-kernel grain, semantic PLACE/TIME support frames, and selective downstream compound construction.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 
 on:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V101
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V101.md
-      RI_MODEL_COMMAND: python researcher_inventory/v101_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V102
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V102.md
+      RI_MODEL_COMMAND: python researcher_inventory/v102_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -46,8 +46,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V101 gated calibration and certification pipeline
+      - name: Run V102 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v101_pipeline.sh
+          bash researcher_inventory/v102_pipeline.sh
