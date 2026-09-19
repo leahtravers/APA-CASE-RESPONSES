@@ -1,0 +1,116 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon_not_working_state",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "not working"
+      },
+      {
+        "canonical_key": "coupon_date_valid_state",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "valid",
+        "source_cue": "the date is valid",
+        "source_wording": "valid"
+      },
+      {
+        "canonical_key": "questioned_karen_identity",
+        "note": "Questioned self-classification.",
+        "qualities_available": true,
+        "short_tag": "being a Karen right now",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "Am I being a Karen right now?"
+      },
+      {
+        "canonical_key": "questioned_concern_about_coupon_savings",
+        "note": "Questioned value posture toward the coupon savings.",
+        "qualities_available": true,
+        "short_tag": "really care about the $1.25 off my cereal",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "Do I really care about the $1.25 off my cereal?"
+      },
+      {
+        "canonical_key": "questioned_rudeness_of_paying_and_leaving",
+        "note": "Questioned evaluation of the contemplated action.",
+        "qualities_available": true,
+        "short_tag": "rude for me to just pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "Would it be rude for me to just pay and walk out?"
+      },
+      {
+        "canonical_key": "coupon_failure_frustrating_evaluation",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "frustrating"
+      },
+      {
+        "canonical_key": "greater_frustration_state",
+        "note": "Comparative frustration state.",
+        "qualities_available": true,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated that I felt out of control",
+        "source_wording": "more frustrated"
+      },
+      {
+        "canonical_key": "out_of_control_state",
+        "note": null,
+        "qualities_available": false,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control of what the decision on the coupon’s next step should be",
+        "source_wording": "out of control"
+      },
+      {
+        "canonical_key": "stuck_waiting_state",
+        "note": null,
+        "qualities_available": true,
+        "short_tag": "stuck there waiting",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there waiting"
+      },
+      {
+        "canonical_key": "avoidance_of_appearing_rude",
+        "note": "Desired avoidance of a perceived status.",
+        "qualities_available": false,
+        "short_tag": "don’t want to appear rude",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "I don’t want to appear rude"
+      },
+      {
+        "canonical_key": "most_frustrating_part_evaluation",
+        "note": "Evaluation of the loss-of-control and waiting aspect.",
+        "qualities_available": true,
+        "short_tag": "super frustrating",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "super frustrating"
+      },
+      {
+        "canonical_key": "rejected_attendant_fault_attribution",
+        "note": "Explicit rejection of fault attribution to the attendant.",
+        "qualities_available": true,
+        "short_tag": "not think it was the attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "I do not think it was the attendant’s fault"
+      },
+      {
+        "canonical_key": "self_attributed_issue",
+        "note": "Corrective self-attribution following rejection of attendant fault.",
+        "qualities_available": false,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing",
+        "source_wording": "It’s a me thing"
+      }
+    ],
+    "session_id": "sess_016df7ca80575c2d006aade386ac18819b973af038fc32cde1",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_06624dcce9c7e1b9006aade3cada58819b9823a0146b64b265",
+    "status": "in_progress"
+  }
+}
