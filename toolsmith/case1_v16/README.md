@@ -18,6 +18,11 @@ This package implements the deterministic shared contracts required by the Case 
 
 - `src/case1_v16/contracts.py` — immutable contracts, state enumerations, and validation.
 - `src/case1_v16/orchestrator.py` — deterministic repository-only orchestration and evidence generation.
+- `src/case1_v16/authority.py` — exact manifest/reservation/policy/license binding validation.
+- `src/case1_v16/processing.py` — queue bounds, endpoint custody, and uncertainty/no-replay contracts.
+- `src/case1_v16/destination.py` — owner gateway protocol and result validator; no invocation implementation.
+- `src/case1_v16/evidence.py` — prespecified-field Audit evidence emission with separate commentary type.
+- `src/case1_v16/vault.py` — reproducible candidate-package validation without Quality or mint authority.
 - `tests/test_contracts.py` — positive, negative, partial, uncertainty, retry, and custody tests.
 - `migrations/` — candidate-only forward SQL. Facilities must inspect and separately authorize any execution.
 - `audit-requirements/` — job-specific Audit Requirement Package candidates.
@@ -30,4 +35,3 @@ This package implements the deterministic shared contracts required by the Case 
 - Clarified-intent reconciliation blob: `b275167c89c13a984da3cf6ccbada8b9a6c5ff77`
 - Compliance package: `APA-COMPLIANCE-V3`
 - Construction Registrar: `APA-EXEC-CASE1-V16-TOOLSMITH-CONSTRUCTION-SUCCESSOR-20260919-0001`
-
