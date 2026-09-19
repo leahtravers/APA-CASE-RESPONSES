@@ -1,0 +1,52 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "store_checkout_episode",
+        "note": "Inferred occurrence frame for the checkout episode.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "at the self-check at the store",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": null
+      },
+      {
+        "canonical_key": "waiting_period",
+        "note": "Contained waiting frame within the checkout episode.",
+        "order_cue": "And so then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "then I am standing there waiting",
+        "source_cue": "And so then I am standing there waiting",
+        "source_wording": "then"
+      },
+      {
+        "canonical_key": "partner_explanation_frame",
+        "note": null,
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "canonical_key": "present_reflection_frame",
+        "note": null,
+        "order_cue": "And wow, it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "it is still bugging me",
+        "source_wording": "still"
+      }
+    ],
+    "session_id": "sess_01f98a124af09b1e006aae456ac090819988b04842c8a96824",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_08a8a3e6eb698770006aae45839f30819bae35268018c4d579",
+    "status": "in_progress"
+  }
+}

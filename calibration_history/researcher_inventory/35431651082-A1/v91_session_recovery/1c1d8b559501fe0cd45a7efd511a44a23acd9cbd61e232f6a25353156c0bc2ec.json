@@ -1,0 +1,34 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": null,
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "self-check",
+        "note": null,
+        "order_cue": "at the self-check",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      }
+    ],
+    "session_id": "sess_0213c15979a0efd7006aae456a282c819a94de797481f31508",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0fe3ff9c97b01c73006aae457ef2688199a9832b1c6bc13c9f",
+    "status": "in_progress"
+  }
+}

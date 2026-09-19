@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 64,
+        "canonical_key": "coupon",
+        "note": null,
+        "order_cue": "scan this coupon for my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "coupon",
+        "source_cue": "scan this coupon for my kids’ cereal",
+        "source_wording": "this coupon"
+      },
+      {
+        "anchor_hint": 80,
+        "canonical_key": "cereal",
+        "note": "Coreferent with later “my cereal.”",
+        "order_cue": "this coupon for my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "my kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "anchor_hint": 532,
+        "canonical_key": "coupon discount",
+        "note": null,
+        "order_cue": "Do I really care about the $1.25 off my cereal?",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off my cereal",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "$1.25 off my cereal"
+      },
+      {
+        "anchor_hint": 960,
+        "canonical_key": "decision on coupon next step",
+        "note": null,
+        "order_cue": "what the decision on the coupon’s next step should be",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "the decision on the coupon’s next step",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision on the coupon’s next step"
+      }
+    ],
+    "session_id": "sess_0ebbe15f982f1c88006aae456ad870819b92aca3771a55b56e",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_023987ab2642fd64006aae458bb2c0819ab8c772340d53275d",
+    "status": "in_progress"
+  }
+}
