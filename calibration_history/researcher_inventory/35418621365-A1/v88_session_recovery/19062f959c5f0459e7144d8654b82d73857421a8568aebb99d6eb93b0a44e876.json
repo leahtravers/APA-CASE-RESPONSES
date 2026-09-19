@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": null,
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 87,
+        "canonical_key": "B_kids",
+        "note": "Stable group represented through relation to B.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "anchor_hint": 143,
+        "canonical_key": "attendant",
+        "note": "Corefers with subsequent \"them\" and \"they\" references.",
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 443,
+        "canonical_key": "manager",
+        "note": "Offscreen prospective institutional actor.",
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 900,
+        "canonical_key": "partner",
+        "note": null,
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0bcfe6e298d68498006aae014f1f90819aa07c3749e282f3a5",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0273f97b783e3e2d006aae0164d03881999e590db04c270347",
+    "status": "in_progress"
+  }
+}

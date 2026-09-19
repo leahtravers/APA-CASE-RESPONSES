@@ -1,0 +1,67 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 34,
+        "canonical_key": "store",
+        "note": null,
+        "order_cue": "at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "the store",
+        "source_cue": "at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 16,
+        "canonical_key": "store_self_check",
+        "note": "Contained setting within the store.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 428,
+        "canonical_key": "coupon_wait_position",
+        "note": "Unnamed occurrence position for the wait at the self-check.",
+        "order_cue": "standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "standing there waiting",
+        "source_cue": "standing there waiting",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 849,
+        "canonical_key": "partner_explanation_position",
+        "note": "Unnamed occurrence position for the later explanation.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 1301,
+        "canonical_key": "present_reflection_position",
+        "note": "Unnamed occurrence position for the present reflection.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0a89e6f6be32f674006aae014ee2d8819abd51611e8851dc77",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0d6ad99358e96d37006aae016d7adc81988b1c1ba6b9313b98",
+    "status": "in_progress"
+  }
+}
