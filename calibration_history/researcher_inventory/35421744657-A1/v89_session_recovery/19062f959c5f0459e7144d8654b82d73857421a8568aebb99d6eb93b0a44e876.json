@@ -1,0 +1,57 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "B",
+        "note": null,
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "short_tag": "I",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "canonical_key": "kids",
+        "note": null,
+        "order_cue": null,
+        "qualities_available": false,
+        "short_tag": "my kids",
+        "source_cue": "my kids’ cereal",
+        "source_wording": "my kids"
+      },
+      {
+        "canonical_key": "attendant",
+        "note": null,
+        "order_cue": "the attendant sees I am struggling",
+        "qualities_available": true,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling",
+        "source_wording": "the attendant"
+      },
+      {
+        "canonical_key": "manager",
+        "note": null,
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "canonical_key": "partner",
+        "note": null,
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_0bde3bffd0f50a88006aae11584600819ab9a3c05df3edfc89",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_04ad7d7c650c5fff006aae1175d8a8819b84a08eb1484b6d89",
+    "status": "in_progress"
+  }
+}
