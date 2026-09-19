@@ -29,6 +29,16 @@ class SqlSafetyTests(unittest.TestCase):
                 self.assertRegex(text, rf"ALTER TABLE\s+{re.escape(table)}\s+ENABLE ROW LEVEL SECURITY", table)
             self.assertIn("REVOKE ALL", text, migration.name)
 
+    def test_no_schema_wide_grant_or_revoke(self):
+        for migration in (ROOT / "migrations").glob("*.sql"):
+            text = migration.read_text(encoding="utf-8")
+            self.assertNotRegex(text, r"(?i)(GRANT|REVOKE).*ALL TABLES IN SCHEMA")
+
+    def test_endpoint_exclusivity_is_partial_unique_hold(self):
+        text = (ROOT / "migrations" / "002_licensing_processing_candidate.sql").read_text(encoding="utf-8")
+        self.assertIn("CREATE UNIQUE INDEX endpoint_holder_v16_one_active_holder", text)
+        self.assertIn("WHERE state = 'HELD'", text)
+
     def test_no_plaintext_candidate_column_in_graveyard(self):
         text = (ROOT / "migrations" / "004_cases_graveyard_vault_candidate.sql").read_text(encoding="utf-8")
         block = text.split("CREATE TABLE apa_graveyard.unwritten_identity_candidate_disposition", 1)[1]
@@ -40,4 +50,3 @@ class SqlSafetyTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
