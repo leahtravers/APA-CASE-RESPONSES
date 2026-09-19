@@ -14,6 +14,7 @@ from .contracts import (
     LicenseState,
     PolicyState,
 )
+from .identity import CandidateIdentityCompiler, GrammarContract, HistoricalIdentityDecoder
 
 __all__ = [
     "AuditRequirementPackage",
@@ -24,5 +25,8 @@ __all__ = [
     "JobState",
     "LicenseState",
     "PolicyState",
+    "CandidateIdentityCompiler",
+    "GrammarContract",
+    "HistoricalIdentityDecoder",
 ]
 
