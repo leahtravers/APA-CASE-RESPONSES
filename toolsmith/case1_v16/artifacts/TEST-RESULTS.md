@@ -2,7 +2,7 @@
 
 Date: 2026-09-19  
 Command: `python -m unittest discover -s toolsmith/case1_v16/tests -v`  
-Result: `PASS — 11 tests`
+Result: `PASS — 17 tests`
 
 Covered controls:
 
@@ -17,6 +17,10 @@ Covered controls:
 - migrations contain no destructive SQL;
 - candidate tables enable RLS and revoke ordinary/public access;
 - the Graveyard candidate object separates HMAC key references from digests.
+- the assembler obeys only an exact owner-supplied grammar contract;
+- historical decoding requires the exact grammar version;
+- job transitions are forward-only;
+- the Monitoring registry contains exactly `MON-V16-01..14`;
+- Post Office keeps evidence and home commentary separate and validates receipt correlation.
 
 This is Toolsmith test evidence, not an Audit finding, owner acceptance, Facilities verification, Security approval, or Tool Vault quality result.
-
