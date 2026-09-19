@@ -1,0 +1,192 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "coupon_not_working",
+        "note": null,
+        "order_cue": "it is not working",
+        "qualities_available": false,
+        "short_tag": "not working",
+        "source_cue": "it is not working",
+        "source_wording": "not working"
+      },
+      {
+        "canonical_key": "speaker_struggling_to_finish_order",
+        "note": null,
+        "order_cue": "I am struggling to finish my order",
+        "qualities_available": false,
+        "short_tag": "struggling to finish my order",
+        "source_cue": "I am struggling to finish my order",
+        "source_wording": "struggling to finish my order"
+      },
+      {
+        "canonical_key": "coupon_wont_scan_for_attendant",
+        "note": null,
+        "order_cue": "It won’t scan for them either",
+        "qualities_available": false,
+        "short_tag": "won’t scan for them either",
+        "source_cue": "It won’t scan for them either",
+        "source_wording": "won’t scan for them either"
+      },
+      {
+        "canonical_key": "coupon_date_valid",
+        "note": null,
+        "order_cue": "the date is valid",
+        "qualities_available": false,
+        "short_tag": "valid",
+        "source_cue": "the date is valid",
+        "source_wording": "valid"
+      },
+      {
+        "canonical_key": "attendant_in_a_huff",
+        "note": null,
+        "order_cue": "in a huff",
+        "qualities_available": false,
+        "short_tag": "in a huff",
+        "source_cue": "walk away with my coupon in a huff",
+        "source_wording": "in a huff"
+      },
+      {
+        "canonical_key": "speaker_questioned_karen_identity",
+        "note": null,
+        "order_cue": "Am I being a Karen right now?",
+        "qualities_available": false,
+        "short_tag": "Am I being a Karen right now?",
+        "source_cue": "Am I being a Karen right now?",
+        "source_wording": "Am I being a Karen right now?"
+      },
+      {
+        "canonical_key": "speaker_questioned_care_about_discount",
+        "note": null,
+        "order_cue": "Do I really care about the $1.25 off my cereal?",
+        "qualities_available": true,
+        "short_tag": "Do I really care about the $1.25 off my cereal?",
+        "source_cue": "Do I really care about the $1.25 off my cereal?",
+        "source_wording": "Do I really care about the $1.25 off my cereal?"
+      },
+      {
+        "canonical_key": "speaker_wanted_in_and_out",
+        "note": null,
+        "order_cue": "in and out",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "wait_duration_question",
+        "note": null,
+        "order_cue": "How long will this take?",
+        "qualities_available": false,
+        "short_tag": "How long will this take?",
+        "source_cue": "How long will this take?",
+        "source_wording": "How long will this take?"
+      },
+      {
+        "canonical_key": "rude",
+        "note": "Later exact repetition in “appear rude” refers to the same characterization.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": false,
+        "short_tag": "rude",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "rude"
+      },
+      {
+        "canonical_key": "coupon_failure_frustrating",
+        "note": null,
+        "order_cue": "frustrating",
+        "qualities_available": false,
+        "short_tag": "frustrating",
+        "source_cue": "the coupon not working itself was frustrating",
+        "source_wording": "frustrating"
+      },
+      {
+        "canonical_key": "speaker_more_frustrated",
+        "note": null,
+        "order_cue": "more frustrated",
+        "qualities_available": true,
+        "short_tag": "more frustrated",
+        "source_cue": "I was more frustrated",
+        "source_wording": "more frustrated"
+      },
+      {
+        "canonical_key": "speaker_out_of_control",
+        "note": null,
+        "order_cue": "out of control",
+        "qualities_available": false,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control",
+        "source_wording": "out of control"
+      },
+      {
+        "canonical_key": "speaker_stuck_waiting",
+        "note": null,
+        "order_cue": "stuck there waiting",
+        "qualities_available": true,
+        "short_tag": "stuck there waiting",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there waiting"
+      },
+      {
+        "canonical_key": "decision_control_part_super_frustrating",
+        "note": null,
+        "order_cue": "super frustrating",
+        "qualities_available": true,
+        "short_tag": "super frustrating",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "super frustrating"
+      },
+      {
+        "canonical_key": "speaker_sincere_posture",
+        "note": null,
+        "order_cue": "sincerely",
+        "qualities_available": false,
+        "short_tag": "sincerely",
+        "source_cue": "And sincerely, I do not think it was the attendant’s fault.",
+        "source_wording": "sincerely"
+      },
+      {
+        "canonical_key": "attendant_fault_rejected",
+        "note": null,
+        "order_cue": "do not think it was the attendant’s fault",
+        "qualities_available": false,
+        "short_tag": "do not think it was the attendant’s fault",
+        "source_cue": "I do not think it was the attendant’s fault",
+        "source_wording": "do not think it was the attendant’s fault"
+      },
+      {
+        "canonical_key": "speaker_me_thing_classification",
+        "note": null,
+        "order_cue": "a me thing",
+        "qualities_available": false,
+        "short_tag": "a me thing",
+        "source_cue": "It’s a me thing.",
+        "source_wording": "a me thing"
+      },
+      {
+        "canonical_key": "incident_still_bugging_speaker",
+        "note": null,
+        "order_cue": "still bugging me",
+        "qualities_available": false,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me",
+        "source_wording": "still bugging me"
+      },
+      {
+        "canonical_key": "matter_straight_in_speaker_mind",
+        "note": null,
+        "order_cue": "straight in my mind",
+        "qualities_available": false,
+        "short_tag": "straight in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "straight in my mind"
+      }
+    ],
+    "session_id": "sess_01c2b8beba2ea9bf006aae00ea32a88198ac630e6ba11eb761",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_02ccaa7635d08f49006aae0121910c8198ba35c4ac5e264469",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "canonical_key": "store_setting",
+        "note": null,
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "at the store",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the store"
+      },
+      {
+        "canonical_key": "self_check_position",
+        "note": null,
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "at the self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "at the self-check"
+      },
+      {
+        "canonical_key": "coupon_cereal_context",
+        "note": null,
+        "order_cue": "this coupon for my kids’ cereal",
+        "qualities_available": false,
+        "short_tag": "for my kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "for my kids’ cereal"
+      },
+      {
+        "canonical_key": "attendant_comes_over",
+        "note": null,
+        "order_cue": "comes over to help me with it",
+        "qualities_available": false,
+        "short_tag": "comes over",
+        "source_cue": "comes over to help me with it",
+        "source_wording": "comes over"
+      },
+      {
+        "canonical_key": "box_right_there",
+        "note": null,
+        "order_cue": "the box is right there",
+        "qualities_available": false,
+        "short_tag": "right there",
+        "source_cue": "the box is right there",
+        "source_wording": "right there"
+      },
+      {
+        "canonical_key": "attendant_walks_away",
+        "note": null,
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "walk away",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "walk away"
+      },
+      {
+        "canonical_key": "coupon_carried_with_attendant",
+        "note": null,
+        "order_cue": "walk away with my coupon",
+        "qualities_available": false,
+        "short_tag": "with my coupon",
+        "source_cue": "walk away with my coupon",
+        "source_wording": "with my coupon"
+      },
+      {
+        "canonical_key": "toward_manager_retrieval",
+        "note": null,
+        "order_cue": "to go get a manager",
+        "qualities_available": false,
+        "short_tag": "to go get a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "to go get a manager"
+      },
+      {
+        "canonical_key": "B_standing_there_waiting",
+        "note": null,
+        "order_cue": "I am standing there waiting",
+        "qualities_available": false,
+        "short_tag": "standing there waiting",
+        "source_cue": "I am standing there waiting",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "canonical_key": "B_in_and_out",
+        "note": null,
+        "order_cue": "to be in and out for a few things",
+        "qualities_available": false,
+        "short_tag": "in and out",
+        "source_cue": "to be in and out for a few things",
+        "source_wording": "in and out"
+      },
+      {
+        "canonical_key": "B_standing_here",
+        "note": null,
+        "order_cue": "now I am standing here",
+        "qualities_available": false,
+        "short_tag": "standing here",
+        "source_cue": "now I am standing here",
+        "source_wording": "standing here"
+      },
+      {
+        "canonical_key": "B_hypothetical_walk_out",
+        "note": null,
+        "order_cue": "just pay and walk out",
+        "qualities_available": false,
+        "short_tag": "walk out",
+        "source_cue": "just pay and walk out",
+        "source_wording": "walk out"
+      },
+      {
+        "canonical_key": "B_out_of_control",
+        "note": null,
+        "order_cue": "I felt out of control",
+        "qualities_available": false,
+        "short_tag": "out of control",
+        "source_cue": "I felt out of control",
+        "source_wording": "out of control"
+      },
+      {
+        "canonical_key": "B_stuck_there_waiting",
+        "note": null,
+        "order_cue": "I was sort of stuck there waiting",
+        "qualities_available": false,
+        "short_tag": "stuck there waiting",
+        "source_cue": "I was sort of stuck there waiting",
+        "source_wording": "stuck there waiting"
+      },
+      {
+        "canonical_key": "regular_shopping_context",
+        "note": null,
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "short_tag": "when I shop regularly",
+        "source_cue": "when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "canonical_key": "B_in_my_mind",
+        "note": null,
+        "order_cue": "get it straight in my mind",
+        "qualities_available": false,
+        "short_tag": "in my mind",
+        "source_cue": "get it straight in my mind",
+        "source_wording": "in my mind"
+      },
+      {
+        "canonical_key": "B_into_these_situations",
+        "note": null,
+        "order_cue": "get myself into these situations",
+        "qualities_available": false,
+        "short_tag": "into these situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "into these situations"
+      }
+    ],
+    "session_id": "sess_011e82a92695778b006aae00eaa2888199bf0f11bacfdbf6bf",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0500555f84c221cd006aae0123ff0c819b8aa248fd4476d58f",
+    "status": "in_progress"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 48,
+        "canonical_key": "time_initial_coupon_scan_attempt",
+        "note": "Unnamed initial attempt/condition episode.",
+        "order_cue": "I am trying to scan this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "trying to scan this coupon",
+        "source_cue": "I am trying to scan this coupon for my kids’ cereal, and it is not working",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 139,
+        "canonical_key": "time_attendant_help_episode",
+        "note": "Unnamed response/help episode, including the attendant's scan and inspection.",
+        "order_cue": "comes over to help me with it",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "comes over to help me",
+        "source_cue": "the attendant sees I am struggling to finish my order and comes over to help me with it",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 387,
+        "canonical_key": "time_attendant_departure_transition",
+        "note": "Unnamed departure and transition episode.",
+        "order_cue": "then they sort of just walk away",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "walk away with my coupon",
+        "source_cue": "they sort of just walk away with my coupon in a huff to go get a manager",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 478,
+        "canonical_key": "time_waiting_episode",
+        "note": null,
+        "order_cue": "And so then I am standing there waiting",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "standing there waiting",
+        "source_cue": "And so then I am standing there waiting, thinking to myself",
+        "source_wording": "standing there waiting"
+      },
+      {
+        "anchor_hint": 638,
+        "canonical_key": "time_intended_quick_shopping_period",
+        "note": "Intended shopping period represented during the wait.",
+        "order_cue": "I just wanted to be in and out for a few things",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "in and out for a few things",
+        "source_cue": "I just wanted to be in and out for a few things",
+        "source_wording": "in and out for a few things"
+      },
+      {
+        "anchor_hint": 713,
+        "canonical_key": "time_questioned_resolution_frame",
+        "note": "Questioned prospective duration of the unresolved episode.",
+        "order_cue": "How long will this take?",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "How long will this take?",
+        "source_cue": "How long will this take?",
+        "source_wording": "How long will this take?"
+      },
+      {
+        "anchor_hint": 758,
+        "canonical_key": "time_hypothetical_pay_and_departure",
+        "note": "Hypothetical prospective departure episode considered during the wait.",
+        "order_cue": "Would it be rude for me to just pay and walk out?",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "just pay and walk out",
+        "source_cue": "Would it be rude for me to just pay and walk out?",
+        "source_wording": "just pay and walk out"
+      },
+      {
+        "anchor_hint": 949,
+        "canonical_key": "time_partner_explanation_episode",
+        "note": "Later conversation/reflection episode.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I tried to explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner, my point was that I was more frustrated",
+        "source_wording": "when I tried to explain this to my partner"
+      },
+      {
+        "anchor_hint": 1213,
+        "canonical_key": "time_recurring_regular_shopping_span",
+        "note": "Recurring shopping span.",
+        "order_cue": "when I shop regularly",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "when I shop regularly",
+        "source_cue": "I don’t want to appear rude when I shop regularly",
+        "source_wording": "when I shop regularly"
+      },
+      {
+        "anchor_hint": 1410,
+        "canonical_key": "time_present_reflection",
+        "note": "Present reflection/telling frame.",
+        "order_cue": "And wow, it is still bugging me",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "it is still bugging me",
+        "source_cue": "And wow, it is still bugging me",
+        "source_wording": "it is still bugging me"
+      },
+      {
+        "anchor_hint": 1442,
+        "canonical_key": "time_prospective_avoidance_frame",
+        "note": "Prospective frame for avoiding recurrence.",
+        "order_cue": "how to not get myself into these situations",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "how to not get myself into these situations",
+        "source_cue": "I need to get it straight in my mind how to not get myself into these situations",
+        "source_wording": "how to not get myself into these situations"
+      }
+    ],
+    "session_id": "sess_0e8aafb6c5a53649006aae00ea9bfc819999f61bb9019ee8f4",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0be0d0e04ece5fac006aae01263a7c81999401e852cb27a4e3",
+    "status": "in_progress"
+  }
+}

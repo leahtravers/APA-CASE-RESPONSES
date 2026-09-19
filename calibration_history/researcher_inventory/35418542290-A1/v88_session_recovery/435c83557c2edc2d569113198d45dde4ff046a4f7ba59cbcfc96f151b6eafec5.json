@@ -1,0 +1,144 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 72,
+        "canonical_key": "coupon",
+        "note": "Corefers with later mentions of it, my coupon, and the coupon.",
+        "order_cue": "this coupon",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "coupon",
+        "source_cue": "scan this coupon for my kids’ cereal",
+        "source_wording": "this coupon"
+      },
+      {
+        "anchor_hint": 88,
+        "canonical_key": "kids’ cereal",
+        "note": "Corefers with later mentions of my cereal.",
+        "order_cue": "my kids’ cereal",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "kids’ cereal",
+        "source_cue": "this coupon for my kids’ cereal",
+        "source_wording": "my kids’ cereal"
+      },
+      {
+        "anchor_hint": 177,
+        "canonical_key": "order",
+        "note": null,
+        "order_cue": "my order",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "order",
+        "source_cue": "struggling to finish my order",
+        "source_wording": "my order"
+      },
+      {
+        "anchor_hint": 286,
+        "canonical_key": "coupon date",
+        "note": "The date is represented as a materially distinguished part of the coupon.",
+        "order_cue": "the date",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "date",
+        "source_cue": "see the date is valid",
+        "source_wording": "the date"
+      },
+      {
+        "anchor_hint": 308,
+        "canonical_key": "cereal box",
+        "note": "The box is materially distinguished from the cereal.",
+        "order_cue": "the box",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "box",
+        "source_cue": "the box is right there",
+        "source_wording": "the box"
+      },
+      {
+        "anchor_hint": 524,
+        "canonical_key": "$1.25 off",
+        "note": "Coupon value represented as an independently selectable amount.",
+        "order_cue": "$1.25 off",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "$1.25 off",
+        "source_cue": "the $1.25 off my cereal",
+        "source_wording": "$1.25 off"
+      },
+      {
+        "anchor_hint": 600,
+        "canonical_key": "few things",
+        "note": "Represented set of intended purchases.",
+        "order_cue": "a few things",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "few things",
+        "source_cue": "in and out for a few things",
+        "source_wording": "a few things"
+      },
+      {
+        "anchor_hint": 904,
+        "canonical_key": "point",
+        "note": "Explicitly reified communicated content.",
+        "order_cue": "my point",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "point",
+        "source_cue": "my point was that I was more frustrated",
+        "source_wording": "my point"
+      },
+      {
+        "anchor_hint": 995,
+        "canonical_key": "decision",
+        "note": null,
+        "order_cue": "the decision",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "decision",
+        "source_cue": "what the decision on the coupon’s next step should be",
+        "source_wording": "the decision"
+      },
+      {
+        "anchor_hint": 1011,
+        "canonical_key": "coupon’s next step",
+        "note": "The prospective next step is separately treated as the subject of the decision.",
+        "order_cue": "the coupon’s next step",
+        "qualities_available": true,
+        "scope_rank": 1,
+        "short_tag": "coupon’s next step",
+        "source_cue": "the decision on the coupon’s next step",
+        "source_wording": "the coupon’s next step"
+      },
+      {
+        "anchor_hint": 1227,
+        "canonical_key": "part",
+        "note": "Explicitly reified aspect of the experience.",
+        "order_cue": "the part",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "part",
+        "source_cue": "that was the part that was super frustrating",
+        "source_wording": "the part"
+      },
+      {
+        "anchor_hint": 1510,
+        "canonical_key": "situations",
+        "note": "Represented category of situations.",
+        "order_cue": "these situations",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "situations",
+        "source_cue": "get myself into these situations",
+        "source_wording": "these situations"
+      }
+    ],
+    "session_id": "sess_0787f4e1e446040c006aae00ea9f608199825697e04ff7d589",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_028d4e2f5e17aa75006aae0121a47081989bc28aa40e002718",
+    "status": "in_progress"
+  }
+}
