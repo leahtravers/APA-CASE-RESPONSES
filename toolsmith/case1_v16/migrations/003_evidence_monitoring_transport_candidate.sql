@@ -142,10 +142,14 @@ ALTER TABLE apa_logging.surfaced_projection_v16_candidate ENABLE ROW LEVEL SECUR
 ALTER TABLE apa_post_office.audit_envelope_v16_candidate ENABLE ROW LEVEL SECURITY;
 ALTER TABLE apa_post_office.delivery_receipt_v16_candidate ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_audit FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_monitoring FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_logging FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_post_office FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_audit.requirement_package_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_audit.evidence_submission_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_audit.home_commentary_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_monitoring.criterion_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_monitoring.match_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_logging.requisition_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_logging.surfaced_projection_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_post_office.audit_envelope_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_post_office.delivery_receipt_v16_candidate FROM PUBLIC, anon, authenticated;
 
 COMMIT;
-
