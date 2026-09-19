@@ -2,7 +2,7 @@
 
 Date: 2026-09-19  
 Command: `python -m unittest discover -s toolsmith/case1_v16/tests -v`  
-Result: `PASS — 17 tests`
+Result: `PASS — 19 tests`
 
 Covered controls:
 
@@ -22,5 +22,7 @@ Covered controls:
 - job transitions are forward-only;
 - the Monitoring registry contains exactly `MON-V16-01..14`;
 - Post Office keeps evidence and home commentary separate and validates receipt correlation.
+- no migration may use a schema-wide grant or revoke against predecessor tables;
+- endpoint exclusivity uses a partial unique index limited to the active `HELD` state.
 
 This is Toolsmith test evidence, not an Audit finding, owner acceptance, Facilities verification, Security approval, or Tool Vault quality result.
