@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 4,
+        "canonical_key": "B",
+        "note": "Speaker.",
+        "order_cue": "I am at the self-check at the store",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "B",
+        "source_cue": "I am at the self-check at the store",
+        "source_wording": "I"
+      },
+      {
+        "anchor_hint": 142,
+        "canonical_key": "attendant",
+        "note": "Coreferent with subsequent they/them and the attendant’s.",
+        "order_cue": "the attendant sees I am struggling to finish my order",
+        "qualities_available": true,
+        "scope_rank": 0,
+        "short_tag": "the attendant",
+        "source_cue": "the attendant sees I am struggling to finish my order",
+        "source_wording": "the attendant"
+      },
+      {
+        "anchor_hint": 420,
+        "canonical_key": "manager",
+        "note": "Offscreen represented actor.",
+        "order_cue": null,
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "a manager",
+        "source_cue": "to go get a manager",
+        "source_wording": "a manager"
+      },
+      {
+        "anchor_hint": 915,
+        "canonical_key": "partner",
+        "note": null,
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": "my partner"
+      }
+    ],
+    "session_id": "sess_01ca51e336f71755006aae452e79f8819bbfdce3a5a397267f",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_000c47535bd9364e006aae454b05ec819ab4f3b32489efe84c",
+    "status": "in_progress"
+  }
+}
