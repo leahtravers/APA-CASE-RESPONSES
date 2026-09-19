@@ -1,40 +1,29 @@
 # Case 1 V16 Candidate Source Successor Pointer 0007
 
-Status: `OWNER-LOCAL CODE SPLIT PHASE 1A COMPLETE — OWNER DECISIONS PENDING`
-Date: 2026-09-19
-Predecessor pointer: `SOURCE-SUCCESSOR-POINTER-0006.md`
-Branch: `toolsmith/case1-v16-candidate-20260919`
+Status: `OWNER-BOUNDED CODE SPLIT — PREDECESSORS PRESERVED`  
+Date: 2026-09-19  
+Predecessor pointer: `SOURCE-SUCCESSOR-POINTER-0006.md`  
+Registrar record: `APA-EXEC-20260919-CASE1-V16-OWNER-BOUNDED-CODE-SPLIT-0001`  
+Interface: `CASE1-V16-OWNER-BOUNDARY-0001`
 
-## Successor artifacts
+## Additive construction
 
-- CIA owner-local code packages commit: `leahtravers/APA-CIA@537573f7f32f1f6ab8ddf3a0e5de2e083b98ba5f`
-- Facilities correlation controls commit: `leahtravers/APA-Public-Works@5183931e872ec0b0e98b1c8b2b9af62392d6d212`
-- Tool Vault BRD traceability successor commit: `leahtravers/APA-Oval-Office-Records@48693e41ebefcb4cfc2e21a51eeaac9c50eb0ad3`
-- Registrar record: `APA-EXEC-20260919-CASE1-V16-OWNER-LOCAL-CODE-PHASE1A-0001`
-- Registrar delivery SHA-256: `215502296ec7260c0aaeeb759db58fbf084cf18ecd599dec0731903b936bd2c5`
-- Registrar delivery Git blob: `05a4def7112eb4ba261df849e6a245e20bcdf0a5`
+The integrated candidate remains preserved. Mixed authority logic was decomposed into twelve owner-local candidate packages for APA Cases, CIA Identity, Security, Audit, Monitoring, Logging, Licensing, Processing, Post Office, Infrastructure, Graveyard and Tool Vault.
 
-## Construction result
+Each package contains owner-only code, local positive and negative tests, a standard-library dependency lock, capability/prohibition boundaries, Audit-package reference, lineage, interface version and SHA-256 manifest.
 
-- `identity.py` now has an Identity-custodied runnable candidate with a minimum owner-only contract subset.
-- `evidence.py` now has an Audit-custodied runnable candidate with evidence-emission authority only and no adjudication capability.
-- `monitoring.py` now has a Monitoring-custodied runnable candidate with deterministic match records and no operational activation capability.
-- All three packages bind the immutable integration predecessor, build/runtime pins, the ARP candidate, capability denials, source hashes, and owner-return state.
-- The integrated predecessor package remains unchanged.
+## Package commits
 
-## Verification
+- `leahtravers/APA-CASE-RESPONSES@9d9324f0a0e529b416df8a72f464e31018fae8ea`
+- `leahtravers/APA-CIA@ed58cd346aa612e3bb25c39b9fb3b4fd70f813d2`
+- `leahtravers/APA-Public-Works@947b58872d69f38fe3bc7ae4727dfcd33331de70`
+- `leahtravers/APA-Graveyard@f60a23aa84a6e49440ed682708e9aafb23329af2`
+- `leahtravers/APA-Oval-Office-Records@240aedf6c1c4a0021e6b4b62643e45384662a7a0`
 
-```text
-owner-local functional and negative tests: 8 / PASS
-owner-local source/hash/AST capability checks: 3 packages / PASS
-remote Git blob readback: 30 files / 30 exact matches
-integrated predecessor suite: 29 tests / PASS
-Facilities cross-repository verifier: 3 packages / 8 local tests / PASS
-protected operations: 0
-```
+## Test result
 
-## Remaining work and holds
+Twenty-four owner-local tests and four cross-owner tests pass. The first cross-owner verifier attempt failed because its dynamic module loader omitted `sys.modules` registration; that verifier defect is preserved in the test record and corrected without changing owner logic.
 
-Direct-owner packages remain for Processing, Post Office, Infrastructure, APA Cases, and the Tool Vault. The mixed `authority.py`, `orchestrator.py`, and remaining shared contracts still require owner-bounded splits. New DDL remains held pending an approved additive placement-manifest successor.
+## Non-effects
 
-No database access, SQL execution, gateway invocation, owner acceptance, policy or licensing activation, identity issuance, dispatch, operational Monitoring, rehearsal, Audit adjudication, Quality certification, minting, action-copy issuance, predecessor overwrite, merge, or protected operation occurred.
+No owner acceptance, database action, SQL execution, policy or license activation, identity issuance, dispatch, operational post, Audit finding, Quality result, mint, action copy or rehearsal launch occurred.

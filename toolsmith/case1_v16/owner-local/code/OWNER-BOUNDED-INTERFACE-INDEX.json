@@ -1,0 +1,119 @@
+{
+  "version": "CASE1-V16-OWNER-BOUNDED-INTEGRATION-INDEX-0001",
+  "date": "2026-09-19",
+  "status": "CANDIDATE_NO_OWNER_ACCEPTANCE_NO_OPERATIONAL_AUTHORITY",
+  "integrated_predecessor": "9c2fd6d2bf4f782d8e03f64a2dd5b750741d3730",
+  "custody_predecessor_pointer": "SOURCE-SUCCESSOR-POINTER-0006.md",
+  "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+  "package_count": 12,
+  "packages": [
+    {
+      "owner": "APA Cases",
+      "repository": "leahtravers/APA-CASE-RESPONSES",
+      "path": "toolsmith/case1_v16/owner-local/cases",
+      "source_sha256": "acb2922f5b9b529672011d787a2128c499b609e32a149c5331fa7708d9d84517",
+      "test_sha256": "cf606bce01a5f41ddc112380a93740b8671d24f0e8bb0d4e9d7d4485c7ecb671",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "CIA Identity",
+      "repository": "leahtravers/APA-CIA",
+      "path": "identity/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "ead3d7069e03de3476cffee55f5653c29933c26f4c61a388a4454df28719dc1f",
+      "test_sha256": "cce7df821decfc677e0724cb86cb16f4eb95c462dd4534d5fe7eed5b7b9d323f",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Security",
+      "repository": "leahtravers/APA-CIA",
+      "path": "security/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "7659282f0f6bf71519f87f9d53ab1d5644dc68e9c71c04203ba61569a0ccf0c9",
+      "test_sha256": "4d75dafad687f396a1189390dd3069f5a10c55597770de0352afba716f742284",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Audit",
+      "repository": "leahtravers/APA-CIA",
+      "path": "affiliated-reporting-agencies/audit/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "a59de04c54d92bf32c7345e8f4823f87155011134103de4c5c5f2fee3e340d1a",
+      "test_sha256": "fde2608a54b6180de872b3c22e9ce9a0264617766dae797be586871733c53124",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Monitoring",
+      "repository": "leahtravers/APA-CIA",
+      "path": "affiliated-reporting-agencies/monitoring/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "6e1916a742e453a8770605c30510e5610fd9d83622bb1682b518d9973da8b461",
+      "test_sha256": "9f9d1ca7c7b57ab344a9b7b1feb2b5f6c01d8e8ee7e8240d2ca03b7070591643",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Logging",
+      "repository": "leahtravers/APA-CIA",
+      "path": "affiliated-reporting-agencies/logging/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "a9275b44f86ecd99fadaaa09beebe35cd6d8545908b6a3cff39c7b11082e07eb",
+      "test_sha256": "28768e53066c1e0b7c7c86844e7a977a2e112ad02d9b971711b50335c32c4f63",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Licensing",
+      "repository": "leahtravers/APA-Public-Works",
+      "path": "licensing/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "830ed779f85e577d4856172699f7dc43b6642088c7fe85a9aa54c4729d2cd620",
+      "test_sha256": "b747e237a7cb81ccebcf97b19c880ada9cb1bfd93dadfc93e8454fa93b680fe0",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Processing",
+      "repository": "leahtravers/APA-Public-Works",
+      "path": "processing/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "4ab65ed3c8782309ef79c89fc660eb9d8a73d60184baf4cb674d49d7e98a9bd8",
+      "test_sha256": "cc75268c53aeda656f7c37c7ddd8ad6be843d3d7ad0e9ea6ac0f0cd9b149338b",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Post Office",
+      "repository": "leahtravers/APA-Public-Works",
+      "path": "post-office/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "3a39ed8a0d901807ebc32a4a2c2cac7dcd4082ea4b3c06c49e59c2a21d063e51",
+      "test_sha256": "9a7d3dfff50ee1be5ea5801f954d8881cc2b5587b7aa9f9dbbd652ac933f7752",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Graveyard",
+      "repository": "leahtravers/APA-Graveyard",
+      "path": "restricted-custody/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "883ab7f145533e9b045abc5b02a6fd091902069f3f1817fb89346aaeac782fa8",
+      "test_sha256": "e60d81fd3418ba49f23c913c95048e8a6272145ab7145e1d5818bb10b081bd69",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Tool Vault",
+      "repository": "leahtravers/APA-Oval-Office-Records",
+      "path": "tool-vault/candidates/case1-v16/2026-09-19",
+      "source_sha256": "aa5f31c4cbd81a035773940445e17ad6af64b95493f22649f10f8bc854998145",
+      "test_sha256": "86d817fa6bfb5e7af92412377c32a860e8bb0c4489c12df3606441dd6ecb810d",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    },
+    {
+      "owner": "Infrastructure",
+      "repository": "leahtravers/APA-Public-Works",
+      "path": "infrastructure/v16-successor/toolsmith-candidate-20260919",
+      "source_sha256": "cda410fe8b90e2d0be16453ff31776594afc0d1686a274a7107edbbca5925c86",
+      "test_sha256": "9cc7f62bd5b14bcf9a3a334983240c51dbd3915bb073f8ca2b9f22bfd1b30267",
+      "interface_version": "CASE1-V16-OWNER-BOUNDARY-0001",
+      "owner_return": "PENDING"
+    }
+  ]
+}
