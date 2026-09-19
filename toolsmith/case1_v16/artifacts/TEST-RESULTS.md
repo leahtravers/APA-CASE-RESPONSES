@@ -2,7 +2,7 @@
 
 Date: 2026-09-19  
 Command: `python -m unittest discover -s toolsmith/case1_v16/tests -v`  
-Result: `PASS — 19 tests`
+Result: `PASS — 29 tests`
 
 Covered controls:
 
@@ -24,5 +24,14 @@ Covered controls:
 - Post Office keeps evidence and home commentary separate and validates receipt correlation.
 - no migration may use a schema-wide grant or revoke against predecessor tables;
 - endpoint exclusivity uses a partial unique index limited to the active `HELD` state.
+- exact manifest, reservation, policy, license, Audit-package, and destination bindings fail closed on drift;
+- inactive, expired, or policy-outliving license authority is rejected;
+- queue and capacity bounds must be positive numeric values;
+- repository-only endpoint custody permits one exact holder and exact-holder release;
+- uncertainty uses the shorter of the contract deadline or 15 minutes and forbids same-attempt replay;
+- destination results require the exact owner contract while direct writes remain prohibited;
+- Audit evidence emitters reject fields not prespecified by the requirement package;
+- reproducible vault manifests verify the exact file set and hashes;
+- Toolsmith packages cannot contain Quality, mint, or action-copy result artifacts.
 
 This is Toolsmith test evidence, not an Audit finding, owner acceptance, Facilities verification, Security approval, or Tool Vault quality result.
