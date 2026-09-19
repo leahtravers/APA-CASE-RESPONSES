@@ -88,9 +88,12 @@ CREATE TABLE apa_processing.endpoint_holder_v16_candidate (
   license_ref text NOT NULL,
   state text NOT NULL CHECK (state IN ('HELD','RELEASED','EXPIRED','UNCERTAIN')),
   held_at timestamptz NOT NULL DEFAULT clock_timestamp(),
-  released_at timestamptz,
-  UNIQUE NULLS NOT DISTINCT (endpoint_ref, state)
+  released_at timestamptz
 );
+
+CREATE UNIQUE INDEX endpoint_holder_v16_one_active_holder
+  ON apa_processing.endpoint_holder_v16_candidate (endpoint_ref)
+  WHERE state = 'HELD';
 
 CREATE TABLE apa_processing.cardinal_outcome_v16_candidate (
   cardinal_outcome_key uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -133,8 +136,12 @@ ALTER TABLE apa_processing.endpoint_holder_v16_candidate ENABLE ROW LEVEL SECURI
 ALTER TABLE apa_processing.cardinal_outcome_v16_candidate ENABLE ROW LEVEL SECURITY;
 ALTER TABLE apa_processing.uncertainty_v16_candidate ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_licensing FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON ALL TABLES IN SCHEMA apa_processing FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_licensing.reservation_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_licensing.execution_license_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_licensing.action_permit_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_processing.queue_entry_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_processing.endpoint_holder_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_processing.cardinal_outcome_v16_candidate FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON TABLE apa_processing.uncertainty_v16_candidate FROM PUBLIC, anon, authenticated;
 
 COMMIT;
-
