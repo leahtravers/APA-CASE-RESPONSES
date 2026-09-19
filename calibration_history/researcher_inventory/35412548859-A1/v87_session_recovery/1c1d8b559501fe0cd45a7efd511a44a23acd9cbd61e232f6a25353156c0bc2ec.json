@@ -1,0 +1,56 @@
+{
+  "provisional": {
+    "result": [
+      {
+        "anchor_hint": 32,
+        "canonical_key": "store",
+        "note": null,
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "store",
+        "source_cue": "at the store",
+        "source_wording": "the store"
+      },
+      {
+        "anchor_hint": 14,
+        "canonical_key": "store_self-check",
+        "note": "Contained checkout setting within the store.",
+        "order_cue": "at the self-check at the store",
+        "qualities_available": false,
+        "scope_rank": 1,
+        "short_tag": "self-check",
+        "source_cue": "at the self-check at the store",
+        "source_wording": "the self-check"
+      },
+      {
+        "anchor_hint": 1025,
+        "canonical_key": "partner_explanation_place",
+        "note": "Unnamed occurrence position for the distinct interaction with the partner.",
+        "order_cue": "when I tried to explain this to my partner",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "explain this to my partner",
+        "source_cue": "when I tried to explain this to my partner",
+        "source_wording": null
+      },
+      {
+        "anchor_hint": 1569,
+        "canonical_key": "present_reflection_place",
+        "note": "Unnamed occurrence position for the present reflection.",
+        "order_cue": "it is still bugging me",
+        "qualities_available": false,
+        "scope_rank": 0,
+        "short_tag": "still bugging me",
+        "source_cue": "it is still bugging me, and I need to get it straight in my mind",
+        "source_wording": null
+      }
+    ],
+    "session_id": "sess_0b63483aa787dbd3006aade452be408199a76085147e5ae1a8",
+    "status": "completed"
+  },
+  "verified": {
+    "session_id": "sess_0336ea0a69e90194006aade4731cd4819aa8fd70371d07487c",
+    "status": "in_progress"
+  }
+}
