@@ -1,6 +1,6 @@
 name: Researcher Inventory Apparatus Verification
-# V115 prospectively supersedes V114 for new calibration. V114 and all earlier contracts/runs remain historical evidence.
-# V115 retains protection against recurrence/salience pruning while restoring source-presented binding/frame role and natural class grain as the anti-census boundary.
+# V116 prospectively supersedes V115 for new calibration. V115 and all earlier contracts/runs remain historical evidence.
+# V116 retains the anti-census and anti-salience controls while requiring relation-slot closure at natural class grain.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 
 on:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V115
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V115.md
-      RI_MODEL_COMMAND: python researcher_inventory/v115_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V116
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V116.md
+      RI_MODEL_COMMAND: python researcher_inventory/v116_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -46,8 +46,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V115 gated calibration and certification pipeline
+      - name: Run V116 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v115_pipeline.sh
+          bash researcher_inventory/v116_pipeline.sh
