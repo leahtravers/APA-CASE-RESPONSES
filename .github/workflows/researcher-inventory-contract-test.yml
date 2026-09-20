@@ -2,6 +2,7 @@ name: Researcher Inventory Apparatus Verification
 # V118 prospectively supersedes V117 for new calibration. V117 and all earlier contracts/runs remain historical evidence.
 # V118 uses a minimal sufficient binding basis at source-individuated grain.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
+# V118 execution trigger: 2026-09-20; semantic contract, evaluator, harness, archetypes, and certification gates unchanged.
 
 on:
   workflow_dispatch:
