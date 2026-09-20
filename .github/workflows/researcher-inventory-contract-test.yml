@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V121 prospectively supersedes V120 for new calibration. V120 and all earlier contracts/runs remain historical evidence.
-# V121 uses class-relative coordinate individuation: referential/support classes require source-established supports/entities, while occurrence-bound LABEL/VERB/LOCATOR relations may be unique one-use coordinates at minimal source-native grain.
+# V122 prospectively supersedes V121 for new calibration. V121 and all earlier contracts/runs remain historical evidence.
+# V122 uses material-binding-capable researcher coordinates at source-native editorial grain: privately map represented bindings/support frames first, then derive independently useful source-established primitives without turning literal text into a census.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V121 execution trigger: 2026-09-20.
+# V122 execution trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
@@ -28,9 +28,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V121
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V121.md
-      RI_MODEL_COMMAND: python researcher_inventory/v121_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V122
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V122.md
+      RI_MODEL_COMMAND: python researcher_inventory/v122_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V121 gated calibration and certification pipeline
+      - name: Run V122 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v121_pipeline.sh
+          bash researcher_inventory/v122_pipeline.sh
