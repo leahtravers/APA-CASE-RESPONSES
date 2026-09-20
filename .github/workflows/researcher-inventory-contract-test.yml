@@ -1,6 +1,6 @@
 name: Researcher Inventory Apparatus Verification
-# V103 prospectively supersedes V102 for new calibration. V102 and all earlier contracts/runs remain historical evidence.
-# V103 restores comprehensive source-reified candidate recovery, canonical source-native spans, correct class-native projection, semantic identity/deduplication, and selective downstream compound construction.
+# V104 prospectively supersedes V103 for new calibration. V103 and all earlier contracts/runs remain historical evidence.
+# V104 requires frame-anchored class-native admission: low-salience and one-use coordinates remain eligible when they perform a distinct research role, while lexical/POS/grammatical presence alone never suffices.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 
 on:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V103
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V103.md
-      RI_MODEL_COMMAND: python researcher_inventory/v103_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V104
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V104.md
+      RI_MODEL_COMMAND: python researcher_inventory/v104_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -46,8 +46,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V103 gated calibration and certification pipeline
+      - name: Run V104 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v103_pipeline.sh
+          bash researcher_inventory/v104_pipeline.sh
