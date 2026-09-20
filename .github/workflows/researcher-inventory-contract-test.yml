@@ -2,6 +2,7 @@ name: Researcher Inventory Apparatus Verification
 # V119 prospectively supersedes V118 for new calibration. V118 and all earlier contracts/runs remain historical evidence.
 # V119 separates source-addressable primitive ledgers from the stricter selective material-binding compound layer.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
+# V119 execution trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
