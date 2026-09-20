@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V119 prospectively supersedes V118 for new calibration. V118 and all earlier contracts/runs remain historical evidence.
-# V119 separates source-addressable primitive ledgers from the stricter selective material-binding compound layer.
+# V120 prospectively supersedes V119 for new calibration. V119 and all earlier contracts/runs remain historical evidence.
+# V120 requires stable source-individuated class-native primitive coordinates and retains the stricter selective material-binding compound layer.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V119 execution trigger: 2026-09-20.
+# V120 execution trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
@@ -28,9 +28,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V119
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V119.md
-      RI_MODEL_COMMAND: python researcher_inventory/v119_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V120
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V120.md
+      RI_MODEL_COMMAND: python researcher_inventory/v120_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V119 gated calibration and certification pipeline
+      - name: Run V120 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v119_pipeline.sh
+          bash researcher_inventory/v120_pipeline.sh
