@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V124 prospectively supersedes V123 for new calibration. V123 and all earlier contracts/runs remain historical evidence.
-# V124 uses source-anchored coordinate entitlement and reconstructs unnamed PLACE/TIME support separately from explicit lexical primitives.
+# V125 prospectively supersedes V124 for new calibration. V124 and all earlier contracts/runs remain historical evidence.
+# V125 establishes source-coordinate coverage before anti-census pruning, preserves exact source grain, reconstructs source-differentiated local supports, and types survivors by represented job.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V124 execution trigger: 2026-09-20.
+# V125 execution trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
@@ -28,9 +28,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V124
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V124.md
-      RI_MODEL_COMMAND: python researcher_inventory/v124_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V125
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V125.md
+      RI_MODEL_COMMAND: python researcher_inventory/v125_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V124 gated calibration and certification pipeline
+      - name: Run V125 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v124_pipeline.sh
+          bash researcher_inventory/v125_pipeline.sh
