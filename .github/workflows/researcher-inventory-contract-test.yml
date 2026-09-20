@@ -1,6 +1,6 @@
 name: Researcher Inventory Apparatus Verification
-# V113 prospectively supersedes V112 for new calibration. V112 and all earlier contracts/runs remain historical evidence.
-# V113 retains class-local orthogonality but adds a representation-bearing research-coordinate threshold to prevent language-census over-admission.
+# V114 prospectively supersedes V113 for new calibration. V113 and all earlier contracts/runs remain historical evidence.
+# V114 retains class-local orthogonality and anti-census controls while restoring comprehensive represented-denotatum/relation coverage, explicit scene/episode support closure, function-first typing, and proposition-instance compounds.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 
 on:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V113
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V113.md
-      RI_MODEL_COMMAND: python researcher_inventory/v113_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V114
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V114.md
+      RI_MODEL_COMMAND: python researcher_inventory/v114_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -46,8 +46,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V113 gated calibration and certification pipeline
+      - name: Run V114 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v113_pipeline.sh
+          bash researcher_inventory/v114_pipeline.sh
