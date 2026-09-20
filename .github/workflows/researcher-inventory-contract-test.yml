@@ -1,6 +1,6 @@
 name: Researcher Inventory Apparatus Verification
-# V110 prospectively supersedes V109 for new calibration. V109 and all earlier contracts/runs remain historical evidence.
-# V110 replaces broad source-differentiated projection with represented-role admission while rejecting both lexical census and indispensability-under-removal pruning.
+# V111 prospectively supersedes V110 for new calibration. V110 and all earlier contracts/runs remain historical evidence.
+# V111 replaces represented-role admission with independent research-coordinate admission while rejecting both semantic/lexical census and importance/indispensability pruning.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 
 on:
@@ -27,9 +27,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V110
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V110.md
-      RI_MODEL_COMMAND: python researcher_inventory/v110_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V111
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V111.md
+      RI_MODEL_COMMAND: python researcher_inventory/v111_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -46,8 +46,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V110 gated calibration and certification pipeline
+      - name: Run V111 gated calibration and certification pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v110_pipeline.sh
+          bash researcher_inventory/v111_pipeline.sh
