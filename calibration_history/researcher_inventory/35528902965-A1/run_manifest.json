@@ -1,0 +1,13 @@
+{
+  "commit_sha": "c3dbca26fb3aad930d6199e20a8bacedf41ff787",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V120.md",
+  "contract_version": "RI-CONTRACT-V120",
+  "event": "push",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "harness_correction": "V66_HARNESS_CORRECTION_2026-09-17 + V82_ATTEMPT_HISTORY_DURABILITY + V88A_EDITOR_SHORTHAND_ALIGNMENT_2026-09-18 + V92_SAME_SESSION_TRANSIENT_RECOVERY",
+  "model": "gpt-5.6-sol",
+  "semantic_correction": "STABLE_CLASS_NATIVE_COORDINATE_GRAIN",
+  "semantic_successor": "V120",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "35528902965"
+}
