@@ -20,7 +20,7 @@ def minimal_integrated_response():
         "classes": {
             "PLACE": [{"canonical_key":"store","short_tag":"store","source_wording":"store","source_cue":"at the store","note":None,"qualities_available":False,"anchor_hint":12,"order_cue":"at the store","scope_rank":0}],
             "TIME": [],
-            "PERSON": [{"canonical_key":"B","short_tag":"B","source_wording":"I","source_cue":"I waited","note":None,"qualities_available":False,"anchor_hint":0,"order_cue":"I waited","scope_rank":0}],
+            "PERSON": [{"canonical_key":"B","short_tag":"I","source_wording":"I","source_cue":"I waited","note":None,"qualities_available":False,"anchor_hint":0,"order_cue":"I waited","scope_rank":0}],
             "OBJECT": [],
             "LABEL": [],
             "VERB": [{"canonical_key":"waited","short_tag":"waited","source_wording":"waited","source_cue":"waited","note":None,"qualities_available":False,"anchor_hint":2,"order_cue":"waited","scope_rank":0}],
