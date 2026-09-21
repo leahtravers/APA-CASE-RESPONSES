@@ -1,0 +1,13 @@
+{
+  "commit_sha": "ebd6c2b6c578a87ad70b7b8ab8b87446584e632e",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V138.md",
+  "contract_version": "RI-CONTRACT-V138",
+  "event": "push",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "harness_corrections": "V66_FIELD_ALIGNMENT + V88A_EDITOR_SHORTHAND_ALIGNMENT + V92_SAME_SESSION_TRANSIENT_RECOVERY + V126A_CONTRACT_SUBORDINATE_REQUEST_ENVELOPE",
+  "harness_successor": "V126A_CONTRACT_SUBORDINATE_REQUEST_ENVELOPE_RETAINED",
+  "model": "gpt-5.6-sol",
+  "semantic_contract": "V138_REPRESENTATION_LEDGER_PROJECTION_COMPLETE_PREDICATE_KERNEL",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "35597301001"
+}
