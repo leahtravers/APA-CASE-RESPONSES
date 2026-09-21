@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V126 remains the finalized durable semantic contract.
-# V126A is a harness-only successor that removes contradictory legacy request-level prompt directives and makes every per-request/class/compound prompt subordinate to AGENT_CONTRACT_V126.
+# V127 is the current durable semantic calibration contract.
+# V126A remains the independently established harness-only correction: every request/class/compound prompt is subordinate to the durable contract and contains no hidden archetype semantics.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V126A harness execution trigger: 2026-09-20.
+# V127 prospective routing trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
@@ -28,9 +28,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V126
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V126.md
-      RI_MODEL_COMMAND: python researcher_inventory/v126_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V127
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V127.md
+      RI_MODEL_COMMAND: python researcher_inventory/v127_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V126 durable contract through V126A corrected harness pipeline
+      - name: Run V127 durable contract through retained V126A corrected harness pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v126a_pipeline.sh
+          bash researcher_inventory/v127_pipeline.sh
