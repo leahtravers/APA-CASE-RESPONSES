@@ -37,8 +37,8 @@ class V148AClassCompleteHarnessTests(unittest.TestCase):
         payload = adapter.payloads[0]
         self.assertEqual(payload["task"], "researcher_inventory_build_class_complete_source_role_inventory")
         lower = payload["rules"].lower()
-        self.assertIn("positive class capture", lower)
-        self.assertIn("class-local", lower)
+        self.assertIn("primitive completeness is class-local", lower)
+        self.assertIn("class-local exclusions", lower)
         self.assertEqual(set(payload["response_schema"]["classes"]), set(apparatus.CLASSES))
         self.assertEqual({u["unit_ref"] for u in result["units"]}, {"P1","B","V1","R1"})
 
