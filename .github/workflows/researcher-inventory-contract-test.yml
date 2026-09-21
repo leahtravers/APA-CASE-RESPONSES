@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V126 prospectively supersedes V125 for new calibration. V125 and all earlier contracts/runs remain historical evidence.
-# V126 reconstructs source-local frames/support first, then admits only editor coordinates with a distinct binding role, preserving exact lexical grain and typing by represented binding job.
+# V126 remains the finalized durable semantic contract.
+# V126A is a harness-only successor that removes contradictory legacy request-level prompt directives and makes every per-request/class/compound prompt subordinate to AGENT_CONTRACT_V126.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V126 execution trigger: 2026-09-20.
+# V126A harness execution trigger: 2026-09-20.
 
 on:
   workflow_dispatch:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V126 gated calibration and certification pipeline
+      - name: Run V126 durable contract through V126A corrected harness pipeline
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v126_pipeline.sh
+          bash researcher_inventory/v126a_pipeline.sh
