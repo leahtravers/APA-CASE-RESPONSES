@@ -1,0 +1,4 @@
+{"detail": null, "event": "session_created", "session_id": "sess_07aab0862cadbcb6006ab19647ad1c8199962624182f2db38d", "session_type": "researcher_inventory_v55_contract_isolated_extract", "status": "in_progress", "unix": 1790023240.1747513}
+{"detail": null, "event": "session_completed", "session_id": "sess_07aab0862cadbcb6006ab19647ad1c8199962624182f2db38d", "session_type": "researcher_inventory_v55_contract_isolated_extract", "status": "completed", "unix": 1790023287.6398594}
+{"detail": null, "event": "session_created", "session_id": "sess_0da97aac00bca915006ab19678285081989f2d7ac8daccfc94", "session_type": "researcher_inventory_v55_contract_isolated_adjudication", "status": "in_progress", "unix": 1790023288.5376668}
+{"detail": null, "event": "session_completed", "session_id": "sess_0da97aac00bca915006ab19678285081989f2d7ac8daccfc94", "session_type": "researcher_inventory_v55_contract_isolated_adjudication", "status": "completed", "unix": 1790023367.0969028}
