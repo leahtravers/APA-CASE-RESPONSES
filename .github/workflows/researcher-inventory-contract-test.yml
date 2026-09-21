@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
 # V146 is the current durable semantic calibration contract.
-# V126A remains the independently established harness-only correction: every request/class/compound prompt is subordinate to the durable contract and contains no hidden archetype semantics.
+# V146A is the harness-only successor that executes V146's mandated whole-source relation-first construction in one semantic turn before deterministic normalization.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V146 prospective routing trigger: 2026-09-21.
+# V146A harness routing trigger: 2026-09-21.
 
 on:
   workflow_dispatch:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V146 durable contract through retained V126A corrected harness pipeline
+      - name: Run V146 durable contract through V146A whole-source relation-first harness
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v146_pipeline.sh
+          bash researcher_inventory/v146a_pipeline.sh
