@@ -1,8 +1,8 @@
 name: Researcher Inventory Apparatus Verification
-# V146 is the current durable semantic calibration contract.
-# V146A is the harness-only successor that executes V146's mandated whole-source relation-first construction in one semantic turn before deterministic normalization.
+# V147 is the current durable semantic calibration contract.
+# V147A retains the proven one-turn whole-source topology and executes V147's scaffold-first / bounded-relation construction before deterministic normalization.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
-# V146A harness routing trigger: 2026-09-21.
+# V147/V147A routing trigger: 2026-09-21.
 
 on:
   workflow_dispatch:
@@ -28,9 +28,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V146
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V146.md
-      RI_MODEL_COMMAND: python researcher_inventory/v146_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V147
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V147.md
+      RI_MODEL_COMMAND: python researcher_inventory/v147_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -47,8 +47,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V146 durable contract through V146A whole-source relation-first harness
+      - name: Run V147 durable contract through V147A whole-source hybrid harness
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v146a_pipeline.sh
+          bash researcher_inventory/v147a_pipeline.sh
