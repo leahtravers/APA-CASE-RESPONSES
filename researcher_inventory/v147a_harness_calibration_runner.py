@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""V147 calibration entry point with V147A whole-source hybrid harness."""
+from researcher_inventory import v66_calibration_runner as v66
+from researcher_inventory import inventory_apparatus as apparatus
+from researcher_inventory.v66_harness_correction import install_field_aware_alignment
+from researcher_inventory.v88a_harness_alignment_correction import install_editor_shorthand_alignment
+from researcher_inventory.v126a_task_rules import V126A_BASE_RULES, V126A_CLASS_RULES
+from researcher_inventory.v147a_hybrid_harness import V147AHybridInventoryApparatus
+
+apparatus.BASE_RULES = V126A_BASE_RULES
+apparatus.CLASS_RULES = V126A_CLASS_RULES
+base = v66.base
+base.InventoryApparatus = V147AHybridInventoryApparatus
+install_field_aware_alignment(base)
+install_editor_shorthand_alignment(base)
+
+if __name__ == "__main__":
+    base.main()
