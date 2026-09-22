@@ -1,9 +1,19 @@
 from __future__ import annotations
 
+import sys
 import unittest
+from pathlib import Path
 from unittest import mock
 
-from researcher_inventory import v156_openai_agents_adapter as v156
+# Runtime adapters intentionally use script-local absolute imports because the workflow
+# executes them as `python researcher_inventory/<version>_openai_agents_adapter.py`.
+# Add that directory for this deterministic unit-test import rather than changing the
+# production adapter's import topology.
+RI_ROOT = Path(__file__).resolve().parents[1]
+if str(RI_ROOT) not in sys.path:
+    sys.path.insert(0, str(RI_ROOT))
+
+import v156_openai_agents_adapter as v156
 
 
 class V156ResultRetrievalTests(unittest.TestCase):
