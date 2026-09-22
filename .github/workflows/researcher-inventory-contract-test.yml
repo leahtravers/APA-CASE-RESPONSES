@@ -1,9 +1,9 @@
 name: Researcher Inventory Apparatus Verification
-# V151 is the current durable semantic calibration contract.
-# V151A retains the proven one-turn whole-source topology while removing V150 semantic promotion/nonredundancy cues from harness routing; V151 durable instructions remain the sole semantic authority.
+# V152 is the current durable semantic calibration contract.
+# V152A retains the proven one-turn whole-source topology while changing only the bounded task label and version plumbing; V152 durable instructions remain the sole semantic authority.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 # No semantic gold, expected counts, evaluator findings, or holdout material are supplied to the worker.
-# V151/V151A routing trigger: 2026-09-21.
+# V152/V152A routing trigger: 2026-09-22.
 
 on:
   workflow_dispatch:
@@ -29,9 +29,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V151
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V151.md
-      RI_MODEL_COMMAND: python researcher_inventory/v151_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V152
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V152.md
+      RI_MODEL_COMMAND: python researcher_inventory/v152_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -48,8 +48,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V151 durable contract through V151A class-function-complete whole-source harness
+      - name: Run V152 durable contract through V152A canonical-primitive whole-source harness
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v151a_pipeline.sh
+          bash researcher_inventory/v152a_pipeline.sh
