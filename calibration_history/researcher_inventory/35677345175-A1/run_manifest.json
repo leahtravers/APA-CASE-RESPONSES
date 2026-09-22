@@ -1,0 +1,13 @@
+{
+  "commit_sha": "92687fc5fcbd0a40e48f027fad06beb5f54ad455",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V148.md",
+  "contract_version": "RI-CONTRACT-V148",
+  "event": "schedule",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "harness_corrections": "V66_FIELD_ALIGNMENT + V88A_EDITOR_SHORTHAND_ALIGNMENT + V92_SAME_SESSION_TRANSIENT_RECOVERY + V126A_CONTRACT_SUBORDINATE_REQUEST_ENVELOPE + V146A_ONE_TURN_TOPOLOGY + V148A_CLASS_LOCAL_SELECTOR",
+  "harness_successor": "V148A_ONE_TURN_CLASS_COMPLETE_SOURCE_ROLE_TOPOLOGY",
+  "model": "gpt-5.6-sol",
+  "semantic_contract": "V148_CLASS_COMPLETE_SOURCE_ROLE_INVENTORY",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "35677345175"
+}
