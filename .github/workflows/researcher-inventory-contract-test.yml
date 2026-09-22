@@ -1,9 +1,9 @@
 name: Researcher Inventory Apparatus Verification
-# V153 is the current durable semantic calibration contract.
-# V153A preserves the one-turn whole-source topology while using a semantically neutral operation selector; V153 durable instructions remain the sole semantic authority.
+# V154 is the current durable semantic calibration contract.
+# The V153A harness remains the proven semantically neutral one-turn whole-source topology; V154 durable instructions remain the sole semantic authority.
 # Immutable archetype verification, V66/V88A evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 # No semantic gold, expected counts, evaluator findings, case-specific hidden corrections, or holdout material are supplied to the worker.
-# V153/V153A routing trigger: 2026-09-22.
+# V154 routing trigger: 2026-09-22.
 
 on:
   workflow_dispatch:
@@ -29,9 +29,9 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V153
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V153.md
-      RI_MODEL_COMMAND: python researcher_inventory/v153_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V154
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V154.md
+      RI_MODEL_COMMAND: python researcher_inventory/v154_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
     steps:
@@ -48,8 +48,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V153 durable contract through V153A neutral role-complete whole-source harness
+      - name: Run V154 durable contract through retained V153A neutral whole-source harness
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v153a_pipeline.sh
+          bash researcher_inventory/v154_pipeline.sh
