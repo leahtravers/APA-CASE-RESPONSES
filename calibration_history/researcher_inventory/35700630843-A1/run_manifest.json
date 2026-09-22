@@ -1,0 +1,13 @@
+{
+  "commit_sha": "2e087d19a9479b60506face618f8a0cf6c07ba9a",
+  "contract_file": "researcher_inventory/AGENT_CONTRACT_V154.md",
+  "contract_version": "RI-CONTRACT-V154",
+  "event": "push",
+  "evidence_policy": "calibration-only; sealed holdout source/output deliberately excluded",
+  "harness_corrections": "V66_FIELD_ALIGNMENT + V88A_EDITOR_SHORTHAND_ALIGNMENT + V92_SAME_SESSION_TRANSIENT_RECOVERY + V126A_CONTRACT_SUBORDINATE_REQUEST_ENVELOPE + V146A_ONE_TURN_TOPOLOGY + V149A_COMPLETE_ATOM_NORMALIZATION + V153A_NEUTRAL_TASK_SELECTOR + OUTER_TIMEOUT_2400",
+  "harness_successor": "V153A_NEUTRAL_ONE_TURN_WHOLE_SOURCE_TOPOLOGY_RETAINED",
+  "model": "gpt-5.6-sol",
+  "semantic_contract": "V154_STRUCTURAL_LATTICE_PLUS_MINIMAL_RELATION_NUCLEUS",
+  "workflow_run_attempt": "1",
+  "workflow_run_id": "35700630843"
+}
