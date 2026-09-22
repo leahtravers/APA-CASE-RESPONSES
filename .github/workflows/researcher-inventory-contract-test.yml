@@ -1,9 +1,10 @@
 name: Researcher Inventory Apparatus Verification
-# V155 is the current durable semantic calibration contract.
-# V155 separates primitive admission from source-span minimization; the retained V153A harness remains the neutral one-turn whole-source topology.
+# V156 is the current durable semantic calibration contract.
+# V156 preserves represented-role admission while restoring complete researcher-handle relation phrase grain.
+# The retained V153A one-turn whole-source topology remains neutral; V156 also adds semantically-neutral paginated same-session final-answer recovery.
 # Immutable archetype verification, evaluator mechanics, durable attempt history, one-shot holdout isolation, and clean-room certification remain mandatory.
 # No semantic gold, expected counts, evaluator findings, case-specific hidden corrections, predecessor scored outputs, or holdout material are supplied to the worker.
-# V155 routing trigger: 2026-09-22.
+# V156 routing trigger: 2026-09-22.
 
 on:
   workflow_dispatch:
@@ -29,11 +30,12 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.CASES_INVENTORY_KEY }}
       OPENAI_MODEL: gpt-5.6-sol
-      CONTRACT_VERSION: RI-CONTRACT-V155
-      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V155.md
-      RI_MODEL_COMMAND: python researcher_inventory/v155_openai_agents_adapter.py
+      CONTRACT_VERSION: RI-CONTRACT-V156
+      RI_CONTRACT_FILE: researcher_inventory/AGENT_CONTRACT_V156.md
+      RI_MODEL_COMMAND: python researcher_inventory/v156_openai_agents_adapter.py
       RI_AGENT_SESSION_TIMEOUT_SECONDS: 600
       RI_AGENT_SESSION_TOTAL_TIMEOUT_SECONDS: 1800
+      RI_AGENT_RESULT_WAIT_SECONDS: 120
     steps:
       - name: Checkout repository without external actions
         shell: bash
@@ -48,8 +50,8 @@ jobs:
           git config user.name "APA Cases Apparatus"
           git config user.email "apa-cases-apparatus@users.noreply.github.com"
 
-      - name: Run V155 durable contract through retained V153A neutral whole-source harness
+      - name: Run V156 durable contract through retained V153A neutral whole-source harness
         shell: bash
         run: |
           set -euo pipefail
-          bash researcher_inventory/v155_pipeline.sh
+          bash researcher_inventory/v156_pipeline.sh
