@@ -1,0 +1,7 @@
+{
+  "provisional": {
+    "last_error": "turn terminal status failed session_id=sess_09c41a9f9621e11b006acc280a33148198a6d5eeac89fcbd04 turn_id=turn_09c41a9f9621e11b006acc280dafc881988e5decd484544541 code=internal_error message=An internal error occurred.",
+    "session_id": "sess_09c41a9f9621e11b006acc280a33148198a6d5eeac89fcbd04",
+    "status": "unknown"
+  }
+}
