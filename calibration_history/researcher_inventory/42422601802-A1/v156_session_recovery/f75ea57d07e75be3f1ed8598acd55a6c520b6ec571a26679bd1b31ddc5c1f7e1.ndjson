@@ -1,0 +1,3 @@
+{"detail": null, "event": "session_created", "session_id": "sess_0151494447c2d933006aefabe835c8819a9fd3c18caae1554b", "session_type": "researcher_inventory_v55_contract_isolated_extract", "status": "in_progress", "unix": 1794092008.4433546}
+{"detail": null, "event": "session_created", "session_id": "sess_0afb15a1bde31986006aefabfdcb28819aa217c999cfb35d67", "session_type": "researcher_inventory_v55_contract_isolated_extract", "status": "in_progress", "unix": 1794092030.1428936}
+{"detail": null, "event": "session_created", "session_id": "sess_050a4d1381e622b8006aefac143db88198a701ea62eea16a82", "session_type": "researcher_inventory_v55_contract_isolated_extract", "status": "in_progress", "unix": 1794092052.5961301}
